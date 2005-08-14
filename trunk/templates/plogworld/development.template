@@ -1,0 +1,28 @@
+{include file="$blogtemplate/header.template" pageTitle=Download}
+<div id="content" >
+  <div id="nav_bar">
+  <div id="section_title">
+     <h2>Development Releases</h2>
+  </div>
+  <br style="clear:both;" />
+  </div>
+    <ul id="tablist">
+      <li><a href="{$url->templatePage("download")}">Official Releases</a></li>				  	
+	  <li><a href="{$url->templatePage("plugins")}">Plugins</a></li>  
+	  <li><a href="{$url->templatePage("templates")}">Templates</a></li>     
+	  <li id="tab_active"><a id="tab_current" href="{$url->templatePage("development")}">Development</a></li>
+	</ul>
+  <div id="page">
+   <p>The bleeding edge development of pLog is kept in the project's <a href="http://subversion.tigris.org">Subversion</a> 
+   repository hosted at <a href="http://devel.plogworld.net/svn">http://devel.plogworld.net</a>.
+Subversion is a very powerful replacement for CVS, which is already being widely use in many other
+open-source projects.</p>
+   <p>Please be aware that the development version is updated almost daily and can be broken from time to time, so it is
+   not advisable to use the development version in production sites, unless we are near the end of a release cycle and
+   the code in the repository has been frozen.
+   </p>
+   <p>There is a page in the wiki <a href="http://wiki.plogworld.net/index.php/Subversion_Repository">that describes Subversion access</a> 
+   and that has more information on how to find a suitable client for your
+   system and how how to fetch the most recent version of the code.</p>
+  </div>
+{include file="$blogtemplate/footer.template"}

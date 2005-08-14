@@ -1,0 +1,11 @@
+<div id="version">
+ <a href="http://sourceforge.net/project/showfiles.php?group_id=83964" style="border:0px;">
+  <img src="{$url->getTemplateFile("download.gif")}" alt="Download!" />
+ </a> 
+</div>
+
+{**<div id="version">
+ Donate!<br/>
+ <img src="{$url->getTemplateFile("paypal.gif")}" alt="Donate!" /><br/>
+ <a href="{$url->templatePage("donations")}">What will happen to my donation?</a>
+</div>**}

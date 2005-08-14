@@ -1,0 +1,286 @@
+body {
+	margin:10px 0px; 
+	padding:0px;
+	text-align:center;
+	font:11px arial, times new roman, lucida sans unicode, sans-serif;
+	color:#333;
+        background:#fff url("./stripes.gif") fixed;
+	}
+
+h1 {
+	font:bold italic 20px times new roman, lucida sans unicode, sans-serif;
+	margin-top:20px;
+	background: transparent;
+	}
+
+h2 {
+	color:#333;
+	font:bold 15px times new roman, times, sans-serif;
+	margin-top: 15px;
+	margin-bottom: 2px;
+	background: transparent;
+	}
+h3 {
+	color:#666;
+	font: bold 13px/18px lucida sans unicode, times new roman, times, sans-serif;
+	margin-top: 15px;
+	margin-bottom: 2px;
+	background: transparent;
+    border: 1px solid #666;
+    border-width: 0px 0px 1px 0px;
+	}
+
+h4 {
+	font: 10px times new roman, arial, sans-serif;
+	letter-spacing: 0.09em;
+	text-transform: uppercase;
+	margin: 0px;
+	padding: 0px;
+	}
+
+.date {
+	font: 10px verdana, arial, helvetica, sans-serif;
+	letter-spacing: 0.09em;
+	}
+
+.footer {
+	font:10px verdana, arial, helvetica, sans-serif;
+	color: #666;
+	background: transparent;
+	text-align: right;
+	}
+
+.Upgrade {
+	display: none;
+	font-weight: bold;
+      }
+
+p {
+	line-height:1.8;
+	margin:10px 0px;
+	}
+
+ol, ul {
+	margin-top:0;
+	margin-bottom:10px;
+	line-height:1.8;
+	}
+
+#Container {
+	width:790px;
+	margin:0px auto;
+	text-align:left;
+	padding:0px;
+	border: 1px solid #ccc;
+	background-color:#eee;
+	color: #333;
+	}
+
+#Main {
+	width:748px;
+	float: left;
+	margin-right: 10px;
+	margin-left: 10px;
+	text-align:center;
+	padding:0px;
+	border: 1px solid #ccc;
+	background-color:#fff;
+	color: #333;
+	}
+	
+#Resource-Container {
+	width:790px;
+	margin:0px auto;
+	text-align:left;
+	padding:0px;
+	border: 1px solid #ccc;
+	background-color:#eee;
+	color: #333;
+	}	
+	
+#Resource-Container a:link {
+ text-decoration: none;
+}
+	
+	
+#Resource-Main {
+	width:790px;
+	padding:0px;
+	border-top: 1px solid #ccc;
+	background-color:#fff;
+	color: #333;
+	text-decoration: none;
+	}
+	
+#Resource-Desc {
+    padding: 10px;
+    text-decoration: none;
+}
+
+#Resource-Desc a:link, 
+#Resource-Desc a,
+#Resource-Desc a:hover {
+ text-decoration: none;
+ border: 0px;
+}
+	
+
+#Container>#Main {margin-left: 20px;}
+
+#Top {
+	text-align:center;
+	padding:10px;
+	border-bottom: 0px;
+	color: #333;
+	background:#ddd;
+	}
+
+#Topmenu {
+	text-align:center;
+	padding:5px 10px;
+	border-top:1px dashed #ccc;
+	border-bottom: 0px;
+	background-color:#eee;
+	font:10px verdana, arial, helvetica, sans-serif;
+	color:#333;
+	text-transform: uppercase;
+	}
+
+#Content {
+	width: 425px;
+	float: left;
+	text-align:left;
+	margin:0px;
+	padding:10px;
+	border-right: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+	color: #333;
+	background-color:#fff;
+	}
+
+#Sidebar-l {
+	width: 130px;
+	float: left;
+	font:12px/1.5 trebuchet ms, verdana, arial, helvetica, sans-serif;
+	color:#666;
+	text-align:left;
+	padding:10px;
+	background-color:#fff;
+	}
+
+#Sidebar-r {
+	width: 130px;
+	float: left;
+	font:12px/1.5 trebuchet ms, verdana, arial, helvetica, sans-serif;
+	color:#666;
+	text-align:left;
+	padding:10px;
+	background-color:#fff;
+	}
+
+.Sidetitle {
+	text-align: center;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	color: #333;
+	background: #eee;
+    text-transform: uppercase;
+	}
+
+#Bottommenu {
+	text-align:center;
+	padding:10px 5px;
+	border-top:0px;
+	border-bottom:1px dashed #ccc;
+	background-color:#eee;
+	font:10px verdana, arial, helvetica, sans-serif;
+	color:#333;
+	text-transform: uppercase;
+	}
+
+#Bottom {
+	text-align:center; 
+	padding:10px;
+	border-top: 0px;
+	background-color:#ddd;
+	font:10px verdana, arial, helvetica, sans-serif;
+	color:#333;
+	text-transform: uppercase;
+	}
+
+a {
+	color:#666;
+	text-decoration:none;
+	background: transparent;
+	}
+
+a:link {color: #666; border-bottom: 1px dashed #666; background: transparent;}
+a:visited {color: #666; border-bottom: 1px dashed #666; background: transparent;}
+a:hover {color: #666; border-bottom: 1px solid #666; background: transparent;}
+
+#album a, #album a:link, #album a:hover, #album a:active { border: 0px; text-decoration: none; }
+
+.calendar {
+  font: 12px/1.5 trebuchet ms, verdana, arial, helvetica, sans-serif;
+}
+
+.calMonthToday {
+ font: inherit;
+ background-color: #ecdebd;
+}
+
+table.calMonth {
+ font: inherit;
+	width:130px;
+}
+
+thead {
+ font: inherit;
+	text-align:center;
+}
+
+tbody {
+ font: inherit;
+	text-align:right;
+}
+
+table.calYear tbody tr td {
+ font: inherit;
+	vertical-align:top;
+}
+
+
+th.calMonthCurrent {
+ font: inherit;
+   font-weight:normal;
+   padding: 0px;
+   text-align: center;
+}
+
+th.calMonthBackward {
+ font: inherit;
+   font-weight:normal;
+   padding: 0px;
+   text-align:center;
+}
+
+th.calMonthForward {
+ font: inherit;
+   font-weight:normal;
+   padding: 0px;
+   text-align:center;
+}
+
+.calMonthHeader th {
+ font: inherit;
+   text-align:center;
+   font-weight:normal;
+   padding: 0px;
+}
+
+.commentposterinfo {
+  	font: 9px trebuchet ms, arial, verdana, sans-serif;
+	letter-spacing: .09em;
+	text-align: left;
+    margin-top: 0px;
+}

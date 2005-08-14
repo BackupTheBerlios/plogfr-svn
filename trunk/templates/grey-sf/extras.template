@@ -1,0 +1,152 @@
+{include file="$blogtemplate/header.template"}
+<h1>pLog Extras</h1>
+<p>
+ You will find here additional files for pLog, such as plugins to extend its functionality,
+ new installable template sets or new language files.
+</p>
+<a name="languages"></a><h2>Language Files</h2>
+<p>
+No additional language files have been released for pLog 0.2 yet.
+<p>
+<a name="templates"></a><h2>Template Sets</h2>
+<br/>
+<table width="100%" border="1">
+<tr>
+ <th>Template</th>
+ <th>Author/License</th>
+ <th>Screenshot</th>
+ <th>Download</th> 
+</tr>
+<tr>
+ <td align="center">Lighthouse</td>
+ <td align="center"><a href="http://www.bassettcorp.com/">Author</a></td>
+ <td align="center"><a href="http://www.bassettcorp.com/">Screenshot</a>
+ <td align="center"><a href="http://prdownloads.sourceforge.net/plog/lighthouse.tar.gz?download">Download</a>
+</tr>
+<tr>
+ <td align="center">Lily</td>
+ <td align="center"><a href="http://www.xs4all.nl/~mosm/English/Webdesign_us/blogger_template_us.html">Author</a></td>
+ <td align="center"><a href="http://www.plogworld.net/imgs/screenshots/screenshot_lily.jpg">Screenshot</a>
+ <td align="center"><a href="http://prdownloads.sourceforge.net/plog/lily.tar.gz?download">Download</a>
+</tr>
+<tr>
+ <td align="center">Roof</td>
+ <td align="center"><a href="http://www.xs4all.nl/~mosm/English/Webdesign_us/blogger_template_us.html">Author</a></td>
+ <td align="center"><a href="http://www.plogworld.net/imgs/screenshots/screenshot_roof.jpg">Screenshot</a>
+ <td align="center"><a href="http://prdownloads.sourceforge.net/plog/roof.tar.gz?download">Download</a>
+</tr>
+<tr>
+ <td align="center">White</td>
+ <td align="center"><a href="http://www.xs4all.nl/~mosm/English/Webdesign_us/blogger_template_us.html">Author</a></td>
+ <td align="center"><a href="http://www.plogworld.net/imgs/screenshots/screenshot_white.jpg">Screenshot</a>
+ <td align="center"><a href="http://prdownloads.sourceforge.net/plog/white.tar.gz?download">Download</a>
+</tr>
+<tr>
+ <td align="center">3-column-liquid</td>
+ <td align="center"><a href="http://www.renalias.net/">Author</a></td>
+ <td align="center"><a href="http://www.plogworld.net/imgs/screenshots/screenshot_3-column-liquid.jpg">Screenshot</a>
+ <td align="center"><a href="http://prdownloads.sourceforge.net/plog/3-column-liquid.tar.gz?download">Download</a>
+</tr>
+</table>
+
+<a name="plugins"></a><h2>Plugins</h2>
+<br/>
+<table width="100%" border="1">
+<tr>
+ <th>Plugin</th>
+ <th>Author</th>
+ <th>Functionality</th>
+ <th>Download</th>
+</tr>
+<tr>
+ <td>Documents Plugin</td>
+ <td><a href="http://www.someblog.com">Darren Greer</a></td>
+ <td>Allows users to upload files to their blogs.</td>
+ <td><a href="http://prdownloads.sourceforge.net/plog/plog-plugin-documents.tar.gz?download">Download</a></td>
+</tr>
+<tr>
+ <td>Google plugin</td>
+ <td>The pLog Team</td>
+ <td>Highlights search terms when visitors come from Google</td>
+ <td><a href="http://prdownloads.sourceforge.net/plog/plog-plugin-google.tar.gz?download">Download</a></td>
+</tr>
+<tr>
+ <td>Haiku plugin</td>
+ <td><a href="http://www.someblog.com">Darren Greer</a></td>
+ <td>Shows a random haiku</td>
+ <td><a href="http://prdownloads.sourceforge.net/plog/plog-plugin-haiku-20040110.tar.gz?download">Download</a></td>
+</tr>
+<tr>
+ <td>JsDictionary plugin</td>
+ <td>The pLog Team</td>
+ <td>Allows users to get info about words of pieces of text.</td>
+ <td><a href="http://prdownloads.sourceforge.net/plog/plog-plugin-jsdictionary.tar.gz?download">Download</a></td>
+</tr>
+<tr>
+ <td>Stats plugin</td>
+ <td>The pLog Team</td>
+ <td>Integrates phpOpenTracker and pLog</td>
+ <td><a href="http://prdownloads.sourceforge.net/plog/plog-plugin-stats.tar.gz?download">Download</a></td>
+</tr>
+<tr>
+ <td>XMLRPC plugin</td>
+ <td><a href="http://www.phpn.de">http://www.phpn.de</a></td>
+ <td>Implementation of the Blogger XMLRPC API</td>
+ <td><a href="http://prdownloads.sourceforge.net/plog/plog-plugin-xmlrpc-20040107.tar.gz?download">Download</a></td>
+</tr>
+<tr>
+ <td>PHPNGallery plugin</td>
+ <td><a href="http://www.phpn.de">http://www.phpn.de</a></td>
+ <td>Implementation of an image gallery, based on a very simple text file including the name of the
+ picture and its description.</td>
+ <td><a href="http://prdownloads.sourceforge.net/plog/plog-plugin-phpngallery.tar.gz?download">Download</a></td>
+</tr>
+<tr>
+ <td>Print View plugin</td>
+ <td><a href="http://www.phpn.de">The pLog Team</a></td>
+ <td>Very simple "print this page" functionality, driven by a template and a stylesheet.</td>
+ <td><a href="http://prdownloads.sourceforge.net/plog/plog-plugin-printview-20040110.tar.gz?download">Download</a></td>
+</tr>
+</table>
+
+<a name="languages"></a><h2>Language Files</h2>
+<br/>
+<table width="100%" border="1">
+<tr>
+ <th>Language</th>
+ <th>Author</th>
+ <th>Download</th>
+</tr>
+<tr>
+ <td>Dutch (nl_BE, nl_NL)</td>
+ <td>info_AT_versys_DOT_be</td>
+ <td><a href="http://prdownloads.sourceforge.net/plog/locale_nl_BE.tar.gz?download">Download</a></td>
+</tr>
+</table>
+
+<a name="logos"></a><h2>Logos</h2>
+<br/>
+<table width="100%" border="1">
+<tr>
+ <th>Logo</th>
+ <th>Author</th>
+ <th>Download</th>
+</tr>
+<tr>
+ <td><img src="http://www.plogworld.net/imgs/logos/plog-thespear.jpg" alt="Logo" /></td>
+ <td><a href="http://www.thespear.net">Author</a></td>
+ <td><a href="http://www.plogworld.net/imgs/logos/plog-thespear.jpg">Download</a></td>
+</tr>
+<tr>
+ <td><img src="http://www.plogworld.net/imgs/logos/plog-small.gif" alt="Logo" /></td>
+ <td><a href="http://www.bassettcorp.com">Author</a></td>
+ <td><a href="http://www.plogworld.net/imgs/logos/plog-small.gif">Download</a></td>
+</tr>
+<tr>
+ <td><img src="http://www.plogworld.net/imgs/logos/plog-daemon.jpg" alt="Logo" /></td>
+ <td>Koen Calliauw</td>
+ <td><a href="http://www.plogworld.net/imgs/logos/plog-daemon.jpg">Download</a></td>
+</tr>
+</table>
+
+{include file="$blogtemplate/footer.template"}

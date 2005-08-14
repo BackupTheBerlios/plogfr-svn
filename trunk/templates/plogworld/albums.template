@@ -1,0 +1,19 @@
+{include file="$blogtemplate/header.template"}
+<div id="container">
+{foreach from=$albums item=album}
+ {assign var="aDate" value=$album->getTimestamp()}
+ <div class="blog">
+ <h2 class="date">{$album->getName()}</h2>
+ <div class="blogbody">
+  <div class="posted">
+   <img alt="Album" src="{$url->getTemplateFile("folderblue.gif")}" width="10" height="11" style="border:0px;" />
+   <a href="{$url->albumLink($album)}">  
+     {$locale->tr("view")} ({$album->getNumResources()})
+    </a>| {$locale->tr("created")} {$locale->formatDate($aDate,"%d %b, %Y")}
+  </div>
+ </div>
+{$album->getDescription()|truncate:255:"..."|escape}
+</div>
+{/foreach}
+</div>
+{include file="$blogtemplate/footer.template"}

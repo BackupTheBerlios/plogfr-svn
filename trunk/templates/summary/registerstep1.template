@@ -1,0 +1,55 @@
+{include file="summary/header.template" section=$locale->tr("register_step1_title")}
+  <form name="newUser" action="summary.php" method="post">
+    <fieldset class="inputField">
+        <legend>{$locale->tr("step1")}</legend>
+        <p>
+          {$locale->tr("register_step1_help")}
+        </p>        
+        {include file="summary/formvalidate.template" message=$locale->tr("error_adding_user")}
+        <div class="field">
+            <label for="userName">{$locale->tr("username")}</label>
+			<span class="required">*</span>
+			<div class="formHelp">{$locale->tr("username_help")}</div>
+            <input type="text" name="userName" value="{$userName}" id="userName" />
+            {include file="summary/validate.template" field=userName message=$locale->tr("error_incorrect_username")}
+        </div>
+        <div class="field">
+            <label for="userFullName">{$locale->tr("full_name")}</label>
+			<span class="required">*</span>
+            <div class="formHelp">{$locale->tr("full_name_help")}</div>			
+            <input type="text" name="userFullName" value="{$userFullName}" id="userFullName" />
+        </div>        
+        <div class="field">
+            <label for="userPassword">{$locale->tr("password")}</label>
+			<span class="required">*</span>
+            <input type="password" name="userPassword" id="userPassword" value="{$userPassword}"/>
+            {include file="summary/validate.template" field=userPassword message=$locale->tr("error_invalid_password")}            
+			<div class="formHelp">{$locale->tr("password_help")}</div>
+            <label for="userPasswordCheck">{$locale->tr("confirm_password")}</label><br />
+            <input type="password" name="userPasswordCheck" id="userPasswordCheck" value="{$userPasswordCheck}"/>
+            {include file="summary/validate.template" field=userPasswordCheck message=$locale->tr("error_passwords_dont_match")}            
+        </div>
+        <div class="field">
+            <label for="userPasswordCheck">{$locale->tr("email")}</label>
+			<span class="required">*</span>
+			<div class="formHelp">{$locale->tr("email_help")}</div>
+            <input type="text" name="userEmail" id="userEmail" value="{$userEmail}" />
+            {include file="summary/validate.template" field=userEmail message=$locale->tr("error_incorrect_email_address")}
+        </div>
+        {if $useCaptchaAuth}
+        <div class="field">
+            <label for="userAuth">{$locale->tr("auth_img")}</label>
+            <span class="required">*</span>
+            <div class="formHelp">{$locale->tr("auth_img_help")}</div>
+            <img src="{$userAuthImgPath}" alt="CAPTCHA" />
+            <input type="text" name="userAuth" id="userAuth" value="" />
+            {include file="summary/validate.template" field=userAuth message=$locale->tr("error_incorrect_auth_img")}
+        </div>
+        {/if}
+    </fieldset>
+    <div class="buttons">
+      <input type="submit"  value="{$locale->tr("register_next")} &raquo;" name="Register"/>
+      <input type="hidden" name="op" value="RegisterStep2"/>
+    </div>
+  </form>
+{include file="summary/footer.template"}

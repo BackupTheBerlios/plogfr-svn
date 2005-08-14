@@ -1,0 +1,63 @@
+{assign var=htmlarea value=$blogsettings->getValue("htmlarea_enabled")}
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset={$locale->getCharset()}"/> 
+  <link rel="stylesheet" href="styles/admin.css" type="text/css" />
+  <title>{$locale->tr("admin_interface_title")}</title>
+  <script type="text/javascript" src="js/htmlarea/popups/popup.js"></script>
+  <script type="text/javascript" src="js/htmlarea/htmlarea-plog-resourcelist.js"></script>
+  <script type="text/javascript" src="js/ui/common.js"></script>
+  <script type="text/javascript">
+   var plogBaseUrl = '{$baseurl}';
+  </script>
+  <style>{literal}
+   html,body {
+    margin           : 0px;
+    padding          : 0px;
+    background       : #FFFFFF;
+   }
+   #container
+   {
+    width            : 415px;
+    text-align       : left;
+    margin-left      : auto;
+    margin-right     : auto;
+   }
+.info
+{
+    margin-bottom    : 10px;
+    width            : 285px;
+}
+#list_action_bar
+{
+    width            : 350px;
+    padding          : 4px;
+}
+  {/literal}</style>
+ </head>
+<body onLoad="resourceListWindowInit();">
+<div id="container">
+<table class="info">
+ <thead>
+  <th style="width:410px";>{$locale->tr("template")}</th>
+ </thead>  
+ <tbody>
+  {foreach from=$templates item=template}
+   <tr class="{cycle values="odd,even"}">
+    <td>
+     {assign var=templateName value=$template->getName()}
+     <b>{$templateName}</b><br/>
+     <img src="{$template->getScreenshotUrl()}" alt="{$templateName}" height="300" width="400" />
+     <br/>
+     <a href="javascript:blogTemplateSelector('{$templateName}')">{$locale->tr("select")}</a>
+    </td>
+   </tr> 
+  {/foreach}
+</tbody>
+</table>
+<div id="list_action_bar">
+  <a href="javascript:window.close()">{$locale->tr("close")}</a>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,132 @@
+{include file="$blogtemplate/header.template"} 
+{if !empty($flickr)}
+ <script type="text/javascript" src="{$url->getBaseUrl()}/plugins/flickr/js/annotation/annotation.js"></script>
+ {literal}
+  <STYLE TYPE="text/css">
+   <!--
+    .flickr-album { 
+     padding: 0; 
+     width: 100%; 
+     clear: both; 
+    } 
+      
+    .flickr-thumbnail { 
+     float: left; 
+     padding-right: 20px; 
+     background-color: #fff; 
+     border: 1px solid #a9a9a9; 
+     margin: 6px 6px 6px 6px; 
+     padding: 4px; 
+     margin-top: 10px; 
+    } 
+      
+    .flickr-photo { 
+     padding-right: 20px; 
+     background-color: #fff; 
+     border: 1px solid #a9a9a9; 
+     margin: 6px 6px 6px 6px; 
+     padding: 4px; 
+     margin-top:10px; 
+    } 
+      
+    .flickr-title { 
+     color: #260; 
+     border-bottom: 1px dashed #CCC; 
+     padding: 5px 0; 
+    } 
+      
+    .flickr-album-nav { 
+     clear: both; 
+     text-align: left; 
+    }
+
+    .flickr-photo-nav { 
+     clear: both; 
+     text-align: center; 
+    }    
+
+    .flickr-slideshow { 
+     clear: both; 
+     text-align: right; 
+    } 
+
+    .flickr-description { 
+     font-size: 11px; 
+    } 
+
+    a.annotation {
+	 position: absolute;
+	 border: 2px solid yellow;
+	 padding: 0;
+	 display: none;
+	 opacity: 0.2;
+	 -moz-opacity: 0.2;
+	 filter: alpha(opacity=20);	
+    }
+    a.annotation span {
+	 display: block;
+	 width: 100%;
+	 height: 100%;
+	 background: white;
+	 opacity: 0.2;
+	 -moz-opacity: 0.2;
+	 filter: alpha(opacity=20);
+    }
+    a.annotation:hover {
+	 background: white;
+	 opacity: 0.2;
+	 -moz-opacity: 0.2;
+	 filter: alpha(opacity=20);
+	 border: 2px solid blue;
+    }
+   -->
+  </STYLE>
+ {/literal}
+
+ {if $flickr->isEnabled()}
+  {assign var=albumId value=$smarty.request.album}
+  {assign var=photoId value=$smarty.request.photo}
+  {assign var=secretId value=$smarty.request.secret}
+  {if $albumId != '' && $photoId != '' && $secretId != ''}
+   <div class="flickr-album-nav"><a href="{$flickr->pluginTemplatePage()}">{$locale->tr("flickr")}</a>  &raquo; <a href="{$flickr->getAlbumUrl($albumId)}">{$locale->tr("flickr_album_id")} {$albumId}</a>  &raquo; <b>{$locale->tr("flickr_photo_id")} {$photoId}</b></div>
+   {assign var=flickrPhotoInfo value=$flickr->getPhotoInfo($photoId,$secretId)}
+   <h3 class="flickr-title">{$locale->tr("flickr_photo_title")} {$flickrPhotoInfo.title}</h3>
+   {assign var=photoNavigation value=$flickr->getPhotoNavigation($albumId,$photoId)}
+   <div class="flickr-photo-nav">{if $photoNavigation.prevPhotoUrl != ''}<a href="{$photoNavigation.prevPhotoUrl}">&laquo; {$locale->tr("flickr_prev_photo")}</a>{/if} | {if $photoNavigation.nextPhotoUrl != ''}<a href="{$photoNavigation.nextPhotoUrl}">{$locale->tr("flickr_next_photo")} &raquo;</a>{/if}</div>
+   <a href="{$flickrPhotoInfo.originalimageUrl}"><img class="annotated flickr-photo" src="{$flickrPhotoInfo.resizeimageUrl}" alt="" usemap="imgmap" /></a><br />
+   {assign var=flickrNotes value=$flickrPhotoInfo.notes}
+   <map id="imgmap">
+    {foreach item=flickrNote from=$flickrNotes}
+     <area alt="" title="{$flickrNote.noteDesc}" nohref="nohref" shape="rect" coords="{$flickrNote.noteX},{$flickrNote.noteY},{$flickrNote.noteX+$flickrNote.noteW-1},{$flickrNote.noteY+$flickrNote.noteH-1}" />
+    {/foreach}
+   </map> 
+   {assign var=flickrTags value=$flickrPhotoInfo.tags}
+   <div class="flickr-description">{$locale->tr("flickr_photo_description")} {$flickrPhotoInfo.description}</div>
+   <div class="flickr-description">{$locale->tr("flickr_photo_date")} {$flickrPhotoInfo.date}</div>
+   <div class="flickr-description">{$locale->tr("flickr_photo_tag")} {foreach item=flickrTag from=$flickrTags}<a href="{$flickrTag.tagUrl}">{$flickrTag.tagName}</a> {/foreach}</div>
+   <div class="flickr-description">{$locale->tr("flickr_photo_url")} <a href="{$flickrPhotoInfo.flickrUrl}">{$locale->tr("flickr_photo_see_url")} ({$flickrPhotoInfo.comments} {$locale->tr("comments")})</a></div>
+  {elseif $albumId != '' && ($photoId == '' || $secretId == '')}
+   <div class="flickr-nav"><a href="{$flickr->pluginTemplatePage()}">{$locale->tr("flickr")}</a>  &raquo; <b>{$locale->tr("flickr_album_id")} {$albumId}</b></div>
+   <div class="flickr-slideshow"><a href="#" onclick="window.open('{$flickr->getSlideShowUrl($albumId)}','slideShowWin','width=500,height=500,top=150,left=70,scrollbars=no, status=no, resizable=no')">{$locale->tr("flickr_view_as_slideshow")}</a></div>
+   {assign var=flickrPhotos value=$flickr->getPhotos($albumId)}
+   {foreach item=flickrPhoto from=$flickrPhotos}
+    <a href="{$flickrPhoto.photoUrl}"><img class="flickr-thumbnail" src="{$flickrPhoto.thumbnailUrl}" alt="" /></a>
+   {/foreach}
+  {else}
+   {assign var=flickrAlbums value=$flickr->getPhotoList()}
+   {foreach name=flickrAlbum item=flickrAlbum from=$flickrAlbums}
+    <div class="flickr-album">
+     <a href="{$flickrAlbum.albumUrl}"><img class="flickr-thumbnail" src="{$flickrAlbum.thumbnailUrl}" alt="{$flickrAlbum.title}" /></a><br />
+     <h4 class="flickr-title">{$locale->tr("flickr_album_title")} {$flickrAlbum.title}</h4>
+     <div class="flickr-description">{$locale->tr("flickr_album_description")} {$flickrAlbum.description}</div>
+     <div class="flickr-description">{$locale->tr("flickr_album_photos")} <a href="{$flickrAlbum.albumUrl}">{$flickrAlbum.photos}</a></div>
+     <div class="flickr-description">{$locale->tr("flickr_album_url")} <a href="{$flickrAlbum.flickrUrl}">{$locale->tr("flickr_album_see_url")}</a></div>
+    </div>
+   {/foreach}
+   {assign var=totalAlbums value=$smarty.foreach.flickrAlbum.total}
+  {/if}
+ {else}
+  {$locale->tr("error_flickr_not_enabled")}
+ {/if}
+{/if}   
+{include file="$blogtemplate/footer.template"} 

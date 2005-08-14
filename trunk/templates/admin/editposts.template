@@ -1,0 +1,151 @@
+{include file="$admintemplatepath/header.template"}
+{include file="$admintemplatepath/navigation.template" showOpt=editPosts title=$locale->tr("editPosts")}
+		  <div id="list_nav_bar">
+            <div id="list_nav_select">
+                <form id="showBy" action="admin.php" method="post">
+                <fieldset>
+                <legend>{$locale->tr("show_by")}</legend>
+
+                    <div class="list_nav_option">
+                    <label for="showCategory">{$locale->tr("category")}</label>
+                    <br />
+                    <select name="showCategory" id="showCategory">
+                     <option value="-1">{$locale->tr("category_all")}</option>
+                     {foreach from=$categories item=category}
+                     <option value="{$category->getId()}" {if $currentcategory == $category->getId()} selected="selected" {/if}>{$category->getName()}</option>
+                     {/foreach}
+                    </select>
+                    </div>
+
+                    <div class="list_nav_option">
+                    <label for="showStatus">{$locale->tr("status")}</label>
+                    <br />
+                    <select name="showStatus" id="showStatus">
+                     {foreach from=$poststatus key=name item=status}
+                     <option value="{$status}" {if $currentstatus == $status} selected="selected"{/if}>{$locale->tr($name)}</option>
+                     {/foreach}
+                    </select>
+                    </div>
+
+                    <div class="list_nav_option">
+                    <label for="showUser">{$locale->tr("author")}</label>
+                    <br />
+                    <select name="showUser" id="showUser">
+                      <option value="0" {if $currentuser == 0} selected="selected" {/if}>{$locale->tr("author_all")}</option>
+                      {foreach from=$users item=user}
+                       <option value="{$user->getId()}" {if $currentuser == $user->getId()} selected="selected" {/if}>{$user->getUsername()}</option>
+                      {/foreach}
+                    </select>
+                    </div>
+
+                    <div class="list_nav_option">
+                    <label for="time">{$locale->tr("date")}</label>
+                    <br />
+                    <select name="showMonth" id="time">
+                     <option value="-1" {if $currentmonth == -1} selected="selected" {/if}>{$locale->tr("all")}</option>
+                     {foreach from=$months item=month}
+                     <option value="{$month.date}" {if $currentmonth == $month.date} selected="selected" {/if}>{$month.name}</option>
+                     {/foreach}
+                    </select>
+                    </div>
+
+                    <div class="list_nav_option">
+                    <label for="search">{$locale->tr("search_terms")}</label>
+                    <br />
+                    <input type="text" name="searchTerms" value="{$searchTerms}" size="15" id="search" />
+                    </div>
+
+                    <div class="list_nav_option">
+                    <br />
+                    <input type="hidden" name="op" value="editPosts" />
+                    <input type="submit" name="Show" value="{$locale->tr("show")}" class="submit" />
+                    </div>
+
+                </fieldset>
+                </form>
+            </div>
+            <br style="clear:both;" />
+        </div>
+
+        <form id="postsList" action="admin.php" method="post">
+        <div id="list">
+  {include file="$admintemplatepath/successmessage.template"}
+  {include file="$admintemplatepath/errormessage.template"}
+            <table class="info">
+                <thead>
+                    <tr>
+                        <!-- 775 -->
+                        <th style="width:10px;"><input class="checkbox" type="checkbox" class="check" name="all" id="all" value="1" onclick="toggleAllChecks('postsList');" /></th>
+                        <th style="width:345px;">{$locale->tr("topic")}</th>
+                        <th style="width:115px;">{$locale->tr("date")}</th>
+                        <th style="width:90px;">{$locale->tr("author")}</th>
+                        <th style="width:60px;">{$locale->tr("status")}</th>
+                        <th style="width:30px; text-align:center;">CM</th>
+                        <th style="width:30px; text-align:center;">TB</th>
+                        <th style="width:95px;">{$locale->tr("actions")}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                 {foreach from=$posts item=post}
+                    <tr class="{cycle values="odd,even"}">
+                        <td>
+                            <input class="checkbox" type="checkbox" name="postIds[{$post->getId()}]" id="checks_{$post->getId()}" value="{$post->getId()}" />
+                        </td>
+                        <td class="col_highlighted">
+                            <a href="?op=editPost&amp;postId={$post->getId()}">
+                            {$post->getTopic()}
+                            </a>
+                        </td>
+                        <td>
+                            {assign var=date value=$post->getDateObject()}
+                            {$locale->formatDate($date)}
+                        </td>
+                        <td>
+                            {assign var=owner value=$post->getUserInfo()}
+                            {$owner->getUsername()}
+                        </td>
+                        <td>
+                          {foreach from=$poststatus key=name item=status}
+                           {if $post->getStatus() == $status}
+						    {if $status == 1}<span style="color:green">{$locale->tr($name)}</span>
+							{elseif $status == 2}<span style="color:blue">{$locale->tr($name)}</span>
+							{elseif $status == 3}<span style="color:red">{$locale->tr($name)}</span>
+							{else}{$locale->tr("$name")}{/if}
+						   {/if}
+                          {/foreach}
+                        </td>
+                        <td style="text-align: center;">
+                            {if $post->getTotalComments(false) > 0}
+							 <a href="?op=editComments&articleId={$post->getId()}">({$post->getTotalComments(false)})</a>
+							{else}
+							 0
+							{/if}
+                        </td>
+                        <td style="text-align: center;">
+                            {if $post->getTotalTrackbacks() > 0}
+							 <a href="?op=editTrackbacks&articleId={$post->getId()}">({$post->getTotalTrackbacks()})</a>
+							{else}
+							 0
+							{/if}
+                        </td>						
+                        <td>
+                            <div class="list_action_button">
+                            <a href="?op=editPost&amp;postId={$post->getId()}"><img src="imgs/admin/icon_edit-16.png" alt="{$locale->tr("edit")}" /></a>
+                            <a href="?op=deletePost&amp;postId={$post->getId()}"><img src="imgs/admin/icon_delete-16.png" alt="{$locale->tr("delete")}" /></a>
+                            <a href="?op=postStats&amp;postId={$post->getId()}"><img src="imgs/admin/icon_stats-16.png" alt="{$locale->tr("statistics")}" /></a>
+                            </div>
+                        </td>
+                    </tr>
+                    {/foreach}
+                </tbody>
+            </table>
+        </div>
+        <div id="list_action_bar">
+            {include file="$admintemplatepath/adminpager.template" style=list}
+            <input type="submit" name="delete" value="{$locale->tr("delete")}" class="submit" />
+            <input type="hidden" name="op" value="deletePosts" />
+        </div>
+
+        </form>
+{include file="$admintemplatepath/footernavigation.template"}
+{include file="$admintemplatepath/footer.template"}

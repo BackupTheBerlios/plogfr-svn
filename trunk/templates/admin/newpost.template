@@ -1,0 +1,190 @@
+{include file="$admintemplatepath/header.template"}
+{include file="$admintemplatepath/navigation.template" showOpt=newPost title=$locale->tr("newPost")}
+{if $smarty.request.postText}
+	{assign var=postText value=$smarty.request.postText}
+{/if}
+{assign var=htmlarea value=$blogsettings->getValue("htmlarea_enabled")}
+ <script type="text/javascript" src="js/ui/plogui.js"></script>
+ <script type="text/javascript" src="js/calendar/datetimepicker.js"></script>
+  <script type="text/javascript">
+     var indexPage = "{$config->getValue("script_name")}";
+  </script>  
+ {if $htmlarea}
+  <link rel="stylesheet" href="js/htmlarea/htmlarea.css" type="text/css"/>    
+  <script type="text/javascript" src="js/htmlarea/htmlarea.js"/></script>
+  <script type="text/javascript" src="js/htmlarea/dialog.js"/></script>
+  <script type="text/javascript" src="js/htmlarea/htmlarea-plog.js"/></script>
+  {if $locale->getLocaleCode()=="fa_IR"}
+  <script type="text/javascript" src="js/htmlarea/htmlarea-plog-farsi.js"/></script>
+  {/if}
+ {else}
+  <link rel="stylesheet" href="js/editor/plogeditor.css" type="text/css" />
+  <script type="text/javascript" src="js/editor/plogeditor.js"></script>
+ {/if}
+ <script type="text/javascript">
+ {if $blogsettings->getValue("new_drafts_autosave_enabled")}
+  // in order to save drafts at regular intervals, we need a timer
+  var timer;
+  timer = window.setInterval("saveDraft()", {$autoSaveNewDraftsTimeMillis});
+ {/if} 
+  
+  // some messages that we are going to need in the functions above
+  var msgErrorSavingDraft = "{$locale->tr("error_saving_draft")}";
+  var msgDraftSavedOk = "{$locale->tr("draft_saved_ok")}";
+  var msgErrorMakingRequest = "{$locale->tr("error_sending_request")}";
+  var msgErrorNoCategorySelected = "{$locale->tr("error_no_category_selected")}";
+  var xmlHttpRequestSupportEnabled = '{$xmlHttpRequestSupportEnabled}';
+  var htmlAreaEnabled = '{$htmlarea}';
+  var msgErrorPostTopic = "{$locale->tr("error_missing_post_topic")}";
+  var msgErrorPostText = "{$locale->tr("error_missing_post_text")}";
+  
+  // base url where we can find the admin.php script
+  var plogAdminBaseUrl = "{$url->getBaseUrl(false)}/admin.php";
+
+  var todayDay = '{$today->getDay()}';
+  var todayMonth = '{$today->getMonth()}';
+  var todayYear = '{$today->getYear()}';  
+  
+  {include file="$admintemplatepath/calendarstuff.template"}
+  
+ </script>
+ 
+  <form name="newPost" id="newPost" action="admin.php" method="post">
+   <fieldset class="inputField">
+   <legend>{$locale->tr("newPost")}</legend>
+   <div style="float:left; width: 73%; border-right: 1px solid #DEDEDE;">
+	   {include file="$admintemplatepath/formvalidate.template" message=$locale->tr("error_adding_post")}  
+	   
+	   <div class="field">
+	     <label for="postTopic">{$locale->tr("topic")}</label>
+		 <span class="required">*</span>
+		 <div class="formHelp">{$locale->tr("topic_help")}</div>
+	     <input type="text" name="postTopic" style="width:100%" id="postTopic" value="{$postTopic}" />
+	     {include file="$admintemplatepath/validate.template" field=postTopic message=$locale->tr("error_missing_post_topic")}
+	   </div>
+	   
+	   <!-- text field custom fields -->
+	   {include file="$admintemplatepath/newpost_customfields.template" type=1 fields=$customfields}	   
+	   	 
+	   <div class="field">
+	     <label for="postText">{$locale->tr("text")}</label>
+		 <span class="required">*</span>
+		 <div class="formHelp">{$locale->tr("text_help")}</div>
+	     {if !$htmlarea}<script type="text/javascript">var ed1 = new pLogEditor('postText','ed1');</script>{/if}
+	     <textarea {if $htmlarea==1}rows="20"{else}rows="10"{/if} id="postText" name="postText" style="width:100%">{$postText}</textarea>
+	     {include file="$admintemplatepath/validate.template" field=postText message=$locale->tr("error_missing_post_text")}   
+  	     {if !$htmlarea}
+		   <a href="javascript:resource_list_window(1);">{$locale->tr("add_resource")}</a>
+	     {/if}
+	   </div>
+	   
+	   <div class="field">
+	     <label for="postExtendedText">{$locale->tr("extended_text")}</label>
+		 <div class="formHelp">{$locale->tr("extended_text_help")}</div>
+	     {if !$htmlarea}<script type="text/javascript">var ed2 = new pLogEditor('postExtendedText','ed2');</script>{/if}
+	     <textarea {if $htmlarea}rows="25"{else}rows="15"{/if} id="postExtendedText" name="postExtendedText" style="width:100%">{$postExtendedText}</textarea>
+	     {if !$htmlarea}
+		 <a href="javascript:resource_list_window(2);">{$locale->tr("add_resource")}</a>
+	     {/if}
+	   </div>
+
+	   <div class="field">
+	     <label for="trackbackUrls">{$locale->tr("trackback_urls")}</label>
+		 <div class="formHelp">{$locale->tr("trackback_urls_help")}</div>
+	     <textarea rows="5" id="trackbackUrls" name="trackbackUrls" style="width:100%">{$trackbackUrls}</textarea>
+	   </div>	      	   
+	   
+	   <!-- text area custom fields -->
+      {include file="$admintemplatepath/newpost_customfields.template" type=2 fields=$customfields}
+   </div>
+   
+   <div style="float:left; width: 23%; margin-left: 8px;">
+   
+	   <div class="field">
+	     <label for="postSlug">{$locale->tr("post_slug")}</label>
+		 <div class="formHelp">{$locale->tr("post_slug_help")}</div>
+	     <input type="text" name="postSlug" id="postSlug" style="width:100%" value="{$postSlug}" />
+	   </div>
+   
+       <div class="field">
+   	     <label for="postDateTime">{$locale->tr("date")}</label>
+		 <span class="required">*</span>
+		 <div class="formHelp">{$locale->tr("post_date_help")}</div>
+	     <input name="postDateTime" id="postDateTime" class="dateTime" readonly="true" type="text" size="16" value="{$postDateTime}" style="margin-bottom: 4px;">
+	     <a href="javascript:NewCal('postDateTime','ddmmyyyy',true,24);">
+		   <img src="imgs/admin/cal.jpg" alt="{$locale->tr("date")}" style="border:0px;width: 16px; height: 14px; padding: 0;" />
+		 </a>
+	   </div>
+	   
+	   <!-- date custom fields -->
+	   {include file="$admintemplatepath/newpost_customfields.template" type=4 fields=$customfields}
+	   
+	   <div class="field">
+         <label for="postStatus">{$locale->tr("status")}</label>
+		 <span class="required">*</span>		 
+		 <div class="formHelp">{$locale->tr("post_status_help")}</div>
+		 <select name="postStatus" id="postStatus">
+		   {foreach from=$poststatus key=name item=status}
+		   <option value="{$status}" {if $postStatus == $status} selected="selected"{/if}>{$locale->tr($name)}</option>
+		   {/foreach}
+         </select>	   
+	   </div>
+	   
+	   <div class="field">
+         <label for="postCategories[]">{$locale->tr("categories")}</label>
+		 <span class="required">*</span>
+		 <div class="formHelp">{$locale->tr("post_categories_help")}</div>
+         <select name="postCategories[]" id="postCategories" size="5" multiple="multiple" style="width:100%">
+           {foreach from=$categories item=category}
+           <option value="{$category->getId()}" {foreach from=$postCategories item=categoryId}{if $category->getId() == $categoryId} selected="selected" {/if}{/foreach}>{$category->getName()}</option>
+           {/foreach}
+         </select>
+        {include file="$admintemplatepath/validate.template" field=postCategories message=$locale->tr("error_no_category_selected")}	   
+	   </div>
+   
+       <div class="field_checkbox">
+         <input class="checkbox" type="checkbox" id="commentsEnabled" name="commentsEnabled" value="1" {if $commentsEnabled} checked="checked" {/if}/>
+		 <label for="commentsEnabled">{$locale->tr("post_comments_enabled_help")}</label>
+	   </div>
+   
+       <div class="field_checkbox">
+	     <input class="checkbox" type="checkbox" name="sendNotification" id="sendNotification" value="1" {if $sendNotification} checked="checked" {/if}/>
+		 <label for="sendNotification">{$locale->tr("send_notification_help")}</label>
+	   </div>
+
+       <div class="field_checkbox">
+	     <input class="checkbox" type="checkbox" name="sendTrackbacks" id="sendTrackbacks" value="1" {if $sendTrackbacks} checked="checked" {/if}/>  
+		 <label for="sendTrackbacks">{$locale->tr("send_trackback_pings_help")}</label>
+	   </div>
+        
+	   <div class="field_checkbox">	
+         {if $xmlRpcPingEnabled}
+		 <input class="checkbox" type="checkbox" name="sendPings" id="sendPings" value="1" {if $sendPings} checked="checked" {/if}/>
+		 <label for="sendPings">{$locale->tr("send_xmlrpc_pings_help")}</label>
+		 {/if}
+      </div>
+
+      <div class="field">
+       	<br /><label for="bookmarklet">{$locale->tr("bookmarklet")}</label>
+       	<div class="formHelp">{$locale->tr("bookmarklet_help")}</div>
+		<a href="javascript:bm=document.selection?document.selection.createRange().text:document.getSelection();void(plogbm=window.open('{$url->getAdminUrl()}?op=newPost&sendTrackbacks=1&postText='+encodeURIComponent('&lt;p&gt;'+bm+' ... '+'&lt;a href=&quot;'+window.location.href+'&quot;&gt;'+'{$locale->tr("original_post")}'+'&lt;/a&gt;&lt;/p&gt;'),'plogbm','toolbar=1,status=1,location=1,scrollbars=1,menubar=1,resizable=1'))" onclick="window.alert('{$locale->tr("bookmarklet_help")}');">{$locale->tr("blogit_to_plog")}</a> 
+      </div>	 
+	  
+	  <!-- checkbox custom fields -->
+	   {include file="$admintemplatepath/newpost_customfields.template" type=3 fields=$customfields}	  
+	  
+	</div>
+	</fieldset>
+    <div class="buttons">
+		{if $browser->has_feature("xmlhttpreq")}
+		<input type="button" name="saveDraftAndContinue" value="{$locale->tr("save_draft_and_continue")}" onclick="javascript:saveDraft()" />
+		{/if}	
+		<input type="button" name="previewPost" value="{$locale->tr("preview")}" onclick="javascript:previewNewPost()" />
+		<input type="submit" name="addPost" value="{$locale->tr("add_post")}"/>		
+		<input type="hidden" name="isDraft" value="" />
+		<input type="hidden" name="op" value="addPost"/>
+		<input type="hidden" name="postId" value="{$postId}" />
+    </div>
+  </form>
+{include file="$admintemplatepath/footernavigation.template"}
+{include file="$admintemplatepath/footer.template"}
