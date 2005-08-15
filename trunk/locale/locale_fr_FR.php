@@ -130,7 +130,7 @@ $messages["password"] = "Mot de passe";
 $messages["dashboard"] = "Tableau de bord";
 
 // menu options
-$messages["newPost"] = "Nouveau";
+$messages["newPost"] = "Créer";
 $messages["Manage"] = "Editer";
 $messages["managePosts"] = "Notes";
 $messages["editPosts"] = "Notes";
@@ -145,7 +145,7 @@ $messages["newLinkCategory"] = "Nouvelle catégorie de liens";
 $messages["editLinkCategory"] = "Editer une catégorie de liens";
 $messages["manageCustomFields"] = "Champs personnalisés";
 $messages["blogCustomFields"] = "Champs personnalisés";
-$messages["newCustomField"] = "Nouveau Champ personnalisé";
+$messages["newCustomField"] = "Nouveau champ personnalisé";
 $messages["resourceCenter"] = "Centre de ressources";
 $messages["resources"] = "Ressources";
 $messages["newResourceAlbum"] = "Nouvel album";
@@ -268,8 +268,8 @@ $messages["notification_removed"] = "Aucune notification ne vous sera envoyée p
 // post comments
 $messages["url"] = "URL";
 $messages["comment_status_all"] = "Tous";
-$messages["comment_status_spam"] = "Spam";
-$messages["comment_status_nonspam"] = "Pas de Spam";
+$messages["comment_status_spam"] = "Pourriel";
+$messages["comment_status_nonspam"] = "Pas de pourriel";
 $messages["error_fetching_comments"] = "Erreur en récupérant les commentaires.";
 $messages["error_deleting_comments"] = "Erreur en supprimant les commentaires ou aucun commentaire sélectionné";
 $messages["comment_deleted_ok"] = "Commentaire \"%s\" supprimé";
@@ -277,8 +277,8 @@ $messages["comments_deleted_ok"] = "%s commentaires supprimés";
 $messages["error_deleting_comment"] = "Erreur en supprimant le commentaire \"%s\"";
 $messages["error_deleting_comment2"] = "Erreur en supprimant le commentaire avec l'identifiant' %s";
 $messages["editComments"] = "Commentaires";
-$messages["mark_as_spam"] = "Identifier comme spam";
-$messages["mark_as_no_spam"] = "Identifier comme non-spam";
+$messages["mark_as_spam"] = "Identifier comme pourriel";
+$messages["mark_as_no_spam"] = "Identifier comme sans pourriel";
 $messages["error_incorrect_comment_id"] = "Identifiant du commentaire erroné.";
 $messages["error_marking_comment_as_spam"] = "Erreur dans l'identification du commentaire comme spam.";
 $messages["comment_marked_as_spam_ok"] = "Commentaire bien identifié comme spam.";
@@ -410,14 +410,14 @@ $messages["num_resources"] = "Nombre de ressources";
 $messages["total_size"] = "Taille totale";
 $messages["album"] = "Album";
 $messages["error_incorrect_album_id"] = "Identifiant de l'album erroné";
-$messages["error_base_storage_folder_missing_or_unreadable"] = "It was not possible for pLog to create the necessary folders where resources are going to be installed. This might be due to several reasons, such as your PHP installation running with safe mode enabled or your user not having enough permissions to do so. You may still try to carry out the operation manually, by creating the following folders: <br/><br/>%s<br/><br/>If these folders already exist please make sure that they can be read and written by the user running the web server.";
+$messages["error_base_storage_folder_missing_or_unreadable"] = "Il est impossible pour pLog de créer les dossiers nécessaires où les ressources seront sauvegardées.  Cela peut causé pour différentes raisons, tel la variable de configuration PHP safe_mode de votre serveur est activée ou votre utilisateur ne possède pas les permissions nécessaires pour créer un dossier. Vous pourriez faire cette tâche manuellement, en créant les dossier suivant: <br/><br/>%s<br/><br/>Si ces fichiers existent déjà, veuillez vous assurer que ceux-ci possèdent les permissions nécessaires permettant au serveur d'écrire et de lire dans ces dossiers.";
 $messages["items_deleted_ok"] = "%s éléments supprimés";
-$messages["error_album_has_children"] = "L'album \"%s\" a un enfant. Veuillez d'abord éditer les albums enfants";
+$messages["error_album_has_children"] = "L'album \"%s\" possède un album secondaire. Veuillez d'abord supprimer les albums secondaires de cet album";
 $messages["item_deleted_ok"] = "Elément \"%s\" supprimé";
 $messages["error_deleting_album"] = "Erreur en supprimant l'album \"%s\"";
-$messages["error_deleting_album2"] = "Erreur en supprimant l'album d'ID \"%s\"";
+$messages["error_deleting_album2"] = "Erreur en supprimant l'album avec l'identifiant' \"%s\"";
 $messages["error_deleting_resource"] = "Erreur en supprimant la ressource \"%s\"";
-$messages["error_deleting_resource2"] = "Erreur en supprimant la ressource d'ID \"%s\"";
+$messages["error_deleting_resource2"] = "Erreur en supprimant la ressource avec l'identifiant \"%s\"";
 $messages["error_no_resources_selected"] = "Aucun élément sélectionné pour être supprimé";
 $messages["resource_deleted_ok"] = "Ressource \"%s\" supprimée";
 $messages["album_deleted_ok"] = "Album \"%s\" supprimé";
@@ -431,19 +431,19 @@ $messages["parent"] = "Parent";
 $messages["no_parent"] = "Pas de parent";
 $messages["parent_album_help"] = "Utilisez ceci pour imbriquer des albums les uns dans les autres afin de mieux organiser vos fichiers";
 $messages["album_description_help"] = "Longue description du contenu de l'album";
-$messages["error_adding_album"] = "Erreur en ajoutant le nouvel album. Vérifiez les données entrées et recommencez";
+$messages["error_adding_album"] = "Erreur en ajoutant le nouvel album. Vérifiez les données saisies et recommencez";
 $messages["album_added_ok"] = "Album \"%s\" ajouté";
 
 // edit album
-$messages["error_incorrect_album_id"] = "Id de l'album incorrect.";
+$messages["error_incorrect_album_id"] = "Identifiant de l'album erroné.";
 $messages["error_fetching_album"] = "Erreur en récupérant l'album.";
-$messages["error_updating_album"] = "Erreur en mettant l'album à jour. Vérifiez les données entrées et recommencez";
+$messages["error_updating_album"] = "Erreur en mettant l'album à jour. Vérifiez les données saisies et recommencez";
 $messages["album_updated_ok"] = "Album \"%s\" mis à jour";
-$messages["show_album_help"] = "Si c'est disactivé, cet album ne sera pas visibke dans la liste des album disponible sur ce Blog";
+$messages["show_album_help"] = "Si désactivé, cet album ne sera pas visible dans la liste des albums disponibles sur ce carnet";
 
 // new resource
 $messages["file"] = "Fichier";
-$messages["resource_file_help"] = "Fichier qui sera ajouté au blog. Utilisez le lien \"Ajouter\" pour ajouter plusieurs fichiers en même temps.";
+$messages["resource_file_help"] = "Fichier qui sera ajouté au carnet. Utilisez le lien \"Ajouter\" pour ajouter plusieurs fichiers en même temps.";
 $messages["add_field"] = "Ajouter";
 $messages["resource_description_help"] = "Longue description du fichier";
 $messages["resource_album_help"] = "Sélectionnez l'album auquel le fichier sera ajouté";
@@ -451,12 +451,12 @@ $messages["error_no_resource_uploaded"] = "Aucun fichier sélectionné pour êtr
 $messages["resource_added_ok"] = "Ressource \"%s\" ajoutée";
 $messages["error_resource_forbidden_extension"] = "Type de fichier interdit";
 $messages["error_resource_too_big"] = "Fichier trop gros";
-$messages["error_uploads_disabled"] = "Uploads désactivés";
+$messages["error_uploads_disabled"] = "Téléchargements désactivés";
 $messages["error_quota_exceeded"] = "Quota dépassé";
 $messages["error_adding_resource"] = "Erreur en ajoutant le fichier";
 
 // edit resource
-$messages["editResource"] = "Editer la Ressource";
+$messages["editResource"] = "Editer la ressource";
 $messages["resource_information_help"] = "Quelques information à propos du fichier";
 $messages["information"] = "Information";
 $messages["size"] = "Taille";
@@ -467,7 +467,7 @@ $messages["sample_rate"] = "Taux de l'échantillon";
 $messages["number_of_channels"] = "Nombre de canaux";
 $messages["legnth"] = "Longueur";
 $messages["thumbnail_format"] = "Taille de l'aperçu";
-$messages["regenerate_preview"] = "Regénérer l'arpeçu";
+$messages["regenerate_preview"] = "Regénérer l'aperçu";
 $messages["error_fetching_resource"] = "Erreur en récupérant la ressource";
 $messages["error_updating_resource"] = "Erreur en mettant à jour la ressource";
 $messages["resource_updated_ok"] = "Ressource \"%s\" mise à jour";
@@ -478,10 +478,10 @@ $messages["blog_link_help"] = "Permalien vers ce carnet";
 $messages["blog_name_help"] = "Titre du carnet";
 $messages["blog_description_help"] = "Description longue du contenu de ce carnet";
 $messages["language"] = "Langue";
-$messages["blog_language_help"] = "Langue utilisée pour afficher les textes dans le Blog et dans la partie Administration.";
+$messages["blog_language_help"] = "Langue utilisée pour afficher les textes dans le carnet et dans la partie administration.";
 $messages["max_main_page_items"] = "Nombre d'éléments sur la page principale";
-$messages["max_main_page_items_help"] = "Nombre d'éléments qui peuvent être affichés à chaque fois sur la page principale de ce Blog.";
-$messages["max_recent_items"] = "Nombre d'éléments recents";
+$messages["max_main_page_items_help"] = "Nombre d'éléments qui peuvent être affichés à chaque fois sur la page principale de ce carnet.";
+$messages["max_recent_items"] = "Nombre d'éléments récents";
 $messages["max_recent_items_help"] = "Nombre maximum de notes récentes affichées sur la page principale.";
 $messages["template"] = "Modèle";
 $messages["choose"] = "Choisir";
@@ -489,20 +489,20 @@ $messages["blog_template_help"] = "Le modèle qui sera utilisé pour afficher le
 $messages["use_read_more"] = 'Utiliser le lien "suite..." dans les articles';
 $messages["use_read_more_help"] = 'Si activé, seulement le texte saisi dans "Texte" sera affiché sur la page principale. Et pour afficher le texte saisi dans "Texte supplémentaire", un lien "suite..." sera ajouté à chaque note.';
 $messages["enable_wysiwyg"] = "Activer l'éditeur visuel pour les articles";
-$messages["enable_wysiwyg_help"] = "Active un éditeur HTML complet pour l'édition des articles. L'éditeur fonctionne seulement sur Mozilla 1.3 et ultérieur, IE 5.5 et ultérieur.";
-$messages["enable_comments"] = "Active les commentaires par défaut.";
-$messages["enable_comments_help"] = "Active les commentaires pour tous les notes par défaut. Les commentaires pourront être activés ou désactivé pour une note particulière durant sa création ou son édition.";
-$messages["show_future_posts"] = "Montre les notes futures dans le calendrier.";
+$messages["enable_wysiwyg_help"] = "Active un éditeur HTML complet pour l'édition des notes. L'éditeur fonctionne seulement avec les navigateurs Mozilla 1.3 et ultérieur, IE 5.5 et ultérieur.";
+$messages["enable_comments"] = "Activer les commentaires par défaut.";
+$messages["enable_comments_help"] = "Active les commentaires pour tous les notes par défaut. Les commentaires pourront être activés ou désactivés pour une note particulière durant sa création ou son édition.";
+$messages["show_future_posts"] = "Montrer les notes futures dans le calendrier.";
 $messages["show_future_posts_help"] = "Les notes dont la date de publication n'est pas passée pourront apparaître dans le calendrier et seront visibles par les visiteurs.";
 $messages["comments_order"] = "Ordre des commentaires";
 $messages["comments_order_help"] = "Ordre dans lequel les commentaires apparaîtront dans la page principale.";
 $messages["oldest_first"] = "Les plus vieux en premier";
-$messages["newest_first"] = "Les plus recents en premier";
+$messages["newest_first"] = "Les plus récents en premier";
 $messages["categories_order"] = "Ordre des catégories";
 $messages["categories_order_help"] = "Ordre dans lequel les catégories apparaîtront dans la page principale.";
-$messages["most_recent_updated_first"] = "Les plus récemment mis à jour en premier";
-$messages["alphabetical_order"] = "Ordre alphabetique";
-$messages["reverse_alphabetical_order"] = "Ordre alphabétique inverse";
+$messages["most_recent_updated_first"] = "Les plus récents mis à jour en premier";
+$messages["alphabetical_order"] = "Ordre alphabétique croissant";
+$messages["reverse_alphabetical_order"] = "Ordre alphabétique décroissant";
 $messages["most_articles_first"] = "Le plus de notes en premier";
 $messages["link_categories_order"] = "Ordre des catégories de lien";
 $messages["link_categories_order_help"] = "Ordre dans lequel les catégories de lien apparaîtront dans la page principale.";
@@ -518,18 +518,18 @@ $messages["error_incorrect_time_offset"] = "Décalage temps invalide";
 $messages["blog_settings_updated_ok"] = "Paramètres mis à jour";
 
 // user settings
-$messages["username_help"] = "Pseudo public. Ne pourra pas être changé";
+$messages["username_help"] = "Pseudonyme public. Il ne pourra pas être changé plus tard";
 $messages["full_name"] = "Nom complet";
 $messages["full_name_help"] = "Nom complet";
-$messages["password_help"] = "Tapez et confirmez un nouveau mot de passe. Laissez vide pour ne pas le changer";
+$messages["password_help"] = "Tapez et confirmez un nouveau mot de passe. Laissez les champs vides pour garde votre mot de passe actuel.";
 $messages["confirm_password"] = "Confirmez le mot de passe";
 $messages["email"] = "Courriel";
 $messages["email_help"] = "Courriel à lequel les notifications seront envoyées";
-$messages["bio"] = "Votre bio";
-$messages["bio_help"] = "Votre portrait. Une description de vous-même";
+$messages["bio"] = "Votre biogaphie";
+$messages["bio_help"] = "Votre biographie. Une description de vous-même";
 $messages["picture"] = "Photo";
 $messages["user_picture_help"] = "Sélectionnez une photo parmis celles ajoutées à ce carnet comme photo personnelle";
-$messages["error_invalid_password"] = "Mot de passe invalide. Vérifiez qu'il n'est pas trop court";
+$messages["error_invalid_password"] = "Mot de passe invalide. Vérifiez s'il n'est pas trop court";
 $messages["error_passwords_dont_match"] = "Désolé, mot de passe erroné";
 $messages["error_incorrect_email_address"] = "Courriel erroné";
 $messages["error_updating_user_settings"] = "Erreur en mettant à jour les paramètres utilisateurs. Vérifiez les données saisies et recommencez";
@@ -540,142 +540,142 @@ $messages["resource"] = "Ressource";
 $messages["identifier"] = "Identifiant";
 
 // blog users
-$messages["revoke_permissions"] = "Retirer permissions";
-$messages["error_no_users_selected"] = "Aucuns Membres sélectionnés.";
-$messages["user_removed_from_blog_ok"] = "Membre \"%s\" bien supprimé du Blog.";
-$messages["users_removed_from_blog_ok"] = "%s membres supprimés";
-$messages["error_removing_user_from_blog"] = "Erreur en supprimant le Membre \"%s\" du Blog.";
-$messages["error_removing_user_from_blog2"] = "Erreur en supprimant le Membre d'ID \"%s\" du Blog.";
+$messages["revoke_permissions"] = "Retirer des permissions";
+$messages["error_no_users_selected"] = "Aucun utilisateur sélectionné.";
+$messages["user_removed_from_blog_ok"] = "Utilisateur \"%s\" supprimé du carnet.";
+$messages["users_removed_from_blog_ok"] = "%s utilisateurs supprimés";
+$messages["error_removing_user_from_blog"] = "Erreur en supprimant l'utilisateur' \"%s\" du carnet.";
+$messages["error_removing_user_from_blog2"] = "Erreur en supprimant l'utilisateur avec l'identifiant \"%s\" du carnet.";
 
 // new blog user
-$messages["new_blog_username_help"] = "Pseudo du Membre qui aura accès à ce Blog. Les nouveaus Membres ont seulement accès aux section \"Réglages\" et \"Centrale Ressources\".";
+$messages["new_blog_username_help"] = "Pseudonyme de l'utilisateur qui aura accès à ce carnet. Les nouveaus utilisateurs ont seulement accès aux sections \"Réglages\" et \"Centre des ressources\".";
 $messages["send_notification"] = "Envoyer une notification";
-$messages["send_user_notification_help"] = "Envoyer un e-mail de notification à ce Membre";
+$messages["send_user_notification_help"] = "Envoyer un courriel de notification à cet utilisateur ";
 $messages["notification_text"] = "Texte de la notification";
 $messages["notification_text_help"] = "Texte qui sera inclu dans le message de notification";
-$messages["error_adding_user"] = "Erreur lors de l'autorisation de l'accès. Vérifiez les données entrées et recommencez";
+$messages["error_adding_user"] = "Erreur lors de l'autorisation d'accès. Vérifiez les données saisies et recommencez";
 $messages["error_empty_text"] = "Vous devez entrer un texte";
-$messages["error_adding_user"] = "Erreur en ajoutant le Membre. Vérifiez les données entrées et recommencez";
-$messages["error_invalid_user"] = "Le Membre \"%s\" n'est pas valide ou n'existe pas";
-$messages["user_added_to_blog_ok"] = "Le Membre \"%s\" a l'autorisation d'accès à ce blog à présent.";
+$messages["error_adding_user"] = "Erreur en ajoutant l'utilisateur'. Vérifiez les données saisies et recommencez";
+$messages["error_invalid_user"] = "L'utilisateur' \"%s\" est invalide ou n'existe pas";
+$messages["user_added_to_blog_ok"] = "L'utilisateur' \"%s\" possède maintenant l'autorisation d'accès à ce carnet.";
 
 // blog templates
-$messages["error_no_templates_selected"] = "Aucun template sélectionné";
-$messages["error_template_is_current"] = "Le template \"%s\" ne peut être supprimé car c'est celui qui est utilisé";
-$messages["error_removing_template"] = "Erreur en supprimant le template \"%s\"";
-$messages["template_removed_ok"] = "Template \"%s\" supprimé";
-$messages["templates_removed_ok"] = "%s templates supprimés";
+$messages["error_no_templates_selected"] = "Aucun modèle sélectionné";
+$messages["error_template_is_current"] = "Le modèle \"%s\" ne peut être supprimé car il est utilisé en ce moment sur le carnet";
+$messages["error_removing_template"] = "Erreur en supprimant le modèle \"%s\"";
+$messages["template_removed_ok"] = "Modèle \"%s\" supprimé";
+$messages["templates_removed_ok"] = "%s Modèles supprimés";
 
 // new blog template
-$messages["template_installed_ok"] = "Template \"%s\" ajouté";
-$messages["error_installing_template"] = "Erreur durant l'installation du template \"%s\"";
+$messages["template_installed_ok"] = "Modèle \"%s\" ajouté";
+$messages["error_installing_template"] = "Erreur durant l'installation du modèle \"%s\"";
 $messages["error_missing_base_files"] = "Fichier(s) manquant(s)";
-$messages["error_add_template_disabled"] = "Aucun template ne peut être ajouté car cette fonction a été désactivée.";
-$messages["error_must_upload_file"] = "Pas de template à télécharger";
-$messages["error_uploads_disabled"] = "Les uploads ont été désactivés";
-$messages["error_no_new_templates_found"] = "Pas de nouveaux templates trouvés";
-$messages["error_template_not_inside_folder"] = "Les fichiers du template doivent être dans un répertoire du même nom que le template.";
-$messages["error_missing_base_files"] = "Fichier(s) du template basique manquant(s)";
+$messages["error_add_template_disabled"] = "Aucun modèle ne peut être ajouté car cette fonction a été désactivée.";
+$messages["error_must_upload_file"] = "Pas de modèle à télécharger";
+$messages["error_uploads_disabled"] = "Les téléchargements ont été désactivés";
+$messages["error_no_new_templates_found"] = "Pas de nouveaux modèles trouvés";
+$messages["error_template_not_inside_folder"] = "Les fichiers du modèle doivent être dans un dossier du même nom que le modèle.";
+$messages["error_missing_base_files"] = "Fichier(s) du modèle de base manquant(s)";
 $messages["error_unpacking"] = "Erreur en décompressant le fichier";
-$messages["error_forbidden_extensions"] = "Des fichiers d'extensions interdites sont inclus dans le template";
+$messages["error_forbidden_extensions"] = "Des fichiers d'extensions interdites sont inclus dans le modèle";
 $messages["error_creating_working_folder"] = "Erreur durant la création du répertoire temporaire nécessaire à la décompression.";
-$messages["error_checking_template"] = "Erreur en vérifiant le template : %s";
-$messages["template_package"] = "Template package";
-$messages["blog_template_package_help"]  = "Use this form to upload a new template set, which will only be available to your blog. If it is not possible to upload a template package using this form, upload the template set manually and place it in <b>%s</b>, which is the folder where your blog templates are stored and click the \"<b>Scanner les Templates</b>\" button. pLog will scan the folder and will automatically add any new template it can find.";
-$messages["scan_templates"] = "Scanner les Templates";
+$messages["error_checking_template"] = "Erreur en vérifiant le modèle : %s";
+$messages["template_package"] = "Plugiciel de modèles";
+$messages["blog_template_package_help"]  = "Utiliser ce formulaire pour télécharger un nouveau modèle, lequel sera seulement disponible pour votre carnet. S'il n'est pas possible de télécharger un modèle em utilisant ce formulaire, téléchargez le modèle manuellement et placez le dans le dossier <b>%s</b>, endroit où vos modèles pour votre carnet sont entreposés et cliquer le boutton \"<b>Balayer les modèles</b>\". pLog balayera le dossier et ajoutera automatiquement les nouveaux modèles qu'il trouvera.";
+$messages["scan_templates"] = "Balayer les modèles";
 
 // site users
 $messages["user_status_active"] = "Actif";
 $messages["user_status_disabled"] = "Inactif";
 $messages["user_status_all"] = "Tous";
 $messages["user_status_unconfirmed"] = "non-confirmé";
-$messages["error_invalid_user2"] = "Le Membre d'ID \"%s\" n'existe pas";
-$messages["error_deleting_user"] = "Erreur en supprimant le Membre \"%s\"";
-$messages["user_deleted_ok"] = "Membre \"%s\" supprimé";
-$messages["users_deleted_ok"] = "%s Membres supprimés";
+$messages["error_invalid_user2"] = "L'utilisateur avec l'identifiant \"%s\" n'existe pas";
+$messages["error_deleting_user"] = "Erreur en supprimant l'utilisateur' \"%s\"";
+$messages["user_deleted_ok"] = "Utilisateur \"%s\" supprimé";
+$messages["users_deleted_ok"] = "%s utilisateurs supprimés";
 
 // create user
-$messages["user_added_ok"] = "Membre \"%s\" ajouté";
-$messages["error_incorrect_username"] = "Pseudo invalide ou utilisé";
-$messages["user_status_help"] = "Statut actuel de le Membre";
-$messages["user_blog_help"] = "Blog avec lequel cet Membre est initialisé";
+$messages["user_added_ok"] = "Utilisateur \"%s\" ajouté";
+$messages["error_incorrect_username"] = "Pseudonyme invalide ou déjà utilisé";
+$messages["user_status_help"] = "Statut actuel de l'utilisateur";
+$messages["user_blog_help"] = "Carnet avec lequel cet utilisateur est initialisé";
 $messages["none"] = "Aucun";
 
 // edit user
-$messages["error_invalid_user"] = "ID du Membre invalide ou le Membre n'exite pas.";
-$messages["error_updating_user"] = "Erreur en mettant à jour les paramètres Membre. Vérifiez les données entrées et recommencez";
-$messages["blogs"] = "Blogs";
-$messages["user_blogs_help"] = "Blogs du Membre ou ceux auxquels il a accès";
+$messages["error_invalid_user"] = "Identifiant de l'utilisateur invalide ou l'utilisateur n'existe pas.";
+$messages["error_updating_user"] = "Erreur en mettant à jour les paramètres utilisateurs. Vérifiez les données saisies et recommencez";
+$messages["blogs"] = "Carnets";
+$messages["user_blogs_help"] = "Carnets de l'utilisateur ou ceux auxquels il a accès";
 $messages["site_admin"] = "Administrateur";
-$messages["site_admin_help"] = "Si cet Membre est administrateur, il pourra accéder à la partie \"Administration\" et accomplir des taches administratives.";
-$messages["user_updated_ok"] = "Membre \"%s\" mis à jour";
+$messages["site_admin_help"] = "Si cet utilisateur est administrateur, il pourra accéder à la partie \"Administration\" et accomplir des tâches administratives.";
+$messages["user_updated_ok"] = "Uilisateur \"%s\" mis à jour";
 
 // site blogs
 $messages["blog_status_all"] = "Tous";
 $messages["blog_status_active"] = "Actif";
 $messages["blog_status_disabled"] = "Inactif";
-$messages["blog_status_unconfirmed"] = "Non-validé";
-$messages["owner"] = "Propriétaires";
+$messages["blog_status_unconfirmed"] = "Non validé";
+$messages["owner"] = "Propriétaire";
 $messages["quota"] = "Quota";
 $messages["bytes"] = "octets";
-$messages["error_no_blogs_selected"] = "Aucun blog sélectionné pour être désactivé";
-$messages["error_blog_is_default_blog"] = "Le Blog \"%s\" ne peut être supprimé car il s'agit du Blog par défaut.";
-$messages["blog_deleted_ok"] = "Blog \"%s\" désactivé";
-$messages["blogs_deleted_ok"] = "%s Blogs supprimés";
-$messages["error_deleting_blog"] = "Erreur en désactivant le Blog \"%s\"";
-$messages["error_deleting_blog2"] = "Erreur en désactivant le Blog d'ID \"%s\"";
+$messages["error_no_blogs_selected"] = "Aucun carnet sélectionné pour être désactivé";
+$messages["error_blog_is_default_blog"] = "Le carnet \"%s\" ne peut être supprimé car il s'agit du carnet par défaut.";
+$messages["blog_deleted_ok"] = "Carnet \"%s\" désactivé";
+$messages["blogs_deleted_ok"] = "%s Carnets désactivés";
+$messages["error_deleting_blog"] = "Erreur en désactivant le carnet \"%s\"";
+$messages["error_deleting_blog2"] = "Erreur en désactivant le carnet avec l'identifiant \"%s\"";
 
 // create blog
-$messages["error_adding_blog"] = "Erreur en ajoutant le Blog. Vérifiez les données entrées et recommencez";
-$messages["blog_added_ok"] = "Blog \"%s\" ajouté";
+$messages["error_adding_blog"] = "Erreur en créant le carnet. Vérifiez les données saisies et recommencez";
+$messages["blog_added_ok"] = "Carnet \"%s\" créé";
 
 // edit blog
-$messages["blog_status_help"] = "Statut du Blog";
-$messages["blog_owner_help"] = "Membre considéré comme propriétaire du Blog, qui aura un contrôle total des paramètres du Blog";
-$messages["users"] = "Membre";
-$messages["blog_quota_help"] = "Quota de ressource en octet. Mettre à 0 pour illimité ou laisser vide pour utilisé le quota par défaut";
-$messages["blog_users_help"] = "Membre qui ont accès à ce Blogs. Sélectionner un Membre de gauche et le mettre à droite pour qu'il ait des droits d'accès au Blog";
-$messages["edit_blog_settings_updated_ok"] = "Blog \"%s\"mis à jour";
-$messages["error_updating_blog_settings"] = "Erreur en mettant à jour le blog \"%s\"";
-$messages["error_incorrect_blog_owner"] = "Membre sélectionné comme propriétaire, incorrect.";
-$messages["error_fetching_blog"] = "Erreur en récupérant le Blog";
-$messages["error_updating_blog_settings2"] = "Erreur en mettant à jour le blog. Vérifiez les données entrées et recommencez";
-$messages["add_or_remove"] = "Ajouter ou supprimer des Membres";
+$messages["blog_status_help"] = "Statut du carnet";
+$messages["blog_owner_help"] = "Utilisateur considéré comme propriétaire du carnet, qui aura un contrôle total des paramètres du carnet";
+$messages["users"] = "Utilisateurs";
+$messages["blog_quota_help"] = "Quota de ressources en octet. Mettre à 0 pour illimité ou laisser vide pour utiliser le quota par défaut";
+$messages["blog_users_help"] = "Utilisateurs qui ont accès à ce carnets. Sélectionner un utilisateur de gauche et le mettre à droite pour qu'il ait des droits d'accès au carnet";
+$messages["edit_blog_settings_updated_ok"] = "Carnet \"%s\"mis à jour";
+$messages["error_updating_blog_settings"] = "Erreur en mettant à jour le carnet \"%s\"";
+$messages["error_incorrect_blog_owner"] = "Utilisateur propriétaire erroné.";
+$messages["error_fetching_blog"] = "Erreur en récupérant le carnet";
+$messages["error_updating_blog_settings2"] = "Erreur en mettant à jour le carnet. Vérifiez les données saisies et recommencez";
+$messages["add_or_remove"] = "Ajouter ou supprimer des utilisateurs";
 
 // site locales
-$messages["locale"] = "Locale";
+$messages["locale"] = "Langue";
 $messages["locale_encoding"] = "Encodage";
-$messages["locale_deleted_ok"] = "Locale \"%s\" supprimée";
-$messages["error_no_locales_selected"] = "Aucune locale sélectionnée pour être supprimée";
-$messages["error_deleting_only_locale"] = "Cette locale ne peut être supprimée car c'est la seule présente sur le système.";
-$messages["locales_deleted_ok"]= "%s locales supprimées";
-$messages["error_deleting_locale"] = "Erreur en supprimant la locale \"%s\"";
-$messages["error_locale_is_default"] = "La locale \"%s\" ne peut être supprimée car il s'agit de la locale par défaut pour les nouveau Blogs";
+$messages["locale_deleted_ok"] = "Langue \"%s\" supprimée";
+$messages["error_no_locales_selected"] = "Aucune langue sélectionnée pour être supprimée";
+$messages["error_deleting_only_locale"] = "Cette langue ne peut être supprimée car c'est la seule sur le système.";
+$messages["locales_deleted_ok"]= "%s langues supprimées";
+$messages["error_deleting_locale"] = "Erreur en supprimant la langue \"%s\"";
+$messages["error_locale_is_default"] = "La langue \"%s\" ne peut être supprimée car il s'agit de la langue par défaut pour les nouveaux carnets";
 
 // add locale
-$messages["error_invalid_locale_file"] = "Fichier de locale invalide";
-$messages["error_no_new_locales_found"] = "Pas de nouveaux fichiers de locale trouvés";
-$messages["locale_added_ok"] = "Locale \"%s\" ajouté";
-$messages["error_saving_locale"] = "Erreur en sauvegardant la nouvelle locale";
-$messages["scan_locales"] = "Scanner les locales";
-$messages["add_locale_help"] = "Use this form to upload a new locale file. If it is not possible to upload files using this form, upload the locale file manually and place it in <b>./locales/</b>, which is the folder where locale files are stored and click the \"<b>Scan Locales</b>\" button. pLog will scan the folder and will automatically add any new locale file can find.";
+$messages["error_invalid_locale_file"] = "Fichier de langue invalide";
+$messages["error_no_new_locales_found"] = "Pas de nouveaux fichiers de langue trouvés";
+$messages["locale_added_ok"] = "Langue \"%s\" ajouté";
+$messages["error_saving_locale"] = "Erreur en sauvegardant la nouvelle langue";
+$messages["scan_locales"] = "Balayer les langues";
+$messages["add_locale_help"] = "Utiliser ce formulaire pour télécharger un nouveau fichier lanque, lequel sera seulement disponible pour votre carnet. S'il n'est pas possible de télécharger un fichier langue em utilisant ce formulaire, téléchargez le fichier langue manuellement et placez le dans le dossier <b>%s</b>, endroit où vos fichiers langues pour votre carnet sont entreposés et cliquer le boutton \"<b>Balayer les langues</b>\". pLog balayera le dossier et ajoutera automatiquement les nouvelles langues qu'il trouvera.";
 
 // site templates
-$messages["error_template_is_default"] = "Template \"%s\" ne peut être supprimé car il s'agit du template par défaut";
+$messages["error_template_is_default"] = "Modèle \"%s\" ne peut être supprimé car il s'agit du modèle par défaut";
 
 // add template
-$messages["global_template_package_help"] = "Use this form to upload a new template set, which will be available to all blogs in the site. If it is not possible to upload a template package using this form, upload the template set manually and place it in <b>%s</b>, which is the folder where globally available templates are stored and click the \"<b>Scan templates</b>\" button. pLog will scan the folder and will automatically add any new template it can find.";
+$messages["global_template_package_help"] = "Utiliser ce formulaire pour télécharger un nouveau modèle, lequel sera seulement disponible pour votre carnet. S'il n'est pas possible de télécharger un modèle em utilisant ce formulaire, téléchargez le modèle manuellement et placez le dans le dossier <b>%s</b>, endroit où vos modèles pour votre carnet sont entreposés et cliquer le boutton \"<b>Balayer les modèles</b>\". pLog balayera le dossier et ajoutera automatiquement les nouveaux modèles qu'il trouvera.";
 
 // global settings
 $messages["site_config_saved_ok"] = "Paramètres de site sauvegardés";
 $messages["error_saving_site_config"] = "Erreur en sauvegardant les paramètres de site";
 /// general settings
-$messages["help_comments_enabled"] = "Activer ou désactiver les commentaires sur les nouveaux Blogs par défaut";
-$messages["help_beautify_comments_text"] = "Si activé, LEs commentaires postés seront formatés en ajoutant des paragraphes et des liens automatiques pour toutes les URLs";
-$messages["help_temp_folder"] = "Répertoire que pLog peut utiliser pour écrire les données temporaires comme les templates compilés, etc. Utiliser un répertoire hors de cette partie du serveur pour augmenter la sécurité.";
-$messages["help_base_url"] = "URL de base où ce blog est installé";
-$messages["help_subdomains_enabled"] = "Activer ou disactiver les sous-domaines. Veuillez lire la documentation au sujet des sous-domaines pour plus d'informations.";
-$messages["help_subdomains_base_url"] = "Quand les sous-domaines sont activés, cette URL est utilisée à la place de l'URL de base (base_url). Utiliser {blogname} pour donner le nom du blog et {username} pour donner le nom du propriétaire du Blog afin de générer un lien vers le Blog";
+$messages["help_comments_enabled"] = "Activer les commentaires sur les nouveaux carnets par défaut";
+$messages["help_beautify_comments_text"] = "Si activé, les commentaires postés seront formatés en ajoutant des paragraphes et des liens automatiques pour toutes les URLs";
+$messages["help_temp_folder"] = "Dossier que pLog peut utiliser pour écrire les données temporaires comme les modèles compilés, etc. Utilisez un répertoire hors de cette partie du serveur pour augmenter la sécurité.";
+$messages["help_base_url"] = "URL de base où ce carnet est installé";
+$messages["help_subdomains_enabled"] = "Activer les sous-domaines. Veuillez lire la documentation au sujet des sous-domaines pour plus d'informations.";
+$messages["help_subdomains_base_url"] = "Quand les sous-domaines sont activés, cette URL est utilisée à la place de l'URL de base (base_url). Utiliser {blogname} pour donner le nom du carnet et {username} pour donner le nom du propriétaire du carnet afin de générer un lien vers le carnet";
 $messages["help_include_blog_id_in_url"] = "Meaningful only when subdomains are enabled and \"normal\" URLs are enabled, forces internally-generated URLs not to have the \"blogId\" parameter. Do not change unless you know what you are doing";
 $messages["help_script_name"] = "Set this if you need to rename index.php to something else";
 $messages["help_show_posts_max"] = "Nombre de notes montré dans la page principale. Seulement utilisé pour les nouveaux carnets";
@@ -807,22 +807,22 @@ $messages["posts_purged_ok"] = "Articles nettoyés";
 // front page
 $messages["summary"] = "Sommaire";
 $messages["register"] = "S'inscrire";
-$messages["summary_welcome"] = "Bienvenu!";
-$messages["summary_most_active_blogs"] = "Blogs les plus actifs";
-$messages["summary_most_commented_articles"] = "Articles les plus commentés";
-$messages["summary_most_read_articles"] = "Articles les plus lue";
+$messages["summary_welcome"] = "Bienvenue!";
+$messages["summary_most_active_blogs"] = "Carnets les plus actifs";
+$messages["summary_most_commented_articles"] = "Notes les plus commentées";
+$messages["summary_most_read_articles"] = "Notes les plus lues";
 $messages["password_forgotten"] = "Vous avez perdu votre mot de passe?";
-$messages["summary_newest_blogs"] = "Nouveaux Blogs";
-$messages["summary_latest_posts"] = "Derniers Articles";
-$messages["summary_search_blogs"] = "Recherche d'un Blog";
+$messages["summary_newest_blogs"] = "Nouveaux Carnets";
+$messages["summary_latest_posts"] = "Dernières notes";
+$messages["summary_search_blogs"] = "Recherche d'un carnet";
 
 // blog list
 $messages["updated"] = "mis à jour";
 $messages["total_reads"] = "total";
 
 // blog profile
-$messages["blog"] = "Blog";
-$messages["latest_posts"] = "Derniers articles";
+$messages["blog"] = "Carnet";
+$messages["latest_posts"] = "Dernières notes";
 
 // registration
 $messages["register_step0_title"] = "Service d'acceptation des termes";
