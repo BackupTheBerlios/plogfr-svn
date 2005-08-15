@@ -1,0 +1,56 @@
+{include file="$admintemplatepath/header.template"}
+{include file="$admintemplatepath/navigation.template" showOpt=newBlockedHost title=$locale->tr("newBlockedHost")}
+{include file="common.template"}
+{if $pluginEnabled}
+<form name="newBlockedHost" action="admin.php" method="post" onSubmit="return checkIpAddress(this);">
+ <fieldset class="inputField">
+ <legend>{$locale->tr("add_blocked_host")}</legend>
+  {include file="$admintemplatepath/successmessage.template"}
+  {include file="$admintemplatepath/errormessage.template"} 
+  <div class="field">
+   <label for="blockedHost">{$locale->tr("ip_address")}</label>
+   <span class="required">*</span>
+   <div class="formHelp">{$locale->tr("host_to_block_help")}</div>
+    <input style="width:40px;" type="text" size="3" maxlength="3" name="ip1" id="ip1" />.
+    <input style="width:40px;" type="text" size="3" maxlength="3" name="ip2" id="ip2" />.
+    <input style="width:40px;" type="text" size="3" maxlength="3" name="ip3" id="ip3" />.
+    <input style="width:40px;" type="text" size="3" maxlength="3" name="ip4" id="ip4" />
+	/ <select name="mask" id="mask" >
+     <option value="8">8 {$locale->tr("bits")}</option>
+     <option value="16">16 {$locale->tr("bits")}</option>
+     <option value="24">24 {$locale->tr("bits")}</option>
+     <option value="32" selected="selected">32 {$locale->tr("bits")}</option>
+    </select> 
+  </div>
+
+  <div class="field">
+   <label for="blockType">{$locale->tr("block_type")}</label>
+   <span class="required"></span>
+   <div class="formHelp">{$locale->tr("block_type_help")}</div>
+     <select name="blockType" id="blockType">
+     <option value="1">{$locale->tr("access_blocked")}</option>
+     <option value="2">{$locale->tr("posting_blocked")}</option>
+    </select> 
+  </div>
+
+  <div class="field">
+   <label for="reason">{$locale->tr("reason")}</label>
+   <span class="required"></span>
+   <div class="formHelp">{$locale->tr("reason_help")}</div>
+   <input type="text" name="reason" id="reason" value=""/>
+  </div>
+
+ </fieldset>
+
+ <div class="buttons">
+  <input type="hidden" name="op" value="addBlockedHost" />
+  <input type="reset" value="{$locale->tr("reset")}" name="reset"/>	
+  <input type="submit" name="Add" value="{$locale->tr("add")}"/>
+ </div>    
+
+</form>
+{else}
+ {include file="$admintemplatepath/errormessage.template"} 
+{/if}
+{include file="$admintemplatepath/footernavigation.template"}
+{include file="$admintemplatepath/footer.template"}

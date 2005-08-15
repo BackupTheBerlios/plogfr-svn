@@ -1,0 +1,37 @@
+{include file="$admintemplatepath/header.template"}
+{include file="$admintemplatepath/navigation.template" showOpt=newFilteredContent title=$locale->tr("newFilteredContent")}
+{if $pluginEnabled}
+<form name="newFilteredContent" action="admin.php" method="post">
+ <fieldset class="inputField">
+ <legend>{$locale->tr("add_filtered_content")}</legend>
+  {include file="$admintemplatepath/successmessage.template"}
+  {include file="$admintemplatepath/errormessage.template"} 
+  <div class="field">
+   <label for="filteredContent">{$locale->tr("content")}</label>
+   <span class="required">*</span>
+   <div class="formHelp">{$locale->tr("content_to_block_help")}</div>
+   <input type="text" name="filteredContent" id="filteredContent" value=""/>
+   {include file="$admintemplatepath/validate.template" field=filteredContent message=$locale->tr("error_provide_content_to_block")}
+  </div>
+
+  <div class="field">
+   <label for="reason">{$locale->tr("reason")}</label>
+   <span class="required"></span>
+   <div class="formHelp">{$locale->tr("reason_help")}</div>
+   <input type="text" name="reason" id="reason" value=""/>
+  </div>
+
+ </fieldset>
+
+ <div class="buttons">
+  <input type="hidden" name="op" value="addFilteredContent" />
+  <input type="reset" value="{$locale->tr("reset")}" name="reset"/>	
+  <input type="submit" name="Add" value="{$locale->tr("add")}"/>
+ </div>    
+
+</form>
+{else}
+ {include file="$admintemplatepath/errormessage.template"}
+{/if}
+{include file="$admintemplatepath/footernavigation.template"}
+{include file="$admintemplatepath/footer.template"}

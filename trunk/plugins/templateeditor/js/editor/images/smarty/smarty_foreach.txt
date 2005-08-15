@@ -1,0 +1,3 @@
+{foreach from= item= name= key=}
+{foreachelse}
+{/foreach}

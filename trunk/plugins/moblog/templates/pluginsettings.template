@@ -1,0 +1,53 @@
+{include file="$admintemplatepath/header.template"}
+{include file="$admintemplatepath/navigation.template" showOpt=moblogSettings title=$locale->tr("moblogSettings")}
+<form name="pluginAtomSettings" method="post" action="admin.php">
+ <fieldset class="inputField">
+  <legend>{$locale->tr("moblogSettings")}</legend>
+  {include file="$admintemplatepath/successmessage.template"}
+  {include file="$admintemplatepath/errormessage.template"}  
+  <div class="field">
+   <label for="pluginEnabled">{$locale->tr("enable_plugin")}</label>
+   <div class="formHelp">
+    <input type="checkbox" name="pluginEnabled" value="1"  type="checkbox" {if $pluginEnabled}checked="checked"{/if} />
+    {$locale->tr("enable_atom_plugin_help")}
+   </div> 
+  </div>
+  
+  <!-- article categories -->
+  <div class="field">
+   <label for="categoryId">{$locale->tr("posts")}</label>
+   <div class="formHelp">{$locale->tr("moblog_articles_help")}</div>
+   <select name="categoryId">
+    {foreach from=$categories item=category}
+	<option value="{$category->getId()}" {if $categoryId == $category->getId()}selected="selected"{/if}>{$category->getName()}</option>
+	{/foreach}
+   </select>
+  </div> 
+  
+ <!-- album categories -->
+ <div class="field">
+  <label for="albumId">{$locale->tr("resources")}</label>
+  <div class="formHelp">{$locale->tr("moblog_resources_help")}</div>
+  <select name="albumId">
+   {foreach from=$albums item=album}
+    <option value="{$album->getId()}" {if $albumId == $album->getId()}selected="selected"{/if}>{$album->getName()}</option>
+   {/foreach}
+  </select>
+  <br/>
+   <div class="formHelp">{$locale->tr("moblog_image_preview_type_help")}</div>
+    <select name="resourcePreviewType">
+     <option value="1" {if $resourcePreviewType==1}selected="selected"{/if}>{$locale->tr("small_preview")}</option>
+     <option value="2" {if $resourcePreviewType==2}selected="selected"{/if}>{$locale->tr("medium_preview")}</option>
+     <option value="3" {if $resourcePreviewType==3}selected="selected"{/if}>{$locale->tr("full_size")}</option>
+    </select>
+ </div>  
+  
+</fieldset>
+<div class="buttons">
+ <input type="hidden" name="op" value="updateMoblogSettings" />
+ <input type="reset" name="reset" value="{$locale->tr("reset")}" />
+ <input type="submit" name="submit" value="{$locale->tr("update")}" />
+</div> 
+</form>
+{include file="$admintemplatepath/footernavigation.template"}
+{include file="$admintemplatepath/footer.template"}

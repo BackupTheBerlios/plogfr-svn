@@ -1,0 +1,52 @@
+{include file="$admintemplatepath/header.template"}
+{include file="$admintemplatepath/navigation.template" showOpt=BlogTemplateEditor title=$locale->tr("BlogTemplateEditor")}
+<link rel="stylesheet" href="plugins/templateeditor/js/editor/smartyeditor.css" type="text/css" />
+{literal}
+<script type="text/javascript" src="plugins/templateeditor/js/editor/smartyeditor.js"></script>
+<script type="text/javascript">
+function MM_jumpMenu(targ,selObj,restore){ //v3.0 
+    eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'"); 
+    if (restore) selObj.selectedIndex=0; 
+}
+</script>
+{/literal}
+<form name="blogEditTemplateFile" method="post">
+ <fieldset class="inputField">
+ <legend>{$locale->tr("label_edit")}</legend>  
+  {include file="$admintemplatepath/successmessage.template"}
+  {include file="$admintemplatepath/errormessage.template"}   
+
+  <div class="field">
+   <label for="backupFile">{$locale->tr("label_backupfile")}</label>
+   <span class="required"></span>
+   <div class="formHelp">{$locale->tr("templateeditor_backupfile")}</div>
+   <select name="backupFile" id="backupFile" onChange="MM_jumpMenu('parent',this,0)">
+    <option value="">{$locale->tr("templateeditor_choose_backupfile")}</option>
+    <option value="admin.php?op=blogEditTemplateFile&amp;templateId={$currentTemplate}&amp;fileId={$currentFile}">{$locale->tr("templateeditor_currentfile")}</option>
+    {foreach from=$backupFiles item=backupFile}
+     <option value="admin.php?op=blogEditTemplateFile&amp;templateId={$currentTemplate}&amp;fileId={$currentFile}&amp;backupId={$backupFile.backupId}">{$backupFile.time}</option>
+    {/foreach}
+   </select>
+  </div>
+
+  <div class="field">
+   <label for="fileContent"><a href="?op=blogTemplatesList&amp;templateId={$currentTemplate}">{$currentTemplate}</a> &raquo; {$currentFile} {if !empty($backupId)}&raquo; {$locale->tr("templateeditor_recover_from")}: {$backupId|date_format:"%Y/%m/%d - %H:%M:%S"}{/if}</label>
+   <span class="required">*</span>
+   <div class="formHelp">{$locale->tr("templateeditor_filecontent")}</div>
+   <script type="text/javascript">var ed1 = new SmartyEditor('fileContent','ed1');</script>
+   <textarea rows="25" id="fileContent" name="fileContent" style="width:100%">{$fileContent|escape:"html"}</textarea>
+  </div>
+  
+ </fieldset>  
+
+ <div class="buttons">
+  <input type="hidden" name="templateId" value="{$currentTemplate}" />
+  <input type="hidden" name="fileId" value="{$currentFile}" />
+  <input type="hidden" name="op" value="blogUpdateTemplateFile" />
+  <input type="reset" name="{$locale->tr("reset")}" />    
+  <input type="submit" name="{$locale->tr("update_settings")}" value="{$locale->tr("update")}" />
+ </div>
+</form>
+ 
+{include file="$admintemplatepath/footernavigation.template"}
+{include file="$admintemplatepath/footer.template"}

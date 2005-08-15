@@ -1,0 +1,82 @@
+{include file="$admintemplatepath/header.template"}
+{if $editable}
+{include file="$admintemplatepath/navigation.template" showOpt=composeMessage title=$locale->tr("composeMessage")}
+{else}
+{include file="$admintemplatepath/navigation.template" showOpt=sentMail title=$locale->tr("viewMessage")}
+{/if}
+<script type="text/javascript" src="js/ui/forms.js"></script>
+<form name="newMailMessage" id="newMailMessage" method="post">
+ <fieldset class="inputField">
+ <legend>{$locale->tr("Message")}</legend>  
+  {include file="$admintemplatepath/successmessage.template"}
+  {include file="$admintemplatepath/errormessage.template"}   
+  
+  {if !$editable}
+  <div class="field">
+   <label for="sentDate">{$locale->tr("mailcentre_sent")}</label>
+   <span class="required">*</span>
+   <div class="formHelp">{$locale->tr("mailcentre_sent_help")}</div>
+   <input type="text" name="sentDate" id="sendDate" value="{$locale->formatDate($messageSentDate)}" readonly="readonly" />
+  </div>  
+  {/if}
+  
+  <div class="field">
+   <label for="messageSubject">{$locale->tr("subject")}</label>
+   <span class="required">*</span>
+   <div class="formHelp">{$locale->tr("mailcentre_subject_help")}</div>
+   <input type="text" name="messageSubject" id="messageSubject" value="{$messageSubject}" {if !$editable}readonly="readonly"{/if} />
+   {include file="$admintemplatepath/validate.template" field=messageSubject message=$locale->tr("mailcentre_error_empty_subject")}
+  </div>
+  
+  <div class="field">
+   <a name="to"></a>
+   <label for="messageRecipient">{$locale->tr("to")}</label>
+   <span class="required">*</span>
+   <div class="formHelp">{$locale->tr("mailcentre_to_help")}</div>   
+   <input type="text" name="messageRecipient" style="width:50%" value="{$messageRecipient}" {if !$editable}readonly="readonly"{/if} />
+   {if $editable}<a href="#to" onclick="window.open('?op=mailcentreUserSelector&amp;dest=1','UserSelector','scrollbars=yes,resizable=yes,toolbar=no,height=500,width=400');">{$locale->tr("add_recipient")}</a>{/if}
+   {include file="$admintemplatepath/validate.template" field=messageRecipient message=$locale->tr("mailcentre_error_empty_recipient")}
+  </div>
+  
+  <div class="field">
+   <a name="cc"></a>
+   <label for="messageCc">{$locale->tr("cc")}</label>
+   <span class="required">*</span>
+   <div class="formHelp">{$locale->tr("mailcentre_cc_help")}</div>   
+   <input type="text" name="messageCc" style="width:50%" value="{$messageCc}" {if !$editable}readonly="readonly"{/if} />
+   {if $editable}<a href="#cc" onclick="window.open('?op=mailcentreUserSelector&amp;dest=2','UserSelector','scrollbars=yes,resizable=yes,toolbar=no,height=500,width=400');">{$locale->tr("add_recipient")}</a>{/if}
+  </div>
+
+  <div class="field">
+   <a name="bcc"></a>
+   <label for="messageBcc">{$locale->tr("bcc")}</label>
+   <span class="required">*</span>
+   <div class="formHelp">{$locale->tr("mailcentre_bcc_help")}</div>   
+   <input type="text" name="messageBcc" style="width:50%" value="{$messageBcc}" {if !$editable}readonly="readonly"{/if} />
+   {if $editable}<a href="#bcc" onclick="window.open('?op=mailcentreUserSelector&amp;dest=3','UserSelector','scrollbars=yes,resizable=yes,toolbar=no,height=500,width=400');">{$locale->tr("add_recipient")}</a>{/if}
+  </div>
+  
+  
+  <div class="field">
+   <label for="messageText">{$locale->tr("text")}</label>
+   <span class="required">*</span>
+   <div class="formHelp">{$locale->tr("mailcentre_text_help")}</div>   
+   <textarea name="messageText" id="messageText" rows="15" style="width:100%" {if !$editable}readonly="readonly"{/if}>{$messageText}</textarea>
+   {include file="$admintemplatepath/validate.template" field=messageText message=$locale->tr("mailcentre_error_empty_text")}  
+  </div>
+  
+ </fieldset>  
+
+ <div class="buttons">
+  {if $editable}
+  <input type="hidden" name="op" value="mailcentreSendMessage" />  
+  <input type="reset" name="{$locale->tr("reset")}" />    
+  <input type="submit" name="{$locale->tr("send")}" value="{$locale->tr("send")}" />
+  {else}
+  <input type="hidden" name="op" value="mailcentreSentMail" />
+  <input type="submit" name="{$locale->tr("back")}" value="{$locale->tr("back")}" />
+  {/if}
+ </div>
+</form>
+{include file="$admintemplatepath/footernavigation.template"}
+{include file="$admintemplatepath/footer.template"}

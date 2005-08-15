@@ -1,0 +1,112 @@
+{include file="$admintemplatepath/header.template"}
+{include file="$admintemplatepath/navigation.template" showOpt=BlogTemplateEditor title=$locale->tr("BlogTemplateEditor")}
+<SCRIPT type="text/javascript"> var copyToMessage = '{$locale->tr("templateeditor_enter_new_templateset_name")}'; </SCRIPT>
+{literal}
+<SCRIPT type="text/javascript">
+function copyTemplateSetTo( objId ) {
+    copyToName = prompt(copyToMessage, 'new_' + objId);
+    url = document.getElementById(objId);
+    if (copyToName != '' && copyToName != null) {
+        originUrl = url.getAttribute('href');
+        newUrl = encodeURI(originUrl + '&newTemplateId=' + copyToName);
+        url.setAttribute('href', newUrl);
+    } else {
+        url.setAttribute('href', '?op=blogTemplateSetsList');
+    }
+}
+</SCRIPT>
+{/literal}
+ <form id="blogTemplateSetsList" method="post" action="admin.php">
+ <div id="list">
+  {include file="$admintemplatepath/successmessage.template"}
+  {include file="$admintemplatepath/errormessage.template"}
+  <table class="info">
+   <thead>
+    <tr>
+      <th style="width:10px;"><input class="checkbox" type="checkbox" class="check" name="all" id="all" value="1" onclick="toggleAllChecks('blogTemplateSetsList');" /></th>
+      <th style="width:580px;">{$locale->tr("template")}</th>
+      <th style="width:70px;">{$locale->tr("type")}</th>
+      <th style="width:115px;">{$locale->tr("actions")}</th>
+    </tr>
+  </thead>
+  <tbody>
+
+  {foreach from=$globalTemplateSets item=sitetemplate}
+   <tr class="{cycle values="odd,even"}">
+    <td>
+     <div align="center"><span style="background-color: #CCCCCC">&nbsp;&nbsp;&nbsp;</span></div>
+    </td>
+    <td  class="col_highlighted">
+     <img src="imgs/admin/icon_folder-16.png" />
+     {$sitetemplate->getName()}
+    </td>
+    <td>
+     {$locale->tr("global")}
+    </td>
+    <td>
+     <div class="list_action_button">
+      <img src="imgs/admin/icon_empty-16.png" />
+      <img src="imgs/admin/icon_empty-16.png" />
+      <a href="?op=blogCopyTemplateSet&amp;type=1&amp;templateId={$sitetemplate->getName()}" id="{$sitetemplate->getName()}" onClick="copyTemplateSetTo(this.id)" >
+        <img src="imgs/admin/icon_copy-16.png" alt="{$locale->tr("copy")}" />
+      </a>
+      <img src="imgs/admin/icon_empty-16.png" />
+	  {if $sitetemplate->hasScreenshot()}
+	    <a href="javascript:openScreenshotWindow('{$sitetemplate->getScreenshotUrl()}');">
+		  <img src="imgs/admin/icon_image-16.png" alt="Screenshot" />
+		</a>
+	  {/if}	  
+     </div>
+    </td>
+   </tr>
+  {/foreach}  
+
+  {foreach from=$blogTemplateSets item=blogtemplate}
+   <tr class="{cycle values="odd,even"}">
+    <td>
+       <input class="checkbox" type="checkbox" name="templateIds[{counter}]" value="{$blogtemplate->getName()}" />
+    </td>
+    <td  class="col_highlighted">
+     <a href="?op=blogTemplatesList&amp;templateId={$blogtemplate->getName()}">
+      <img src="imgs/admin/icon_folder-16.png" />
+      {$blogtemplate->getName()}
+     </a>
+    </td>
+    <td>
+     {$locale->tr("blog")}
+    </td>    
+    <td>
+     <div class="list_action_button">
+      <a href="?op=blogTemplatesList&amp;templateId={$blogtemplate->getName()}">
+        <img src="imgs/admin/icon_edit-16.png" alt="{$locale->tr("edit")}" />
+      </a>
+      <a href="?op=blogDeleteTemplateSet&amp;templateId={$blogtemplate->getName()}">
+        <img src="imgs/admin/icon_delete-16.png" alt="{$locale->tr("delete")}" />
+      </a>
+      <a href="?op=blogCopyTemplateSet&amp;type=2&amp;templateId={$blogtemplate->getName()}" id="{$blogtemplate->getName()}" onClick="copyTemplateSetTo(this.id)" >
+        <img src="imgs/admin/icon_copy-16.png" alt="{$locale->tr("copy")}" />
+      </a>
+      <a href="?op=blogArchiveTemplateSet&amp;templateId={$blogtemplate->getName()}">
+        <img src="imgs/admin/icon_archive-16.png" alt="{$locale->tr("download")}" />
+      </a>         
+	  {if $blogtemplate->hasScreenshot()}
+	    <a href="javascript:openScreenshotWindow('{$blogtemplate->getScreenshotUrl()}');">
+		  <img src="imgs/admin/icon_image-16.png" alt="Screenshot" />
+		</a>
+	  {/if}	  
+     </div>
+    </td>
+   </tr>
+  {/foreach}
+
+  </tbody>
+ </table>
+ </div>
+ <div id="list_action_bar">
+   <input type="hidden" name="op" value="blogDeleteTemplateSets" class="submit" />
+   <input type="submit" name="{$locale->tr("delete")}" value="{$locale->tr("delete")}"/>
+ </div>
+ </form>
+ 
+{include file="$admintemplatepath/footernavigation.template"}
+{include file="$admintemplatepath/footer.template"}

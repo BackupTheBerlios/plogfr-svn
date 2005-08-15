@@ -1,0 +1,37 @@
+<html>
+ <head>
+  <style type="text/css" media="print,screen">
+   {literal}
+   body {
+    margin-top: 1.5cm;
+    margin-left: 2cm;
+    margin-right: 2cm;
+    margin-bottom: 1.5cm;
+   }
+   h1 {
+    font-size: 18pt;
+    font-weight: bold;
+    text-align: right;
+    border-bottom: 2px solid black;
+   }
+   .text {
+    font-size: 10pt;
+   }
+   .author {
+
+   }
+   .date {
+
+   }
+   {/literal}
+  </style>
+  </style>
+  <title>{$article->getTopic()}</title>
+ </head>
+ <body>
+  <h1>{$article->getTopic()}</h1>
+  {assign var="date" value=$article->getDateObject()}
+  <span class="date">{$locale->formatDate($date, "%A, %D %B %Y")}</span><br/>
+  <p class="text">{$article->getText()}</p>
+ </body>
+</html>

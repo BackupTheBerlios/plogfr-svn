@@ -1,0 +1,36 @@
+<?php
+$messages["subject"] = "Subject";
+$messages["mailcentre_subject_help"] = "Message subject";
+$messages["to"] = "To";
+$messages["mailcentre_to_help"] = "Recipients of this message. Use the selector to find users from this site or type as many email addresses as needed, separated by commas";
+$messages["text"] = "Text";
+$messages["mailcentre_text_help"] = "Body of the message";
+$messages["send"] = "Send";
+$messages["composeMessage"] = "New Message";
+$messages["sentMail"] = "Sent Messages";
+$messages["mailcentre_sent"] = "Sent";
+$messages["mailcentre_sent_help"] = "This message was sent on";
+$messages["add_recipient"] = "Find user...";
+$messages["mailcentre_error_empty_subject"] = "The subject of the message cannot be empty";
+$messages["mailcentre_error_empty_recipient"] = "You must select at least one recipient for this message in either the To, Cc or Bcc fields";
+$messages["mailcentre_error_empty_text"] = "The body of the message cannot be empty";
+$messages["mailcentre_error_sending_message"] = "There was an error sending the message";
+$messages["mailcentre_message_sent_ok"] = "Message sent successfully";
+$messages["mailcentre_incorrect_message_id"] = "The message identifier is not correct";
+$messages["mailcentre_error_deleting_messages"] = "There was an error removing the messages";
+$messages["mailcentre_error_deleting_message2"] = "There was an error removing messge with identifier \"%s\"";
+$messages["mailcentre_error_deleting_message"] = "There was an error removing message \"%s\"";
+$messages["mailcentre_message_deleted_ok"] = "Message \"%s\" deleted successfully";
+$messages["mailcentre_messages_deleted_ok"] = "%s messages deleted successfully";
+$messages["bcc"] = "Bcc";
+$messages["cc"] = "Cc";
+$messages["mailcentre_bcc_help"] = "Blind carbon copy";
+$messages["mailcentre_cc_help"] = "Carbon copy";
+$messages["mailcentre_all_active_users"] = "To Active Users";
+$messages["mailcentre_all_disabled_users"] = "To Disabled Users";
+$messages["mailcentre_all_unconfirmed_users"] = "To Unconfirmed Users";
+$messages["mailcentre_all_blogowners"] = "To Blog Owners";
+$messages["mailcentre_all_nonblogowners"] = "To Non-blog Owners";
+$messages["mailcentre_special_recipients"] = "Special recipients";
+$messages["viewMessage"] = "View Message";
+?>
