@@ -1,0 +1,14 @@
+{include file="$blogtemplate/header.template"}
+	<p style="text-align: center">
+	{* I am not so keen on using if's in templates, but can't think of another way... *}
+	{if $nextpost == true}
+		<a href="{$url->postPermalink($nextpost)}" title="Next post: {$nextpost->getTopic()}">&laquo;</a> |
+	{/if}
+	{if $prevpost == true}
+		<a href="{$url->postPermalink($prevpost)}" title="Previous post: {$prevpost->getTopic()}">&raquo;</a>
+	{/if}
+	</p>
+	{assign var="poster" value=$post->getUserInfo()}
+    <!-- {$url->postTrackbackLink($post)} -->
+	{include file="$blogtemplate/post.template"}
+{include file="$blogtemplate/footer.template"}

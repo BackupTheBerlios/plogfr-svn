@@ -1,0 +1,21 @@
+    <div class="block-shadow">
+     <div class="block-main">
+      <div class="{cycle values="box-red,box-blue,box-orange,box-teal,box-purple,box-green"}">
+       <div class="block-syndicate">
+
+        <div class="block-title">
+         <div class="block-header">{$locale->tr("syndicate")}</div>
+        </div>
+
+         <p>
+          <a class="rsslink" title="Add to My Yahoo." href="http://add.my.yahoo.com/rss?url={$url->rssLink("rss10")}"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo2.gif" style="border:0px;" alt="add to My Yahoo" /></a><br/><br/>
+          <a class="rsslink" title="Link to the RSS 0.90 feed." href="{$url->rssLink("rss090")}"><img src="{$url->getUrl("/imgs/rss090_logo.gif")}" style="border:0px;" alt="RSS 0.90" /></a><br/><br/>
+          <a class="rsslink" title="Link to the RSS 1.0 feed." href="{$url->rssLink("rss10")}"><img src="{$url->getUrl("/imgs/rss10_logo.gif")}" style="border:0px;" alt="RSS 1.0" /></a><br/><br/>
+          <a class="rsslink" title="Link to the RSS 2.0 feed." href="{$url->rssLink("rss20")}"><img src="{$url->getUrl("/imgs/rss20_logo.gif")}" style="border:0px;" alt="RSS 2.0" /></a><br/><br/>
+          <a class="rsslink" title="Link to the Atom 0.3 feed." href="{$url->rssLink("atom")}"><img src="{$url->getUrl("/imgs/atom_logo.png")}" style="border:0px;" alt="Atom 0.3" /></a><br/><br/>	
+         </p><br/>
+
+       </div>
+      </div>
+     </div>
+    </div>

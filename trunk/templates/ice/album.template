@@ -1,0 +1,52 @@
+{include file="$blogtemplate/header.template"}
+{include file="$blogtemplate/panel.template"}
+
+<div id="main">
+ <div class="resources">
+  <h2>{$album->getName()}</h2>
+  <p>
+  {$album->getDescription()}
+  </p>
+  <div class="album">
+   <a href="{$url->parentAlbumLink($album)}">
+   <img src="{$url->getTemplateFile("icons/parentfolder.png")}" alt="Folder" /><br/>
+   ..</a>
+  </div>
+
+ {assign var=children value=$album->getChildren()}
+ {foreach from=$children item=childalbum}
+  <div class="album">
+   <a href="{$url->albumLink($childalbum)}">
+   <img src="{$url->getTemplateFile("icons/folder.png")}" alt="Folder" /><br/>
+   {$childalbum->getName()}</a>
+  </div>
+ {/foreach}
+ <div style="clear:left">&nbsp;</div>
+
+  {assign var=resources value=$album->getResources()}
+  {foreach from=$resources item=resource}
+  <div class="resource">
+   {if $resource->hasPreview()}
+    <a href="{$url->resourceLink($resource)}">
+    <img alt="{$resource->getDescription()}" src="{$url->resourcePreviewLink($resource)}" /></a><br />
+    {$resource->getFileName()}
+   {else}
+   	<a href="{$url->resourceLink($resource)}">
+    {if $resource->isSound()}
+     <img alt="Sound" src="{$url->getTemplateFile("icons/sound.png")}" /></a><br />
+    {elseif $resource->isVideo()}
+     <img alt="Video" src="{$url->getTemplateFile("icons/video.png")}" /></a><br />
+    {elseif $resource->isZip()}
+     <img alt="Zip" src="{$url->getTemplateFile("icons/compressed.png")}" /></a><br /> 
+    {else}
+     <img alt="File" src="{$url->getTemplateFile("icons/file.png")}" /></a><br />
+    {/if}  
+   	<a href="{$url->resourceLink($resource)}">{$resource->getFileName()}</a>
+   {/if}  
+  </div>
+  {/foreach}
+  <div style="clear:left">&nbsp;</div>
+ </div>
+</div>
+ 
+{include file="$blogtemplate/footer.template"}

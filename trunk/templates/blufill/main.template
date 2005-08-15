@@ -1,0 +1,15 @@
+{include file="$blogtemplate/header.template"}
+    <tr> 
+      <td valign="top" style="width: 350px; border-left:1px solid #EAEAEA;">
+			  <div id="content"> 
+          <div id="blog">
+					  {foreach from=$posts item=post} 
+						  {include file="$blogtemplate/post.template"} 
+            {/foreach} 
+					</div>
+        </div></td>
+      <td valign="top" style="border-right:1px solid #EAEAEA;">
+			 {include file="$blogtemplate/panel.template"}
+			</td>
+    </tr>
+{include file="$blogtemplate/footer.template"}

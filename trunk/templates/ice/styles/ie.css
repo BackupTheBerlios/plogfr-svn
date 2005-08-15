@@ -1,0 +1,7 @@
+											/* --- panel --- */
+#panel ul {
+	margin: 10px 5px 10px 40px;
+}
+#panel ul * ul {
+	margin: 2px 5px 10px 10px;
+}

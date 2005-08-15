@@ -1,0 +1,7 @@
+{include file="$blogtemplate/header.template"}
+{include file="$blogtemplate/leftmenu.template"}
+<div id="postmain">
+
+</div>
+{include file="$blogtemplate/rightmenu.template"}
+{include file="$blogtemplate/footer.template"}

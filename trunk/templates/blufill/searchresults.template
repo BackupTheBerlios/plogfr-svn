@@ -1,0 +1,23 @@
+{include file="$blogtemplate/header.template"}
+  <tr> 
+    <td valign="top" style="width: 350px; border-left:1px solid #EAEAEA;">
+	  <div id="content"> 
+   <h2>{$locale->tr("search_results")}</h2>
+   <p>
+    {foreach from=$searchresults item=result}
+     <div class="searchresult">
+      {assign var=article value=$result->getArticle()}
+      <a href="{$url->postPermalink($article)}"><h3><b>{$article->getTopic()}</b></h3></a>
+      <p>
+      {$article->getText()|strip_tags|truncate:300:"...":false}
+      </p>
+     </div>
+     <br/>
+    {/foreach}
+   </p> 
+   </div></td>
+      <td valign="top" style="border-right:1px solid #EAEAEA;">
+			 {include file="$blogtemplate/panel.template"}
+			</td>
+    </tr>
+{include file="$blogtemplate/footer.template"}

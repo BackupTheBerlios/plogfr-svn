@@ -1,0 +1,24 @@
+<div class="postinput">
+<form action="{$url->getIndexUrl()}" method="post">   
+        <div>
+	<input tabindex="1" id="subject" name="commentTopic" />
+	<label for="subject"><small>{$locale->tr("comment_topic")}</small></label><br /><br />
+	<input tabindex="2" id="author" name="userName" />
+	<label for="author"><small>{$locale->tr("comment_username")}</small></label><br /><br />
+	<input tabindex="3" id="email" name="userEmail" />
+	<label for="email"><small>{$locale->tr("comment_email")}</small></label><br /><br />
+	<input tabindex="4" id="url" name="userUrl" />
+	<label for="url"><small>{$locale->tr("comment_url")}</small></label><br /><br />
+  <textarea tabindex="5" id="text" name="commentText" rows="10" cols="50"></textarea><br /><br />
+  <input style="font-weight: bold;" type="submit" name="post" value="&nbsp;{$locale->tr("comment_send")}&nbsp;" /><br /><br />
+  <input type="hidden" name="op" value="AddComment"/>
+  <input type="hidden" name="articleId" value="{$post->getId()}"/>
+  <input type="hidden" name="blogId" value="{$blog->getId()}"/>
+  <input type="hidden" name="parentId" value="{$parentId}"/>
+  </div>
+  </form>
+</div>
+
+
+
+

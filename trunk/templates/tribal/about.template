@@ -1,0 +1,4 @@
+{include file="$blogtemplate/header.template"}
+<h1>{$locale->tr("about")}</h1>
+<p>You can change the contents of this page by editing the templates/tribal/about.template file.</p>
+{include file="$blogtemplate/footer.template"}

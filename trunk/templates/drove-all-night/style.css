@@ -1,0 +1,247 @@
+/*
+	For WordPress Style Competition
+	(www.alexking.org)
+
+	by Vladimir Simovic aka Perun
+	www.vlad-design.de - www.perun.net
+
+	Licensed under GPL
+*/
+
+body{
+margin:0;
+padding:10px;
+background:#021130;
+color:#FAFACC;
+font:100.01% verdana, sans-serif;}
+
+#rap{
+width:750px;
+padding:0;
+margin:0;}
+
+#header{
+text-align:right;
+color:#fff;
+background: url(images/droveallnight.jpg) no-repeat;
+height:150px;
+font: italic normal 230% 'Times New Roman', Times, serif;
+letter-spacing:0.2em;
+margin:0;}
+
+#header a{
+display:none;
+color: #fff;
+text-decoration: none;}
+#header a:hover{
+text-decoration: underline;}
+
+#menu{
+border-top:20px solid #AF4F0A;
+border-bottom:20px solid #AF4F0A;
+background:#300228;
+color:#FAFACC;
+position: absolute;
+left:10px;
+top:180px;
+width:170px;
+padding:0;}
+
+#menu form{
+margin: 0 0 0 13px;}
+
+#menu input{
+background:#4D0340;
+color:#FAFACC;
+border:1px solid #AF4F0A;
+letter-spacing: -0.05em;
+width:100px;}
+
+#menu ul{
+background:#300228;
+color:#FAFACC;
+font-weight: bold;
+list-style-type: none;
+margin:10px;
+padding:0;
+text-transform: lowercase;}
+
+#menu ul li{
+font-family: arial, sans-serif;
+letter-spacing: 0.1em;
+margin-top: 10px;
+padding-bottom: 2px;}
+
+#menu ul ul{
+list-style-type: none;
+font-variant:normal;
+font-weight:normal;
+line-height:90%;
+margin: 0;
+padding: 0;
+text-align: left;}
+
+#menu ul ul li{
+border: 0;
+font:90% arial, sans-serif;
+letter-spacing: 0;
+margin-top: 0;
+padding: 0;
+padding-left: 12px;}
+
+#content{
+font-size:100%;
+margin:0 0 0 200px;
+voice-family: "\"}\"";
+voice-family: inherit;
+margin:0 0 0 190px;}
+
+#dummy{
+margin:0;}
+
+.post{
+font-size:90%;}
+
+h2{
+text-align:right;
+font:85% "Times New Roman", Times, serif;
+letter-spacing:0.2em;
+padding:0 10px;
+margin:25px 0 5px 0;}
+h3{
+border-top:1px solid #AF4F0A;
+border-bottom:1px solid #AF4F0A;
+background:#300228;
+color:#FAFACC;
+margin:0;
+padding:5px;
+font-family: "Times New Roman", Times, serif;}
+
+a{
+color:#FF7F00;
+background:transparent;
+text-decoration:none;}
+a img{
+border: none;}
+a:visited{
+color:#FF9F00;
+background:transparent;}
+a:hover{
+color:#FFBF00;
+text-decoration:underline;
+background:#000;}
+
+acronym, abbr {
+border-bottom: 1px dashed #FF7F00;}
+
+acronym, abbr, span.caps {
+cursor: help;
+font-size: 90%;
+letter-spacing: .07em;}
+
+blockquote {
+border-left: 5px solid #FF9F00;
+margin-left: 1.5em;
+padding-left: 5px;}
+
+cite{
+font-size: 90%;
+font-style: normal;}
+
+ol#comments li p{
+font-size: 100%;}
+
+p, li, .feedback {
+font: 90%/175% verdana, sans-serif;
+letter-spacing: -1px;}
+
+.credit{
+border-top:1px solid #AF4F0A;
+border-bottom:1px solid #AF4F0A;
+width:750px;
+background:#300228;
+color:#FAFACC;
+font-size:11px;
+margin:20px 0 0 0;
+padding:5px 0;
+text-align: center;}
+
+.feedback{
+border-top:1px solid #AF4F0A;
+border-bottom:1px solid #AF4F0A;
+text-align: right;
+font-size:85%;
+background:#300228;
+color:#FAFACC;
+padding:3px 10px;}
+
+.meta{
+font-size:85%;
+color:#e7e7e7;}
+.meta ul {
+display: inline;
+margin:0;
+padding:0;
+list-style: none;}
+.meta li{
+display: inline;}
+
+.storytitle {
+margin: 0;}
+
+#commentform input, #commentform textarea{
+background:#4D0340;
+color:#FAFACC;
+border:1px solid #AF4F0A;}
+
+#commentform textarea {
+width:100%;}
+
+#calendar{
+  empty-cells: show;
+  font:11px Verdana, Arial, serif;
+  margin:0px;
+  background:#4D0340;
+  color:#FAFACC;
+}
+.calMonthHeader, .calMonthNav{
+	color: #fff;
+	padding-top:10px;
+	text-align: center;
+	text-transform: uppercase;
+}
+#calendar .calMonthForward, #calendar .calMonthForward>a{
+  padding-right: 5px;
+  text-align: right;
+}
+
+#calendar .calMonthBackward, #calendar .calMonthBackward>a{
+  padding-left: 5px;
+  text-align: left;
+}
+
+.calDayLink {
+  display:block;
+  text-decoration:none;
+}
+
+#calendar a:hover{
+  background:#000;
+  color:#FFBF00;
+}
+
+#calendar td {
+  letter-spacing: normal;
+  padding:0px;
+  text-align: center;
+}
+
+#calendar td:hover, #calendar .calMonthToday{
+  background:#000;
+  color:#e7e7e7;
+}
+
+#calendar th{
+  font-style: normal;
+  text-transform: lowercase;
+}

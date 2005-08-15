@@ -1,0 +1,14 @@
+{include file="$blogtemplate/header.template"}
+	<div class="BlockTitle">
+		{$locale->tr("albums")}
+	</div>
+ <!-- album contents go here -->
+	{foreach from=$albums item=album}
+		<div class="BlockArea">
+			<a class="nodecoration" href="{$url->albumLink($album)}">
+			<img align="middle" class="IMGDotElement" src="{$url->getTemplateFile("/img/32_folder.gif")}" alt="Folder" /></a>
+			{$album->getName()} ({$album->getNumResources()})
+		</div>
+	{/foreach}
+ <!-- end of the albums -->
+{include file="$blogtemplate/footersimple.template"}

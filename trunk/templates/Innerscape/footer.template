@@ -1,0 +1,11 @@
+<div id="footer"><p>
+<H1 CLASS="footer">
+powered by <a href="http://plogword.net">pLog</a>
+| Template Design By <a href="http://site4me.us">blacksnday</a>
+{if $rightschooser->isEnabled()}<center>
+{$rightschooser->getHtml()}</center>
+{/if}
+</h1>
+</div></p>
+</body>
+</html>

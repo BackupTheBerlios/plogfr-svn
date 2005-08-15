@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$locale->getLanguageId()}" 
+      lang="{$locale->getLanguageId()}" dir="{$locale->getDirection()}">
+
+{assign var=tpldir value=$url->getTemplateFile("")}
+
+ <head>
+
+  <title>{$blog->getBlog()}{$postPageTitle}</title>
+  <meta http-equiv="Content-Type" content="text/html;charset={$locale->getCharset()}" />
+  <meta name="generator" content="{$version}" />
+  <meta http-equiv="Content-Language" content="{$locale->getLanguageId()}" />
+
+  <link rel="stylesheet" title="pastel blocks" href="{$url->getTemplateFile("style-common.css")}" type="text/css" />
+  <link rel="stylesheet" title="pastel blocks" href="{$url->getTemplateFile("style.css")}" type="text/css" />
+
+  <link rel="alternate stylesheet" title="no shadow" href="{$url->getTemplateFile("style-common.css")}" type="text/css" />
+  <link rel="alternate stylesheet" title="no shadow" href="{$url->getTemplateFile("style-noshadow.css")}" type="text/css" />
+
+  <link rel="alternate stylesheet" title="white blocks" href="{$url->getTemplateFile("style-common.css")}" type="text/css" />
+  <link rel="alternate stylesheet" title="white blocks" href="{$url->getTemplateFile("style-whiteblocks.css")}" type="text/css" />
+
+  <link rel="alternate stylesheet" title="darker colors" href="{$url->getTemplateFile("style-common.css")}" type="text/css" />
+  <link rel="alternate stylesheet" title="darker colors" href="{$url->getTemplateFile("style-darkercolors.css")}" type="text/css" />
+
+  <link rel="alternate stylesheet" title="column swap" href="{$url->getTemplateFile("style-common.css")}" type="text/css" />
+  <link rel="alternate stylesheet" title="column swap" href="{$url->getTemplateFile("style-columnswap.css")}" type="text/css" />
+
+  <link rel="alternate" type="text/xml" title="RSS 2.0" href="{$url->rssLink("rss20")}" />
+  <link rel="alternate" type="text/xml" title="RSS 1.0" href="{$url->rssLink("rss10")}" />
+  <link rel="alternate" type="text/xml" title="RSS 0.90" href="{$url->rssLink("rss090")}" />
+  <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="{$url->rssLink("atom")}" />
+
+ </head>
+
+ <body> 
+
+  <p class="upgrade">
+  This page looks plain and unstyled because you're using a non-standard compliant browser. To see it in its best form, please <a href="http://www.webstandards.org/upgrade/" title="The Web Standards Project's Browser Upgrade initiative">upgrade</a> to a browser that supports web standards. It's free and painless. 
+  </p>
+  
+  <div class="banner-shadow">
+   <div class="banner">  
+        <div><span class="span1">{$blog->getBlog()}</span></div>
+        {if $blog->getAbout()}<div><span class="span2">{$blog->getAbout()}</span></div>{/if}
+    </div>
+  </div>
+
+  <div class="column"
+       id="left">
+
+{include file="$blogtemplate/block-calendar.template"}
+{include file="$blogtemplate/block-links.template"}
+{include file="$blogtemplate/block-recently.template"}
+{include file="$blogtemplate/block-categories.template"}
+{include file="$blogtemplate/block-syndicate.template"}
+{include file="$blogtemplate/block-search.template"}
+{include file="$blogtemplate/block-resources.template"}
+{include file="$blogtemplate/block-archives.template"}
+
+
+
+  </div>
+
+  <div class="column"
+       id="right">

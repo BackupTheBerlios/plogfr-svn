@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$locale->getLanguageId()}" 
+      lang="{$locale->getLanguageId()}" dir="{$locale->getDirection()}">
+<head>
+ <meta http-equiv="Content-Type" content="text/html;charset={$locale->getCharset()}" />
+ <meta http-equiv="Content-Language" content="{$locale->getLanguageId()}" />
+ <meta name="generator" content="{$version}" />
+ <title>{$blog->getBlog()}</title>
+
+ {* You can change the outlooking by change the css file. The available css files are list as below:  *}
+ {* clean.css   trendy.css gettyburg.css plain_jane.css    rusty.css *}
+ {* All of you need to do is to replace the rusty.css in the next line
+    with one of the css files from the list above.   by reic *}
+ <link rel="stylesheet" href="{$url->getTemplateFile("css/plain_jane.css")}" type="text/css" media="screen" />
+
+
+ <link rel="alternate" type="text/xml" title="RSS 2.0" href="{$url->rssLink("rss20")}" />
+ <link rel="alternate" type="text/xml" title="RSS 1.0" href="{$url->rssLink("rss10")}" />
+ <link rel="alternate" type="text/xml" title="RSS 0.90" href="{$url->rssLink("rss090")}" />
+ <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="{$url->rssLink("atom")}" />
+ 
+ {* toolbar.js need the css setting, If you want to remove the toolbar at commentform, remove the css link together *}
+ <script type="text/javascript" src="{$url->getTemplateFile("toolbar.js")}"></script>
+ <link rel="stylesheet" title="" href="{$url->getTemplateFile("css/default.css")}" type="text/css" media="screen" />
+ {*  end of toolbar.js *}
+ 
+</head>
+<body>
+<div id="banner">
+   <h1><a href="{$url->blogLink()}">{$blog->getBlog()}</a></h1>
+   <span class="description">{$blog->getAbout()}</span>
+</div>

@@ -1,0 +1,33 @@
+{include file="$blogtemplate/header.template"}
+ {if $rss->parse("http://rss.news.yahoo.com/rss/topstories")}
+  {assign var=channel value=$rss->getChannel()}
+  <h1>{$channel->getTitle()}</h1>
+  <p>{$channel->getDescription()}</p>
+  <ul style="list-style: none;">
+  {foreach from=$rss->getItems() item=rssItem}
+   <li>
+    <a href="{$rssItem->getLink()}">{$rssItem->getTitle()}</a><br/>
+    <p>
+     {$rssItem->getDescription()}
+    </p>
+   </li> 
+  {/foreach}
+  </ul>
+ {/if}
+
+ {if $rss->parse("http://news.bbc.co.uk/rss/newsonline_uk_edition/front_page/rss091.xml")}
+  {assign var=channel value=$rss->getChannel()}
+  <h1>{$channel->getTitle()}</h1>
+  <p>{$channel->getDescription()}</p>
+  <ul style="list-style: none;">
+  {foreach from=$rss->getItems() item=rssItem}
+   <li>
+    <a href="{$rssItem->getLink()}">{$rssItem->getTitle()}</a><br/>
+    <p>
+     {$rssItem->getDescription()}
+    </p>
+   </li> 
+  {/foreach}
+  </ul>
+ {/if}
+{include file="$blogtemplate/footer.template"}

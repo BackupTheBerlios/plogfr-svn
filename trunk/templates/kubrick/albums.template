@@ -1,0 +1,17 @@
+{include file="$blogtemplate/header.template"}
+<div id="content" class="narrowcolumn">
+{foreach from=$albums item=album}
+ {assign var="aDate" value=$album->getTimestamp()}
+ <div class="post">
+ <h2 class="date">{$album->getName()}</h2>
+  <div class="entry">
+   <a href="{$url->albumLink($album)}">  
+     {$locale->tr("view")} ({$album->getNumResources()})
+    </a>| {$locale->tr("created")} {$locale->formatDate($aDate,"%d %b, %Y")}
+  </div>
+{$album->getDescription()|truncate:255:"..."|escape}
+</div>
+{/foreach}
+</div>
+{include file="$blogtemplate/panel.template"}
+{include file="$blogtemplate/footer.template"}

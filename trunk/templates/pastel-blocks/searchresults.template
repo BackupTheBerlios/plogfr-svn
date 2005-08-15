@@ -1,0 +1,54 @@
+{include file="$blogtemplate/header.template"} 
+    <div class="block-shadow">
+     <div class="block-main">
+      <div class="box-blue">
+       <div class="block-prevnext">
+        <span class="prevnext">
+         <br />{$locale->tr("search_results")}: {foreach from=$searchterms item=term}{$term} {/foreach}
+         <br /><br />
+        </span>
+       </div>
+      </div>
+     </div>
+    </div>
+
+   <div id="searchresults">
+    {foreach from=$searchresults item=result}
+    <div class="block-shadow">
+     <div class="block-main">
+      <div class="{cycle values="box-teal,box-purple,box-red,box-green,box-blue"}">
+      {assign var=article value=$result->getArticle()}
+       <div class="entry-headpad">
+        <div class="entry-headboard">
+         <div class="entry-header">
+          <img alt="star" src="{$url->getTemplateFile("/star.gif")}"/> 
+          {$article->getTopic()}
+         </div>
+         <div class="entry-date">
+         {assign var="postDate" value=$article->getDateObject()}
+         {assign var="postOwner" value=$article->getUserInfo()}
+         {$postOwner->getUsername()} - {$locale->formatDate($postDate,"%Y %b %d (%A) - %H:%M")}
+         </div>
+        </div>
+       </div>
+       <div class="entry-content">
+        {$article->getText()|strip_tags|truncate:300:"...":false}
+       </div>
+       <div class="entry-footer">
+        {foreach name=categories from=$article->getCategories() item=postCategory}
+		<a href="{$url->categoryLink($postCategory)}">{$postCategory->getName()}</a>{if !$smarty.foreach.categories.last}, {/if}
+	  {/foreach} 
+        <img alt="|" class="seperator" src="{$url->getTemplateFile("sp.gif")}"/> 
+        <a href="{$url->postPermalink($article)}">{$locale->tr("comment on this")} ({$article->getTotalComments()})</a> 
+        <img alt="|" class="seperator" src="{$url->getTemplateFile("sp.gif")}"/> 
+        <a title="{$locale->tr("permalink_title")}" href="{$url->postPermalink($article)}">{$locale->tr("permalink")}</a> 
+        <img alt="|" class="seperator" src="{$url->getTemplateFile("sp.gif")}"/> 
+        <a href="{$url->postTrackbackStatsLink($article)}">{$locale->tr("trackbacks")} ({$article->getNumTrackbacks()})</a>
+       </div>
+      </div>
+     </div>
+    </div>
+    {/foreach}
+   </div> 
+
+{include file="$blogtemplate/footer.template"} 

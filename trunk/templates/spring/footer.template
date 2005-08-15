@@ -1,0 +1,84 @@
+</div>
+
+<div id="Menu">
+
+    	<div id="calendar_title"><!--{$locale->tr("calendar")}--></div>
+	<div id="Calendar">
+		{$calendar}
+    	</div>
+
+	<div id="search_title"><!--{$locale->tr("search")}--></div>
+	<div id="Search">
+	<form id="search_form" method="post" action="{$url->getIndexUrl()}">
+	<fieldset>
+	<label for="searchTerms"><input type="text" id="searchTerms" name="searchTerms" value="" /></label>
+	<input type="submit" name="Search" value="{$locale->tr("search_s")}" class="button" />
+	<input type="hidden" name="op" value="Search" />
+	<input type="hidden" name="blogId" value="{$blog->getId()}" />   
+	</fieldset>
+	</form>
+	</div> 
+
+	<div id="archives_title"><!--{$locale->tr("archives")}--></div>
+	<div id="Archives">
+	<ul>
+		{foreach from=$archives item=month}
+    	<li><a href="{$month->getUrl()}">{$month->getName()}</a> [{$month->getNumArticles()}]</li>
+    		{/foreach}
+    	</ul>
+	</div>
+	
+	<div id="categories_title"><!--{$locale->tr("categories")}--></div>
+    	<div id="Categories">
+    	<ul>
+    		{foreach from=$articlecategories item=articleCategory}
+    	<li><a title="{$articleCategory->getName()}" href="{$url->categoryLink($articleCategory)}">{$articleCategory->getName()} <abbr title="{$articleCategory->getNumArticles()} {$locale->tr("posts")}">[{$articleCategory->getNumArticles()}]</abbr></a>&nbsp;<a  href="{$url->categoryRssLink($articleCategory)}"><img src="{$url->getUrl("/imgs/rss_logo_small.gif")}" style="border:0px;" align="center" alt="RSS 0.90" /></a></li>
+   		{/foreach}
+  	</ul>
+  	</div>
+
+  	<div id="recently_title"><!--{$locale->tr("recently")}--></div>
+    	<div id="Recently">
+    	<ul>
+    		{foreach from=$recentposts item=post}
+        <li><a title="{$post->getTopic()}" href="{$url->postLink($post)}">{$post->getTopic()}</a></li>
+    		{/foreach}
+    	</ul>
+   	</div>
+
+	<div id="links_title"><!--{$locale->tr("my_links")}--></div>
+	<div id="Links">
+  		{foreach from=$mylinkscategories item=linkcategory}
+    	<div id="LinksCategories">{$linkcategory->getName()}</div>
+   	<ul>
+  		{foreach from=$linkcategory->getLinks() item=link}
+  	<li><a href="{$link->getUrl()}" title="{$link->getDescription()}">{$link->getName()}</a></li>
+    		{/foreach}
+  	</ul>
+  		{/foreach}
+  	</div>
+
+   	<div id="syndicate_title"><!--{$locale->tr("syndicate")}--></div>
+    	<div id="Syndicate">
+    	<ul>
+    	<li><a  title="Link to the RSS 0.90 feed." href="{$url->rssLink("rss090")}"><img src="{$url->getUrl("/imgs/rss090_logo.gif")}" style="border:0px;" alt="RSS 0.90" /></a></li>
+    	<li><a  title="Link to the RSS 1.0 feed." href="{$url->rssLink("rss10")}"><img src="{$url->getUrl("/imgs/rss10_logo.gif")}" style="border:0px;" alt="RSS 1.0" /></a></li>
+    	<li><a  title="Link to the RSS 2.0 feed." href="{$url->rssLink("rss20")}"><img src="{$url->getUrl("/imgs/rss20_logo.gif")}" style="border:0px;" alt="RSS 2.0" /></a></li>
+    	<li><a  title="Link to the Atom 0.3 feed." href="{$url->rssLink("atom")}"><img src="{$url->getUrl("/imgs/atom_logo.png")}" style="border:0px;" alt="Atom 0.3" /></a></li>
+    	</ul>
+    	</div>
+</div>
+
+<div class="clearer">&nbsp;</div> 
+</div>
+
+
+
+
+<!-- Please leave the credit intact. Thank you. -->
+<div id="Bottom"><a href="http://www.w3.org/WAI/">Accessible</a> and Valid <a href="http://validator.w3.org/check/referer">XHTML 1.0 Strict</a> and <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> Powered by <a href="http://www.plogworld.net">pLog</a></div>
+
+</div>
+
+</body>
+</html>

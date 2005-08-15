@@ -1,0 +1,8 @@
+{include file="$blogtemplate/header.template"}
+{include file="$blogtemplate/panel.template"}
+
+<div id="main">
+    {include file="$blogtemplate/commentform.template"}
+</div>
+
+{include file="$blogtemplate/footer.template"}

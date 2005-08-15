@@ -1,0 +1,23 @@
+    <script language="JavaScript" type="text/javascript">
+     {literal}
+	 <!--
+    function checkIpAddress(form)
+    {
+      var ip = Array();
+      ip[1] = parseInt(form.ip1.value);
+      ip[2] = parseInt(form.ip2.value);
+      ip[3] = parseInt(form.ip3.value);
+      ip[4] = parseInt(form.ip4.value);
+
+      for( i=1; i<=4; i++ ) {
+        if( (isNaN(ip[i])) || (ip[i] < 0) || (ip[i] > 253)) {
+          window.alert({/literal}'{$locale->tr("error_invalid_ip_address")|escape:"javascript"}'{literal});
+          return false;
+        }
+      }
+
+      return true;
+     }
+	  // -->
+     {/literal}
+	</script>

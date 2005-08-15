@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$locale->getLanguageId()}" 
+      lang="{$locale->getLanguageId()}" dir="{$locale->getDirection()}">
+<head>
+ <title>{$blog->getBlog()}</title>
+ <meta http-equiv="Content-Type" content="text/html;charset={$locale->getCharset()}" />
+ <meta name="generator" content="{$version}" />
+ <meta http-equiv="Content-Language" content="{$locale->getLanguageId()}" />
+ <meta name="DESCRIPTION" content="" />
+ <meta name="ROBOTS" content="INDEX,FOLLOW" />
+ <meta name="resource-type" content="document" />
+ <meta http-equiv="expires" content="0" />
+ <meta name="template-author" content="M. Padiernos" />
+ <meta name="template-copyright" content="Copyright (c) 2003-2004 M. Padiernos, Gaby's Family Page" />
+ <meta name="distribution" content="Global" />
+ <link rel="stylesheet" title="Default" href="{$url->getTemplateFile("style.css")}" type="text/css" />
+ <link rel="alternate" type="text/xml" title="RSS 2.0" href="{$url->rssLink("rss20")}" />
+ <link rel="alternate" type="text/xml" title="RSS 1.0" href="{$url->rssLink("rss10")}" />
+ <link rel="alternate" type="text/xml" title="RSS 0.90" href="{$url->rssLink("rss090")}" />
+ <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="{$url->rssLink("atom")}" />
+ <script type="text/javascript" src="{$url->getTemplateFile("toolbar.js")}"></script>
+
+</head>
+<body>
+  <center><table width="500px" border="0" cellspacing="0" cellpadding="0" style="background-color:#ffffff; text-align: left;">
+    <tr> 
+      <td colspan="2" style="background: #C4DB8D"> 
+			  <div id="banner"> 
+          <a href="{$url->blogLink()}"><img src="{$url->getTemplateFile('title.jpg')}" width="500" height="80" alt="" style="border:0"/></a>
+        </div>
+        <div id="bannertitle">
+         {$blog->getBlog()}
+        </div>
+        <div id="navbar" style="text-align:center">
+		      <span><a href="{$url->blogLink()}">{$locale->tr("main")} </a> |
+		      </span> 
+					<span><a href="{$url->albumLink()}">
+		         {$locale->tr("albums")}</a> |
+		      </span>
+		      <span><a href="{$url->getAdminUrl()}" target="blank">{$locale->tr("admin")}</a>
+		      </span>
+				</div>
+		  </td>
+    </tr>

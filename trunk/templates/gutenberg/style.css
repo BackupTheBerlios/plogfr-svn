@@ -1,0 +1,402 @@
+/* ----------------------------------------------
+Gutenberg CSS Theme for WordPress - http://wordpress.org/
+By Serge K. Keller - http://www.almaren.ch
+v1.0 - February 2004 - Validates as CSS3, for CSS2 take out the 'micro-icons' style
+Designed for Alex King's WordPress CSS Style Competition - http://www.alexking.org/
+---------------------------------------------- */
+/* ----------------------------------------------
+Copyleft (c) 2004 Serge K. Keller, Rue de Lausanne 9, 1700 Fribourg (Switzerland). All Rights Reversed.
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+---------------------------------------------- */
+/* ----------------------------------------------
+General page layout
+---------------------------------------------- */
+body {
+	margin : 0;
+	padding : 0;
+	background : #eee;
+	color : #111;
+	font-size: 0.95em;
+	font-family: 'Lucida Grande', Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif;
+}
+
+#rap {
+	margin : 10px auto;
+	padding : 0;
+	width : 750px;
+	border : 1px solid #aaa;
+	background : #fff;
+	overflow: auto;
+}
+
+#header { 
+	height: 50px;
+ 	background: #fff url(images/gutenberg.gif) no-repeat top right;
+	padding: 30px 10px 5px 25px;
+	border-bottom : 1px solid #aaa;
+}
+	
+#header a {
+	color: #111;
+	text-decoration: none;
+}
+	
+#header  h1 {
+    color: #666;
+    font-size: 130%;
+	font-family: Georgia, "'New York'", Utopia, "'Times New Roman'", Times, serif;
+	font-weight : bold;
+	text-align : left;
+}
+	
+#content {
+	width: 500px;
+	margin: 0;
+	text-align: right;
+	float: left;
+	background-color: #fff;
+	padding: 10px 25px;
+}
+
+#menu {
+	margin: 0;
+	padding: 0 15px 10px 10px;
+	width: 150px;
+	text-align: left;
+	background: #fff;
+	float: right;
+	overflow: hidden;
+}
+
+.credit, credit cite {
+	clear: both;
+	margin: 15px 0 0 0;
+	padding: 3px;
+	background: #ddd;
+	border-top: solid 1px #666;
+	color: #111;
+	font-size: 85%;
+	text-align: center;
+}
+
+ .credit cite {
+	color: #111;
+	font-size: 85%;
+	font-style: normal;
+}
+
+.credit a, .credit a:hover {
+	color: #006;
+	text-decoration: none;
+}
+
+/* ----------------------------------------------
+Basic XHTML styling
+---------------------------------------------- */
+h1, h2, h3 {
+	font-family : Georgia, "'New York'", Utopia, "'Times New Roman'", Times, serif;
+}
+
+h2 {
+	font-size: 120%;
+	letter-spacing: .07em;
+}
+
+h3{
+	font-size: 110%;
+}
+
+p, li, .feedback {
+	font: 85%/125% 'Lucida Grande', Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif;
+	letter-spacing: -1px;
+}
+
+/* ----------------------------------------------
+Links styling
+Remember LoVe-HAte rule
+---------------------------------------------- */
+a {
+	color: #036;
+    text-decoration: none;
+}
+
+a:link {
+	font-weight: bold;
+}
+
+a:visited {
+	font-weight: normal;
+}
+
+a:hover {
+	color: #900;
+    text-decoration: underline;
+}
+
+a:active {
+	text-decoration: underline overline;
+}
+
+a img {
+	border: none;
+}
+	
+/* ----------------------------------------------
+Micro-icons (CSS3 only)
+The following will probably work only in Mozilla browsers (state: January 2004)
+but should degrade gracefully in other browsers
+Info: http://my-dimension.com/article/mini_icons/
+Icons: http://www.web-graphics.com/mtarchive/000305.php#000305
+---------------------------------------------- */
+a[href^="mailto:"] {
+	background: transparent url(images/icons/email.gif) no-repeat 100% 50%;
+	padding-right: 10px;
+	white-space: nowrap;
+}
+
+div.storycontent a[href^="http:"] {
+	background: transparent url(images/icons/outside.gif) no-repeat 100% 50%;
+	padding-right: 10px;
+	white-space: nowrap;
+}
+
+/* This avoids the icon being shown on internal links. Change to suit your taste */
+div.storycontent a[href^="http://alexking.org"],
+div.storycontent a[href^="http://www.alexking.org"] {
+	background: inherit;
+	padding-right: 0px;
+}
+
+/* ----------------------------------------------
+Menu styling
+---------------------------------------------- */
+#menu form {
+	margin: 0;
+}
+
+#menu input {
+	background: #eee;
+	border: 1px solid #111;
+	letter-spacing: -0.05em;
+}
+
+#menu ul {
+	margin: 0;
+	padding: 0 10px 0 0;
+	list-style-type: none;
+	color: #111;
+}
+
+#menu ul li {
+	font-family: 'Lucida Grande', Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	margin: 10px 0 10px 0;
+	border-bottom : 1px #eee;
+}
+
+#menu ul ul {
+	list-style-type: none;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 100%;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+}
+
+#menu ul ul li {
+	margin: 0;
+	font-family: 'Lucida Grande', Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif;
+	font-weight: normal;
+	padding-left: 8px;
+}
+
+#menu ul ul li a {
+	text-decoration: none;
+}
+
+
+/* ----------------------------------------------
+Form styling
+---------------------------------------------- */
+form {
+	margin: 0;
+	padding: 0;
+}
+	
+input, textarea {
+	background-color: #eee;
+	border: 1px solid #aaa;
+	font-size:85%; 
+}
+
+/* ----------------------------------------------
+Other useful elements
+---------------------------------------------- */
+blockquote {
+	font-size: 80%;
+	color: #777;
+	padding-left: 23px;
+	background: url(images/blockquote.gif) no-repeat 0 3px;
+}
+
+cite {
+	font-size: 80%;
+	font-style: italic;
+	color: #69c;
+}
+
+code {
+	font-style: normal;
+	color: #c30;
+	padding-left: 15px;
+	background: url(images/code.gif) no-repeat 0 3px;
+	font-family : Fixed, 'Courier New', Courier, monospace;
+}
+
+acronym, abbr {
+	border-bottom : 1px dashed #aaa;
+	cursor : help;
+	font-size: 80%;
+	letter-spacing: .07em;
+}
+
+span.caps {
+	font-size: 80%;
+	font-variant : small-caps;
+}
+
+li {
+	margin: 0;
+	padding: 0;
+}
+	
+/* ----------------------------------------------
+WordPress elements
+---------------------------------------------- */
+.post {
+	text-align: left;
+}
+
+.storytitle {
+	margin: 0;
+	padding: 0;
+	font-size: 120%;
+	/*letter-spacing: .04em;*/
+	font-family: Georgia, "'New York'", Utopia, "'Times New Roman'", Times, serif; 
+	font-weight: normal;
+}
+
+.storytitle a {
+	text-decoration: none;
+}
+
+.meta {
+	font-size: 75%;
+}
+
+.meta, .meta a {
+	color: #777;
+	font-weight: normal;
+	letter-spacing: 0;
+}
+
+.meta ul {
+	display: inline;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.meta li {
+	display: inline;
+}
+
+.feedback {
+	color: #ccc;
+	text-align: left;
+}
+	
+ol#comments li p {
+	font-size: 90%;
+}
+
+/* ----------------------------------------------
+WordPress comments form
+---------------------------------------------- */
+#commentform input, #commentform textarea {
+	background: #fff;
+	border: 1px solid #aaa;
+}
+
+#commentform textarea {
+	width: 100%;
+}
+
+/* ----------------------------------------------
+WordPress calendar
+---------------------------------------------- */
+#calendar {
+	empty-cells: show;
+	margin: 0;
+	width: 140px;
+}
+.calMonthHeader, .calMonthNav{
+	color: #111;
+	font: 12px Verdana, Arial, serif;
+	padding-top:10px;
+	text-align: center;
+}
+
+#calendar .calMonthForward, #calendar .calMonthForward>a{
+	padding-left: 5px;
+	text-align: center;
+	border:0px;
+}
+
+#calendar .calMonthBackward, #calendar .calMonthBackward>a{
+	padding-right: 5px;
+	text-align: center;
+	border:0px;
+}
+
+.calDayLink {
+	display: block;
+	text-decoration: none;
+}
+
+#calendar a:hover {
+	background: #eee;
+	color: #900;
+}
+
+#calendar td {
+	color: #777;
+	font-family: 'Lucida Grande', Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif;
+	font-size: 10px;
+	letter-spacing: normal;
+	padding: 2px 0;
+	text-align: center;
+}
+
+#calendar td.pad:hover {
+	background: #fff;
+}
+
+#calendar td:hover, #calendar .calMonthToday {
+	background: #eee;
+	color: #111;
+}

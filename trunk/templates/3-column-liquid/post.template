@@ -1,0 +1,17 @@
+{assign var="postDate" value=$post->getDateObject()}
+{assign var="postOwner" value=$post->getUserInfo()}
+<!--<h3>{$post->getTopic()}</h3>-->
+<div class="posttitle">{$post->getTopic()}</div>
+<div class="postdate">{$postOwner->getUsername()} | {$locale->formatDate($postDate, "%d %B, %Y %H:%M")}</div>
+<div class="postbody">
+  {$post->getText()}
+ &nbsp;<a style="text-decoration:none;border:0px" title="Permanent link to the archives" href="{$url->postPermalink($post)}"><img alt="#" src="{$url->getUrl("/imgs/permalink3.gif")}" border="0"/></a>
+</div>
+<div class="postlinks">
+  {foreach name=categories from=$post->getCategories() item=postCategory}
+    <a href="{$url->categoryLink($postCategory)}">{$postCategory->getName()}</a>
+    {if !$smarty.foreach.categories.last}, {/if}
+  {/foreach} &#8226;
+ <a href="{$url->postPermalink($post)}">{$locale->tr("comment on this")} ({$post->getTotalComments()})</a> &#8226;
+ <a href="{$url->postTrackbackStatsLink($post)}">{$locale->tr("trackbacks")} ({$post->getNumTrackbacks()})</a>
+</div>

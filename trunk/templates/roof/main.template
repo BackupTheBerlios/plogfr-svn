@@ -1,0 +1,10 @@
+{include file="$blogtemplate/header.template"}
+ {foreach from=$posts item=post}
+   {assign var="postDate" value=$post->getDateObject()}
+   {if $prevDay != $postDate->getDay()}
+    <h3>{$locale->formatDate($postDate, "%A, %B %d, %Y")}</h3>
+   {/if}
+   {assign var="prevDay" value=$post->getDay()}
+   {include file="$blogtemplate/post.template"}
+ {/foreach}
+{include file="$blogtemplate/footer.template"}

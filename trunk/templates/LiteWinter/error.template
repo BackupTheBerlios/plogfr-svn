@@ -1,0 +1,12 @@
+{include file="$blogtemplate/header.template"}
+                                <tr>
+                                    <td background="{$url->getTemplateFile("images/tb_r2_c1.jpg")}">&nbsp;</td>
+                                    <td colspan="2" align="left" valign="top" bgcolor="#FFFFFF">
+										 <h1>{$locale->tr("error")}</h1>
+										 <p>{$locale->tr($message)}</p>
+										 <p><a href="javascript:history.go(-1)">{$locale->tr("back")}</a></p>
+									</td>
+                                    <td background="{$url->getTemplateFile("images/tb_r2_c4.jpg")}"></td>
+                                    <td></td>
+                                </tr>
+{include file="$blogtemplate/footer.template"}

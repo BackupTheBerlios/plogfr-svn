@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset={$locale->getCharset()}" />
+	<title>{$blog->getBlog()}</title>
+	<style type="text/css" media="screen">@import "{$url->getTemplateFile("buggy.css")}";</style>
+	<script type="text/javascript" src="{$url->getTemplateFile("x.js")}"></script>
+	<script type="text/javascript" src="{$url->getTemplateFile("lib.js")}"></script>
+ <link rel="alternate" type="text/xml" title="RSS 2.0" href="{$url->rssLink("rss20")}" />
+ <link rel="alternate" type="text/xml" title="RSS 1.0" href="{$url->rssLink("rss10")}" />
+ <link rel="alternate" type="text/xml" title="RSS 0.90" href="{$url->rssLink("rss090")}" />
+ <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="{$url->rssLink("atom")}" />	
+</head>
+
+<body>
+
+<p class="upgrade">This page looks plain and unstyled because you're using a non-standard compliant browser. To see it in its best form, please <a href="http://www.webstandards.org/upgrade/" title="The Web Standards Project's Browser Upgrade initiative">upgrade</a> to a browser that supports web standards. It's free and painless.</p>
+
+<div id="header">
+	<div class="title">{$blog->getBlog()|lower}</div>
+	<div class="subtitle">YOUR COOL BLOG TAG LINE</div>
+</div>
+
+<div id="photo"><img src="{$url->getTemplateFile("imgs/photo.jpg")}" width="150" height="200" alt="Your sexiest photo" /></div>
+
+<div id="menu">
+	<a href="{$url->blogLink()}">{$locale->tr("main")|upper}</a> |
+	<a href="{$url->albumLink()}">{$locale->tr("albums")|upper}</a>
+</div>
+
+<div id="col1">
+	<div class="content">
+		<h5>{$locale->tr("calendar")|lower}</h5>
+		{$calendar}
+		
+		<h6>{$locale->tr("recently")|lower}</h6>
+		{foreach from=$recentposts item=post}
+			<a title="{$post->getText()|truncate:150:"..."|escape}" href="{$url->postLink($post)}">{$post->getTopic()}</a><br/>
+		{/foreach}
+		<h5>{$locale->tr("syndicate")|lower}</h5>
+		<a title="Link to the RSS 0.90 feed." href="{$url->rssLink("rss090")}"><img src="{$url->getUrl("/imgs/rss090_logo.gif")}" style="border:0px;" alt="RSS 0.90" /></a><br/>
+    <a title="Link to the RSS 1.0 feed." href="{$url->rssLink("rss10")}"><img src="{$url->getUrl("/imgs/rss10_logo.gif")}" style="border:0px;" alt="RSS 1.0" /></a><br/>
+    <a title="Link to the RSS 2.0 feed." href="{$url->rssLink("rss20")}"><img src="{$url->getUrl("/imgs/rss20_logo.gif")}" style="border:0px;" alt="RSS 2.0" /></a><br/>
+    <a title="Link to the Atom 0.3 feed." href="{$url->rssLink("atom")}"><img src="{$url->getUrl("/imgs/atom_logo.png")}" style="border:0px;" alt="Atom 0.3" /></a>
+ 
+	</div>
+</div>
+
+<div id="col2">
+	<div class="content">

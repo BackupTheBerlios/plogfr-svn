@@ -1,0 +1,15 @@
+{include file="$blogtemplate/header.template"}
+<div id="content">
+<div class="blog">
+{foreach from=$posts item=post}
+{** <!-- I don't like showing summary only --> **}
+{**if $showAll}
+  {include file="$blogtemplate/postsummary.template"}
+{else**}
+  {include file="$blogtemplate/post.template"}
+{**/if**}
+{/foreach}
+</div>
+</div>
+{include file="$blogtemplate/panel.template"}
+{include file="$blogtemplate/footer.template"}

@@ -1,0 +1,10 @@
+<div id="footer">
+Powered by <a href="http://www.plogworld.net/">pLog 1.0</a>
+<p>Select Style:
+<a onkeypress="setActiveStyleSheet('ICE'); return false;" onclick="setActiveStyleSheet('ICE'); return false;" href="#">ICE</a> |
+<a onkeypress="setActiveStyleSheet('ICE Mozilla Enhanced'); return false;" onclick="setActiveStyleSheet('ICE Mozilla Enhanced'); return false;" href="#">ICE Mozilla Enhanced</a>
+</p>
+</div>
+<!-- Template designed by Reto Hugi (http://hugi.to/). -->
+</body>
+</html>

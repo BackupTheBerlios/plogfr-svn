@@ -1,0 +1,82 @@
+	body {
+		background : White url("bm_roof.jpg") no-repeat fixed top left;
+		font : 12px Verdana, Geneva, Arial, Helvetica, sans-serif;
+		color : #000033;
+	}
+	h1 {
+		font : bold 2.2em Georgia, serif;
+		text-align: center;
+		color: #678897;
+		padding-bottom: 30px;
+	}
+	#links {
+		line-height : 1.3em;
+		position : absolute;
+		top: 100px;
+		left: 10px;
+		width: 180px;
+		color : white;
+		text-transform: capitalize;
+	}
+	
+	#links ul {
+	 list-style: none;
+	 padding: 0px;
+	 margin: 0px;
+	}
+	
+	#links h3 {
+	 font-weight: bold;
+	 padding: 0px;
+	 margin: 0px;
+	}
+	
+	#links #about {
+	 font-size: normal;
+	}
+	
+	#links #calendar {
+	  // nothing, just in case
+	}
+	
+	#content {
+		width : 454px;
+		line-height : 1.3em;
+		position : absolute;
+		top : 0px;
+		left : 205px;
+		padding: 20px;
+	}
+	h3 {
+		font-weight : bold;
+		font-size : 1em;
+		padding-bottom : 10px;
+	}
+	.postinfo {
+		font-size : 11px;
+		margin-bottom: 35px;
+		color: #333333;
+	}
+	a:link {
+		color : #CCFFFF;
+	}
+	a:visited {
+		color : #CCFFFF;
+	}
+	a:active {
+		color : #CC9900;
+	}
+	a:hover {
+		color : #CC9900;
+	}
+    .calMonthToday {
+    	background-color: #678897;
+        color: #FFFFFF;
+    }
+    
+    #album a,
+    #album a:hover,
+    #album a:link,
+    #album a:visited {
+      text-decoration: none;
+    }

@@ -1,0 +1,36 @@
+<div id="postmain">
+<form id="NewComment" action="{$url->getBaseUrl()}/index.php" method="post">
+<legend>{$locale->tr("add_comment")}</legend>
+<div><label for="commentTopic">{$locale->pr("comment_topic")}</label><input type="text" name="commentTopic" id="commentTopic" value="" /></div>
+<div><label for="commentText">{$locale->pr("comment_text")}</label><textarea rows="10" cols="30" name="commentText" id="commentText"></textarea></div>
+{if $smileys->isEnabled()}
+<script type="text/javascript" src="{$url->getBaseUrl()}/plugins/smileys/js/smileys/smileys.js"></script>
+<div><label for="Smileysbar">Smileys</label>
+{$smileys->generateSmileysBar()}
+</div><br/>{/if}
+<div><label for="userName">{$locale->pr("comment_username")}</label><input type="text" name="userName" id="userName" value="" /></div>
+<div><label for="userEmail">Email</label><input type="text" name="userEmail" id="userEmail" value="" /></div>
+<div><label for="userUrl">Web</label><input type="text" name="userUrl" id="userUrl" value="" /></div>
+{if $authimage->isEnabled()}
+<div><label for="authImage">SPAM STOPPER<br>Please enter the code shown</label>
+<br><input type="text" name="authImage" id="authImage" value="" />&nbsp;{$authimage->show()}</div>
+{/if}
+<div id="Submit"><input id="Add" type="submit" value="{$locale->pr("comment_send")}" name="Add" />
+<input type="hidden" name="op" value="AddComment" />
+<input type="hidden" name="articleId" value="{$post->getId()}" />
+<input type="hidden" name="blogId" value="{$blog->getId()}" />
+<input type="hidden" name="parentId" value="{$parentId}" /></div>
+{if !empty($hiddeninput)}
+{if $hiddeninput->isEnabled()}
+{foreach from=$hiddeninput->getHiddenFields() item=hiddenField}
+<input type="hidden" name="{$hiddenField}" value="GetOut!" />
+{/foreach}
+{/if}
+{/if}
+{if $contentfilter->isEnabled()}{/if}
+{if $dnsantispam->isEnabled()}{/if}
+{if $remembercommentdata->isEnabled()}
+{$remembercommentdata->show()}
+{/if}
+</form>
+</div>

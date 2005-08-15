@@ -1,0 +1,320 @@
+/* 
+	Dark Fire (v1.1) stylesheet for Wordpress 1.0+ || http://www.wordpress.org
+	
+	Layout, Style and Design by B A Khan || http://www.3digita.com
+	
+	Get more free templates, skins and stylesheets from 3digita.com!
+
+	License : GPL - http://www.gnu.org/copyleft/gpl.html
+*/
+
+body {
+	font-family: Tahoma, Arial, Serif;
+	margin: 0;
+	padding: 0;
+	color: #e5e5e5;
+	background: #fff url(images/bg_darkfire.gif) repeat-y 50% 0;
+	text-align: center;
+}
+
+#rap {
+	position: relative;
+	margin: 0 auto;
+	padding: 0;
+	text-align: left;
+	width: 768px;
+}
+
+
+/* =====| MAIN LINKS |========== */
+
+
+a, .feedback a, .meta a  {
+	color: #ffbf00;
+	text-decoration: none;
+	border-bottom: 1px dashed;
+}
+
+a img {
+	border: none;
+}
+
+a:visited {
+	color: #ffbf00;
+}
+
+a:hover, .feedback a:hover, .meta a:hover  {
+	color: #ff7f00;
+	text-decoration: none;
+	border-bottom: 1px solid;
+}
+
+/* =====| HEADER |========== */
+
+
+#header {
+	position:relative;
+	background: url(images/header_darkfire.gif);
+	margin:0;
+	padding: 25px 0 0 0;
+	border-bottom: 2px solid #ffbf00;
+
+	text-align:center;
+
+	font: 35px Georgia, Arial, Serif;
+	letter-spacing: -1px;
+
+	height:65px !important;
+	height /**/: 97px; /* for IE5/Win */
+}
+
+#header a {
+	color: #fff;
+	text-decoration: none;
+	border:0;
+}
+
+#header a:hover {
+	color: #ff7f00;
+	text-decoration: none;
+}
+
+
+/* =====| MAIN BODY |========== */
+
+
+#content {
+	position:relative;
+	text-align: justify;
+	top: 10px;
+	width:455px;
+	margin:0px 0 0 270px;
+	height: 100%;
+	padding: 0px 0px 50px 0px;
+	font: 80% Tahoma, Arial, Serif;
+}
+
+acronym, abbr {
+	border-bottom: 1px dashed #333;
+}
+
+acronym, abbr, span.caps {
+	cursor: help;
+}
+
+blockquote {
+	border-left: 5px solid #b2b2b2;
+	margin-left: 1.5em;
+	padding-left: 5px;
+}
+ 
+
+cite {
+	font-style: normal;
+}
+
+h2, code {
+	font-family: Tahoma, Arial, Serif;
+	margin: 15px 0 2px 0;
+	padding-bottom: 5px;
+	color: #8bb7cf;
+}
+
+h2 {
+	font: 120% Tahoma, Arial, Serif;
+}
+
+h3 {
+	margin: 0;
+}
+
+.storytitle {
+	font: 170% Georgia, Arial, Serif;
+	letter-spacing:-1px;
+}
+
+.storycontent, .feedback {
+}
+
+.storycontent ul {
+	list-style: square;
+}
+
+.credit {
+	font: 80% Tahoma, Arial, Serif;
+	position:relative;
+	width:auto;
+	top:0px;
+	margin:0px;
+	text-align: center;
+	margin-left:270px;
+	padding:0px;
+}
+
+.credit a:link {
+	color: #ffbf00;
+	text-decoration: none;
+}
+
+.credit a:hover {
+	color: #ff7f00;
+}
+
+.feedback {
+	text-align: right;
+}
+
+.meta {
+	color: #999;
+	margin: 15px 0 0px 0;
+
+}
+
+.meta ul {
+	display: inline;
+	margin: 0;
+	padding: 0;
+}
+
+.meta li {
+	display: inline;
+	list-style: none;
+	padding-left:5px;
+	padding-right:5px;
+	border-left : 1px solid #999;
+}
+
+#commentform {
+	background: #4d4d4d;
+	padding:10px;
+}
+
+#commentform p {
+	padding:5px;
+	margin:0px;
+}
+
+
+#commentform input, #commentform textarea {
+	background: url(images/input_bg_darkfire.gif);
+	border: 1px solid #333;
+	font: 1em Tahoma, Arial, Serif;
+	padding-left: 2px;
+}
+
+#commentform textarea {
+	width: 90%;
+	padding-left: 2px;
+}
+
+
+/* =====| SIDE MENU |========== */
+
+
+#menu {
+	position: absolute;
+	height:100%;
+	top: 100px;
+	margin: 0px 0px 20px 5px;
+	padding: 20px;
+	width: 250px !important;
+	width /**/: 290px; /* for IE5/Win */
+}
+
+#menu form {
+	margin: 0 0 0 10px;
+}
+
+#menu input {
+	background: url(images/input_bg_darkfire.gif) #333;
+	border: 1px solid #333;
+	font: 60% Tahoma, Arial, Serif;
+	padding-left: 2px;
+}
+
+
+#menu ul {
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+#menu ul li {
+	font: 140% Tahoma, Arial, Serif;
+	margin-bottom: 15px;
+	color: #ffffff;
+	text-transform: lowercase;
+}
+
+#menu ul ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+}
+
+#menu ul ul li {
+	letter-spacing: 0;
+	margin: 0;
+	padding-left: 10px;
+	font: 60% Tahoma, Arial, Serif;
+}
+
+#menu ul ul li a {
+	color: #ffbf00;
+	text-decoration: none;
+}
+
+#menu ul ul li a:hover {
+	color: #ff7f00;
+}
+
+
+/* =====| CALENDAR |========== */
+
+
+#calendar {
+	empty-cells: show;
+	font-size: 14px;
+	margin: 0px;
+	width: 180px;
+}
+.calMonthHeader, .calMonthNav{
+	color: #fff;
+	font: 14px Verdana, Arial, serif;
+	padding-top:10px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+#calendar .calMonthForward, #calendar .calMonthForward a{
+	padding-left: 5px;
+	text-align: center;
+	border:0;
+}
+
+#calendar .calMonthBackward, #calendar .calMonthBackward a{
+	padding-right: 5px;
+	text-align: center;
+	border:0;
+}
+
+.calDayLink {
+	display: block;
+	text-decoration: none;
+}
+
+#calendar a:hover {
+	background: #ffffff;
+	color: #ff7f00;
+}
+
+#calendar td {
+	color: #b2b2b2;
+	font: normal 12px Tahoma, Arial, Serif;
+	text-align: center;
+}
+
+#calendar .calMonthToday {
+	border: 1px solid #ffffff;
+}

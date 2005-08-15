@@ -1,0 +1,80 @@
+</div>
+</div>
+
+<div id="links">
+
+<div class="sidetitle">{$locale->tr("search")}</div>
+<div class="side">
+   <form name="search_form" method="post" action="{$url->getIndexUrl()}">
+    <input type="text" name="searchTerms" value="" size="14" /><br/>
+    <input type="hidden" name="op" value="Search" />
+    <input type="hidden" name="blogId" value="{$blog->getId()}"/>   
+    <input type="submit" name="Search" value="{$locale->tr("search")|capitalize}" />
+   </form>
+</div>
+
+<div class="sidetitle">{$locale->tr("calendar")|capitalize}</div>
+<div class="side">
+<div align="center">
+{$calendar}
+</div>
+</div>
+
+<div class="sidetitle">{$locale->tr("archives")|capitalize}</div>
+<div class="side">
+<p>
+ <ul>
+ {foreach from=$archives item=archive}
+  <li><a href="{$archive->getUrl()}">{$archive->getName()}</a></li>
+ {/foreach}
+ </ul>
+</p>
+</div>
+
+<div class="sidetitle">{$locale->tr("categories")|capitalize}</div>
+<div class="side">
+<p>
+ <ul>
+ {foreach from=$articlecategories item=category}
+  <li><a href="{$url->categoryLink($category)}">{$category->getName()}</a></li>
+ {/foreach}
+ </ul>
+</p>
+</div>
+
+<div class="sidetitle">{$locale->tr("links")|capitalize}</div>
+<div class="side">
+<p>
+  <ul>
+   {foreach from=$mylinkscategories item=linkcategory}
+     <li><b>{$linkcategory->getName()}</b>
+     <ul>
+      {foreach from=$linkcategory->getLinks() item=link}
+       <li><a href="{$link->getUrl()}" title="{$link->getDescription()}">{$link->getName()}</a></li>
+      {/foreach}
+     </ul>
+    </li>
+   {/foreach}  
+   </ul>
+</p>
+</div>
+
+<div class="sidetitle">{$locale->tr("menu")|capitalize}</div>
+<div class="side">
+<ul>
+<p>
+   <li><a href="{$url->blogLink()}">{$locale->tr("main")}</a></li>
+   <li><a href="{$url->albumLink()}">{$locale->tr("albums")}</a></li>
+   <li><a title="Link to the RSS 1.0 feed." href="{$url->rssLink("rss10")}">RSS feed</a></li>
+   <li><a title="Link to the Atom feed." href="{$url->rssLink("atom")}">Atom feed</a></li>
+  </ul>
+</p> 
+</div>
+
+<div class="powered">
+Powered by <a href="http://www.plogworld.net">pLog</a><br />    
+</div>
+
+</div>
+</body>
+</html>

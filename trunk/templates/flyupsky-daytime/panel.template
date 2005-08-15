@@ -1,0 +1,78 @@
+<div id="links">
+<div class="sidetitle">
+    {$locale->tr("calendar")|capitalize}
+   </div>
+ <div class="sideCal">
+    {$calendar}
+ </div>
+<div class="sidetitle">
+{$locale->tr("search")|capitalize}
+</div>
+    <div class="side" id="Search"> 
+	<form id="search_form"  name="search_form" method="post" action="{$url->getIndexUrl()}">
+	<!--fieldset-->
+	<label for="searchTerms"><input type="text" id="searchTerms" name="searchTerms" value="" size="10"/></label>
+	<input type="submit" name="Search" value="{$locale->tr("search_s")}" class="button" />
+	<input type="hidden" name="op" value="Search" />
+	<input type="hidden" name="blogId" value="{$blog->getId()}" />
+	<!--/fieldset-->
+	</form>
+    </div>   
+ <div class="sidetitle">
+  {$locale->tr("recently")|capitalize}
+ </div>
+ <div class="side">
+  <ul>
+  {foreach from=$recentposts item=post}
+<li><a title="{$post->getText()|truncate:15:"..."|escape}" href="{$url->postLink($post)}">{$post->getTopic()}</a></li>
+  {/foreach}
+  </ul>
+ </div>
+
+ <div class="sidetitle">
+  {$locale->tr("categories")|capitalize}
+ </div>
+ <div class="side">
+<ul>
+   {foreach from=$articlecategories item=articleCategory}
+<li><a href="{$url->categoryLink($articleCategory)}">{$articleCategory->getName()}</a> [{$articleCategory->getNumArticles()}]
+<a class="nodecoration" href="{$url->categoryRssLink($articleCategory)}"><img border="0" src="{$url->getUrl("/imgs/rss_logo_small.gif")}" alt="RSS Feed for this category." height="12" /></a></li>
+   {/foreach}
+</ul>
+ </div>
+
+ <div class="sidetitle">
+  {$locale->tr("archives")|capitalize}
+ </div>
+ <div class="side">
+<ul>
+  {foreach from=$archives item=archivelink}
+<li><a href="{$archivelink->getUrl()}">{$archivelink->getName()}</a> [{$archivelink->getNumArticles()}]</li>
+  {/foreach}
+</ul>
+ </div>
+ <div class="sidetitle">
+  {$locale->tr("links")|capitalize}
+ </div>
+ <div class="side">
+
+   {foreach from=$mylinkscategories item=linkcategory}
+<b>{$linkcategory->getName()}</b><br />
+      {foreach from=$linkcategory->getLinks() item=link}
+<a href="{$link->getUrl()}" title="{$link->getDescription()}">{$link->getName()}</a><br />
+      {/foreach}
+   {/foreach}  
+ </div>
+   <div class="sidetitle">
+    {$locale->tr("syndicate")}
+   </div>
+   <div class="side">
+<ul>
+<li><a title="Link to the RSS 0.90 feed." href="{$url->rssLink("rss090")}"><img border="0" src="{$url->getUrl("/imgs/rss090_logo.gif")}" alt="" /></a></li>
+<li><a title="Link to the RSS 1.0 feed." href="{$url->rssLink("rss10")}"><img border="0" src="{$url->getUrl("/imgs/rss10_logo.gif")}" alt="" /></a></li>
+<li><a title="Link to the RSS 2.0 feed." href="{$url->rssLink("rss20")}"><img border="0" src="{$url->getUrl("/imgs/rss20_logo.gif")}" alt="" /></a></li>
+<li><a title="Link to the Atom 0.3 feed." href="{$url->rssLink("atom")}"><img border="0" src="{$url->getUrl("/imgs/atom_logo.png")}" alt="" /></a></li>
+</ul>
+   </div>
+
+</div>

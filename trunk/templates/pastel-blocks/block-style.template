@@ -1,0 +1,6 @@
+  Change site style:<br />
+  <a href="#" onclick="setActiveStyleSheet('pastel blocks'); return false;">pastel blocks</a><br />
+  <a href="#" onclick="setActiveStyleSheet('no shadow'); return false;">no shadow</a><br />
+  <a href="#" onclick="setActiveStyleSheet('white blocks'); return false;">white blocks</a><br />
+  <a href="#" onclick="setActiveStyleSheet('darker colors'); return false;">darker colors</a><br/>
+  <a href="#" onclick="setActiveStyleSheet('column swap'); return false;">column swap</a><br/>

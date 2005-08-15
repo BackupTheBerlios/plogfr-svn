@@ -1,0 +1,49 @@
+{assign var="postPageTitle" value=$post->getTopic()}
+{assign var="postPageTitle" value=" | $postPageTitle"}
+{assign var="postDate" value=$post->getDateObject()}
+{assign var="postOwner" value=$post->getUserInfo()}
+{assign var="oddcomment" value='alt'}
+{include file="$blogtemplate/header.template"}
+{include file="$blogtemplate/panel.template"}
+
+<div id="content">
+ <!-- {$url->postTrackbackLink($post)} -->
+ {include file="$blogtemplate/post.template"}
+
+ <div>
+ {if $post->getComments()}
+ <ol class="commentlist">
+ {foreach from=$post->getComments() item=comment}
+  <li class={$oddcomment}>
+    <div class="comment_author">
+      {if $comment->getUserUrl() != ""}
+        <a href="{$comment->getUserUrl()}"}>{$comment->getUsername()}</a>
+      {else}
+        {$comment->getUsername()}
+      {/if}{$locale->tr("comment on this")}
+    </div>
+    <p class="metadate">
+       	{assign var=commentDate value=$comment->getDateObject()}
+        {$locale->formatDate($commentDate, "%d %b %Y, %H:%M")}
+    </p>
+   <a name="{$comment->getId()}"></a><p>{$comment->getText()}</p>  
+  </li>
+  {if $oddcomment == 'alt'}
+  {assign var="oddcomment" value=''}
+  {else}
+  {assign var="oddcomment" value='alt'}
+  {/if}
+  {/foreach}
+ </ol>
+ {/if}
+ </div>
+ 
+ {if $blogsettings->getValue("comments_enabled") && $post->getCommentsEnabled()==1}
+  <div>
+   <div>{$locale->tr("add_comment")}</div>
+     {include file="$blogtemplate/commentform.template"}
+  </div>
+ {/if}
+</div> 
+
+{include file="$blogtemplate/footer.template"}

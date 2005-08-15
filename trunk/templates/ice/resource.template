@@ -1,0 +1,49 @@
+{include file="$blogtemplate/header.template"}
+{include file="$blogtemplate/panel.template"}
+
+<div id="main">
+ <div class="resources">
+  <h2>{$resource->getFileName()}</h2>
+  <p>
+   {assign var=metadata value=$resource->getMetadataReader()}
+   {if $resource->isImage()}
+    <img src="{$url->resourceDownloadLink($resource)}" alt="{$resource->getFileName()}, {$metadata->getFileSize()} {$locale->tr("bytes")}" />
+   {else}
+   	<a href="{$url->resourceDownloadLink($resource)}">
+    {if $resource->isSound()}
+     <img alt="Sound" src="{$url->getTemplateFile("icons/sound.png")}" /></a><br />
+    {elseif $resource->isVideo()}
+     <img alt="Video" src="{$url->getTemplateFile("icons/video.png")}" /></a><br />
+    {elseif $resource->isZip()}
+     <img alt="Zip" src="{$url->getTemplateFile("icons/compressed.png")}" /></a><br /> 
+    {else}
+     <img alt="File" src="{$url->getTemplateFile("icons/file.png")}" /></a><br />
+    {/if}  
+   {/if}
+   	<a href="{$url->resourceDownloadLink($resource)}">{$resource->getFileName()}</a>
+	
+   {assign var=metadata value=$resource->getMetadataReader()}
+   <div class="metadata">{$locale->tr("size")}: {$metadata->getRoundedSize()}
+   {if $resource->isImage()}
+  	<br />{$locale->tr("dimensions")}: {$metadata->getWidth()} x {$metadata->getHeight()}
+   {elseif $resource->isSound()}
+  	<br />{$locale->tr("format")}: {$metadata->getFormat()|upper}
+	<br />{$locale->tr("sample_rate")}: {$metadata->getSampleRate()}
+   {elseif $resource->isVideo()}
+  	<br />{$locale->tr("format")}: {$metadata->getFormat()|upper}
+	<br />{$locale->tr("dimensions")}: {$metadata->getWidth()} x {$metadata->getHeight()}
+	<br />{$locale->tr("legnth")}: {$metadata->getLengthString()}
+   {elseif $resource->isZip()}
+   	<br />{$locale->tr("files")}: {$metadata->getTotalFiles()} 
+   {/if}
+   </div>
+	
+  <p>	
+   {$resource->getDescription()}<br /><br />
+   <a href="javascript:history.go(-1);">{$locale->tr("back")}</a>
+  </p>
+
+
+ </div>
+</div>
+{include file="$blogtemplate/footer.template"}

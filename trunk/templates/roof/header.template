@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+
+<!-- This template has been designed by Martijn ten Napel, http://blogtemplates.noipo.org/ -->
+
+<!--
+     This template is distributed under the Creative Commons License. For more information, please
+     see http://creativecommons.org/licenses/by-nc-sa/1.0/ and
+     http://creativecommons.org/licenses/by-nc-sa/1.0/legalcode
+
+     The pLog team.
+-->
+
+	<title>{$blog->getBlog()}</title>
+	<meta http-equiv="Content-Type" content="text/html; charset={$locale->getCharset()}" />
+	<!-- the part below <style> determines the look of the page -->
+	<link rel="stylesheet" title="default" type="text/css" media="screen" href="{$url->getTemplateFile("roof.css")}" />
+</style>
+ <link rel="alternate" type="text/xml" title="RSS 2.0" href="{$url->rssLink("rss20")}" />
+ <link rel="alternate" type="text/xml" title="RSS 1.0" href="{$url->rssLink("rss10")}" />
+ <link rel="alternate" type="text/xml" title="RSS 0.90" href="{$url->rssLink("rss090")}" />
+ <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="{$url->rssLink("atom")}" />
+</head>
+
+<body>
+<div id="content">
+<!-- start of content space -->
+<h1>{$blog->getBlog()}</h1>

@@ -1,0 +1,4 @@
+{include file="$blogtemplate/header.template"}
+ <h1>{$locale->tr("error")}</h1>
+ <p>{$locale->tr($message)}</p>
+{include file="$blogtemplate/footer.template"}

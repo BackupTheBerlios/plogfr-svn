@@ -1,0 +1,43 @@
+<div id="left">
+<div id="leftlist">
+<H1 CLASS="leftmenu">Recent Posts</h1>
+<ul>
+{foreach from=$recentposts item=recentpost}
+<li><a title="{$recentpost->getText()|truncate:25:"..."|strip_tags|escape}" href="{$url->postLink($recentpost)}">{$recentpost->getTopic()}</a></li>
+{/foreach}
+</ul>
+<H1 CLASS="leftmenu">Categories</h1>
+<ul>
+{foreach from=$articlecategories item=articleCategory}
+<li><a href="{$url->categoryLink($articleCategory)}">{$articleCategory->getName()}</a></li>
+{/foreach}
+</ul>
+
+{if $topreadposts->isEnabled()}
+<H1 CLASS="leftmenu">Top Read Posts</h1>
+<ul>
+{assign var=readposts value=$topreadposts->getTopReadPosts()}
+{foreach from=$readposts item=readpost}
+<li><a href="{$url->postLink($readpost)}">{$readpost->getTopic()|truncate:10:"..."|strip_tags|escape} ({$readpost->getNumReads()} Times)</a></li>
+{/foreach}
+
+{if $topcommentposts->isEnabled()}
+<H1 CLASS="leftmenu">Top Comments</h1>
+{assign var=commentposts value=$topcommentposts->getTopCommentPosts()}
+{foreach from=$commentposts item=commentpost}
+<br />
+<a href="{$url->postLink($commentpost)}">{$commentpost->getTopic()|truncate:10:"..."|strip_tags|escape} ({$commentpost->getTotalComments()} Comments)</a>
+{/foreach} <br/><br/>
+{/if}
+{/if}
+
+<!-- {if $plogpoll neq ""}
+<H1 CLASS="leftmenu">Testing Poll</h1>
+<H1 CLASS="leftmenutext">
+{assign var=blogid value=$blog->getId()}
+{$plogpoll->generateActivePollHTML($blogid)}
+</h1>
+{/if} -->
+
+</div>
+</div>

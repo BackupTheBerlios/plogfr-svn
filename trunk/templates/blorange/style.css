@@ -1,0 +1,308 @@
+/* 
+	Blorange (v1.1) stylesheet for Wordpress 1.0+ || http://www.wordpress.org
+	
+	Layout, Style and Design by B A Khan || http://www.3digita.com
+	
+	Get more free templates, skins and stylesheets from 3digita.com!
+
+	License : GPL - http://www.gnu.org/copyleft/gpl.html
+*/
+
+body {
+	font-family: Verdana, Arial, Serif;
+	margin: 0;
+	padding: 0;
+	color: #333333;
+	background: #0a3567;
+}
+
+/* =====| MAIN LINKS |========== */
+
+a, .feedback a, .meta a  {
+	color: #ff7f00;
+	text-decoration: none;
+	border-bottom: 1px dashed;
+}
+
+a img {
+	border: none;
+}
+
+a:visited {
+	color: #ff7f00;
+}
+
+a:hover, .feedback a:hover, .meta a:hover  {
+	color: #ff0000;
+	text-decoration: none;
+	border-bottom: 1px solid;
+}
+
+
+/* =====| HEADER |========== */
+
+#header {
+	position:relative;
+	background: #333333;
+	margin:0px;
+	padding: 15px 0px 5px 30px;
+	border-bottom: 2px solid #fff;
+
+	font: 35px Verdana, Arial, Serif;
+	letter-spacing: -1px;
+
+	height:55px !important;
+	height /**/: 77px; /* for IE5/Win */
+}
+
+#header a {
+	color: #fff;
+	text-decoration: none;
+	border:0;
+}
+
+#header a:hover {
+	color: #ff0000;
+	text-decoration: none;
+}
+
+
+/* =====| MAIN BODY |========== */
+ 
+#content {
+	position:relative;
+	top:0px;
+	width:auto;
+	margin:0px;
+	margin-right:300px;
+	height: 100%;
+	background: #fff;
+	padding:10px 20px 50px 30px;
+	font: 80% Verdana, Arial, Serif;
+
+}
+
+h2, code {
+	font-family: Verdana, Arial, Serif;
+	margin: 15px 0 2px 0;
+	padding-bottom: 5px;
+	color: #0080ff;
+}
+
+h2 {
+	font: 120% Verdana, Arial, Serif;
+}
+
+h3 {
+	margin: 0;
+}
+
+.storytitle {
+	font-size: 170%;
+	letter-spacing:-1px;
+}
+
+p, .feedback {
+}
+
+.storycontent ul {
+	list-style: square;
+}
+
+acronym, abbr {
+	border-bottom: 1px dashed #333;
+}
+
+acronym, abbr, span.caps {
+	cursor: help;
+}
+
+blockquote {
+	border-left: 5px solid #ccc;
+	margin-left: 1.5em;
+	padding-left: 5px;
+}
+
+.credit {
+	font: 80% Verdana, Arial, Serif;
+	position:relative;
+	width:auto;
+	top:0px;
+	margin:0px;
+	text-align: center;
+	background: #ffffff;	
+	margin-right:300px;
+	padding:0 20px 20px 30px;
+}
+
+.credit a:link {
+	color: #ff7f00;
+	text-decoration: none;
+}
+
+.credit a:hover {
+	color: #ff0000;
+}
+
+cite {
+	font-style: normal;
+}
+
+.feedback {
+	text-align: right;
+}
+
+.meta {
+	margin: 15px 0 0px 0;
+	color: #808080;
+}
+
+.meta ul {
+	display: inline;
+	margin: 0;
+	padding: 0;
+}
+
+.meta li {
+	display: inline;
+	list-style: none;
+	padding-left:5px;
+	padding-right:5px;
+	border-left : 1px solid #808080;
+}
+
+#commentform {
+	background: #eeeeee;
+	padding:10px;
+}
+
+#commentform p {
+	padding:5px;
+	margin:0px;
+}
+
+
+#commentform input, #commentform textarea {
+	background: #ffffff;
+	border: 1px solid #333;
+	font: 1em Verdana, Arial, Serif;
+	padding-left: 2px;
+}
+
+#commentform textarea {
+	width: 90%;
+	padding-left: 2px;
+}	
+
+
+/* =====| SIDE MENU |========== */
+
+#menu {
+	position: absolute;
+	height:100%;
+	top: 82px;
+	right:0;
+	padding: 20px;
+	width: 250px !important;
+	width /**/: 290px; /* for IE5/Win */
+}
+
+#menu form {
+	margin: 0 0 0 20px;
+}
+
+#menu input {
+	background: #ffffff;
+	border: 1px solid #333;
+	font: 60% Verdana, Arial, Serif;
+	padding-left: 2px;
+}
+
+#menu ul {
+	list-style-type: none;
+	margin: 0px;
+	padding-left: 5px;
+}
+
+#menu ul li {
+	font: 150% Verdana, Arial, Serif;
+	letter-spacing: -1px;
+	margin-bottom: 15px;
+	color: #ffffff;
+	text-transform: lowercase;
+}
+
+#menu ul ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+}
+
+#menu ul ul li {
+	letter-spacing: 0;
+	margin: 0;
+	padding-left: 20px;
+	font: 60% Verdana, Arial, Serif;
+}
+
+#menu ul ul li a {
+	color: #ff7f00;
+	text-decoration: none;
+}
+
+#menu ul ul li a:hover {
+	color: #ff0000;
+}
+
+
+/* =====| CALENDAR |========== */
+
+#calendar {
+	empty-cells: show;
+	font-size: 14px;
+	margin: 0px;
+	width: 200px;
+}
+.calMonthHeader, .calMonthNav{
+	color: #fff;
+	font: 14px Verdana, Arial, serif;
+	padding-top:10px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+#calendar .calMonthForward, #calendar .calMonthForward>a{
+	padding-left: 5px;
+	text-align: center;
+	border:0px;
+}
+
+#calendar .calMonthBackward, #calendar .calMonthBackward>a{
+	padding-right: 5px;
+	text-align: center;
+	border:0px;
+}
+
+.calDayLink {
+	display: block;
+	text-decoration: none;
+}
+
+#calendar a:hover {
+	background: #ffffff;
+	color: #ff0000;
+}
+
+#calendar td {
+	color: #808080;
+	font: normal 12px Verdana, Arial, serif;
+	padding: 1px;
+	text-align: center;
+}
+
+#calendar .calMonthToday {
+	border: 1px solid #ffffff;
+}
+
+

@@ -1,0 +1,3833 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 39;
+	objects = {
+		55BD6FC60668DF6D00917C64 = {
+			children = (
+				55BD6FCF0668DF8200917C64,
+				55BD6FF30668DF8300917C64,
+				55BD70190668DF8300917C64,
+				55BD702D0668DF8300917C64,
+				55BD70400668DF8300917C64,
+				55BD70560668DF8300917C64,
+				55BD706C0668DF8300917C64,
+				55BD70800668DF8300917C64,
+				55BD70920668DF8300917C64,
+				55BD70AC0668DF8300917C64,
+				55BD70C60668DF8400917C64,
+				55BD70EA0668DF8400917C64,
+				55BD70FF0668DF8400917C64,
+				55BD71170668DF8400917C64,
+				55BD712C0668DF8400917C64,
+				55BD713D0668DF8400917C64,
+				55BD71500668DF8400917C64,
+				55BD71630668DF8400917C64,
+				55BD71760668DF8400917C64,
+				55BD719B0668DF8400917C64,
+			);
+			isa = PBXGroup;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD6FC80668DF6D00917C64 = {
+			buildRules = (
+			);
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			isa = PBXBuildStyle;
+			name = Development;
+		};
+		55BD6FC90668DF6D00917C64 = {
+			buildRules = (
+			);
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+			};
+			isa = PBXBuildStyle;
+			name = Deployment;
+		};
+		55BD6FCA0668DF6D00917C64 = {
+			buildSettings = {
+			};
+			buildStyles = (
+				55BD6FC80668DF6D00917C64,
+				55BD6FC90668DF6D00917C64,
+			);
+			hasScannedForEncodings = 1;
+			isa = PBXProject;
+			mainGroup = 55BD6FC60668DF6D00917C64;
+			projectDirPath = "";
+			targets = (
+			);
+		};
+		55BD6FCF0668DF8200917C64 = {
+			children = (
+				55BD6FD00668DF8200917C64,
+				55BD6FD10668DF8200917C64,
+				55BD6FD20668DF8200917C64,
+				55BD6FD30668DF8200917C64,
+				55BD6FD40668DF8200917C64,
+				55BD6FD50668DF8200917C64,
+				55BD6FD60668DF8200917C64,
+				55BD6FD70668DF8200917C64,
+				55BD6FD80668DF8200917C64,
+				55BD6FD90668DF8200917C64,
+				55BD6FDA0668DF8200917C64,
+				55BD6FDB0668DF8200917C64,
+				55BD6FDC0668DF8200917C64,
+				55BD6FDD0668DF8200917C64,
+				55BD6FDE0668DF8200917C64,
+				55BD6FDF0668DF8200917C64,
+				55BD6FE00668DF8200917C64,
+				55BD6FE10668DF8200917C64,
+			);
+			isa = PBXGroup;
+			name = aubmach;
+			path = "/Users/oscar/Sites/plog-0.3.2/templates/blog_1/aubmach";
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		55BD6FD00668DF8200917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.png;
+			path = "446-70.png";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD6FD10668DF8200917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = about.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD6FD20668DF8200917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = album.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD6FD30668DF8200917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = albums.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD6FD40668DF8200917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.png;
+			path = aubmach.png;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD6FD50668DF8200917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = commentarticle.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD6FD60668DF8200917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = commentform.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD6FD70668DF8200917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = error.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD6FD80668DF8200917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = footer.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD6FD90668DF8200917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = header.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD6FDA0668DF8200917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = linktracker.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD6FDB0668DF8200917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = main.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD6FDC0668DF8200917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = panel.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD6FDD0668DF8200917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = post.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD6FDE0668DF8200917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = postandcomments.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD6FDF0668DF8200917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = posttrackbacks.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD6FE00668DF8200917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = resource.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD6FE10668DF8200917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = style.css;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD6FF30668DF8300917C64 = {
+			children = (
+				55BD6FF40668DF8300917C64,
+				55BD6FF50668DF8300917C64,
+				55BD6FF60668DF8300917C64,
+				55BD6FF70668DF8300917C64,
+				55BD6FF80668DF8300917C64,
+				55BD6FF90668DF8300917C64,
+				55BD6FFA0668DF8300917C64,
+				55BD6FFB0668DF8300917C64,
+				55BD6FFC0668DF8300917C64,
+				55BD6FFD0668DF8300917C64,
+				55BD6FFE0668DF8300917C64,
+				55BD6FFF0668DF8300917C64,
+				55BD70000668DF8300917C64,
+				55BD70010668DF8300917C64,
+				55BD70020668DF8300917C64,
+				55BD70030668DF8300917C64,
+			);
+			isa = PBXGroup;
+			name = blorange;
+			path = "/Users/oscar/Sites/plog-0.3.2/templates/blog_1/blorange";
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		55BD6FF40668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = about.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD6FF50668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = album.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD6FF60668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = albums.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD6FF70668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = commentarticle.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD6FF80668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = commentform.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD6FF90668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = error.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD6FFA0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = footer.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD6FFB0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = header.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD6FFC0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = linktracker.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD6FFD0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = main.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD6FFE0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = panel.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD6FFF0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = post.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70000668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = postandcomments.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70010668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = posttrackbacks.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70020668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = resource.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70030668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = style.css;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70190668DF8300917C64 = {
+			children = (
+				55BD701A0668DF8300917C64,
+				55BD701B0668DF8300917C64,
+				55BD701C0668DF8300917C64,
+				55BD701D0668DF8300917C64,
+				55BD701E0668DF8300917C64,
+				55BD701F0668DF8300917C64,
+				55BD70200668DF8300917C64,
+				55BD70210668DF8300917C64,
+				55BD70220668DF8300917C64,
+				55BD70250668DF8300917C64,
+				55BD70260668DF8300917C64,
+				55BD70270668DF8300917C64,
+				55BD70280668DF8300917C64,
+				55BD70290668DF8300917C64,
+				55BD702A0668DF8300917C64,
+				55BD702B0668DF8300917C64,
+				55BD702C0668DF8300917C64,
+			);
+			isa = PBXGroup;
+			name = buddha;
+			path = "/Users/oscar/Sites/plog-0.3.2/templates/blog_1/buddha";
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		55BD701A0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = about.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD701B0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = album.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD701C0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = albums.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD701D0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = commentarticle.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD701E0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = commentform.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD701F0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = error.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70200668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = footer.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70210668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = header.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70220668DF8300917C64 = {
+			children = (
+				55BD70230668DF8300917C64,
+			);
+			isa = PBXGroup;
+			path = images;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70230668DF8300917C64 = {
+			children = (
+				55BD70240668DF8300917C64,
+			);
+			isa = PBXGroup;
+			path = buddha;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70240668DF8300917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.jpeg;
+			path = "buddha-sm.jpg";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70250668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = linktracker.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70260668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = main.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70270668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = panel.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70280668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = post.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70290668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = postandcomments.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD702A0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = posttrackbacks.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD702B0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = resource.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD702C0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = style.css;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD702D0668DF8300917C64 = {
+			children = (
+				55BD702E0668DF8300917C64,
+				55BD702F0668DF8300917C64,
+				55BD70300668DF8300917C64,
+				55BD70310668DF8300917C64,
+				55BD70320668DF8300917C64,
+				55BD70330668DF8300917C64,
+				55BD70340668DF8300917C64,
+				55BD70350668DF8300917C64,
+				55BD70360668DF8300917C64,
+				55BD70370668DF8300917C64,
+				55BD70380668DF8300917C64,
+				55BD70390668DF8300917C64,
+				55BD703A0668DF8300917C64,
+				55BD703B0668DF8300917C64,
+				55BD703C0668DF8300917C64,
+				55BD703D0668DF8300917C64,
+				55BD703E0668DF8300917C64,
+				55BD703F0668DF8300917C64,
+			);
+			isa = PBXGroup;
+			name = cab;
+			path = "/Users/oscar/Sites/plog-0.3.2/templates/blog_1/cab";
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		55BD702E0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = about.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD702F0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = album.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70300668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = albums.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70310668DF8300917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.jpeg;
+			path = cabbottom.jpg;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70320668DF8300917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.jpeg;
+			path = cabhead.jpg;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70330668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = commentarticle.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70340668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = commentform.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70350668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = error.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70360668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = footer.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70370668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = header.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70380668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = linktracker.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70390668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = main.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD703A0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = panel.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD703B0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = post.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD703C0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = postandcomments.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD703D0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = posttrackbacks.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD703E0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = resource.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD703F0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = style.css;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70400668DF8300917C64 = {
+			children = (
+				55BD70410668DF8300917C64,
+				55BD70420668DF8300917C64,
+				55BD70430668DF8300917C64,
+				55BD70440668DF8300917C64,
+				55BD70450668DF8300917C64,
+				55BD70460668DF8300917C64,
+				55BD70470668DF8300917C64,
+				55BD70480668DF8300917C64,
+				55BD70490668DF8300917C64,
+				55BD704D0668DF8300917C64,
+				55BD704E0668DF8300917C64,
+				55BD704F0668DF8300917C64,
+				55BD70500668DF8300917C64,
+				55BD70510668DF8300917C64,
+				55BD70520668DF8300917C64,
+				55BD70530668DF8300917C64,
+				55BD70540668DF8300917C64,
+				55BD70550668DF8300917C64,
+			);
+			isa = PBXGroup;
+			name = darkfire;
+			path = "/Users/oscar/Sites/plog-0.3.2/templates/blog_1/darkfire";
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		55BD70410668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = about.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70420668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = album.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70430668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = albums.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70440668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = commentarticle.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70450668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = commentform.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70460668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = error.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70470668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = footer.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70480668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = header.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70490668DF8300917C64 = {
+			children = (
+				55BD704A0668DF8300917C64,
+				55BD704B0668DF8300917C64,
+				55BD704C0668DF8300917C64,
+			);
+			isa = PBXGroup;
+			path = images;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD704A0668DF8300917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.gif;
+			path = bg_darkfire.gif;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD704B0668DF8300917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.gif;
+			path = header_darkfire.gif;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD704C0668DF8300917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.gif;
+			path = input_bg_darkfire.gif;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD704D0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = linktracker.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD704E0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = main.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD704F0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = panel.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70500668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = post.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70510668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = postandcomments.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70520668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = posttrackbacks.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70530668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = resource.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70540668DF8300917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.gif;
+			path = sample.gif;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70550668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = style.css;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70560668DF8300917C64 = {
+			children = (
+				55BD70570668DF8300917C64,
+				55BD70580668DF8300917C64,
+				55BD70590668DF8300917C64,
+				55BD705A0668DF8300917C64,
+				55BD705B0668DF8300917C64,
+				55BD705C0668DF8300917C64,
+				55BD705D0668DF8300917C64,
+				55BD705E0668DF8300917C64,
+				55BD705F0668DF8300917C64,
+				55BD70620668DF8300917C64,
+				55BD70630668DF8300917C64,
+				55BD70640668DF8300917C64,
+				55BD70650668DF8300917C64,
+				55BD70660668DF8300917C64,
+				55BD70670668DF8300917C64,
+				55BD70680668DF8300917C64,
+				55BD70690668DF8300917C64,
+				55BD706A0668DF8300917C64,
+				55BD706B0668DF8300917C64,
+			);
+			isa = PBXGroup;
+			name = dots;
+			path = "/Users/oscar/Sites/plog-0.3.2/templates/blog_1/dots";
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		55BD70570668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = about.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70580668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = album.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70590668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = albums.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD705A0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = commentarticle.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD705B0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = commentform.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD705C0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = error.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD705D0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = footer.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD705E0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = header.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD705F0668DF8300917C64 = {
+			children = (
+				55BD70600668DF8300917C64,
+				55BD70610668DF8300917C64,
+			);
+			isa = PBXGroup;
+			path = images;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70600668DF8300917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.jpeg;
+			path = columns.jpg;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70610668DF8300917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.gif;
+			path = header_background.gif;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70620668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = linktracker.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70630668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = main.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70640668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = panel.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70650668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = post.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70660668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = postandcomments.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70670668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = posttrackbacks.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70680668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = resource.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70690668DF8300917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.gif;
+			path = sample.gif;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD706A0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = style.css;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD706B0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = style.css.bak;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD706C0668DF8300917C64 = {
+			children = (
+				55BD706D0668DF8300917C64,
+				55BD706E0668DF8300917C64,
+				55BD706F0668DF8300917C64,
+				55BD70700668DF8300917C64,
+				55BD70710668DF8300917C64,
+				55BD70720668DF8300917C64,
+				55BD70730668DF8300917C64,
+				55BD70740668DF8300917C64,
+				55BD70750668DF8300917C64,
+				55BD70780668DF8300917C64,
+				55BD70790668DF8300917C64,
+				55BD707A0668DF8300917C64,
+				55BD707B0668DF8300917C64,
+				55BD707C0668DF8300917C64,
+				55BD707D0668DF8300917C64,
+				55BD707E0668DF8300917C64,
+				55BD707F0668DF8300917C64,
+			);
+			isa = PBXGroup;
+			name = "drove-all-night";
+			path = "/Users/oscar/Sites/plog-0.3.2/templates/blog_1/drove-all-night";
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		55BD706D0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = about.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD706E0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = album.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD706F0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = albums.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70700668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = commentarticle.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70710668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = commentform.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70720668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = error.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70730668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = footer.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70740668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = header.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70750668DF8300917C64 = {
+			children = (
+				55BD70760668DF8300917C64,
+				55BD70770668DF8300917C64,
+			);
+			isa = PBXGroup;
+			path = images;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70760668DF8300917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.jpeg;
+			path = droveallnight.jpg;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70770668DF8300917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = file;
+			path = Thumbs.db;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70780668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = linktracker.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70790668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = main.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD707A0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = panel.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD707B0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = post.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD707C0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = postandcomments.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD707D0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = posttrackbacks.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD707E0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = resource.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD707F0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = style.css;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70800668DF8300917C64 = {
+			children = (
+				55BD70810668DF8300917C64,
+				55BD70820668DF8300917C64,
+				55BD70830668DF8300917C64,
+				55BD70840668DF8300917C64,
+				55BD70850668DF8300917C64,
+				55BD70860668DF8300917C64,
+				55BD70870668DF8300917C64,
+				55BD70880668DF8300917C64,
+				55BD70890668DF8300917C64,
+				55BD708A0668DF8300917C64,
+				55BD708B0668DF8300917C64,
+				55BD708C0668DF8300917C64,
+				55BD708D0668DF8300917C64,
+				55BD708E0668DF8300917C64,
+				55BD708F0668DF8300917C64,
+				55BD70900668DF8300917C64,
+				55BD70910668DF8300917C64,
+			);
+			isa = PBXGroup;
+			name = flower;
+			path = "/Users/oscar/Sites/plog-0.3.2/templates/blog_1/flower";
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		55BD70810668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = about.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70820668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = album.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70830668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = albums.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70840668DF8300917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.jpeg;
+			path = bg.jpg;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70850668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = commentarticle.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70860668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = commentform.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70870668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = error.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70880668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = footer.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70890668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = header.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD708A0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = linktracker.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD708B0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = main.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD708C0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = panel.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD708D0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = post.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD708E0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = postandcomments.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD708F0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = posttrackbacks.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70900668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = resource.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70910668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = style.css;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70920668DF8300917C64 = {
+			children = (
+				55BD70930668DF8300917C64,
+				55BD70940668DF8300917C64,
+				55BD70950668DF8300917C64,
+				55BD70960668DF8300917C64,
+				55BD70970668DF8300917C64,
+				55BD70980668DF8300917C64,
+				55BD70990668DF8300917C64,
+				55BD709A0668DF8300917C64,
+				55BD709B0668DF8300917C64,
+				55BD70A30668DF8300917C64,
+				55BD70A40668DF8300917C64,
+				55BD70A50668DF8300917C64,
+				55BD70A60668DF8300917C64,
+				55BD70A70668DF8300917C64,
+				55BD70A80668DF8300917C64,
+				55BD70A90668DF8300917C64,
+				55BD70AA0668DF8300917C64,
+				55BD70AB0668DF8300917C64,
+			);
+			isa = PBXGroup;
+			name = gutenberg;
+			path = "/Users/oscar/Sites/plog-0.3.2/templates/blog_1/gutenberg";
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		55BD70930668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = about.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70940668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = album.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70950668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = albums.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70960668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = commentarticle.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70970668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = commentform.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70980668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = error.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70990668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = footer.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD709A0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = header.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD709B0668DF8300917C64 = {
+			children = (
+				55BD709C0668DF8300917C64,
+				55BD709D0668DF8300917C64,
+				55BD709E0668DF8300917C64,
+				55BD709F0668DF8300917C64,
+			);
+			isa = PBXGroup;
+			path = images;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD709C0668DF8300917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.gif;
+			path = blockquote.gif;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD709D0668DF8300917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.gif;
+			path = code.gif;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD709E0668DF8300917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.gif;
+			path = gutenberg.gif;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD709F0668DF8300917C64 = {
+			children = (
+				55BD70A00668DF8300917C64,
+				55BD70A10668DF8300917C64,
+				55BD70A20668DF8300917C64,
+			);
+			isa = PBXGroup;
+			path = icons;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70A00668DF8300917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.gif;
+			path = email.gif;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70A10668DF8300917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.gif;
+			path = outside.gif;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70A20668DF8300917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.gif;
+			path = pdf.gif;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70A30668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = linktracker.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70A40668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = main.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70A50668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = panel.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70A60668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = post.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70A70668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = postandcomments.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70A80668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = posttrackbacks.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70A90668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = resource.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70AA0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = "style-uncommented.css";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70AB0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = style.css;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70AC0668DF8300917C64 = {
+			children = (
+				55BD70AD0668DF8300917C64,
+				55BD70AE0668DF8300917C64,
+				55BD70AF0668DF8300917C64,
+				55BD70B00668DF8300917C64,
+				55BD70B10668DF8300917C64,
+				55BD70B20668DF8400917C64,
+				55BD70B30668DF8400917C64,
+				55BD70B40668DF8400917C64,
+				55BD70B50668DF8400917C64,
+				55BD70BE0668DF8400917C64,
+				55BD70BF0668DF8400917C64,
+				55BD70C00668DF8400917C64,
+				55BD70C10668DF8400917C64,
+				55BD70C20668DF8400917C64,
+				55BD70C30668DF8400917C64,
+				55BD70C40668DF8400917C64,
+				55BD70C50668DF8400917C64,
+			);
+			isa = PBXGroup;
+			name = human_condition;
+			path = "/Users/oscar/Sites/plog-0.3.2/templates/blog_1/human_condition";
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		55BD70AD0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = about.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70AE0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = album.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70AF0668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = albums.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70B00668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = commentarticle.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70B10668DF8300917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = commentform.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70B20668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = error.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70B30668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = footer.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70B40668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = header.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70B50668DF8400917C64 = {
+			children = (
+				55BD70B60668DF8400917C64,
+				55BD70B70668DF8400917C64,
+				55BD70B80668DF8400917C64,
+				55BD70B90668DF8400917C64,
+				55BD70BA0668DF8400917C64,
+				55BD70BB0668DF8400917C64,
+				55BD70BC0668DF8400917C64,
+				55BD70BD0668DF8400917C64,
+			);
+			isa = PBXGroup;
+			path = images;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70B60668DF8400917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.gif;
+			path = bg.gif;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70B70668DF8400917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.gif;
+			path = bullet.gif;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70B80668DF8400917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.gif;
+			path = date.gif;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70B90668DF8400917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.gif;
+			path = fg.gif;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70BA0668DF8400917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.gif;
+			path = footer.gif;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70BB0668DF8400917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.gif;
+			path = header.gif;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70BC0668DF8400917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.gif;
+			path = posts.gif;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70BD0668DF8400917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.gif;
+			path = today.gif;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70BE0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = linktracker.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70BF0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = main.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70C00668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = panel.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70C10668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = post.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70C20668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = postandcomments.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70C30668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = posttrackbacks.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70C40668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = resource.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70C50668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = style.css;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70C60668DF8400917C64 = {
+			children = (
+				55BD70C70668DF8400917C64,
+				55BD70C80668DF8400917C64,
+				55BD70C90668DF8400917C64,
+				55BD70CA0668DF8400917C64,
+				55BD70CB0668DF8400917C64,
+				55BD70CC0668DF8400917C64,
+				55BD70CD0668DF8400917C64,
+				55BD70CE0668DF8400917C64,
+				55BD70CF0668DF8400917C64,
+				55BD70E20668DF8400917C64,
+				55BD70E30668DF8400917C64,
+				55BD70E40668DF8400917C64,
+				55BD70E50668DF8400917C64,
+				55BD70E60668DF8400917C64,
+				55BD70E70668DF8400917C64,
+				55BD70E80668DF8400917C64,
+				55BD70E90668DF8400917C64,
+			);
+			isa = PBXGroup;
+			name = "mars-spirit";
+			path = "/Users/oscar/Sites/plog-0.3.2/templates/blog_1/mars-spirit";
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		55BD70C70668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = about.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70C80668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = album.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70C90668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = albums.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70CA0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = commentarticle.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70CB0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = commentform.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70CC0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = error.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70CD0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = footer.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70CE0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = header.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70CF0668DF8400917C64 = {
+			children = (
+				55BD70D00668DF8400917C64,
+				55BD70D10668DF8400917C64,
+				55BD70D20668DF8400917C64,
+				55BD70D30668DF8400917C64,
+				55BD70D40668DF8400917C64,
+				55BD70D50668DF8400917C64,
+				55BD70D60668DF8400917C64,
+				55BD70D70668DF8400917C64,
+				55BD70D80668DF8400917C64,
+				55BD70D90668DF8400917C64,
+				55BD70DA0668DF8400917C64,
+				55BD70DB0668DF8400917C64,
+				55BD70DC0668DF8400917C64,
+				55BD70DD0668DF8400917C64,
+				55BD70DE0668DF8400917C64,
+				55BD70DF0668DF8400917C64,
+				55BD70E00668DF8400917C64,
+				55BD70E10668DF8400917C64,
+			);
+			isa = PBXGroup;
+			path = images;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70D00668DF8400917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.jpeg;
+			path = "bg-body.jpg";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70D10668DF8400917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.jpeg;
+			path = "bg-post.jpg";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70D20668DF8400917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.jpeg;
+			path = comments.jpg;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70D30668DF8400917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.jpeg;
+			path = date.jpg;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70D40668DF8400917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.jpeg;
+			path = header.jpg;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70D50668DF8400917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.gif;
+			path = "list-archives.gif";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70D60668DF8400917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.gif;
+			path = "list-calendar.gif";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70D70668DF8400917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.gif;
+			path = "list-category.gif";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70D80668DF8400917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.gif;
+			path = "list-meta.gif";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70D90668DF8400917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.gif;
+			path = "list-other.gif";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70DA0668DF8400917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.gif;
+			path = "list-post.gif";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70DB0668DF8400917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.gif;
+			path = "list-search.gif";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70DC0668DF8400917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.gif;
+			path = "list-styles.gif";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70DD0668DF8400917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.gif;
+			path = "list-wordpress.gif";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70DE0668DF8400917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.gif;
+			path = "tabbed-meta.gif";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70DF0668DF8400917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.gif;
+			path = today.gif;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70E00668DF8400917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.gif;
+			path = topic.gif;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70E10668DF8400917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.jpeg;
+			path = topic.jpg;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70E20668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = linktracker.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70E30668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = main.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70E40668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = panel.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70E50668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = post.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70E60668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = postandcomments.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70E70668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = posttrackbacks.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70E80668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = resource.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70E90668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = style.css;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70EA0668DF8400917C64 = {
+			children = (
+				55BD70EB0668DF8400917C64,
+				55BD70EC0668DF8400917C64,
+				55BD70ED0668DF8400917C64,
+				55BD70EE0668DF8400917C64,
+				55BD70EF0668DF8400917C64,
+				55BD70F00668DF8400917C64,
+				55BD70F10668DF8400917C64,
+				55BD70F20668DF8400917C64,
+				55BD70F30668DF8400917C64,
+				55BD70F40668DF8400917C64,
+				55BD70F50668DF8400917C64,
+				55BD70F60668DF8400917C64,
+				55BD70F70668DF8400917C64,
+				55BD70F80668DF8400917C64,
+				55BD70F90668DF8400917C64,
+				55BD70FA0668DF8400917C64,
+				55BD70FB0668DF8400917C64,
+				55BD70FC0668DF8400917C64,
+				55BD70FD0668DF8400917C64,
+				55BD70FE0668DF8400917C64,
+			);
+			isa = PBXGroup;
+			name = outback;
+			path = "/Users/oscar/Sites/plog-0.3.2/templates/blog_1/outback";
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		55BD70EB0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = about.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70EC0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = album.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70ED0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = albums.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70EE0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = commentarticle.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70EF0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = commentform.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70F00668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = error.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70F10668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = footer.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70F20668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = header.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70F30668DF8400917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.jpeg;
+			path = headerimg.jpg;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70F40668DF8400917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.gif;
+			path = kangaroo.gif;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70F50668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = linktracker.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70F60668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = main.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70F70668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = panel.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70F80668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = post.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70F90668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = postandcomments.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70FA0668DF8400917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.gif;
+			path = postbg.gif;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70FB0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = posttrackbacks.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70FC0668DF8400917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.gif;
+			path = rapbg.gif;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70FD0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = resource.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70FE0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = style.css;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD70FF0668DF8400917C64 = {
+			children = (
+				55BD71000668DF8400917C64,
+				55BD71010668DF8400917C64,
+				55BD71020668DF8400917C64,
+				55BD71030668DF8400917C64,
+				55BD71040668DF8400917C64,
+				55BD71050668DF8400917C64,
+				55BD71060668DF8400917C64,
+				55BD71070668DF8400917C64,
+				55BD71080668DF8400917C64,
+				55BD71090668DF8400917C64,
+				55BD710A0668DF8400917C64,
+				55BD710B0668DF8400917C64,
+				55BD710C0668DF8400917C64,
+				55BD710D0668DF8400917C64,
+				55BD710E0668DF8400917C64,
+				55BD710F0668DF8400917C64,
+				55BD71100668DF8400917C64,
+				55BD71110668DF8400917C64,
+				55BD71120668DF8400917C64,
+				55BD71130668DF8400917C64,
+				55BD71140668DF8400917C64,
+				55BD71150668DF8400917C64,
+				55BD71160668DF8400917C64,
+			);
+			isa = PBXGroup;
+			name = pink_lilies;
+			path = "/Users/oscar/Sites/plog-0.3.2/templates/blog_1/pink_lilies";
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		55BD71000668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = about.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71010668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = album.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71020668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = albums.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71030668DF8400917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.gif;
+			path = bullet.gif;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71040668DF8400917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.gif;
+			path = comment.gif;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71050668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = commentarticle.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71060668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = commentform.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71070668DF8400917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.gif;
+			path = date.gif;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71080668DF8400917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.gif;
+			path = day.gif;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71090668DF8400917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.gif;
+			path = day2.gif;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD710A0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = error.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD710B0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = footer.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD710C0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = header.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD710D0668DF8400917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.jpeg;
+			path = lilies.jpg;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD710E0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = linktracker.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD710F0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = main.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71100668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = panel.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71110668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = post.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71120668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = postandcomments.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71130668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = posttrackbacks.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71140668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = resource.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71150668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = style.css;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71160668DF8400917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.gif;
+			path = top.gif;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71170668DF8400917C64 = {
+			children = (
+				55BD71180668DF8400917C64,
+				55BD71190668DF8400917C64,
+				55BD711A0668DF8400917C64,
+				55BD711B0668DF8400917C64,
+				55BD711C0668DF8400917C64,
+				55BD711D0668DF8400917C64,
+				55BD711E0668DF8400917C64,
+				55BD711F0668DF8400917C64,
+				55BD71200668DF8400917C64,
+				55BD71240668DF8400917C64,
+				55BD71250668DF8400917C64,
+				55BD71260668DF8400917C64,
+				55BD71270668DF8400917C64,
+				55BD71280668DF8400917C64,
+				55BD71290668DF8400917C64,
+				55BD712A0668DF8400917C64,
+				55BD712B0668DF8400917C64,
+			);
+			isa = PBXGroup;
+			name = rubric;
+			path = "/Users/oscar/Sites/plog-0.3.2/templates/blog_1/rubric";
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		55BD71180668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = about.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71190668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = album.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD711A0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = albums.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD711B0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = commentarticle.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD711C0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = commentform.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD711D0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = error.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD711E0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = footer.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD711F0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = header.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71200668DF8400917C64 = {
+			children = (
+				55BD71210668DF8400917C64,
+			);
+			isa = PBXGroup;
+			path = images;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71210668DF8400917C64 = {
+			children = (
+				55BD71220668DF8400917C64,
+				55BD71230668DF8400917C64,
+			);
+			isa = PBXGroup;
+			path = rubric;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71220668DF8400917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.gif;
+			path = gradient.gif;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71230668DF8400917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.jpeg;
+			path = "pen-sm.jpg";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71240668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = linktracker.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71250668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = main.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71260668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = panel.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71270668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = post.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71280668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = postandcomments.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71290668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = posttrackbacks.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD712A0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = resource.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD712B0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = style.css;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD712C0668DF8400917C64 = {
+			children = (
+				55BD712D0668DF8400917C64,
+				55BD712E0668DF8400917C64,
+				55BD712F0668DF8400917C64,
+				55BD71300668DF8400917C64,
+				55BD71310668DF8400917C64,
+				55BD71320668DF8400917C64,
+				55BD71330668DF8400917C64,
+				55BD71340668DF8400917C64,
+				55BD71350668DF8400917C64,
+				55BD71360668DF8400917C64,
+				55BD71370668DF8400917C64,
+				55BD71380668DF8400917C64,
+				55BD71390668DF8400917C64,
+				55BD713A0668DF8400917C64,
+				55BD713B0668DF8400917C64,
+				55BD713C0668DF8400917C64,
+			);
+			isa = PBXGroup;
+			name = silver;
+			path = "/Users/oscar/Sites/plog-0.3.2/templates/blog_1/silver";
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		55BD712D0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = about.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD712E0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = album.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD712F0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = albums.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71300668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = commentarticle.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71310668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = commentform.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71320668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = error.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71330668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = footer.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71340668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = header.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71350668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = linktracker.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71360668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = main.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71370668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = panel.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71380668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = post.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71390668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = postandcomments.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD713A0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = posttrackbacks.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD713B0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = resource.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD713C0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = style.css;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD713D0668DF8400917C64 = {
+			children = (
+				55BD713E0668DF8400917C64,
+				55BD713F0668DF8400917C64,
+				55BD71400668DF8400917C64,
+				55BD71410668DF8400917C64,
+				55BD71420668DF8400917C64,
+				55BD71430668DF8400917C64,
+				55BD71440668DF8400917C64,
+				55BD71450668DF8400917C64,
+				55BD71460668DF8400917C64,
+				55BD71470668DF8400917C64,
+				55BD71480668DF8400917C64,
+				55BD71490668DF8400917C64,
+				55BD714A0668DF8400917C64,
+				55BD714B0668DF8400917C64,
+				55BD714C0668DF8400917C64,
+				55BD714D0668DF8400917C64,
+				55BD714E0668DF8400917C64,
+				55BD714F0668DF8400917C64,
+			);
+			isa = PBXGroup;
+			name = simple_sky;
+			path = "/Users/oscar/Sites/plog-0.3.2/templates/blog_1/simple_sky";
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		55BD713E0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = about.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD713F0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = album.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71400668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = albums.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71410668DF8400917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.jpeg;
+			path = clouds.jpg;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71420668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = commentarticle.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71430668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = commentform.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71440668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = error.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71450668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = footer.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71460668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = header.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71470668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = linktracker.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71480668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = main.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71490668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = panel.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD714A0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = post.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD714B0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = postandcomments.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD714C0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = posttrackbacks.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD714D0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = resource.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD714E0668DF8400917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.jpeg;
+			path = sample.jpg;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD714F0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = style.css;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71500668DF8400917C64 = {
+			children = (
+				55BD71510668DF8400917C64,
+				55BD71520668DF8400917C64,
+				55BD71530668DF8400917C64,
+				55BD71540668DF8400917C64,
+				55BD71550668DF8400917C64,
+				55BD71560668DF8400917C64,
+				55BD71570668DF8400917C64,
+				55BD71580668DF8400917C64,
+				55BD71590668DF8400917C64,
+				55BD715B0668DF8400917C64,
+				55BD715C0668DF8400917C64,
+				55BD715D0668DF8400917C64,
+				55BD715E0668DF8400917C64,
+				55BD715F0668DF8400917C64,
+				55BD71600668DF8400917C64,
+				55BD71610668DF8400917C64,
+				55BD71620668DF8400917C64,
+			);
+			isa = PBXGroup;
+			name = splat;
+			path = "/Users/oscar/Sites/plog-0.3.2/templates/blog_1/splat";
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		55BD71510668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = about.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71520668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = album.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71530668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = albums.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71540668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = commentarticle.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71550668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = commentform.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71560668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = error.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71570668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = footer.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71580668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = header.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71590668DF8400917C64 = {
+			children = (
+				55BD715A0668DF8400917C64,
+			);
+			isa = PBXGroup;
+			path = images;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD715A0668DF8400917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.gif;
+			path = whitesplat.gif;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD715B0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = linktracker.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD715C0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = main.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD715D0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = panel.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD715E0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = post.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD715F0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = postandcomments.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71600668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = posttrackbacks.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71610668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = resource.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71620668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = style.css;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71630668DF8400917C64 = {
+			children = (
+				55BD71640668DF8400917C64,
+				55BD71650668DF8400917C64,
+				55BD71660668DF8400917C64,
+				55BD71670668DF8400917C64,
+				55BD71680668DF8400917C64,
+				55BD71690668DF8400917C64,
+				55BD716A0668DF8400917C64,
+				55BD716B0668DF8400917C64,
+				55BD716C0668DF8400917C64,
+				55BD716D0668DF8400917C64,
+				55BD716E0668DF8400917C64,
+				55BD716F0668DF8400917C64,
+				55BD71700668DF8400917C64,
+				55BD71710668DF8400917C64,
+				55BD71720668DF8400917C64,
+				55BD71730668DF8400917C64,
+				55BD71740668DF8400917C64,
+				55BD71750668DF8400917C64,
+			);
+			isa = PBXGroup;
+			name = toni;
+			path = "/Users/oscar/Sites/plog-0.3.2/templates/blog_1/toni";
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		55BD71640668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = about.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71650668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = album.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71660668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = albums.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71670668DF8400917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.gif;
+			path = bg.gif;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71680668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = commentarticle.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71690668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = commentform.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD716A0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = error.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD716B0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = footer.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD716C0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = header.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD716D0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = linktracker.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD716E0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = main.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD716F0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = panel.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71700668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = post.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71710668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = postandcomments.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71720668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = posttrackbacks.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71730668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = resource.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71740668DF8400917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.jpeg;
+			path = sample.jpg;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71750668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = style.css;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71760668DF8400917C64 = {
+			children = (
+				55BD71770668DF8400917C64,
+				55BD71780668DF8400917C64,
+				55BD71790668DF8400917C64,
+				55BD717A0668DF8400917C64,
+				55BD717B0668DF8400917C64,
+				55BD717C0668DF8400917C64,
+				55BD717D0668DF8400917C64,
+				55BD717E0668DF8400917C64,
+				55BD717F0668DF8400917C64,
+				55BD71830668DF8400917C64,
+				55BD71840668DF8400917C64,
+				55BD71850668DF8400917C64,
+				55BD71860668DF8400917C64,
+				55BD71870668DF8400917C64,
+				55BD71880668DF8400917C64,
+				55BD71890668DF8400917C64,
+				55BD718A0668DF8400917C64,
+			);
+			isa = PBXGroup;
+			name = water_play;
+			path = "/Users/oscar/Sites/plog-0.3.2/templates/blog_1/water_play";
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		55BD71770668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = about.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71780668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = album.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71790668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = albums.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD717A0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = commentarticle.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD717B0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = commentform.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD717C0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = error.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD717D0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = footer.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD717E0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = header.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD717F0668DF8400917C64 = {
+			children = (
+				55BD71800668DF8400917C64,
+				55BD71810668DF8400917C64,
+				55BD71820668DF8400917C64,
+			);
+			isa = PBXGroup;
+			path = images;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71800668DF8400917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.jpeg;
+			path = "polar-bg.jpg";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71810668DF8400917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.jpeg;
+			path = "polar-head.jpg";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71820668DF8400917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.jpeg;
+			path = polar.jpg;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71830668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = linktracker.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71840668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = main.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71850668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = panel.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71860668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = post.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71870668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = postandcomments.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71880668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = posttrackbacks.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71890668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = resource.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD718A0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = style.css;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD719B0668DF8400917C64 = {
+			children = (
+				55BD719C0668DF8400917C64,
+				55BD719D0668DF8400917C64,
+				55BD719E0668DF8400917C64,
+				55BD719F0668DF8400917C64,
+				55BD71A00668DF8400917C64,
+				55BD71A10668DF8400917C64,
+				55BD71A20668DF8400917C64,
+				55BD71A30668DF8400917C64,
+				55BD71A40668DF8400917C64,
+				55BD71A60668DF8400917C64,
+				55BD71A70668DF8400917C64,
+				55BD71A80668DF8400917C64,
+				55BD71A90668DF8400917C64,
+				55BD71AA0668DF8400917C64,
+				55BD71AB0668DF8400917C64,
+				55BD71AC0668DF8400917C64,
+				55BD71AD0668DF8400917C64,
+				55BD71AE0668DF8400917C64,
+			);
+			isa = PBXGroup;
+			name = zen;
+			path = "/Users/oscar/Sites/plog-0.3.2/templates/blog_1/zen";
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		55BD719C0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = about.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD719D0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = album.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD719E0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = albums.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD719F0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = commentarticle.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71A00668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = commentform.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71A10668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = error.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71A20668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = footer.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71A30668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = header.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71A40668DF8400917C64 = {
+			children = (
+				55BD71A50668DF8400917C64,
+			);
+			isa = PBXGroup;
+			path = images;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71A50668DF8400917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.jpeg;
+			path = grass.jpg;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71A60668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = linktracker.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71A70668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = main.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71A80668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = panel.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71A90668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = post.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71AA0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = postandcomments.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71AB0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = posttrackbacks.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71AC0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = resource.template;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71AD0668DF8400917C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.gif;
+			path = sample.gif;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		55BD71AE0668DF8400917C64 = {
+			fileEncoding = 5;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = style.css;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+	};
+	rootObject = 55BD6FCA0668DF6D00917C64;
+}

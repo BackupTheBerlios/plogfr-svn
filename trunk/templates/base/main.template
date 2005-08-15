@@ -1,0 +1,14 @@
+{include file="$blogtemplate/header.template"}
+
+<div id="content">
+ {foreach from=$posts item=post}
+  <div class="post">
+    {assign var="postDate" value=$post->getDateObject()}
+    <h2>{$locale->formatDate($postDate,"%d %b, %Y")}</h2>
+    {include file="$blogtemplate/post.template"}
+  </div>
+ {/foreach}
+</div>
+
+{include file="$blogtemplate/panel.template"}
+{include file="$blogtemplate/footer.template"}

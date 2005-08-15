@@ -1,0 +1,3 @@
+<div id="subleft">this divs are</div>
+<div id="submiddle">controlled by the style.css file</div>
+<div id="subright">add your content here</div>

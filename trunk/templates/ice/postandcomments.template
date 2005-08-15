@@ -1,0 +1,58 @@
+{assign var="postPageTitle" value=$post->getTopic()}
+{assign var="postPageTitle" value=" | $postPageTitle"}
+{include file="$blogtemplate/header.template"}
+{include file="$blogtemplate/panel.template"}
+
+   {assign var="poster" value=$post->getUserInfo()}
+   {assign var="postDate" value=$post->getDateObject()}
+
+<div id="main">
+
+ <div id="prevnext">
+  <p>
+  {assign var=prevpost value=$post->getPrevArticle()}{assign var=nextpost value=$post->getNextArticle()}
+  {if $prevpost == true}
+   <a href="{$url->postPermalink($prevpost)}" title="Previous post: {$prevpost->getTopic()}">&laquo;</a>{if $nextpost == true} |{/if}
+  {/if}
+
+  {if $nextpost == true}
+   <a href="{$url->postPermalink($nextpost)}" title="Next post: {$nextpost->getTopic()}">&raquo;</a>
+  {/if}
+  </p>
+ </div>
+
+<!-- {$url->postTrackbackLink($post)} -->
+{include file="$blogtemplate/post.template"}
+
+ <a name="comments"> </a>
+{if $post->getTotalComments() > 0 }
+ <div id="comments">
+  <h2>{$locale->tr("comments")}</h2>
+
+  {foreach from=$comments item=comment}
+   <p class="commentheader">
+    {$comment->getTopic()} <span class="reply">[<a href="{$url->replyCommentLink($post,$comment)}">{$locale->tr("reply")}</a>]</span>
+   </p>
+     {$comment->getText()}
+   <div class="commentposterinfo">
+    {assign var=commentDate value=$comment->getDateObject()}
+    {$locale->tr("posted_by")} 
+    {if $comment->getUserUrl()}
+     <a href="{$comment->getUserUrl()}">{$comment->getUsername()}</a>
+    {else}
+     {$comment->getUsername()}
+    {/if}
+     @ {$locale->formatDate($postDate,"%H:%M")}, {$locale->formatDate($postDate, "%Y-%m-%d")}
+   </div>
+  {/foreach}
+ </div>
+{/if}
+
+ {if $blogsettings->getValue("comments_enabled") && $post->getCommentsEnabled()==1} 
+ <a name="comment"></a>
+ {include file="$blogtemplate/commentform.template"}
+ {/if}
+
+</div>
+ 
+{include file="$blogtemplate/footer.template"}

@@ -1,0 +1,18 @@
+{include file="$blogtemplate/header.template"}
+<div class="BlockTitle">
+	{$locale->tr("search_results")}: {foreach from=$searchterms item=term}{$term} {/foreach}
+</div>
+{foreach from=$searchresults item=result}
+	<div class="BlockArea">	
+		<div class="BlockAreaTitle">
+			{assign var=article value=$result->getArticle()}
+
+
+			<a href="{$url->postPermalink($article)}" target="blank">{$article->getTopic()}</a>
+		</div>
+		<div>
+		  {$article->getText()|strip_tags|truncate:300:"...":false}
+		 </div>
+	</div> 
+{/foreach}
+{include file="$blogtemplate/footer.template"}

@@ -1,0 +1,12 @@
+{include file="$blogtemplate/header.template"}
+{include file="$blogtemplate/panel.template"}
+<div id="content">
+<div>
+  <h2><a href="{$url->templatePage("about")}">{$locale->tr("about")}</a></h2>
+  &nbsp;&nbsp;&nbsp;&nbsp;This template is a port over of 'greenmarinee' template which design by <a href='http://e-lusion.com/'>Ian Main</a>
+ <br/>
+ You can change the contents by editing the templates/greenmarinee/about.template file.
+  </div>
+  <br />
+ </div>
+{include file="$blogtemplate/footer.template"}

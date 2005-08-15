@@ -1,0 +1,225 @@
+{include file="$blogtemplate/header.template"}
+
+    <div class="block-shadow">
+     <div class="block-main">
+      <div class="{cycle values="box-teal,box-purple,box-red,box-green,box-blue"}">
+       <div class="block-samplerss">
+
+        <br/>
+        <span class="samplerss">
+         Sample RSS Feeds using the RSS parser included in this package
+        </span>
+        <br/><br/>
+
+       </div>
+      </div>
+     </div>
+    </div>
+
+    <div class="block-shadow">
+     <div class="block-main">
+      <div class="{cycle values="box-teal,box-purple,box-red,box-green,box-blue"}">
+       <div class="block-samplerss">
+
+        {if $rss->parse("http://rss.news.yahoo.com/rss/topstories")}
+
+        <div class="block-title">
+         <div class="block-rss">
+         {assign var=channel value=$rss->getChannel()}
+         {$channel->getTitle()|escape}
+         </div>
+        </div>
+
+        <ul>
+         {foreach name=rss from=$rss->getItems() item=rssItem}
+          {if $smarty.foreach.rss.iteration < 11} 
+           <li class="rss"><a href="{$rssItem->getLink()|escape}">{$rssItem->getTitle()|escape}</a></li>
+          {/if}
+         {/foreach}
+        {/if}
+        </ul><br/>
+
+       </div>
+      </div>
+     </div>
+    </div>
+
+   
+
+    <div class="block-shadow">
+     <div class="block-main">
+      <div class="{cycle values="box-teal,box-purple,box-red,box-green,box-blue"}">
+       <div class="block-samplerss">
+
+        {assign var=feed value="http://rss.news.yahoo.com/rss/internet"}
+        {if $rss->parse($feed)}
+
+        <div class="block-title">
+         <div class="block-rss">
+         {assign var=channel value=$rss->getChannel()}
+         {$channel->getTitle()|escape}
+         </div>
+        </div>
+
+        <ul>
+         {foreach name=rss from=$rss->getItems() item=rssItem}
+          {if $smarty.foreach.rss.iteration < 11} 
+           <li class="rss"><a href="{$rssItem->getLink()|escape}">{$rssItem->getTitle()|escape}</a></li>
+          {/if}
+         {/foreach}
+        {/if}
+        </ul><br/>
+
+       </div>
+      </div>
+     </div>
+    </div>
+
+    <div class="block-shadow">
+     <div class="block-main">
+      <div class="{cycle values="box-teal,box-purple,box-red,box-green,box-blue"}">
+       <div class="block-samplerss">
+
+        {assign var=feed value="http://rss.news.yahoo.com/rss/rssblog"}
+        {if $rss->parse($feed)}
+
+        <div class="block-title">
+         <div class="block-rss">
+         {assign var=channel value=$rss->getChannel()}
+         {$channel->getTitle()|escape}
+         </div>
+        </div>
+
+        <ul>
+         {foreach name=rss from=$rss->getItems() item=rssItem}
+          {if $smarty.foreach.rss.iteration < 11} 
+           <li class="rss"><a href="{$rssItem->getLink()|escape}">{$rssItem->getTitle()|escape}</a></li>
+          {/if}
+         {/foreach}
+        {/if}
+        </ul><br/>
+
+       </div>
+      </div>
+     </div>
+    </div>
+
+
+    <div class="block-shadow">
+     <div class="block-main">
+      <div class="{cycle values="box-teal,box-purple,box-red,box-green,box-blue"}">
+       <div class="block-samplerss">
+
+        {assign var=feed value="http://blog.tonymasiello.com/rss.php?blogId=1&profile=rss090"}
+        {if $rss->parse($feed)}
+
+        <div class="block-title">
+         <div class="block-rss">
+         {assign var=channel value=$rss->getChannel()}
+         {$channel->getTitle()|escape}
+         </div>
+        </div>
+
+        <ul>
+         {foreach name=rss from=$rss->getItems() item=rssItem}
+          {if $smarty.foreach.rss.iteration < 11} 
+           <li class="rss"><a href="{$rssItem->getLink()|escape}">{$rssItem->getTitle()|escape}</a></li>
+          {/if}
+         {/foreach}
+        {/if}
+        </ul><br/>
+
+       </div>
+      </div>
+     </div>
+    </div>
+
+
+    <div class="block-shadow">
+     <div class="block-main">
+      <div class="{cycle values="box-teal,box-purple,box-red,box-green,box-blue"}">
+       <div class="block-samplerss">
+
+        {assign var=feed value="http://www.mozillazine.org/atom.xml"}
+        {if $rss->parse($feed)}
+
+        <div class="block-title">
+         <div class="block-rss">
+         {assign var=channel value=$rss->getChannel()}
+         {$channel->getTitle()|escape}
+         </div>
+        </div>
+
+        <ul>
+         {foreach name=rss from=$rss->getItems() item=rssItem}
+          {if $smarty.foreach.rss.iteration < 11} 
+           <li class="rss"><a href="{$rssItem->getLink()|escape}">{$rssItem->getTitle()|escape}</a></li>
+          {/if}
+         {/foreach}
+        {/if}
+        </ul><br/>
+
+       </div>
+      </div>
+     </div>
+    </div>
+
+    <div class="block-shadow">
+     <div class="block-main">
+      <div class="{cycle values="box-teal,box-purple,box-red,box-green,box-blue"}">
+       <div class="block-samplerss">
+
+        {assign var=feed value="http://www.nytimes.com/services/xml/rss/nyt/Science.xml"}
+        {if $rss->parse($feed)}
+
+        <div class="block-title">
+         <div class="block-rss">
+         {assign var=channel value=$rss->getChannel()}
+         {$channel->getTitle()|escape}
+         </div>
+        </div>
+
+        <ul>
+         {foreach name=rss from=$rss->getItems() item=rssItem}
+          {if $smarty.foreach.rss.iteration < 11} 
+           <li class="rss"><a href="{$rssItem->getLink()|escape}">{$rssItem->getTitle()|escape}</a></li>
+          {/if}
+         {/foreach}
+        {/if}
+        </ul><br/>
+
+       </div>
+      </div>
+     </div>
+    </div>
+
+    <div class="block-shadow">
+     <div class="block-main">
+      <div class="{cycle values="box-teal,box-purple,box-red,box-green,box-blue"}">
+       <div class="block-samplerss">
+
+        {assign var=feed value="http://news.bbc.co.uk/rss/newsonline_uk_edition/world/rss091.xml"}
+        {if $rss->parse($feed)}
+
+        <div class="block-title">
+         <div class="block-rss">
+         {assign var=channel value=$rss->getChannel()}
+         {$channel->getTitle()|escape}
+         </div>
+        </div>
+
+        <ul>
+         {foreach name=rss from=$rss->getItems() item=rssItem}
+          {if $smarty.foreach.rss.iteration < 11} 
+           <li class="rss"><a href="{$rssItem->getLink()|escape}">{$rssItem->getTitle()|escape}</a></li>
+          {/if}
+         {/foreach}
+        {/if}
+        </ul><br/>
+
+       </div>
+      </div>
+     </div>
+    </div>
+
+{include file="$blogtemplate/footer.template"}

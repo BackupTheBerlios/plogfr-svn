@@ -1,0 +1,20 @@
+    <div class="block-shadow">
+     <div class="block-main">
+      <div class="{cycle values="box-red,box-blue,box-orange,box-teal,box-purple,box-green"}">
+       <div class="block-categories">
+
+        <div class="block-title">
+          <div class="block-header">{$locale->tr("categories")}</div>
+        </div>
+        
+         <ul>
+         {foreach from=$articlecategories item=articleCategory}
+         <li><a href="{$url->categoryLink($articleCategory)}">{$articleCategory->getName()}</a> [{$articleCategory->getNumArticles()}]</li>
+         {/foreach}
+          </ul>
+         <br/>
+
+        </div>
+       </div>
+      </div>
+     </div>

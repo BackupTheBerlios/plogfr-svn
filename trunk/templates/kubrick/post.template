@@ -1,0 +1,29 @@
+{assign var="postDate" value=$post->getDateObject()}
+{assign var="postOwner" value=$post->getUserInfo()}
+<div>
+ <div class="post">
+  <h2><a href="{$url->postPermalink($post)}">{$post->getTopic()}</a></h2>
+ 	<small>{$locale->tr("posted_by")} {$postOwner->getUsername()} | {$locale->formatDate($postDate,"%j %b, %Y")}</small>
+ 	
+  <div class="entry">
+  	{$post->getText()}
+  </div>
+  <p class="postmetadata"> {$locale->tr("post")} {$locale->tr("in")} 
+   {foreach name=categories from=$post->getCategories() item=postcategory}
+   <a href="{$url->categoryLink($postcategory)}">{$postcategory->getName()}</a>{if !$smarty.foreach.categories.last}, {/if}
+   {/foreach} |
+   <a href="{$url->postPermalink($post)}">{$locale->tr("comments")} ({$post->getTotalComments()})</a> | 
+   <a href="{$url->postTrackbackStatsLink($post)}">{$locale->tr("trackbacks")} ({$post->getNumTrackbacks()})</a>
+   
+  </p>
+ </div>
+
+<!-- comment these out if you want to see an example of custom fields, but remember to name the fields
+     in the same way they are named here: 'imfeeling' (livejournal.com style), 'listening' and 'new_field' 
+<p>
+ <b>{$post->getFieldDescription("imfeeling")}</b> {$post->getField("imfeeling")}<br/>
+ <b>{$post->getFieldDescription("listening")}:</b> {$post->getField("listening")}<br/> 
+ <b>{$post->getFieldDescription("non-searchable")}</b> {$post->getField("non-searchable")}
+</p> 
+-->
+</div>

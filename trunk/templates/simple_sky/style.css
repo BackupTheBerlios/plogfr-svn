@@ -1,0 +1,200 @@
+/* Modifications by Chris M (http://aphotolog.com) for WordPress. 
+   Pardon my sloppiness..
+
+	Licensed under GPL :)
+*/
+
+body {
+	margin: 0px 0px 20px 0px;
+	background-color: rgb(223, 223, 223);
+  text-align: center;
+	font-size: 12px;
+	line-height: 130%;
+	}
+
+a {
+	text-decoration: none;
+	}
+
+a:link {
+	color: #336699;
+	}
+
+a:visited {
+	color: #336699;
+	}
+
+a:active {
+	color: #336699;
+	}
+
+a:hover {
+	color: #000000;
+	text-decoration: underline;
+	}
+	
+a img {
+	border: none;
+	}
+
+h1, h2, h3 {
+	margin: 0px;
+	padding: 0px;
+	font-weight: normal;
+	}
+
+#rap {
+	margin: 0 auto 10px auto;
+	text-align: left;
+	padding: 0px;
+	width: 750px;
+	background-color: transparent;
+	}
+
+#header {
+	font-family: Georgia, Verdana, Arial, Helvetica, sans-serif;
+	background-color: transparent;
+	text-align: left;
+	padding: 25px 0;
+	border-bottom: 1px solid #666;
+	}
+
+#header  a {
+	color: #666;
+	text-decoration: none;
+	}
+
+#header  h1 {
+	font-family: Georgia, Verdana, Arial, Helvetica, sans-serif;
+	font-size: xx-large;
+	margin: 0;
+	padding: 0;
+	}
+	
+.meta {
+	padding: 0 0 0 100px;
+	}
+	
+.meta ul, .meta li {
+	display: inline;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	color: #666;
+	font-size: 11px;
+	}
+
+#search, #calendar {
+	display: none;
+	}
+
+#content {
+	float: left;
+	width: 530px;
+	overflow: hidden;
+	padding: 15px 15px 5px 15px;
+	background-color: #FFF;
+	color: #333;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: small;
+	}
+	
+#content h2 {
+	float: left;
+	color: #666;
+	font-family: Georgia, Verdana, Arial, Helvetica, sans-serif;
+	font-size: small;
+	text-align: center;
+	font-weight: normal;
+	margin: 0 10px 0 0;
+	padding: 5px;
+	width: 75px;
+	background-color: #efefef;
+	}
+	
+.storycontent {
+	padding-left: 105px;
+	}
+
+.storycontent p {
+	color: #333;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	text-align: left;
+	margin-bottom: 10px;
+	}
+
+.storycontent blockquote {
+	font-size: 11px;
+	}
+	
+.storycontent li {
+	margin-left: 10px;
+	font-size: 11px;
+	}
+
+.storytitle {
+	color: #333;
+	font-family: Georgia, Verdana, Arial, Helvetica, sans-serif;
+	font-size: large;
+	font-weight: bold;
+	text-align: left;
+	margin: 0;
+	padding: 0 0 0 100px;
+	}
+	
+.feedback {
+	text-align: right;
+	margin-bottom: 20px;
+	}
+	
+#menu {
+	float: left;
+	background-image:url(clouds.jpg);
+  background-repeat:no-repeat;
+	background-position: top center;
+	margin: 10px;
+	padding-top: 100px;
+	width: 170px;
+	background-color: transparent;
+	overflow: hidden;
+	}
+	
+#menu ul {
+	margin: 0 0 15px 0;
+	padding: 0;
+	}
+
+#menu ul ul {
+	border-top: 1px solid #999999;
+	}
+
+#menu ul li {
+	font-family: Georgia, Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #666;
+	list-style-type: none;
+	padding-left: 3px;
+	text-align: left;
+	}
+
+#menu li li {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	text-align: left;
+	list-style-type: none;
+	border-bottom: 0;
+	}
+	
+.credit {
+	clear: both;
+	margin-top: 10px;
+	font-size: 11px;
+	}
+
+.credit p {
+	margin: 0;
+	padding: 0;
+	color: #666;
+	text-align: center;
+	}

@@ -1,0 +1,19 @@
+{include file="$blogtemplate/header.template"}
+
+    <div class="block-shadow">
+     <div class="block-main">
+      <div class="{cycle values="box-teal,box-purple,box-red,box-green,box-blue"}">
+       <div class="block-error">
+
+        <br/>
+        <span class="error">{$locale->tr("error")}</span><br/><br/>
+        {$locale->tr($message)}<br/><br/>
+        <a href="javascript:history.go(-1)">{$locale->tr("back")}</a><br/><br/>
+
+       </div>
+      </div>
+     </div>
+    </div>
+
+
+{include file="$blogtemplate/footer.template"}

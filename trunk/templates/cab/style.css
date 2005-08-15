@@ -1,0 +1,308 @@
+/*
+wordpress screen master
+author: oliver temmler
+version: 020904
+released under GNU General Public License (GPL)
+*/
+
+/* ### layout ####################################################### */
+
+html body {
+	margin:0;
+	padding:0;
+	color:#000;
+	background:#666;
+	font:12px verdana,arial,helvetica,sans-serif;
+	} html>body {font-size:12px;}
+
+/* --- container including menu and entries ------------------------- */
+#rap {
+	margin:10px 20px 10px 20px;
+	border-style:solid;
+	border-color:#000;
+	border-width:1px;
+	background:#fff url("cabbottom.jpg") no-repeat bottom right;
+	}
+
+#header {
+	margin-top:0;
+	height:99px;
+	padding-left:330px;
+	text-align: right;
+	background:#c90 url("cabhead.jpg") no-repeat;
+	border-bottom:1px solid #000;
+	}
+
+#menu {
+/* IE6/Win2k, as far as I can tell, will hide a float, if 
+position:relative is not set. If you remove relative positioning below
+and the background:#fff url... above in #container the problem becomes
+more obvious. Similar behaviour is described at:
+www.evolt.org/article/MSIE6_bug_with_floating_divs_and_spacers/17/23899
+ */
+ 	position:absolute;
+    top:110px;
+    right:21px;
+	width:156px;
+	margin:0 -1px 10px 10px;
+	padding:0 0 4px 5px;
+	color:#000;
+	background-color:#666;
+	border-left:1px solid #000;
+	border-bottom:1px solid #000;
+	border-top:1px solid #000;
+/* Here is the ugly brilliant hack that protects IE5/Win from its own
+stupidity. Thanks to Tantek Celik for the hack and to Eric Costello for
+publicizing it. IE5/Win incorrectly parses the voice-family value,
+prematurely closing the style declaration. The incorrect IE5/Win 
+width-value is above, while the correct value is below. See
+http://glish.com/css/hacks.asp for details. */
+	voice-family: "\"}\"";
+	voice-family:inherit;
+	width:150px;
+	}
+/* The "be nice to Opera 5" rule. Basically, it feeds correct length
+values to user agents that exhibit the parsing error exploited above yet
+get the CSS box model right and understand the CSS2 parent-child
+selector. ALWAYS include a "be nice to Opera 5" rule every time you use
+the Tantek Celik hack (above). */
+html>body #menu {width:150px;}
+
+#menu #wordpress{
+	margin-top:-1px;
+	margin-bottom:5px;
+	padding:0 0 4px 5px;
+	background-color:#c90;
+	border-color:#000;
+	border-style:solid;
+	border-width:0 1px 1px 1px;
+	}
+
+#menu #categories{
+	margin-bottom:5px;
+	padding:0 0 4px 5px;
+	background-color:#c90;
+	border:1px solid #000;
+	}	
+
+#menu #search{
+	margin-bottom:5px;
+	padding:0 0 4px 5px;
+	background-color:#c90;
+	border:1px solid #000;
+	}
+	
+#menu #archives{
+	margin-bottom:5px;
+	padding:0 0 4px 5px;
+	background-color:#c90;
+	border:1px solid #000;
+	}
+
+#menu .calendar{
+	margin-bottom:5px;
+	padding:0 0 4px 5px;
+	background-color:#c90;
+	border:1px solid #000;
+	}
+
+#menu #other{
+	margin-bottom:5px;
+	padding:0 0 4px 5px;
+	background-color:#c90;
+	border:1px solid #000;
+	}
+
+#menu #meta{
+	margin-bottom:5px;
+	padding:0 0 4px 5px;
+	background-color:#c90;
+	border:1px solid #000;
+	}
+	
+#menu #style{
+	margin-bottom:5px;
+	padding:0 0 4px 5px;
+	background-color:#c90;
+	border:1px solid #000;
+	}
+	
+/* ### typeset ###################################################### */
+
+/* --- standard ----------------------------------------------------- */
+a {color:#000; text-decoration:none;}
+h1 {font-size:36px; text-align:left;}
+h2 {font-size:12px; text-align:left;}
+h3 {font-size:12px; text-align:left;}
+h4 {font-size:10px; text-align:left;}
+
+
+/* --- menu --------------------------------------------------------- */
+#menu {
+	text-align: left;
+	font-size:10px;
+	line-height:1.5em;
+	}
+
+#menu ul, #menu li{
+	list-style: none;
+	margin:0;
+	padding:0;
+	text-align:left;
+	}
+
+#menu #meta li{
+	list-style: none;
+	margin:0;
+	padding:2px 0;
+	text-align:left;
+	}
+
+#menu a, #menu a:visited {color:#fff; font-weight:bold; border-style:none;}
+#menu a:hover {color:#000; font-weight:bold; border-style:none;}
+
+#menu img {border:1px solid #000;}
+
+/* --- entries ------------------------------------------------------ */
+#content {
+	margin:0px 154px 50px 0px;
+	padding:0 10px 0 10px;
+	font-size:12px;
+	}
+
+.post{
+	margin-bottom:10px;
+	padding:0;
+	color:#000;
+	/*background-color:#fff;*/
+	border:1px solid #000;
+	}
+
+.post ul {
+	display:inline;
+	margin:0;
+	padding:0;
+	text-align:left;
+	}
+
+.post ul li {
+	display:inline;
+	list-style: none;
+	margin:0;
+	padding:0;
+	text-align:left;
+	}
+
+.storytitle {
+	margin:0;
+	padding:0 10px 0 10px;
+	letter-spacing:2pt;
+	text-align:left;
+	background-color:#c90;
+	}
+
+.meta {
+	margin:0 0 10px 0;
+	padding:1px 10px 1px 10px;
+	font-size:10px;
+	letter-spacing:1pt;
+	text-align:left;
+	background-color:#fc0;
+	border-bottom:1px solid #000;
+	}
+
+.storycontent {
+	margin:0;
+	padding:1px 10px 0 10px;
+	text-align:justify;
+	}
+
+blockquote {
+	margin:0;
+	padding:0 8px 0 8px;
+	text-align:justify;
+	}
+
+.feedback {
+	margin:0;
+	padding:1px 10px 5px 10px;
+	font-size:10px;
+	letter-spacing:1pt;
+	text-align:right;
+	}
+
+.trackback {
+	padding:0 10px 0 10px;
+	font-size:85%;
+	text-align:left;
+	}
+
+.credit {
+	margin:10px 20px 10px 20px;
+	padding-left:10px;
+	border-style:solid;
+	border-color:#000;
+	border-width:1px;
+	font-weight:bold;
+	font-size:10px; 
+	text-align:left;
+	background-color:#c90;
+	border-top:1px solid #000;
+	
+	}
+
+.storytitle a:link, .storytitle a:visited, .storytitle a:hover {font-weight:bold; border-style:none;}
+
+.storycontent a:link, .storycontent a:visited {border-bottom:dotted 1px #000;}
+.storycontent a:hover {border-bottom:solid 1px #000;}
+
+.feedback a:link, .feedback a:visited, .feedback a:hover {font-weight:bold;}
+
+
+#storycontent img {
+	position:relative;
+	float:left;
+	margin:5px 5px 5px 0;
+	border:1px solid #000;
+	}
+		
+/* --- comments ----------------------------------------------------- */
+.post #commentlist {
+	margin:0 10px 0 30px;
+	padding:0;
+	text-align:left;
+	}
+
+.post>p {
+	margin:0;
+	padding:0 10px 0 10px;
+	text-align:left;
+	}
+
+.post>h2 {
+	margin:0;
+	padding:0 10px 0 10px;
+	text-align:left;
+	}
+	
+#comments{
+	margin:0 0 2px 0;
+	padding:0 10px 0 10px;
+	color:#000;
+	letter-spacing:4pt;
+	background-color:#fc0;
+	border-top:1px solid #000;
+	border-bottom:1px solid #000;
+	}
+
+#commentlist {
+	margin:0;
+	padding:1px 10px 0 10px;
+	text-align:left;
+	}
+
+#commentform {
+	margin:0;
+	padding:1px 10px 5px 10px;
+	text-align:left;
+	}

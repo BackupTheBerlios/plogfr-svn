@@ -1,0 +1,65 @@
+body                 {               margin: 10px 0px; 
+                                    padding: 0px;
+                                 text-align: center;
+                                       font: 8pt verdana, arial, times new roman, lucida sans unicode, sans-serif;
+                                      color: #111;
+                                 background: #dddde7;}
+
+.column              {               border: none;
+                             padding-bottom: 20px;
+                                     height: auto;
+                                        top: 150px;}
+
+#left                {             position: absolute;
+                                       left: 3%;
+                                      width: 22%;}
+#right               {             position: absolute;
+                                       left: 28%;
+                                      width: 70%;}
+
+.banner-shadow       {           text-align: center;
+                                      width: 790px;
+                                     height: 130px;
+                                   position: relative; 
+                                     margin: auto;
+                                 margin-top: 20px;
+                              margin-bottom: 20px;
+                                 background: #777;} 
+
+.banner              {           text-align: center;
+                                    padding: 0px;
+                              border-bottom: 0px;
+                                      color: #000;
+                                     height: 130px;
+                                     border: 1px solid #444;
+                           background-image: url("logo.jpg");
+                                   position: relative; 
+                                       left: -7px; 
+                                        top: -6px;}
+
+.block-shadow        {           text-align: center;
+                                   position: relative; 
+                                     margin: auto;
+                                 margin-top: 30px;
+                              margin-bottom: 30px;
+                                 background: #707070;} 
+
+.block-main         {            text-align: left;
+                                   position: relative; 
+                                       left: -7px; 
+                                        top: -5px;
+                                     border: 1px solid #222;}
+
+
+.box-purple       {        background-color: #f7e7ff;}
+.box-blue         {        background-color: #e7e7ff;}
+.box-red          {        background-color: #fee;}
+.box-teal         {        background-color: #dff;}
+.box-green        {        background-color: #e7ffe7;}
+.box-orange       {        background-color: #fec;}
+
+
+    
+
+
+

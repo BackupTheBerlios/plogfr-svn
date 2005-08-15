@@ -1,0 +1,5 @@
+{include file="$blogtemplate/header.template"}
+ <h3>{$locale->tr("error")}</h3>
+ {$locale->tr($message)}
+ <br /><a href="javascript:history.go(-1)">{$locale->tr("back")}</a>
+{include file="$blogtemplate/footer.template"}

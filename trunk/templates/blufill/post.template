@@ -1,0 +1,21 @@
+{assign var="postDate" value=$post->getDateObject()}
+{assign var="postOwner" value=$post->getUserInfo()}
+<div class="blog">
+ <div class="blogbody">
+  <h2 class="title"><a href="#top"><img src="{$url->getTemplateFile("top.gif")}" style="border:0; padding-top: 3px; float:right; margin-right: 2px; vertical-align: bottom" alt=""/></a>{$post->getTopic()}</h2>
+  <h3 class="postby">{$locale->tr("posted_by")} {$postOwner->getUsername()} | {$locale->formatDate($postDate,"%b %d, '%y @ %H:%M")}<br /> </h3>
+   <div class="posted">
+ {$post->getText()} <br />
+	 </div>
+	 <div style="text-align:left; margin-bottom: 25px; margin-left: 6px; font-size: 10px">
+     <a href="{$url->postPermalink($post)}"><img alt="{$locale->tr("permalink")}" src="{$url->getTemplateFile("post.gif")}" width="10" height="11" style="border: 0px; vertical-align: middle" /></a> | 
+     <a href="{$url->postTrackbackStatsLink($post)}"><img alt="{$locale->tr("trackbacks")} [{$post->getNumTrackbacks()}]" src="{$url->getTemplateFile("trackback.gif")}" width="16" height="11" style="border: 0px; vertical-align: middle" /></a> |
+		 <a href="{$url->postPermalink($post)}" style=" font-size: 10px; font-family:georgia, verdana, arial, sans-serif;"><img alt="{$locale->tr("comments")}  [{$post->getTotalComments()}]" src="{$url->getTemplateFile("bubble.gif")}" width="11" height="11" style="border: 0px; vertical-align: middle;" /> {$locale->tr("comments")}  [{$post->getTotalComments()}]</a> | 
+
+		  {foreach name=categories from=$post->getCategories() item=postCategory}
+		    <a href="{$url->categoryLink($postCategory)}">{$postCategory->getName()}</a>
+		  {if !$smarty.foreach.categories.last}, {/if}
+		  {/foreach}
+		 </div>
+	</div>
+ </div>

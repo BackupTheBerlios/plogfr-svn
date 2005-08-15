@@ -1,0 +1,74 @@
+{assign var="postPageTitle" value=$post->getTopic()}
+{assign var="postPageTitle" value=" | $postPageTitle"}
+{include file="$blogtemplate/header.template"}
+
+    <div class="block-shadow">
+     <div class="block-main">
+      <div class="{cycle values="box-teal,box-purple,box-red,box-green,box-blue"}">
+       <div class="block-prevnext">
+        <span class="prevnext">
+   
+         <br/>
+         {assign var=nextpost value=$post->getNextArticle()}
+         {assign var=prevpost value=$post->getPrevArticle()}
+         {if $prevpost == true}
+          <a href="{$url->postPermalink($prevpost)}" title="Previous post: {$prevpost->getTopic()}">&larr; Previous Entry</a>
+            {if $nextpost == true}  <img alt="|" class="seperator" src="{$url->getTemplateFile("/sp.gif")}"/>  {/if}
+         {/if}
+         {if $nextpost == true}
+          <a href="{$url->postPermalink($nextpost)}" title="Next post: {$nextpost->getTopic()}">Next Entry &rarr;</a>
+         {/if}
+         <br/><br/>
+
+        </span>
+       </div>
+      </div>
+     </div>
+    </div>
+
+   {assign var="poster" value=$post->getUserInfo()}
+   <!-- {$url->postTrackbackLink($post)} -->
+   {include file="$blogtemplate/post.template"}
+   {foreach from=$comments item=comment}
+
+    <div class="block-shadow">
+     <div class="block-main">
+      <div class="{cycle values="box-teal,box-purple,box-red,box-green,box-blue"}">
+       <div class="commentheader">
+
+       <div class="comment-title">
+         <div class="comment-header">
+          <div class="comment-topic">
+           <img alt="comment" src="{$url->getUrl("/imgs/comment_icon1.gif")}"/> {$comment->getTopic()} 
+          </div>
+         <!-- div class="entry-date" -->
+          <span class="comment-posterinfo">
+           {assign var="commentDate" value=$comment->getDateObject()}
+           {$comment->getUsername()} - {$locale->formatDate($commentDate,"%Y %b %d - %H:%M")}
+          </span>
+         <!-- /div -->
+        </div>
+       </div>
+
+
+
+       <p>
+        {$comment->getText()}
+       </p>
+
+       <span class="categoryinfo"><a href="{$url->replyCommentLink($post,$comment)}">{$locale->tr("reply")}</a></span>
+
+
+    
+
+       </div>
+      </div>
+     </div>
+    </div>
+
+  {/foreach}
+ {if $blogsettings->getValue("comments_enabled") && $post->getCommentsEnabled()==1}
+ 
+ {include file="$blogtemplate/commentform.template"}
+ {/if}
+{include file="$blogtemplate/footer.template"}

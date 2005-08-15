@@ -1,0 +1,21 @@
+{include file="$blogtemplate/header.template"}
+{include file="$blogtemplate/leftmenu.template"}
+<div id="mainsearch">
+<div id="search">
+<h2>Search Results</h2>
+<p>
+{foreach from=$searchresults item=result}
+<div class="searchresult">
+{assign var=article value=$result->getArticle()}
+<a href="{$url->postPermalink($article)}"><h3><b>{$article->getTopic()}</b></h3></a>
+<p>
+{$article->getText()|strip_tags|truncate:300:"...":false}
+</p>
+</div>
+<br/>
+{/foreach}
+</p>
+</div>
+</div>
+{include file="$blogtemplate/rightmenu.template"}
+{include file="$blogtemplate/footer.template"}

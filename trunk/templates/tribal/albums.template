@@ -1,0 +1,10 @@
+{include file="$blogtemplate/header.template"}
+<h1>{$locale->tr("albums")}</h1>
+<!-- album contents go here -->
+{foreach from=$albums item=album}
+<p class="album">
+  <a href="{$url->albumLink($album)}"><img src="{$url->getUrl("/imgs/folder.gif")}" alt="" />{$album->getName()}</a> ({$album->getNumResources()}) | {$album->getDescription()}
+</p> 
+{/foreach}
+ <!-- end of the albums -->
+{include file="$blogtemplate/footer.template"}

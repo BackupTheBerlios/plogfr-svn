@@ -1,0 +1,42 @@
+{include file="$admintemplatepath/header.template"}
+{include file="$admintemplatepath/navigation.template" showOpt=sentMail title=$locale->tr("sentMessages")}
+        
+
+<form id="messages" action="admin.php" method="post">
+<div id="list">
+  {include file="$admintemplatepath/successmessage.template"}
+  {include file="$admintemplatepath/errormessage.template"}
+<table class="info">
+ <thead>
+  <tr>
+   <th style="width:10px;"><input class="checkbox" type="checkbox" class="check" name="all" id="all" value="1" onclick="toggleAllChecks('messages');" /></th>  
+   <th style="width:600px;">{$locale->tr("subject")}</th>
+   <th style="width:170px;">{$locale->tr("date")}</th>
+   <th style="width:95px;">{$locale->tr("actions")}</th>
+  </tr>
+ </thead>
+ <tbody>
+ {foreach from=$messages item=message}
+  <tr class="{cycle values="odd,even"}">
+   <td><input class="checkbox" type="checkbox" name="messageIds[{counter}]" value="{$message->getId()}"/></td>  
+   <td class="col_highlighted"><a href="?op=mailcentreShowMessage&amp;messageId={$message->getId()}">{$message->getSubject()}</a></td>
+   {assign var=sent value=$message->getSentTimestamp()}
+   <td>{$locale->formatDate($sent)}</td>
+   <td>
+     <div class="list_action_button">
+       <a href="?op=mailcentreShowMessage&amp;messageId={$message->getId()}"><img src="imgs/admin/icon_edit-16.png" alt="{$locale->tr("edit")}" /></a>
+       <a href="?op=mailcentreDeleteMessage&amp;messageId={$message->getId()}"><img src="imgs/admin/icon_delete-16.png" alt="{$locale->tr("delete")}" /></a>
+     </div>
+   </td>
+  </tr>
+ {/foreach}
+ </tbody>
+ </table>
+ </div>
+ <div id="list_action_bar">
+  <input type="hidden" name="op" value="mailcentreDeleteMessages"/>
+  <input type="submit" name="Delete selected" value="{$locale->tr("delete")}"/>
+ </div>
+</form>
+{include file="$admintemplatepath/footernavigation.template"}
+{include file="$admintemplatepath/footer.template"}

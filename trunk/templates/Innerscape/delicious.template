@@ -1,0 +1,20 @@
+{include file="$blogtemplate/header.template"}
+{include file="$blogtemplate/leftmenu.template"}
+<div id="maindel">
+<div id="del">
+{if !empty($delicious)}
+{if $delicious->isEnabled()}
+{assign var=tagId value=$smarty.request.tag}
+{assign var=deliciousTags value=$delicious->getTagList()}
+{foreach item=deliciousTag from=$deliciousTags}
+{math equation="ceil(x/y)+1" assign=fontsize x=$deliciousTag.count y=5}
+<font size={$fontsize}><a href="{$deliciousTag.deliciousUrl}" style="border-bottom: 0px;" title="{$deliciousTag.count} Posts">{$deliciousTag.id}</a></font>&nbsp;&nbsp;&nbsp;&nbsp;
+{/foreach}
+{else}
+{$locale->tr("error_delicious_not_enabled")}
+{/if}
+{/if}
+</div>
+</div>
+{include file="$blogtemplate/rightmenu.template"}
+{include file="$blogtemplate/footer.template"}

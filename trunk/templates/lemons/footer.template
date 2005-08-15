@@ -1,0 +1,10 @@
+    <div class="next"><a href="#top">^ {$locale->tr("back_top")}</a></div>
+  </div>
+
+  <div class="bottom">Powered by <a href="http://www.plogworld.net">pLog</a><br/>
+     Design &copy; 2002 <a href="http://wannabegirl.org/css/">Firda Beka</a><br/>
+  </div>
+
+</div>
+</body>
+</html>

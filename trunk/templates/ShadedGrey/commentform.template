@@ -1,0 +1,13 @@
+<form id="commentform" name="commentform" action="{$url->getBaseUrl()}/index.php" method="post">
+<p><input name="userName" type="text" size="35" /><small>{$locale->tr("comment_username")} (required)</small></p>
+<p><input name="commentTopic" type="text" size="35" /><small>{$locale->tr("comment_topic")}</small></p>
+<p><input name="userUrl" type="text" size="35" /><small>{$locale->tr("comment_url")}</small></p>
+<p><input name="userEmail" type="text" size="35" /><small>{$locale->tr("comment_email")}</small></p>
+<p><textarea rows="10" cols="45" name="commentText"></textarea></p>
+<p><input style="font-weight: bold;" type="submit" name="post" value="&nbsp;{$locale->tr("comment_send")}&nbsp;" />
+&nbsp;&nbsp;<input style="font-weight: bold;" type="reset"></p>
+<input type="hidden" name="op" value="AddComment"/>
+<input type="hidden" name="articleId" value="{$post->getId()}"/>
+<input type="hidden" name="blogId" value="{$blog->getId()}"/>
+<input type="hidden" name="parentId" value="{$parentId}"/>
+</form>

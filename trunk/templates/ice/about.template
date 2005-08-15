@@ -1,0 +1,6 @@
+{include file="$blogtemplate/header.template"}
+{include file="$blogtemplate/panel.template"}
+
+<h2>About</h2>
+
+{include file="$blogtemplate/footer.template"}

@@ -1,0 +1,14 @@
+<div id="Top">
+</div>
+
+<div id="Topmenu">
+	<div class="TopmenuLine">
+		{$blog->getBlog()}
+	</div>
+	<div class="TopmenuLine">
+	<ul>
+		<li><a href="{$url->blogLink()}">{$locale->tr("main")}</a></li>
+		<li><a href="{$url->albumLink()}"> {$locale->tr("albums")}</a></li>
+		</ul>
+	</div>
+</div>

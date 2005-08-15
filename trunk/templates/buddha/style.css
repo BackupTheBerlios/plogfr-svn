@@ -1,0 +1,190 @@
+/* Whole page
+   -------------------------------------------- */
+
+/* Image from sxc.hu (http://www.sxc.hu/browse.phtml?f=view&id=73842)
+   Thanks marcoaor! */
+	 
+body {
+	background-image: url("images/buddha/buddha-sm.jpg");
+	background-attachment: fixed;
+	background-position: bottom left;
+	background-repeat: no-repeat;
+}
+	
+#rap {
+	margin-left: 35%;
+	margin-right: 60px;
+	padding: 0.5em;
+}
+
+#rap * {
+	-moz-opacity: .999;
+}
+
+#header { 
+	position: absolute;
+	top: 10px;
+	left: 10%;
+}	
+
+#rap {margin-top: 70px;}
+
+
+
+/* Content & menu
+   -------------------------------------------- */
+
+#menu {
+	position: absolute;
+	top: 80px;
+	left: 10%;
+	width: 10em;
+	
+	border: 1px solid #F8E7B0;
+	
+	background-color: #EFD16B;
+
+	font-size: 0.85em;
+	padding: 0.5em;
+
+	-moz-opacity: 0.8;	
+	filter: Alpha(opacity=80);
+
+}
+
+#menu ul {
+	width:100%;
+}
+
+#menu ul {
+	margin-top: 0;
+	padding-left: 0;
+	margin-left: 0;
+	margin-bottom: 1em;
+	color: #7A5208;
+	list-style: none;
+	font-weight: bold;
+}
+
+
+#menu ul ul {
+	margin-left: 0;
+	font-weight: normal;
+}
+
+#menu table {
+	display: none;
+}
+
+#menu a:link, #menu a:visited {
+	padding: 1px;
+	color: black;
+	border-width: 1px;
+	border-style: none;
+	display: block;
+	width: 100%;
+}
+
+#menu a:hover {
+	background-color: #EFD16B;
+	font-weight: bold;
+}
+
+#menu form{
+	margin: 0 0 1em 0;	 
+}
+#menu form br {
+	display:none;
+}
+input {
+	width: 6em;
+	font-family: Verdana, Tahoma, Arial, sans-serif; 
+}
+
+
+
+
+
+	
+	 
+/* Post
+   -------------------------------------------- */
+
+/* date */
+#content h2 {
+	float: right;
+	margin: 0;
+	font-size: 0.85em;
+	font-weight: normal;
+	background-color: #FBF5E1;
+	padding: 0.3em;
+	margin-left: 0.4em;
+	border: 1px solid #F8E7B0;
+
+}
+
+
+.storytitle { margin: 0;}
+
+.post-categories {
+	display: inline;
+	margin: 0;
+	padding: 0;
+}
+.post-categories li {
+	display: inline;
+	margin-left: 0 3px 0 0;
+	padding: 0;
+}
+
+.post .meta {
+	font-family: Verdana, Tahoma, san-serif;
+	margin-top: 0;
+	font-size: 0.75em;
+	color: #666;
+}
+.post .meta * {
+	margin-top: 0;
+}	
+
+.post .feedback {
+	margin-bottom: 3em;
+	padding-bottom: 1px;
+}
+
+
+/* Credit
+   -------------------------------------------- */
+
+p.credit {	
+	margin-left: 35%;
+	margin-right: 60px;
+	padding: 0.5em;
+	font-size: 90%;
+}
+	 
+	 
+/* Basic typography
+   -------------------------------------------- */
+
+body {
+	font-family: "Georgia", serif;
+	font-size: 100%;
+}
+
+p, td, th, li {
+	font-size: 1em;
+	line-height: 1.65em;
+}
+
+
+a:link, a:visited {
+	text-decoration: none;
+	color: #7A5208;
+	border: 1px none white;
+}
+a:hover {
+	background-color: #FBF5E1;
+
+}
+

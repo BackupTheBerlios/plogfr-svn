@@ -1,0 +1,22 @@
+{include file="$blogtemplate/header.template"}
+{include file="$blogtemplate/panel.template"}
+
+<div id="main">
+
+ <div class="searchresults">
+  <h2>{$locale->tr("search_results")}: {foreach from=$searchterms item=term}{$term} {/foreach}</h2>
+
+   {foreach from=$searchresults item=result} {assign var=article value=$result->getArticle()}
+    <div class="result">
+     <strong><a href="{$url->postPermalink($article)}">{$article->getTopic()}</a></strong> in 
+     {foreach name=categories from=$article->getCategories() item=postCategory}
+	  <a href="{$url->categoryLink($postCategory)}">{$postCategory->getName()}</a>{if !$smarty.foreach.categories.last}, {/if}
+	 {/foreach}
+    </div> 
+    <p>
+     {$article->getText()|strip_tags|truncate:300:"...":false}
+    </p>
+   {/foreach}
+ </div>
+</div>
+{include file="$blogtemplate/footer.template"} 

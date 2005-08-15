@@ -1,0 +1,15 @@
+<h1>Advanced Search</h1>
+<form name="advancedSearch" method="post" action="{$url->getIndexUrl()}">
+ Search terms: <input type="text" name="searchTerms" value="" /><br/>
+ Search type:
+ <select name="searchType">
+  <option value="0">All types</option>
+  <option value="1">Pictures</option>
+  <option value="2">Videos</option>
+  <option value="3">Sound Files</option>
+  <option value="4">Everything else</option>
+ </select>
+ <br/><br/>
+ <input type="submit" name="Search" value="Search" />
+ <input type="hidden" name="op" value="performAdvancedSearch" />
+</form>

@@ -1,0 +1,5 @@
+<ul>
+{foreach from=$articlecategories item=articleCategory}
+ <li><a class="navigation" href="{$url->categoryLink($articleCategory)}">{$articleCategory->getName()} [{$articleCategory->getNumArticles()}]</a></li>
+{/foreach}
+</ul>

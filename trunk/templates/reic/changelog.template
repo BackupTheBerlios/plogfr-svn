@@ -1,0 +1,44 @@
+{include file="$blogtemplate/header.template"}
+<div id="outcon">
+<div id="content">
+<div class="blog">
+<h3 class="title">Reic Template Chang log</h3>
+<p>2005/03/24</p>
+<ul><li>Removed the post.gif in reic.css.</li>
+<li>Changed the download.gif in resource.template to images/download.gif.</li>
+<li>Removed fieldset tag in panel. The border of the search is vanished.</li>
+<li>Removed smarty space between category name and subsequent comma.</li>
+<li>Removed the smarty tag $locale-&gt;tr('categories') at post and searchresult.</li>
+<li>Fixed the non-English character in about.</li>
+<li>Fixed the dash board page link error.</li>
+<li>Add changelog in about</li>
+</ul>
+<p>2005/03/17</p>
+<ul>
+<li>Fix Reic template II error.template bug (by firer )</li>
+<li>Fix Reic template II searchresults.template bug (by <a href="http://intelblog.com/plog/index.php?blogId=1">firer</a> report)</li>
+</ul>
+<p>2005/3/15</p>
+<ul>
+<li>Use the $locale-&gt;tr("comments") instead of the chiniese character in commentform.tepmlate (by JamesHuang report)</li>
+</ul>
+<p>2005/03/14</p>
+<ul>
+<li>Hide the image title at psd file</li>
+<li>Redesign the css file for #title field and .scription field</li>
+</ul>
+<p>2005/03/12</p>
+<ul>
+<li>fixed a error in postandcomment.template</li>
+</ul>
+<p>2005/03/11</p>
+<ul>
+<li>Redesign error, album, album,  resource files</li>
+<li>Change the types of output file in reic.psd to gif.</li>
+</ul>
+</div>
+<div class="clear">&nbsp;</div>
+</div>
+</div>
+{include file="$blogtemplate/panel.template"}
+{include file="$blogtemplate/footer.template"}

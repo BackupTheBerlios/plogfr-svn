@@ -1,0 +1,6 @@
+{include file="$blogtemplate/header.template"}
+  <h1>About Me!</h1>
+  <p>
+   You could put here some information about yourself.
+  </p>
+{include file="$blogtemplate/footer.template"}

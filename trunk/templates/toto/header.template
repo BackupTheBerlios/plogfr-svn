@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>{$blog->getBlog()}</title>
+	<meta http-equiv="Content-Type" content="text/html;charset={$locale->getCharset()}" />
+	<meta name="generator" content="{$version}" />
+	<meta http-equiv="Content-Language" content="{$locale->getLanguageId()}" />
+	<link rel="stylesheet" title="Default" href="{$url->getTemplateFile("styles.css")}" type="text/css" />
+	<link rel="alternate" type="text/xml" title="RSS 2.0" href="{$url->rssLink("rss20")}" />
+	<link rel="alternate" type="text/xml" title="RSS 1.0" href="{$url->rssLink("rss10")}" />
+	<link rel="alternate" type="text/xml" title="RSS 0.90" href="{$url->rssLink("rss090")}" />
+	<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="{$url->rssLink("atom")}" />
+</head>
+
+<body>
+<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="68" class="head">&nbsp;&nbsp;<a href="{$url->blogLink()}" class="headLink">{$blog->getBlog()}</a></td>
+    <td height="68" class="head"><span class="desc">{$blog->getAbout()}</span></td>
+  </tr>

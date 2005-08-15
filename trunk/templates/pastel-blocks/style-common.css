@@ -1,0 +1,344 @@
+.upgrade          {                 display: none;
+                                font-weight: bold;}
+
+.span1            {                    font: 24px georgia, verdana, times new roman, lucida sans unicode, sans-serif;
+                                font-weight: 500;
+                                      color: #000;
+                                padding-top: 50px;
+                                line-height: 300%;}
+
+.span2            {                    font: 14px georgia, verdana, times new roman, lucida sans unicode, sans-serif;
+                                font-weight: 500;
+                                 margin-top: 10px;
+                                      color: #000;
+                                line-height: 100%;}
+
+.block-title      {             padding-top: 10px;}
+
+.block-header     {              text-align: center;
+                                       font: 10px arial, sans-serif;
+                             letter-spacing: 0.09em;
+                             text-transform: uppercase;
+                                      width: 75%;
+                                     margin: auto;
+                              margin-bottom: 10px;
+                                 border-top: 1px solid #ddd;
+                                border-left: 1px solid #ddd;
+                               border-right: 1px solid #666;
+                              border-bottom: 1px solid #666;}
+.block-rss        {              text-align: center;
+                                       font: 12px verdana, arial, sans-serif;
+                             text-transform: none;
+                                      width: 50%;
+                                margin-left: auto;
+                               margin-right: auto;
+                              margin-bottom: 10px;
+                                 border-top: 1px solid #ddd;
+                                border-left: 1px solid #ddd;
+                               border-right: 1px solid #666;
+                              border-bottom: 1px solid #666;}
+
+.entry-header     {                   color: #555;
+                                       font: bold 10pt georgia, lucida sans unicode, times new roman, times, sans-serif;
+                                      width: 95%;
+                                     margin: auto;
+                                 margin-top: 10px;
+                              margin-bottom: 2px;
+                                 background: transparent;
+                              border-bottom: 1px solid #666;}
+
+.entry-headboard  {                   width: 75%;
+                                margin-left: 10px;
+                                 border-top: 1px solid #ddd;
+                                border-left: 1px solid #ddd;
+                               border-right: 1px solid #666;
+                              border-bottom: 1px solid #666;}
+
+.entry-headpad    {             padding-top: 10px;}
+
+.entry-date       {                    font: 10px verdana, arial, helvetica, sans-serif;
+                             letter-spacing: 0.09em;
+                                      width: 95%;
+                             padding-bottom: 10px;
+                                     margin: auto;}
+
+.entry-content    {                   width: 90%;
+                                     margin: auto;
+                                 margin-top: 20px;
+                              margin-bottom: 10px;
+                                line-height: 175%;}
+
+.entry-footer     {                    font: 7pt verdana, arial, helvetica, sans-serif;
+                                      color: #666;
+                                 background: transparent;
+                                 text-align: center;
+                             padding-bottom: 20px;
+                                      width: 95%;
+                                     margin: auto;
+                                 margin-top: 10px;}
+
+.block-calendar   {                  margin: auto;
+                                   overflow: hidden;}
+.block-search   {                    margin: auto;
+                                 text-align: center;
+                                   overflow: hidden;}
+.block-links      {             margin-left: 10px;
+                               margin-right: 10px;
+                                       font: 8pt arial, times new roman, lucida sans unicode, sans-serif;
+                                      color: #111;}
+.block-categories {             margin-left: 10px;
+                               margin-right: 10px;
+                                padding-top: 0px;
+                             padding-bottom: 0px;
+                                       font: 8pt arial, times new roman, lucida sans unicode, sans-serif;
+                                      color: #111;}
+.block-recently   {             margin-left: 10px;
+                               margin-right: 10px;
+                                       font: 8pt arial, times new roman, lucida sans unicode, sans-serif;
+                                      color: #111;}
+.block-archives   {             margin-left: 10px;
+                               margin-right: 10px;
+                                       font: 8pt arial, times new roman, lucida sans unicode, sans-serif;
+                                      color: #111;}
+.block-syndicate  {             margin-left: auto;
+                               margin-right: auto;
+                                 text-align: center;}
+.block-credits    {}
+.block-cmntform   {              text-align: left;
+                                margin-left: 25px;
+                                 margin-top: 0px;
+                              margin-bottom: 0px;
+                                padding-top: 0px;
+                             padding-bottom: 0px;}
+.block-prevnext   {              text-align: center;
+                                padding-top: 0px;
+                             padding-bottom: 0px;}
+.block-albums     {              text-align: center;
+                                padding-top: 10px;
+                             padding-bottom: 10px;
+                                margin-left: 10%;
+                               margin-right: 10%;}
+.block-resource   {              text-align: center;
+                                padding-top: 10px;
+                             padding-bottom: 10px;
+                                margin-left: 5%;
+                               margin-right: 5%;}
+.block-trback-top,
+.block-trback,
+.block-error,
+.block-features,
+.block-demosites,
+.block-samplerss  {              text-align: left;
+                                margin-left: 25px;
+                               margin-right: 25px;}
+
+SPAN.prevnext,
+SPAN.trback-top,
+SPAN.features,
+SPAN.samplerss,
+SPAN.linktracker,
+SPAN.demosites    {                    font: 10pt georgia, lucida sans unicode, times new roman, times, sans-serif;}
+SPAN.error        {                    font: 15pt bold lucida sans unicode, times new roman, times, sans-serif;}
+SPAN.trback-url   {                    font: 9pt verdana, arial, helvetica, sans-serif;}
+
+.comment-title    {             padding-top: 0px;}
+
+.comment-header   {              text-align: left;                                    
+                             letter-spacing: 0.09em;
+                                      width: 50%;
+                                margin-left: 0px;
+                               margin-right: 0px;
+                              margin-bottom: 10px;
+                                 border-top: 1px solid #ddd;
+                                border-left: 1px solid #ddd;
+                               border-right: 1px solid #666;
+                              border-bottom: 1px solid #666;}
+
+.comment-topic    {                   color: #555;
+                                       font: bold 8pt georgia, lucida sans unicode, times new roman, times, sans-serif;
+                                      width: 95%;
+                                     margin: auto;
+                                 margin-top: 10px;
+                              margin-bottom: 2px;
+                                 background: transparent;
+                              border-bottom: 1px solid #666;}
+
+.comment-posterinfo {                  font: 9px verdana, arial, helvetica, sans-serif;
+                                      color: #888;
+                                      width: 95%;
+                             padding-bottom: 10px;
+                                     margin: auto;
+                                margin-left: 10px;}
+
+a                 {                   color: #111;
+                            text-decoration: none;
+                                 background: transparent;}   
+a:link            {           border-bottom: 1px solid #aaa;}
+a:visited         {           border-bottom: 1px solid #aaa;}
+a:hover           {           border-bottom: 1px solid #111;}
+
+a.rsslink         {}
+a.rsslink:link    {                  border: 1px none #eee;} 
+a.rsslink:visited {                  border: 1px none #eee;}
+a.rsslink:hover   {                  border: 1px none #111;} 
+
+a.album           {                  border: none;}
+
+.link-cat         {              margin-top: 15px;
+                                margin-left: 10px;
+                                padding-top: 3px;
+                             padding-bottom: 3px;
+                                 text-align: left;                              
+                                       font: 8pt arial, times new roman;
+                                font-weight: bold;
+                                      color: #333}
+.xlink-item        {             margin-top: 1px;
+                                margin-left: 10px;
+                               margin-right: 10px;}
+
+LI                {             line-height: 150%;
+                            list-style-type: disc;
+                           list-style-image: url('li.gif');
+                        list-style-position: outside;
+                                text-indent: 0px;
+                               padding-left: 3px;
+                                padding-top: 3px;
+                                 margin-top: 5px;}
+LI.rss            {             line-height: 150%;
+                            list-style-type: disc;
+                           list-style-image: none;
+                        list-style-position: outside;
+                                text-indent: 0px;
+                               padding-left: 3px;
+                                padding-top: 0px;
+                                 margin-top: 0px;}
+
+UL                {                  margin: 5px;
+                                margin-left: 10px;
+                               padding-left: 7px;
+                            list-style-type: none;}
+
+IMG.seperator     {             margin-left: 5px;
+                               margin-right: 5px;}
+IMG.resource      {                   width: 100%;
+                                     height: auto;}
+
+.recent           {}
+
+TABLE             {             margin-left: auto;
+                               margin-right: auto;}
+TABLE.album-table {                  border: none;
+                                margin-left: auto;
+                               margin-right: auto;
+                             border-spacing: 15px;
+                            border-collapse: separate;}
+TABLE.trback-table {                 border: none;
+                                margin-left: 25px;
+                               margin-right: 25px;
+                             border-spacing: 15px 5px;
+                            border-collapse: separate;} 
+
+TD                {              text-align: right;
+                                       font: 8pt arial, verdana, helvetica, sans-serif;
+                                 border-top: 1px solid #ccc;
+                                border-left: 1px solid #ccc;
+                               border-right: 1px solid #eee;
+                              border-bottom: 1px solid #eee;
+                                    padding: 1px;}
+
+TD.album-cell     {              text-align: center;
+                             vertical-align: middle;
+                                     margin: auto;
+                                    padding: 10px;
+                                      width: auto;
+                                 border-top: 1px solid #ccc;
+                                border-left: 1px solid #ccc;
+                               border-right: 1px solid #f7f7f7;
+                              border-bottom: 1px solid #f7f7f7;}
+
+TD.trback-left    {                  border: none;
+                                 text-align: right;}
+TD.trback-right   {                  border: none;
+                                 text-align: left;}
+
+TH                {              border-top: 1px solid #ccc;
+                                border-left: 1px solid #ccc;
+                               border-right: 1px solid #eee;
+                              border-bottom: 1px solid #eee;}
+
+.calMonth         {          padding-bottom: 0px;}
+
+.calMonthNav      {                    font: 8pt arial, times new roman;
+                                font-weight: bold;
+                                      color: #333}
+
+.calMonthHeader   {                    font: 7pt courier new, arial, times new roman;
+                                font-weight: normal;
+                                 text-align: center;}
+
+.calMonthBackward {                    font: 11px arial, times new roman;
+                                font-weight: normal;
+                                 text-align: center;}
+.calMonthForward  {                    font: 11px arial, times new roman;
+                                font-weight: normal;
+                                 text-align: center;}
+.calMonthCurrent  {                    font: 11px arial, times new roman;
+                                font-weight: bold;
+                                 text-align: center;}
+
+.calMonthToday    {             font-weight: normal;
+                           background-color: #dcc;
+                                 border-top: 1px solid #aaa;
+                                border-left: 1px solid #aaa;
+                               border-right: 1px solid #ccc;
+                              border-bottom: 1px solid #ccc;}
+
+#Bottommenu       {              text-align: center;
+                                    padding: 10px 5px;
+                                       font: 8pt verdana, arial, helvetica, sans-serif;
+                                      color: #111;}
+
+.credit           {              text-align: center;
+                                    padding: 10px; 
+                                     margin: auto;
+                                      color: #111;}
+
+.credit-block     {              text-align: center;
+                                       font: 7pt verdana, arial, helvetica, sans-serif;
+                             letter-spacing: 0.04em;                            
+                                      width: 50%;
+                                     margin: auto;
+                                 margin-top: 10px;
+                              margin-bottom: 10px;
+                                padding-top: 5px;
+                             padding-bottom: 5px;
+                                 border-top: 1px solid #ddd;
+                                border-left: 1px solid #ddd;
+                               border-right: 1px solid #666;
+                              border-bottom: 1px solid #666;}
+
+.commentheader    {             margin-left: 25px;
+                               margin-right: 25px;
+                                padding-top: 10px;
+                             padding-bottom: 10px;}
+
+INPUT.field       {              border-top: 2px solid #666;
+                                border-left: 2px solid #666;
+                               border-right: 1px solid #ccc;
+                              border-bottom: 1px solid #ccc;
+                           background-color: #fff;
+                                      color: #111;}
+
+TEXTAREA          {              border-top: 2px solid #666;
+                                border-left: 2px solid #666;
+                               border-right: 2px solid #ccc;
+                              border-bottom: 2px solid #ccc;
+                           background-color: #fff;
+                                      color: #111;}
+
+
+
+    
+
+
+

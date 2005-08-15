@@ -1,0 +1,60 @@
+<div id="links">
+ <div class="sidetitle">
+  {$locale->tr("recently")|capitalize}
+ </div>
+ <div class="side">
+  <ul>
+  {foreach from=$recentposts item=post}
+   <li><a title="{$post->getText()|truncate:15:"..."|strip_tags|escape}" href="{$url->postLink($post)}">{$post->getTopic()}</a></li>
+  {/foreach}
+  </ul>
+ </div>
+ 	  
+<div class="sidetitle">
+   {$locale->tr("search")}
+</div>
+<div class="side" style="margin-left: 5px">
+   <form name="search_form" method="post" action="{$url->getIndexUrl()}">
+    <input type="text" name="searchTerms" value="" size="14" /><br/>
+    <input type="hidden" name="op" value="Search" />
+    <input type="hidden" name="blogId" value="{$blog->getId()}"/>   
+    <input type="submit" name="Search" value="{$locale->tr("search")|capitalize}" />
+   </form>
+</div>
+  	   
+ <div class="sidetitle" >
+  {$locale->tr("categories")|capitalize}
+ </div>
+ <div class="side" style="margin-left: 5px">
+  <ul>
+   {foreach from=$articlecategories item=articleCategory}
+    <li> <a class="nodecoration" href="{$url->categoryRssLink($articleCategory)}"><img src="{$url->getUrl("/imgs/rss_logo_small.gif")}" style="vertical-align:middle; border:0" alt="RSS This Catgory"/></a> [{$articleCategory->getNumArticles()}] <a href="{$url->categoryLink($articleCategory)}">{$articleCategory->getName()}</a>
+    </li>
+   {/foreach}
+   </ul>
+ </div>
+
+ <div class="sidetitle">
+  {$locale->tr("archives")|capitalize}
+ </div>
+ <div class="side">
+  <ul>
+  {foreach from=$archives item=archivelink}
+   <li><a href="{$archivelink->getUrl()}">{$archivelink->getName()}</a> [{$archivelink->getNumArticles()}]</li>
+  {/foreach}
+  </ul>
+ </div>
+
+ <div class="sidetitle">
+  {$locale->tr("syndicate")}
+ </div>
+ <div class="side" style="text-align:center">
+  <ul>
+   <li><a title="Link to the RSS 0.90 feed." href="{$url->rssLink("rss090")}"><img src="{$url->getUrl('/imgs/rss090_logo.gif')}" alt="Link to the RSS 0.90 feed" title="RSS 0.90" style="border:0" /></a></li>
+   <li><a title="Link to the RSS 1.0 feed." href="{$url->rssLink("rss10")}"><img src="{$url->getUrl('/imgs/rss10_logo.gif')}" alt="Link to the RSS 1.0 feed" title="RSS 1.0" style="border:0" /></a></li>
+   <li><a title="Link to the RSS 2.0 feed." href="{$url->rssLink("rss20")}"><img src="{$url->getUrl('/imgs/rss20_logo.gif')}" alt="Link to the RSS 2.0 feed" title="RSS 2.0" style="border:0" /></a></li>
+   <li><a title="Link to the Atom 0.3 feed." href="{$url->rssLink("atom")}"><img src="{$url->getUrl('/imgs/atom_logo.png')}" alt="Atom 0.3" title="Link to the Atom 0.3 feed" style="border:0" /></a></li>
+  </ul> 
+ </div>
+ 
+</div>

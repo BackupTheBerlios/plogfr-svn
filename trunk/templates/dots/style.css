@@ -1,0 +1,184 @@
+/*
+
+Dots - A WordPress CSS Template
+Copyright 2004 Alex King
+
+Based on: Bloggia 3-Column Template by Alex King (http://www.bloggia.com/styles/bloggia_themer/)
+
+*/
+
+body {
+	background: #fff;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+h1, h2, h3, h4, p, li, a, span, th, td, input, select, textarea {
+	font-family: verdana, tahoma, arial, helvetica, geneva, sans-serif;
+}
+p, li, td, caption, input, select, textarea {
+	font-size: 11px;
+	font-weight: normal;
+}
+#rap {
+	display: block;
+	margin: auto;
+	position: relative;
+	text-align: left;
+	width: 770px;
+}
+#header {
+	background: #5A634E;
+	background: url(images/header_background.gif) no-repeat;
+	border: 1px solid #4B5340;
+	border-width: 0 1px 2px 1px;
+	color: #fff;
+	font-size: 18px;
+	height: 98px;
+	left: 0;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	text-align: left;
+	top: 0;
+	width: 768px;
+}
+#header a {
+	color: #fff;
+	display: block;
+	padding: 65px 10px 10px 10px;
+}
+#content {
+	left: 190px;
+	padding: 10px 0 0 0;
+	position: absolute;
+	top: 100px;
+	width: 420px;
+}
+#content h2 {
+	border-bottom: 1px solid #878D7C;
+	color: #727A66;
+	font-size: 12px;
+	margin: 0;
+	padding: 0 0 3px 0;
+	text-align: right;
+}
+#content div.post {
+	padding: 0 0 10px 0;
+}
+#content div.post h3 {
+	color: #4B5340;
+	font-size: 13px;
+	margin: 7px 0 3px 0;
+	padding: 0;
+}
+#content div.post h3 a, #content div.post h3 a:link, #content div.post h3 a:visited {
+	color: #4B5340;
+}
+#content div.post div.meta, #content div.post div.meta ul li a, #content div.post div.meta ul li a:link, #content div.post div.meta ul li a:visited {
+	color: #727A66;
+	font-size: 10px;
+}
+#content div.post div.meta ul {
+	display: inline;
+	margin: 0;
+	padding: 0;
+}
+#content div.post div.meta ul li {
+	display: inline;
+	margin: 0;
+	padding: 0 3px 0 0;
+}
+#content div.post div.storycontent {
+	border-left: 2px solid #e8e8e8;
+	margin: 0 10px 0 0;
+	padding: 0 0 0 7px;
+}
+#content div.post div.feedback a {
+	color: #727A66;
+	font-size: 10px;
+}
+#content div.post div.storycontent ol, #content div.post div.storycontent ul, #content div.post div.storycontent li, #content div.post div.storycontent blockquote {
+	margin-left: 10px;
+	padding-left: 0;
+}
+#comment {
+	height: 150px;
+	width: 400px;
+}
+#calendar, #search, #archives {
+	left: 630px;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	width: 150px;
+}
+#calendar {
+	top: 0;
+}
+#search {
+	top: 160px;
+}
+#archives {
+	top: 230px;
+}
+#menu {
+	background: url(images/columns.jpg) no-repeat;
+	left: 0;
+	padding: 110px 0 0 0;
+	position: absolute;
+	top: 110px;
+	width: 190px;
+}
+#menu ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+#menu ul li {
+	color: #5A634E;
+	font-weight: bold;
+	margin: 0 0 10px 0;
+	padding: 0;
+}
+#calendar caption {
+	font-weight: bold;
+}
+
+.calendarHeader {
+	color: #4B5340;
+	font-size: 10px;
+	padding: 2px;
+	text-align: center;
+}
+.calendarToday {
+  background-color: #FFAABB;
+}
+.calendar {
+	font-size: 10px;
+	padding: 2px;
+	text-align: right;
+}
+#menu form {
+	margin: 0;
+	padding: 0;
+}
+#menu ul li ul {
+	margin: 2px 0 0 0;
+	padding: 0;
+}
+#menu ul li ul li {
+	color: #000;
+	font-weight: normal;
+	margin: 0 0 2px 10px;
+	padding: 0;
+}
+#menu ul li ul li a, #menu ul li ul li a:link, #calendar td a, #calendar td a:link {
+	color: #4B5340;
+}
+#menu ul li ul li a:visited, #calendar tfoot td a:visited {
+	color: #5A634E;
+}
+p.credit {
+	display: none;
+}

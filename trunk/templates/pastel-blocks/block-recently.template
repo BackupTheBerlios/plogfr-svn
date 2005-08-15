@@ -1,0 +1,21 @@
+    <div class="block-shadow">
+     <div class="block-main">
+      <div class="{cycle values="box-red,box-blue,box-orange,box-teal,box-purple,box-green"}">
+       <div class="block-recently">
+
+        <div class="block-title">
+         <div class="block-header">{$locale->tr("recently")}</div>
+        </div>
+
+        <div class="recent-posts">
+         <ul>
+         {foreach from=$recentposts item=recentpost}
+         <li class="recent"><a title="{$recentpost->getText()|truncate:150:"..."|strip_tags|escape}" href="{$url->postLink($recentpost)}">{$recentpost->getTopic()}</a></li>
+         {/foreach}
+         </ul>       
+        </div><br/>        
+
+       </div>
+      </div>
+     </div>
+    </div>

@@ -1,0 +1,5 @@
+
+ <div class="blogbody">
+  <a href="{$url->postPermalink($post)}">{$post->getTopic()}</a>
+  </div>
+

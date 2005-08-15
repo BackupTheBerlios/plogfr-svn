@@ -1,0 +1,5 @@
+<ul>
+{foreach from=$recentposts item=recentpost}
+  <li><a title="{$recentpost->getText()|truncate:100:"..."|strip_tags|escape}" href="{$url->postLink($recentpost)}">{$recentpost->getTopic()}</a></li>
+{/foreach}
+</ul>

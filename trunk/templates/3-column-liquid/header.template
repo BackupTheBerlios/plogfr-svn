@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head>
+  <title>{$blog->getBlog()}</title>
+  <link rel="stylesheet" title="default" type="text/css" media="screen" href="{$url->getTemplateFile("style_default.css")}" />
+  <meta http-equiv="content-type" content="text/html; charset={$locale->getCharset()}" />
+ <link rel="alternate" type="text/xml" title="RSS 2.0" href="{$url->rssLink("rss20")}" />
+ <link rel="alternate" type="text/xml" title="RSS 1.0" href="{$url->rssLink("rss10")}" />
+ <link rel="alternate" type="text/xml" title="RSS 0.90" href="{$url->rssLink("rss090")}" />
+ <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="{$url->rssLink("atom")}" />  
+ </head>
+ <body>
+   <div id="subtitle">
+   </div>
+
+   <div id="top">
+    <div id="banner">
+    <a href="{$url->blogLink()}">{$blog->getBlog()}</a>
+    </div>
+    <div id="navcontainer">
+     <ul>
+      <li><a href="{$url->blogLink()}">Main</a></li>
+      <li><a href="{$url->templatePage("aboutme.html")}">About Me</a></li>
+      <li><a href="{$url->albumLink()}">{$locale->tr("albums")}</a></li>
+      <li><a href="http://www.plogworld.net">pLog</a></li>
+     </ul>
+    </div>
+   </div>
+
+  <div id="container">
+   <div id="left">
+    <div id="sectionHeader">Categories</div>
+    <div id="sectionContent">
+     <ul id="recently">
+      {foreach from=$articlecategories item=articleCategory}
+       <li>
+         <a href="{$url->categoryLink($articleCategory)}">
+          {$articleCategory->getName()}  
+          [{$articleCategory->getNumArticles()}]
+        </a>
+       </li>
+      {/foreach}
+     </ul>
+    </div>
+
+    <div id="sectionHeader">My Links</div>
+    <div id="sectionContent">
+       {foreach from=$mylinkscategories item=linkcategory}
+        <b>{$linkcategory->getName()}</b><br/>
+        <ul id="recently">
+        {foreach from=$linkcategory->getLinks() item=link}
+         <li><a href="{$link->getUrl()}" title="{$link->getDescription()}">{$link->getName()}</a></li>
+        {/foreach}
+        </ul>
+       {/foreach}
+     </ul>
+    </div>
+
+   </div>
+  </div>
+  <div id="content">

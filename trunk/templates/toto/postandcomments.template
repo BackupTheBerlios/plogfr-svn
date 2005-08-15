@@ -1,0 +1,49 @@
+{include file="$blogtemplate/header.template"}
+{assign var="postDate" value=$post->getDateObject()}
+{assign var="postOwner" value=$post->getUserInfo()}
+  <tr>
+    <td valign="top">
+<table width="100%"  border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td>
+    <!-- {$url->postTrackbackLink($post)} -->
+	{include file="$blogtemplate/post.template"}
+    </td>
+  </tr>
+  <tr>
+    <td>
+	<div class="comments-head">
+	<a name="comments"></a>Comments
+	</div>
+	 {foreach from=$comments item=comment}
+	  <div class="comments-body">
+	   <a name="{$comment->getId()}"></a><p>{$comment->getText()}</p>
+	   <span class="comments-post">
+	    {$locale->tr("posted_by")}
+	    {if $comment->getUserUrl() != ""}
+	     <a href="{$comment->getUserUrl()}"}>{$comment->getUsername()}</a>
+	    {else}
+	     {$comment->getUsername()}
+	    {/if}
+		{assign var=commentDate value=$comment->getDateObject()}
+	    {$locale->formatDate($commentDate, "%d %b %Y, %H:%M")}
+	   </span>
+	  </div>
+	 {/foreach}
+     </td>
+   </tr>
+ {if $blogsettings->getValue("comments_enabled") && $post->getCommentsEnabled()==1}
+  <tr>
+    <td>
+   <div class="comments-head">{$locale->tr("add_comment")}</div>
+   {include file="$blogtemplate/commentform.template"}
+    </td>
+  </tr>
+ {/if}
+</table> 
+</td>
+    <td width="200" valign="top" class="panel">
+		{include file="$blogtemplate/panel.template"}
+	</td>
+</tr>
+{include file="$blogtemplate/footer.template"}

@@ -1,0 +1,6 @@
+{include file="$blogtemplate/header.template"}
+	<div class="AddComment">
+		{$locale->tr("add_comment")}
+	</div>
+{include file="$blogtemplate/commentform.template"}
+{include file="$blogtemplate/footer.template"}

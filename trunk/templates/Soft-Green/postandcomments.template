@@ -1,0 +1,33 @@
+{include file="$blogtemplate/header.template"}
+   {assign var="poster" value=$post->getUserInfo()}
+   {assign var="postDate" value=$post->getDateObject()}
+   <h2 class="date">{$locale->formatDate($postDate, "%A, %B %d, %Y")}</h2>
+   <div class="blogbody">
+   <!-- {$url->postTrackbackLink($post)} -->
+   <p>{include file="$blogtemplate/post.template"}</p>
+   </div>
+   {foreach from=$comments item=comment}
+   <div class="blogbody">
+    <p class="title">
+     <img src="{$url->getUrl("/imgs/comment_icon1.gif")}"/> {$comment->getTopic()} <span class="categoryinfo">[<a href="{$url->replyCommentLink($post,$comment)}">{$locale->tr("reply")}</a>]</span>
+    </p>
+    {$comment->getText()}
+    <div class="posted">
+    {assign var="commentDate" value=$comment->getTimestamp()}
+    Comment by 
+    {if $comment->getUserUrl() != "" }
+    <a href="{$comment->getUserUrl()}">{$comment->getUsername()}</a>
+    {else}
+    {$comment->getUsername()}
+    {/if}
+    ({$locale->formatDate($commentDate, "%m/%d/%Y %H:%M")})</div></div>
+  {/foreach}
+{if $post->getCommentsEnabled()}
+<p>
+<div style="padding-left: 20px">
+<h3>{$locale->tr("add_comment")}</h3>
+{include file="$blogtemplate/commentform.template"}
+</div>
+</p>
+{/if}
+{include file="$blogtemplate/footer.template"}

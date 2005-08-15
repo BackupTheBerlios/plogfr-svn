@@ -1,0 +1,30 @@
+{assign var="postDate" value=$post->getDateObject()}
+{assign var="postOwner" value=$post->getUserInfo()}
+      <table width="100%"  border="0" cellspacing="2" cellpadding="2">
+        <tr>
+          <td class="catList">{$locale->formatDate($postDate,"%d %b, %Y")}</td>
+        </tr>
+      </table>
+      <table width="100%"  border="0" cellspacing="0" cellpadding="4">
+        <tr>
+          <td class="title">{$post->getTopic()}</td>
+        </tr>
+        <tr>
+          <td class="info">{$locale->tr("posted_by")} {$postOwner->getUsername()} {$locale->formatDate($postDate,"%H:%M")} |
+	  <img alt="Permalink" src="{$url->getTemplateFile("post.gif")}" width="10" height="11" align="absmiddle" />
+		<a href="{$url->postPermalink($post)}" class="post">{$locale->tr("permalink")}</a> | 
+	  <img alt="Comments" src="{$url->getTemplateFile("bubble.gif")}" width="11" height="11" align="absmiddle" /> 
+		<a href="{$url->postPermalink($post)}" class="post">{$locale->tr("comments")}</a> ({$post->getTotalComments()}) | 
+	  <img alt="Trackback" src="{$url->getTemplateFile("trackback.gif")}" width="16" height="11" align="absmiddle" /> 
+		<a href="{$url->postTrackbackStatsLink($post)}" class="post">{$locale->tr("trackbacks")}</a> ({$post->getNumTrackbacks()}) |
+   {foreach name=categories from=$post->getCategories() item=postCategory}
+   <a href="{$url->categoryLink($postCategory)}" class="post">{$postCategory->getName()}</a>{if !$smarty.foreach.categories.last}, {/if}
+   {/foreach}</td>
+
+        </tr>
+        <tr>
+          <td class="article">
+	  {$post->getText()}
+	  </td>
+        </tr>
+      </table>

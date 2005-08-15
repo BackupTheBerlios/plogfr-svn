@@ -1,0 +1,6 @@
+  <ul>
+   <li><a title="Link to the RSS 0.90 feed." href="{$url->rssLink("rss090")}">RSS 0.90</a></li>
+   <li><a title="Link to the RSS 1.0 feed." href="{$url->rssLink("rss10")}">RSS 1.0</a></li>
+   <li><a title="Link to the RSS 2.0 feed." href="{$url->rssLink("rss20")}">RSS 2.0</a></li>
+   <li><a title="Link to the Atom 0.3 feed." href="{$url->rssLink("atom")}">Atom 0.3</a></li>
+  </ul> 

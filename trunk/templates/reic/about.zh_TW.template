@@ -1,0 +1,28 @@
+{include file="$blogtemplate/header.template"}
+<div id="content">
+<div class="blog">
+<h3 class="title">Reic 模版使用說明</h3>
+<p><a href="{$url->templatePage("about")}">English Version</a> | <a href="{$url->templatePage("about.zh_TW")}">中文版本</a></p>
+<p>"Reic 模版" 是由內建模版 blueish 所發展的版本. 目前本版為 plog 1.0 的使用模版.
+</p>
+<p>如何去更改模版呢?
+<ol>
+<li>編輯影像法：
+  <ul>
+    <li>Open — 在 Photoshop  中開啟 "reic.psd".</li>
+    <li>Change — 在 Photoshop 修改或新增你所想要增加的部分.</li>
+    <li>Save — 在儲存時，選擇 "儲存為網頁用"，並選擇一個地方放置.</li>
+    <li>Upload — Photoshop 會建立一個 'images' 的目錄來儲放影像. 
+    上傳這一個 'images' 目錄到 "Reic 模版" 所在路徑即可.</li>
+  </ul>
+</li>
+<li>修改 reic.css 來調整顏色的配置。</li>
+</ol>
+	<p style="text-align:right;font-style:italic;">by reic</p>
+	<hr />
+	<p>※修改 about.zh_TW.template 即可修改此頁面的內容</p>
+
+</div>
+</div>
+{include file="$blogtemplate/panel.template"}
+{include file="$blogtemplate/footer.template"}

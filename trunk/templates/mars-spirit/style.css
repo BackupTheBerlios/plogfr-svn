@@ -1,0 +1,379 @@
+body {
+	background-color: #000;
+	margin: 0;
+	padding: 0;
+	color: #C5886B;
+	font: 80%/1.5 Arial, Helvetica, sans-serif;
+}
+
+a:link {
+	color: #FB9950;
+	background-color: transparent;
+	text-decoration: none;
+}
+
+a:visited {
+	color: #C06E3D;
+	background-color: transparent;
+	text-decoration: none;
+}
+
+a:hover, a:focus {
+	color: #D5713F;
+	background-color: transparent;
+	text-decoration: underline;
+}
+
+div#rap {
+	position: relative;
+	border: 1px solid #613725;
+	margin: 0 auto;
+	padding-bottom: 280px;
+	width: 780px;
+	background: Black url(images/header.jpg) no-repeat top center;
+}
+
+div#rap h1#header {
+	position: absolute;
+	margin: 0 auto;
+	width: 780px;
+	top: 206px;
+	height: 43px;
+	overflow: hidden;
+	letter-spacing: 2px;
+	left: 20px;
+}
+
+div#rap h1#header a:hover, div#rap h1#header a:focus {
+	text-decoration: none;
+}
+
+h1#header a {
+	display: block;
+	background-color: transparent;
+}
+
+div#content {
+	position: relative;
+	border-top: 1px solid #613725;
+	border-bottom: 1px solid #613725;
+	margin: 0 auto;
+	padding-top: 20px;
+	width: 780px;
+	top: 250px;
+	background-color: #21120B;
+	background-image: url(images/bg-body.jpg);
+}
+
+div#content h2 {
+	background: #000 url(images/date.jpg) no-repeat left center;
+	color: #94532D;
+	padding: 2px 15px 2px 85px;
+	border: 1px solid #613725;
+	margin-left: 40px;
+	margin-right: 220px;
+	margin-bottom: 10px;
+	margin-top: 0;
+	font-size: 95%;
+	font-weight: normal;
+}
+
+div.post {
+	margin-left: 40px;
+	margin-right: 220px;
+	margin-top: 0;
+	margin-bottom: 30px;
+	background-color: #2A170D;
+	border: 1px solid #542E21;
+	position: relative;
+}
+
+div.post h3.storytitle {
+	background: #000 url(images/topic.jpg) no-repeat left center;
+	margin-top: 0;
+	margin-bottom: 0;
+	font-size: 100%;
+}
+
+div.post h3.storytitle a:link, div.post h3.storytitle a:visited, div.post div.feedback a:link, div.post div.feedback a:visited {
+	background-color: transparent;
+	display: block;
+	padding: 3px 15px 3px 85px;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+div.post h3.storytitle a:hover, div.post h.storytitle a:focus, div.post div.feedback a:hover, div.post div.feedback a:focus {
+	text-decoration: none;
+}
+
+div.post div.meta {
+	position: relative;
+	float: right;
+	background: #512D1E url(images/tabbed-meta.gif) no-repeat left bottom;
+	margin: 0;
+	padding: 2px 15px 2px 60px;
+	font-size: 90%;
+}
+
+div.post ol, div.post ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+div.post li {
+	margin: 5px 15px;
+	padding: 0 20px;
+	background: transparent url(images/list-post.gif) no-repeat 0 4px;
+}
+
+div.meta ul {
+	list-style: none;
+	display: inline;
+	padding: 0;
+	margin: 0;
+}
+
+div.meta ul li {
+	display: inline;
+	padding: 0;
+	margin: 0;
+	background-image: none;
+}
+
+div.storycontent {
+	/* unfortunately a clear:right is breaking the layout in IE, so I went away with padding */
+	padding: 20px 20px 10px;
+}
+
+
+div.post div.feedback {
+	background: #000 url(images/comments.jpg) no-repeat left center;
+	margin-top: 0;
+	margin-bottom: 0;
+	font-size: 100%;
+}
+
+div#menu {
+	position: absolute;
+	width: 180px;
+	right: 0;
+	top: 251px;
+	background-color: #1A0F0A;
+	margin: 0;
+	padding-top: 10px;
+	border-left: 1px solid #613725;
+}
+
+div#menu ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	background-color: #1A0F0A;
+}
+
+div#menu ul li ul {
+	background-color: #512D1E;
+	padding: 10px 0;
+	border: 1px solid #905437;
+}
+
+div#menu ul li {
+	background-color: #321C10;
+	display: block;
+	margin: 10px 0;
+	padding-left: 5px;
+}
+
+li#wordpress {
+	background: #321C10 url(images/list-wordpress.gif) no-repeat 95% 1px;
+	padding: 2px 0;
+	border-top: 1px solid #48291C;
+}
+
+li#categories {
+	background: #321C10 url(images/list-category.gif) no-repeat 95% 1px;
+	padding: 2px 0;
+	border-top: 1px solid #48291C;
+}
+
+li#search {
+	background: #321C10 url(images/list-search.gif) no-repeat 95% 1px;
+	padding: 2px 0;
+	border-top: 1px solid #48291C;
+}
+
+li#archives {
+	background: #321C10 url(images/list-archives.gif) no-repeat 95% 1px;
+	padding: 2px 0;
+	border-top: 1px solid #48291C;
+}
+
+li#calendar {
+	background: #321C10 url(images/list-calendar.gif) no-repeat 95% 1px;
+	padding: 2px 0;
+	border-top: 1px solid #48291C;
+}
+
+li#other {
+	background: #321C10 url(images/list-other.gif) no-repeat 95% 1px;
+	padding: 2px 0;
+	border-top: 1px solid #48291C;
+}
+
+li#meta {
+	background: #321C10 url(images/list-meta.gif) no-repeat 95% 1px;
+	padding: 2px 0;
+	border-top: 1px solid #48291C;
+}
+
+li#style {
+	background: #321C10 url(images/list-styles.gif) no-repeat 95% 1px;
+	padding: 2px 0;
+	border-top: 1px solid #48291C;
+}
+
+div#menu ul li ul li {
+	margin: 0 10px;
+	padding: 0 15px;
+	background: transparent url(images/list-post.gif) no-repeat 0 4px; 
+}
+
+div#menu table {
+	margin: 0;
+	padding: 0;
+	background-color: #512D1E;
+	width: 100%;
+	border: 1px solid #905437;
+}
+
+div#menu table caption {
+	text-align: left;
+}
+
+div#menu table th {
+	background-color: #432418;
+}
+
+div#menu table td {
+	text-align: center;
+}
+
+div#menu table td#today {
+	background-image: url(images/today.gif);
+}
+
+div#menu td a {
+	display: block;
+	background-color: #432418;
+	border: 1px solid;
+}
+
+div#menu tfoot {
+	background-color: #432418;
+}
+
+div#menu tfoot a {
+	border: none;
+	display: inline;
+	background-color: transparent;
+}
+
+/* Comment Styles */
+
+div#content h2#comments {
+	background: #000 url(images/comments.jpg) no-repeat left center;
+	color: #94532D;
+	padding: 2px 15px 2px 85px;
+	border: 1px solid #613725;
+	margin-left: 40px;
+	margin-right: 220px;
+	margin-bottom: 10px;
+	margin-top: 0;
+	font-size: 95%;
+	font-weight: normal;
+}
+
+div#content p {
+	margin-left: 50px;
+	margin-right: 220px;
+}
+
+div#content div.post p, div#content ol#commentlist p, div#content form p {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+ol#commentlist {
+	background-color: #2A170D;
+	margin: 0 220px 30px 40px;
+	padding: 0;
+	list-style: none;
+	border: 1px solid #613725;
+}
+
+ol#commentlist li {
+	margin: 10px;
+	padding: 4px 20px 0;
+	background-color:  #512D1E;
+	border: 1px solid #905437;
+}
+
+code {
+	color: #B46233;
+	font: 100% "Courier New", Courier, monospace;
+}
+
+form {
+	margin: 0 220px 30px 40px;
+	padding: 5px 20px;
+	background-color: #2A170D;
+	border: 1px solid #542E21;
+}
+
+
+textarea {
+	width: 80%;
+}
+
+label {
+	display: block;
+}
+
+input, textarea {
+	background-color: #C5886B;
+	border: 1px solid #905437;
+	font: 100% Arial, Helvetica, sans-serif;
+}
+
+input:focus, textarea:focus {
+	background-color: #DDB9A8; 
+}
+
+input[type=submit] {
+	background-color: #1A0F0A;
+	color: #C5886B;
+	cursor: pointer;
+}
+
+div#menu input {
+	margin-bottom: 5px;
+}
+
+div#menu li#search form {
+	margin: 0;
+	padding: 0;
+	background-color: #512D1E;
+	border: 1px solid #905437;
+}
+
+div#menu li#search div {
+	padding: 10px 15px;
+	margin-bottom: 0;
+}
+
+p.credit {
+	font-size: 70%;
+	text-align: center;
+}

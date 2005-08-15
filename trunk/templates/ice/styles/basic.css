@@ -1,0 +1,332 @@
+											/* --- html-tags --- */
+body {
+	margin: 0px;
+	border: 0px;
+	background: #fff url('background.png') repeat-y;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 90%;
+	color: #000;
+}
+blockquote {
+	border: 1px dashed #069;
+	padding: 2px;
+	margin-left: 15px;
+	margin-right: 15px;
+	font-style: italic;
+}
+span.code {
+	display: block;
+	border: 1px dashed #069;
+	padding: 2px;
+	margin-left: 15px;
+	margin-right: 15px;
+	font-family: "Courier New", Courier, mono;
+}
+cite {
+	font-style: italic;
+}
+
+									/* --- links --- */
+a, a:link, a:visited {
+	color: #069;
+    text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+	font-style: italic;
+}
+
+											/* --- header --- */
+#header {
+	width: auto;
+	margin: 10px;
+	padding: 5px;
+	border: 1px solid #069;
+	background: #069 url('gray-blue-stripe.png') repeat-x top;
+}
+
+#header h1 {
+	font-size: 200%;
+	font-weight: bold;
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	display: inline;
+
+}
+#header a, #header a:link, #header a:visited, #header a:hover {
+	text-decoration: none;
+	font-style: normal;
+	color: #ccc;
+}
+#header p {
+	font-size: 75%;
+	color: #fff;
+	display: inline;
+	font-weight: bold;
+}
+
+											/* --- shortcuts --- */
+
+#shortcuts ul {
+	position: absolute;
+	margin: -18px 50px 0px 0px;
+	list-style: none;
+}
+#shortcuts li {
+	float: right;
+	text-align: center;
+	color: #ccc;
+	background: #069;
+	padding: 2px 5px 2px 5px;
+	margin-left: 5px;
+	border: 1px #ccc solid;
+}
+#shortcuts li:hover {
+	background: #ccc;
+	border: 1px #069 solid;
+}
+#shortcuts a, #shortcuts a:link, #shortcuts a:visited {
+	color: #ccc;
+	font-weight: bold;
+	text-decoration: none;
+	font-style: normal;
+}
+#shortcuts a:hover {
+	color: #069;
+}
+											/* --- panel --- */
+											
+#panel {
+	width: 30%;
+	float: left;
+	padding: 10px;
+	border-right: 1px #000 solid;
+	text-align: left;
+	margin-top: 10px;
+}
+
+div.block {
+	border: 2px #069 solid;
+	margin-bottom: 20px;
+	padding: 10px 5px 5px 5px;
+}
+
+#panel h5 {
+	border: 1px #069 solid;
+	position: absolute;
+	margin: -20px 0px 0px 10px;
+	padding: 2px 5px 2px 5px;
+	background: #069 url('gray-blue-stripe-small.png') repeat-x top;
+	color: #ccc;
+	font-style: italic;
+	text-transform: capitalize;
+}
+#panel ul {
+	margin: 10px 5px 10px 0px;
+}
+#panel ul * ul {
+	margin: 0px 0px 0px -20px;
+}
+#panel li {
+	list-style-position: outside;
+	list-style-image: url('line.png');
+	margin-bottom: 2px;
+}
+
+#panel li:hover {
+	list-style-position: outside;
+	list-style-image: url('arrow.png');
+}
+#panel a, #panel a:link
+{
+    color: #069;
+    text-decoration: none;
+}
+#panel a:visited {
+    color: #000;
+	text-decoration: none;
+}
+#panel a:hover
+{
+	text-decoration: none;
+    color: #069;
+	font-style: italic;
+}
+div.credits {
+	margin: 20px 10px 10px 10px;
+}
+#panel img {
+	border: 0;
+	margin: 5px 3px 2px 3px;
+}
+											/* --- main --- */
+#main {
+	margin: 10px;
+	padding-top: 10px;
+	text-align : left;
+	width: 60%;
+	float: left;
+}
+div.post {
+	border: 2px #069 solid;
+	margin-bottom: 20px;
+	padding: 10px 5px 5px 5px;
+	background: #fff url('gray-white-stripe.png');
+}
+#main h2 {
+	border: 1px #069 solid;
+	position: absolute;
+	margin: -20px 0px 0px 10px;
+	padding: 2px 5px 2px 5px;
+	background: #069 url('gray-blue-stripe-small.png') repeat-x top;
+	color: #ccc;
+	font-style: italic;
+	text-transform: capitalize;
+	font-size: 90%;
+}
+div.postheader {
+	margin: 10px 40px 10px 0px;
+	border-bottom: 1px #000 solid;
+	font-size: 75%;
+	color: #666;
+}
+div.postfooter {
+	margin: 10px 0px 10px 40px;
+	border-top: 1px #000 solid;
+	font-size: 75%;
+	color: #666;
+	text-align: right;
+}
+											/* --- comments --- */
+#comments {
+	border: 2px #069 solid;
+	margin-bottom: 20px;
+	padding: 10px 5px 5px 5px;
+	background: #fff url('gray-white-stripe.png');
+}
+p.commentheader {
+	margin: 10px 40px 10px 0px;
+	border-bottom: 1px #000 solid;
+	color: #000;
+}
+div.commentposterinfo {
+	margin: 10px 0px 25px 40px;
+	border-top: 1px #000 solid;
+	font-size: 75%;
+	color: #666;
+	text-align: right;
+}
+span.reply {
+	font-size: 75%;
+}
+											/* --- album --- */
+#albums {
+	margin: 10px;
+	padding: 10px;
+	text-align : left;
+	width: 60%;
+	float: left;
+}
+div.album {
+	margin: 0px 10px 15px 10px;
+	float: left;
+	text-align: center;
+
+}
+
+											/* --- calendar --- */
+#calendar {
+	margin: 10px 20px 10px 20px;
+	text-align: center;
+}
+.calMonth {
+	font-size: 75%;
+}
+
+
+
+											/* --- footer --- */
+
+#footer {
+	clear:both;
+	margin: 0px;
+	padding: 5px 10px 5px 10px;
+	font-size: 75%;
+	width: auto;
+	text-align: center;
+	border-top: 1px solid #000;
+}
+
+
+											/* --- forms --- */
+
+input[type="submit"] {
+	margin: 5px;
+	font-weight: bold;
+	border: 2px outset #ccc;
+	background-color: #ccc;
+	color: #000;
+}
+input[type="submit"]:hover {
+	border: 2px outset #069;
+	background-color: #069;
+	color: #ccc;
+}
+input[type="text"] {
+	margin: 5px;
+	font-weight: bold;
+	background-color: #ccc;
+	color: #069;
+	border: 1px solid #000;
+}
+input[type="text"]:hover {
+	background-color: #069;
+	color: #ccc;
+}
+textarea {
+	margin: 5px;
+	font-weight: bold;
+	background-color: #ccc;
+	color: #069;
+	border: 1px solid #000;
+}
+textarea:hover {
+	background-color: #069;
+	color: #ccc;
+}
+label {
+	font-weight: bold;
+}
+legend {
+	font-weight: bold;
+	border-right: 2px #069 inset; 
+	border-bottom: 2px #069 inset;
+}
+fieldset {
+	border: 1px #069 solid;
+	padding: 20px;
+}
+											/* --- others --- */
+
+h1.error {
+
+}
+span.error {
+
+}
+a img {border:none;}
+
+/* ******************  to align elements  *************** */
+.left {text-align: left;display:block}
+.right {text-align: right;display:block}
+.center {text-align: center;display:block}
+
+/* ******************  to float elements  *************** */
+.floatleft {float: left;padding:2px 10px 10px 0px}
+.floatright {float: right;padding:2px 0px 10px 10px;}
+
+/* ******************  to highlight text  *************** */
+.bold {font-weight: bold;}
+.italic {font-style:italic;}
+.underline {text-decoration:underline}

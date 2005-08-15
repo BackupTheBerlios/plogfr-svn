@@ -1,0 +1,15 @@
+{include file="$blogtemplate/header.template"}
+   <h2>{$locale->tr("search_results")}</h2>
+   <p>
+    {foreach from=$searchresults item=result}
+     <div class="searchresult">
+      {assign var=article value=$result->getArticle()}
+      <a href="{$url->postPermalink($article)}"><h3><b>{$article->getTopic()}</b></h3></a>
+      <p>
+      {$article->getText()|strip_tags|truncate:300:"...":false}
+      </p>
+     </div>
+     <br/>
+    {/foreach}
+   </p> 
+{include file="$blogtemplate/footer.template"}

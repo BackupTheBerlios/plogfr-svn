@@ -1,0 +1,85 @@
+{include file="$blogtemplate/header.template"}
+<h1>{$album->getName()}</h1>
+<p>
+ {$album->getDescription()}
+</p>
+
+ <!-- album contents go here -->
+<div id="album">
+<table style="border:0px;width:100%;" summary="Album Resources">
+ <tr>
+  <td style="width:50%;" align="center" >
+   <a class="nodecoration" href="{$url->parentAlbumLink($album)}">
+    <img style="border:0px" src="{$url->getUrl("/imgs/folder.gif")}" alt="Folder" /><br/>
+    ..
+   </a>
+  </td>
+  {assign var="counter" value=1}
+  {assign var=children value=$album->getChildren()}
+  {foreach from=$children item=childalbum}
+  <td style="width:50%;" align="center" >
+   <a class="nodecoration" href="{$url->albumLink($childalbum)}">
+   <img style="border:0px;" src="{$url->getUrl("/imgs/folder.gif")}" alt="Folder" /><br/>
+   {$childalbum->getName()} ({$childalbum->getNumResources()})
+  </a>
+  <br/><br/>
+  {assign var="counter" value="`$counter+1`"}
+  </td>
+  {if $counter%2 == 0}
+   </tr>
+   <tr>
+  {/if}
+ {/foreach}
+
+ <!--- show the resources here -->
+
+ {assign var=resources value=$album->getResources()}
+ {foreach from=$resources item=resource}
+  <td style="width:25%;" align="center" >
+  {if $resource->hasPreview()}
+   {*<a target="_blank" href="resserver.php?blogId={$blog->getId()}&amp;resource={$resource->getFileName()}">*}
+   <a href="{$url->resourceLink($resource)}">
+    <img alt="{$resource->getDescription()}" style="border:0px;" src="{$url->resourcePreviewLink($resource)}" />
+    <br/>{$resource->getFileName()}
+   </a>
+  {else}
+   <a class="nodecoration" href="{$url->resourceLink($resource)}">
+   {if $resource->isSound()}
+    <img alt="Sound" src="{$url->getUrl("/imgs/sound.gif")}" height="64" width="64" style="border:0px;" />
+   {elseif $resource->isVideo()}
+    <img alt="Video" src="{$url->getUrl("/imgs/video.gif")}" height="64" width="64" style="border:0px;" />
+   {elseif $resource->isZip()}
+    <img alt="Zip" src="{$url->getUrl("/imgs/compressed.gif")}" height="64" width="64" style="border:0px;" />   
+   {else}
+    <img alt="File" src="{$url->getUrl("/imgs/file.gif")}" height="64" width="64" style="border:0px;" />    
+   {/if}
+   <br/>{$resource->getFileName()}
+   </a>
+  {/if}
+  <br/>
+  {assign var=metadata value=$resource->getMetadataReader()}
+  {$metadata->getRoundedSize()}<br/>
+  {if $resource->isImage()}
+   {$metadata->getWidth()} x {$metadata->getHeight()}<br/>
+  {elseif $resource->isSound()}
+   {$metadata->getFormat()|upper} {$metadata->getSampleRate()} bps<br/>
+  {elseif $resource->isVideo()}
+   {$metadata->getFormat()|upper}
+   {$metadata->getWidth()} x {$metadata->getHeight()}, 
+   {$metadata->getLengthString()}<br/>
+  {elseif $resource->isZip()}
+   {$metadata->getTotalFiles()} {$locale->tr("files")}<br/>
+  {/if}
+  {assign var="counter" value="`$counter+1`"}
+  </td>
+  {if $counter%2 == 0}
+   </tr>
+   <tr>
+  {/if}
+ {/foreach}
+ <td></td></tr>
+</table>
+</div>
+ <!-- end of album contents -->
+ 
+ {include file="$blogtemplate/footer.template"}

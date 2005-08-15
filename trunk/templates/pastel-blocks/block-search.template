@@ -1,0 +1,25 @@
+   <div class="block-shadow">
+    <div class="block-main">
+      <div class="{cycle values="box-red,box-blue,box-orange,box-teal,box-purple,box-green"}">
+      <div class="block-search">
+
+       <div class="block-title">     
+        <div class="block-header">{$locale->tr("search")}
+        </div>
+       </div>
+
+         <form id="search_form" method="post" action="{$url->getIndexUrl()}">
+          <div>
+           <label for="searchTerms">
+           <input type="text" id="searchTerms" name="searchTerms" value="" size="14" />
+           </label><br/><br/>
+           <input type="submit" name="Search" value="{$locale->tr("search_s")}" class="button" />
+           <input type="hidden" name="op" value="Search" />
+           <input type="hidden" name="blogId" value="{$blog->getId()}" />   
+          </div>
+         </form>
+ 
+       </div>
+      </div>
+     </div>
+    </div>

@@ -1,0 +1,20 @@
+<form action="{$url->getBaseUrl()}/index.php" method="post">
+	<div id="CommentForm">
+		<div class="BlockFormTitle"> {$locale->pr("comment_topic")}</div>
+		<div class="BlockForminput"><input class="Forminput" type="text" size="50" name="commentTopic" value=""/></div>
+		<div class="BlockFormTitle"> {$locale->pr("comment_text")} </div>
+		<div class="BlockForminput"><textarea class="FormTextarea" rows="10" cols="40" name="commentText"></textarea></div>
+		<div class="BlockFormTitle">{$locale->pr("comment_username")}</div>
+		<div class="BlockForminput"><input class="Forminput" type="text" name="userName" value=""/></div>
+		<div class="BlockFormTitle">{$locale->pr("comment_email")}</div>
+		<div class="BlockForminput"><input class="Forminput" type="text" name="userEmail" value=""/></div>
+		<div class="BlockFormTitle">{$locale->pr("comment_url")}</div>
+		<div class="BlockForminput"><input class="Forminput" type="text" name="userUrl" value=""/></div>
+		<div class="BlockForminput"><input class="Formsubmit" type="submit" value="{$locale->pr("comment_send")}" name="Add"/></div>
+
+		<input type="hidden" name="op" value="AddComment"/>
+		<input type="hidden" name="articleId" value="{$post->getId()}"/>
+		<input type="hidden" name="blogId" value="{$blog->getId()}"/>
+		<input type="hidden" name="parentId" value="{$parentId}"/>
+	</div>
+</form>

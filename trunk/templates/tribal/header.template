@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$locale->getLanguageId()}" 
+      lang="{$locale->getLanguageId()}" dir="{$locale->getDirection()}">
+<head>
+  <title>{$blog->getBlog()}</title>
+  <meta http-equiv="Content-Type" content="text/html;charset={$locale->getCharset()}" />
+  <meta name="generator" content="{$version}" />
+  <meta http-equiv="Content-Language" content="{$locale->getLanguageId()}" />
+  <link rel="stylesheet" title="Default" href="{$url->getTemplateFile("tribal.css")}" type="text/css" />
+  <link rel="alternate" type="text/xml" title="RSS 2.0" href="{$url->rssLink("rss20")}" />
+  <link rel="alternate" type="text/xml" title="RSS 1.0" href="{$url->rssLink("rss10")}" />
+  <link rel="alternate" type="text/xml" title="RSS 0.90" href="{$url->rssLink("rss090")}" />
+  <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="{$url->rssLink("atom")}" />
+</head>
+<body> 
+  <p class="upgrade">This page looks plain and unstyled because you're using a non-standard compliant browser. To see it in its best form, please <a href="http://www.webstandards.org/upgrade/" title="The Web Standards Project's Browser Upgrade initiative">upgrade</a> to a browser that supports web standards. It's free and painless.</p>
+  <div id="main">
+    <div id="logo" title="{$blog->getAbout()}">{$blog->getBlog()}</div>
+    <div id="menu">{$locale->formatDate($now,"%A, %d %B %Y")}</div>
+    <div id="navigation">
+      <h2>{$locale->tr("search")}</h2>
+      <br />
+      <div>
+		<form id="search_form" method="post" action="{$url->getIndexUrl()}">
+		<div>
+		<label for="searchTerms" style="display:none;">{$locale->tr("search_this_blog")|capitalize} </label><input type="text" id="searchTerms" name="searchTerms" value="" />
+		<input type="submit" name="Search" value="{$locale->tr("search_s")}" class="button" />
+		<input type="hidden" name="op" value="Search" />
+		<input type="hidden" name="blogId" value="{$blog->getId()}" />   
+		</div>
+		</form>
+      </div>
+      <br />
+      <h2>{$locale->tr("categories")}</h2>
+      <ul class="itemsdot">
+        <li><a href="{$url->blogLink()}">{$locale->tr("main")}</a></li>
+        {foreach from=$articlecategories item=articleCategory}
+        <li><a href="{$url->categoryLink($articleCategory)}">{$articleCategory->getName()}</a> ({$articleCategory->getNumArticles()}) (<a href="{$url->categoryRssLink($articleCategory)}">rss</a>)</li>
+        {/foreach}
+        <li><a href="{$url->albumLink()}">{$locale->tr("albums")}</a></li>
+        <li><a href="{$url->templatePage("about")}">{$locale->tr("about")}</a></li>
+      </ul>
+      <br />
+      <h2>{$locale->tr("recently")}</h2>
+      <ul class="itemsdot">
+      {foreach from=$recentposts item=post}
+        <li><a href="{$url->postLink($post)}" title="{$post->getText()|strip_tags|truncate:100:"..."}">{$post->getTopic()}</a></li>
+      {/foreach}
+      </ul>
+      <br />
+      <h2>{$locale->tr("calendar")}</h2>
+      <br />
+      <div>{$calendar}</div>
+      <br />
+      <h2>{$locale->tr("archives")}</h2>
+      <ul class="itemsdot">
+      {foreach from=$archives item=month}
+        <li><a href="{$month->getUrl()}">{$month->getName()}</a> ({$month->getNumArticles()})</li>
+      {/foreach}
+      </ul>
+      <br />
+      <h2>{$locale->tr("my_links")}</h2>
+      {foreach from=$mylinkscategories item=linkcategory}
+      <p><strong>{$linkcategory->getName()}</strong></p>
+      <ul class="itemsdot">
+      {foreach from=$linkcategory->getLinks() item=link}
+        <li><a href="{$link->getUrl()}" title="{$link->getDescription()}">{$link->getName()}</a></li>
+      {/foreach}
+      </ul>
+      {/foreach}
+      <br />
+      <h2>{$locale->tr("syndicate")}</h2>
+      <ul class="itemsdot">
+        <li><a href="{$url->rssLink("rss090")}">RSS 0.9</a></li>
+        <li><a href="{$url->rssLink("rss10")}">RSS 1.0</a></li>
+        <li><a href="{$url->rssLink("rss20")}">RSS 2.0</a></li>
+        <li><a href="{$url->rssLink("atom")}">Atom 0.3</a></li>
+      </ul>
+      <br />
+    </div> <!-- End [navigation] -->
+    <div id="content">

@@ -1,0 +1,46 @@
+{include file="$blogtemplate/header.template"}
+{assign var="postDate" value=$post->getDateObject()}
+{assign var="postOwner" value=$post->getUserInfo()}
+{assign var=nextpost value=$post->getNextArticle()}
+{assign var=prevpost value=$post->getPrevArticle()}
+{assign var=postId value=$post->getId()}
+<div id="content">
+<div class="post">
+<p align="center">
+{if $prevpost == true}
+<a href="{$url->postPermalink($prevpost)}" title="{$locale->tr("previous_post")}: {$prevpost->getTopic()}">&laquo; {$locale->tr("previous_post")}</a> |
+{/if}
+{if $nextpost == true}
+<a href="{$url->postPermalink($nextpost)}" title="{$locale->tr("next_post")}: {$nextpost->getTopic()}">{$locale->tr("next_post")}&raquo;</a>
+{/if}
+</p>
+<!-- {$url->postTrackbackLink($post)} -->
+{include file="$blogtemplate/post.template"}
+
+{* show comments *}
+<h3 id="comments">{$post->getTotalComments()} Comments on "{$post->getTopic()}"</h3>
+<ol class="commentlist">
+{foreach name=comment from=$comments item=comment}
+<li class="alt" id="comment-{$comment->getId()}">
+{$locale->tr("posted_by")}
+{if $comment->getUserUrl() != ""}
+<cite><a href="{$comment->getUserUrl()}"}>{$comment->getUsername()}</a></cite>
+{else}
+<cite>{$comment->getUsername()}</cite>
+{/if}
+<a name="{$comment->getId()}"></a>
+{$comment->getTopic()} [<a href="{$url->postPermalink($post)}#NewComment"> {$locale->tr("reply")} </a>]<br />
+<small class="commentmetadata">{assign var=commentDate value=$comment->getDateObject()}	{$locale->formatDate($commentDate, "%d/%m/%Y, %H:%M")}</small>
+<p>{$comment->getText()}</p>
+</li>
+{/foreach}
+</ol>
+{if $blogsettings->getValue("comments_enabled") && $post->getCommentsEnabled()==1}
+<h3 id="respond"><a name="Newcomment"></a>{$locale->tr("add_comment")}</h3>
+{include file="$blogtemplate/commentform.template"}
+{/if}
+
+</div>
+</div>
+{include file="$blogtemplate/panel.template"}
+{include file="$blogtemplate/footer.template"}

@@ -1,0 +1,15 @@
+		 </div>
+<!--// Content End //-->
+
+<!--// Sidebar Begain //-->
+  {include file="$blogtemplate/sidebar.template"}
+<!--// SideBar End//-->
+<!--// Bottom Begain //-->		
+  {include file="$blogtemplate/copyright.template"}
+<!--// Bottom End //-->
+	 </div>
+<!--// Main End//-->
+</div>
+<!--//  Container End//-->
+</body>
+</html>

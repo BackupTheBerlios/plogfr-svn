@@ -1,0 +1,25 @@
+{assign var="blogId" value=$blog->getId()}
+
+    <div class="block-shadow">
+     <div class="block-main">
+      <div class="{cycle values="box-red,box-blue,box-orange,box-teal,box-purple,box-green"}">
+       <div class="block-archives">
+
+       <div class="block-title">
+         <div class="block-header">{$locale->tr("resources")}</div>
+       </div>
+
+        <ul>
+
+         <li><a href="admin.php">Admin</a></li>
+         <li><a href="{$url->albumLink()}">{$locale->tr("albums")}</a></li>
+         <li><a href="index.php?op=Template&amp;blogId={$blogId}&amp;show=features">Features</a></li>
+         <li><a href="index.php?op=Template&amp;blogId={$blogId}&amp;show=demosites">DemoSites</a></li>
+         <li><a href="index.php?op=Template&amp;blogId={$blogId}&amp;show=samplerss">Sample RSS</a></li>
+
+        </ul><br/>
+
+       </div>
+      </div>
+     </div>
+    </div>

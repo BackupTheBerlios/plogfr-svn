@@ -1,0 +1,30 @@
+{include file="$blogtemplate/header.template"}
+<div id="outcon">
+<div id="content">
+<div class="blog">
+<h3 class="title">Reic Template User Guide</h3>
+<p><a href="{$url->templatePage("about")}">English Version</a> | <a href="{$url->templatePage("about.zh_TW")}">Chinese Version</a></p>
+<p>"Reic Template" is a based on the embeded template of blueish. The template now is suitable for plog 1.0.
+</p>
+<p>How to customize the template?
+<ol>
+<li>Modify the background images method:
+<ul>
+<li>Open:Open the 'reic.psd' file with Photoshop.</li>
+<li>Change:Change whatever you want, such as for instance the background color.</li>
+<li>Save:Go to File->Save For Web. Press Save when the dialog appears. Choose a place to save it.</li>
+<li>Upload:Photoshop has now created a directory called 'images', where you saved the images. Upload this directory to the root of your WordPress installation, overwriting the files already there.</li>
+</ul>
+</li>
+<li>Modify the reic.css to change the css style.</li>
+</ol>
+<p style="text-align:right;font-style:italic;">by reic</p>
+<hr />
+<p>You can change the contents of this page by editing the about.template file.</p>
+<p>The change log is described at <a href="{$url->templatePage("changelog")}" title="change log">changlog page</a>.
+</div>
+<div class="clear">&nbsp;</div>
+</div>
+</div>
+{include file="$blogtemplate/panel.template"}
+{include file="$blogtemplate/footer.template"}

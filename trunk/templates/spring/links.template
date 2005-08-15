@@ -1,0 +1,15 @@
+		{include file="$blogtemplate/header.template"} 
+	<h2>{$locale->tr("my_links")}</h2>
+<div id="links_list">
+ <div id="Links">
+	{foreach from=$mylinkscategories item=linkcategory}
+    	<h3>{$linkcategory->getName()}</h3>
+   	<ul>
+  		{foreach from=$linkcategory->getLinks() item=link}
+  	<li><a href="{$link->getUrl()}" title="{$link->getDescription()}">{$link->getName()}</a>: {$link->getDescription()}</li>
+    		{/foreach}
+  	</ul>
+  		{/foreach}
+  	</div>
+</div>  
+		{include file="$blogtemplate/footer.template"} 

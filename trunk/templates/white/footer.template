@@ -1,0 +1,69 @@
+</div>
+
+<div id="tagline"><p>
+{$blog->getAbout()}
+</p></div>
+
+<div id="menu">
+<h4>{$locale->tr("search")|capitalize}</h4>
+<p>
+ <ul><li>
+		<form id="search_form" method="post" action="{$url->getIndexUrl()}">
+		<div>
+		<label for="searchTerms" style="display:none;">{$locale->tr("search_this_blog")|capitalize} </label><input type="text" id="searchTerms" name="searchTerms" value="" />
+		<input type="submit" name="Search" value="{$locale->tr("search_s")}" class="button" />
+		<input type="hidden" name="op" value="Search" />
+		<input type="hidden" name="blogId" value="{$blog->getId()}" />   
+		</div>
+		</form>
+ </li></ul>
+</p>
+
+<h4>{$locale->tr("archives")|capitalize}</h4>
+<p>
+ <ul>
+ {foreach from=$archives item=archive}
+  <li><a href="{$archive->getUrl()}">{$archive->getName()}</a></li>
+ {/foreach}
+ </ul>
+</p>
+
+<h4>{$locale->tr("categories")|capitalize}</h4>
+<p>
+ <ul>
+ {foreach from=$articlecategories item=category}
+  <li><a href="{$url->categoryLink($category)}">{$category->getName()}</a></li>
+ {/foreach}
+ </ul>
+</p>
+
+<h4>{$locale->tr("links")|capitalize}</h4>
+<p>
+  <ul>
+   {foreach from=$mylinkscategories item=linkcategory}
+     <li><b>{$linkcategory->getName()}</b>
+     <ul>
+      {foreach from=$linkcategory->getLinks() item=link}
+       <li><a href="{$link->getUrl()}" title="{$link->getDescription()}">{$link->getName()}</a></li>
+      {/foreach}
+     </ul>
+    </li>
+   {/foreach}  
+   </ul>
+</p>
+
+<h4>{$locale->tr("menu")|capitalize}</h4>
+<ul>
+<p>
+   <li><a href="{$url->blogLink()}">{$locale->tr("main")}</a></li>
+   <li><a href="{$url->albumLink()}">{$locale->tr("albums")}</a></li>
+   <li><a title="Link to the RSS 0.90 feed." href="{$url->rssLink("rss090")}">RSS 0.90</a></li>
+   <li><a title="Link to the RSS 1.0 feed." href="{$url->rssLink("rss10")}">RSS 1.0</a></li>
+   <li><a title="Link to the RSS 2.0 feed." href="{$url->rssLink("rss20")}">RSS 2.0</a></li>
+  </ul>
+</p> 
+ </div>
+
+</div>
+</body>
+</html>

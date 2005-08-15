@@ -1,0 +1,51 @@
+{include file="$blogtemplate/header.template"}
+<h1>{$album->getName()}</h1>
+<p><strong>{$album->getDescription()}</strong></p>
+<!-- album contents go here -->
+<p class="album">
+  <a href="{$url->parentAlbumLink($album)}" title="{$locale->tr("back")}"><img src="{$url->getUrl("/imgs/folder.gif")}" alt="{$locale->tr("back")}" />..</a>
+</p>
+{assign var=children value=$album->getChildren()}
+{foreach from=$children item=childalbum}
+<p class="album">
+  <a href="{$url->albumLink($childalbum)}"><img src="{$url->getUrl("/imgs/folder.gif")}" alt="" />{$childalbum->getName()}</a> ({$childalbum->getNumResources()}) | {$childalbum->getDescription()}
+</p>
+{/foreach}
+<!--- show the resources here -->
+{assign var=resources value=$album->getResources()}
+{foreach from=$resources item=resource}
+<p class="album">
+  {if $resource->hasPreview()}
+  {*<a target="_blank" href="resserver.php?blogId={$blog->getId()}&amp;resource={$resource->getFileName()}">*}
+  <a href="{$url->resourceLink($resource)}"><img alt="" title="{$resource->getDescription()}" src="{$url->resourcePreviewLink($resource)}" />{$resource->getFileName()}</a>
+  {else}
+  <a href="{$url->resourceLink($resource)}">
+  {if $resource->isSound()}
+  <img alt="Sound" title="Sound" src="{$url->getUrl("/imgs/sound.gif")}" height="64" width="64" />
+  {elseif $resource->isVideo()}
+  <img alt="Video" title="Video" src="{$url->getUrl("/imgs/video.gif")}" height="64" width="64" />
+  {elseif $resource->isZip()}
+  <img alt="Zip" title="Zip" src="{$url->getUrl("/imgs/compressed.gif")}" height="64" width="64" />   
+  {else}
+  <img alt="File" title="File" src="{$url->getUrl("/imgs/file.gif")}" height="64" width="64" />    
+  {/if}
+  {$resource->getFileName()}
+  </a>
+  {/if}
+  {assign var=metadata value=$resource->getMetadataReader()}
+   | {$metadata->getRoundedSize()} | 
+  {if $resource->isImage()}
+   {$metadata->getWidth()} x {$metadata->getHeight()}
+  {elseif $resource->isSound()}
+   {$metadata->getFormat()|upper} {$metadata->getSampleRate()} bps
+  {elseif $resource->isVideo()}
+   {$metadata->getFormat()|upper}
+   {$metadata->getWidth()} x {$metadata->getHeight()}, 
+   {$metadata->getLengthString()}
+  {elseif $resource->isZip()}
+   {$metadata->getTotalFiles()} {$locale->tr("files")}
+  {/if}
+</p>
+{/foreach}
+<!-- end of album contents -->
+{include file="$blogtemplate/footer.template"}

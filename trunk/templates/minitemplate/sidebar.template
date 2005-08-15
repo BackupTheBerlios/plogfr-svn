@@ -1,0 +1,140 @@
+<div id="Sidebar">
+<!--// Block Search //-->
+	<div class="SideBlock">
+		<fieldset class="SideDim">
+			<legend class="SideDimTitle">{$locale->tr("search")}</legend>
+			<form id="search_form" method="post" action="{$url->getIndexUrl()}">
+			<div>
+			<label for="searchTerms"><input size=15 type="text" id="searchTerms" name="searchTerms" value="" /></label>
+			<input type="submit" name="Search" value="{$locale->tr("search_s")}" class="button" />
+			<input type="hidden" name="op" value="Search" />
+			<input type="hidden" name="blogId" value="{$blog->getId()}" />   
+			</div>
+			</form>
+		</fieldset>
+	</div>
+
+<!--// Block Calendar //-->
+	<div class="SideBlock">
+		<fieldset class="SideDim">
+			<legend class="SideDimTitle">{$locale->tr("calendar")}</legend>
+			<div id="calendar">
+				{$calendar}
+			</div>	
+		</fieldset>
+	</div>
+
+
+<!--// Block Recently //-->
+	<div class="SideBlock">
+	<fieldset class="SideDim">
+		<legend class="SideDimTitle">{$locale->tr("recently")}</legend>
+		<div class="SideDimContent">
+			{foreach from=$recentposts item=recentpost}
+			<img align="middle" class="imgDotElement" src="{$url->getTemplateFile("/img/16_post.gif")}" alt="post" /><a title="{$recentpost->getText()|truncate:150:"..."|strip_tags|escape}" href="{$url->postLink($recentpost)}">{$recentpost->getTopic()}</a><br/>
+			{/foreach}
+		</div>
+	</fieldset>
+	</div>
+<!--// Block Archives //-->
+
+	<div class="SideBlock">
+	<fieldset class="SideDim">
+		<legend class="SideDimTitle">{$locale->tr("archives")}</legend>
+		<div class="SideDimContent">
+		{foreach from=$archives item=month}
+		<img align="middle" class="imgDotElement" src="{$url->getTemplateFile("/img/16_archive.gif")}" alt="Archives" /><a href="{$month->getUrl()}">{$month->getName()}</a><br/>
+		{/foreach}
+		</div>
+	</fieldset>
+	</div>
+<!--// Block Categories //-->
+
+	<div class="SideBlock">
+	<fieldset class="SideDim">
+		<legend class="SideDimTitle">{$locale->tr("categories")}</legend>
+		<div class="SideDimContent">
+		{foreach from=$articlecategories item=articleCategory}
+{*
+		<a class="ImgLink" href="{$url->categoryRssLink($articleCategory)}"><img align="middle" class="imgDotElement" src="{$url->getTemplateFile("/img/logo_rss_small.gif")}" alt="RSS 0.90" /></a>
+*}	
+		<img align="middle" class="imgDotElement" src="{$url->getTemplateFile("/img/16_category.gif")}" alt="Category" /><a href="{$url->categoryLink($articleCategory)}">{$articleCategory->getName()}</a> [{$articleCategory->getNumArticles()}]<br/>
+		{/foreach}
+		</div>
+	</fieldset>
+	</div>
+<!--// Block My Links //-->
+
+	<div class="SideBlock">
+	<fieldset class="SideDim">
+		<legend class="SideDimTitle">{$locale->tr("my_links")}</legend>
+
+		{foreach from=$mylinkscategories item=linkcategory}
+		<div class="SideDimContent">
+		<img align="middle" class="imgDotElement" src="{$url->getTemplateFile("/img/16_links.gif")}" alt="Link" />{$linkcategory->getName()}<br/>
+			{foreach from=$linkcategory->getLinks() item=link}
+			<img align="middle" class="imgDotElement" src="{$url->getTemplateFile("/img/16_link.gif")}" alt="Link" /><a href="{$link->getUrl()}" title="{$link->getDescription()}" target="_blank">{$link->getName()}</a><br/>
+			{/foreach}
+		</div>
+		{/foreach}
+
+	</fieldset>
+	</div>
+{*---
+This Block is for mark's
+plog-hack-search-20040805.class.zip
+<http://blog.markplace.net/resserver.php?blogId=1&resource=plog-hack-search-20040805.class.zip>
+
+<!--// Block Search //-->
+	<div class="SideBlock">
+		<fieldset class="SideDim">
+			<legend class="SideDimTitle">Search</legend>
+			<div class="SideDimContent">
+	   <form  type="hidden"  name="search_form" method="post" action="{$url->getIndexUrl()}">
+    <input class="FormInput" type="text" name="searchTerms" value="" size="10" />
+    <input type="hidden" name="op" value="Search" />
+    <input type="hidden" name="blogId" value="{$blog->getId()}"/>   
+    <input class="FormInput"  type="submit" name="Search" value="Go" />
+	   </form>
+			</div>	
+		</fieldset>
+	</div>
+---*}
+{*---
+This Block is for 
+plog-plugin-statistics-20040709.tar.gz
+<http://prdownloads.sourceforge.net/plog/plog-plugin-statistics-20040709.tar.gz?download>
+
+<!--// Block Statistics //-->
+<div class="SideBlock">
+	<fieldset class="SideDim">
+		<legend class="SideDimTitle">Statistics</legend>
+		<div class="SideDimContent">
+		{$blogstatistics->logStatistics()}
+
+Total Post: {$blogstatistics->getTotalPostNumber()} <br />
+Total Read: {$blogstatistics->getTotalReadNumber()} <br />
+Total Comments: {$blogstatistics->getTotalCommentNumber()} <br />
+Total Trackbacks: {$blogstatistics->getTotalTrackbackNumber()} <br />
+Total Referers: {$blogstatistics->getTotalRefererNumber()} <br />
+Today Visitors: {$blogstatistics->getTodayVisitor()}<br />
+Yesterday Visitors: {$blogstatistics->getYesterdayVisitor()}<br />
+Week Visitors: {$blogstatistics->getThisWeekVisitor()}<br />
+Month Visitors: {$blogstatistics->getThisMonthVisitor()}<br />
+Total Visitors: {$blogstatistics->getTotalVisitor()}<br />
+Online Visitors: {$blogstatistics->getOnlineVisitor()}<br />
+
+
+
+		</div>
+	</fieldset>
+	</div>
+---*}
+
+
+<!--// Manage pLog; //-->
+	<br />
+	<a href="{$url->getUrl("/admin.php")}" target="_blank">
+	<img src="{$url->getTemplateFile("img/manage.gif")}"  alt="manage blog" /></a>
+
+</div>

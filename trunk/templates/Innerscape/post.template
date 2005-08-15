@@ -1,0 +1,35 @@
+<div id="postmain">
+{assign var="postDate" value=$post->getDateObject()}
+{assign var="postOwner" value=$post->getUserInfo()}
+<H1 CLASS="postinfo">{$postOwner->getUsername()} | {$locale->formatDate($postDate,"%d %B, %Y %H:%M")}
+{if $post->hasField("Current Mood")} |
+{$post->getFieldDescription("Current Mood")} = {$post->getField("Current Mood")}
+{/if}</h1>
+<br />
+<H1 CLASS="posttitle">{$post->getTopic()}...</h1>
+{$post->getText()}
+
+<p>
+{assign var=nextpost value=$post->getNextArticle()}
+{if $nextpost == true}
+<a href="{$url->postPermalink($nextpost)}" title="Next post: {$nextpost->getTopic()}">&laquo;</a> |
+{/if}
+{assign var=prevpost value=$post->getPrevArticle()}
+{if $prevpost == true}
+<a href="{$url->postPermalink($prevpost)}" title="Previous post: {$prevpost->getTopic()}">&raquo;</a>
+{/if}
+{foreach name=categories from=$post->getCategories() item=postCategory}
+<a href="{$url->categoryLink($postCategory)}">
+{$postCategory->getName()}</a>{if
+!$smarty.foreach.categories.last}, {/if}
+{/foreach}
+:: <a href="{$url->postPermalink($post)}">{$locale->tr("comment on this")} ({$post->getTotalComments()})</a> :: <a title="{$locale->tr("permalink_title")}" href="{$url->postPermalink($post)}">{$locale->tr("permalink")}</a>
+{if !empty($karma)}
+{if $karma->isEnabled()}
+{assign var="positiveKarma" value=$post->getField("positiveKarma")}{if $positiveKarma == ""}{assign var="positiveKarma" value=0}{/if}
+{assign var="negativeKarma" value=$post->getField("negativeKarma")}{if $negativeKarma == ""}{assign var="negativeKarma" value=0}{/if}
+:: {$locale->tr("karma")} (<a href="{$karma->getPositiveUrl($post)}">+{$positiveKarma}</a>/<a href="{$karma->getNegativeUrl($post)}">-{$negativeKarma}</a>)
+{/if}
+{/if}
+</p>
+</div>

@@ -1,0 +1,53 @@
+{include file="$admintemplatepath/header.template"}
+{include file="$admintemplatepath/navigation.template" showOpt=pollview title="PlogPoll - PollView -- need locale"}
+
+<form id="pollform" action="admin.php" method="post">
+<div id="list">
+  {include file="$admintemplatepath/successmessage.template"}
+  {include file="$admintemplatepath/errormessage.template"}
+  <table class="info">
+    <thead>
+      <tr>
+        <th> Delete </th>
+	<th> Activate Poll </th>
+	<th> Query </th>
+	<th> Responses </th>
+      </tr>
+    </thead>
+    <tbody>
+    {if !$polls}
+    {else}
+    {foreach from=$polls item=poll}
+      <tr class="{cycle value="odd,even"}">
+        <td style="width:10px">
+	  <input class='check' type='checkbox' name="plid[]" value="{$poll->getId()}" />
+	</td>
+	<td style="width:10px">
+	  <input class='check' type='radio' name='activepoll' value="{$poll->getId()}" {if $poll->getActive() eq 'Y'}checked{/if}/>
+	</td>
+	<td style="width:400px;"> {$poll->getSubject()} </td>
+	<td style="width:275px;"> 
+	  <table>
+	  {assign var="votecount" value=$poll->getResponseData()}
+	  {foreach name=respview from=$poll->getResponses() item=resp}
+            {assign var="interi" value=$smarty.foreach.respview.iteration-1}
+	    <tr>
+	      <td width="85%">{$resp}</td>
+	      <td>{$votecount[$interi]}</td>
+	    </tr>
+	  {/foreach}
+          </table>
+	</td>
+      </tr>
+    {/foreach}
+    {/if}
+    </tbody>
+  </table>
+</div>
+<div id='list_action_bar'>
+  <input type='hidden' name='op' value="plogpollDeletePoll"/>
+  <input type='submit' name="Commit Changes" value="Commit Changes"/>
+</div>
+</form>
+{include file="$admintemplatepath/footernavigation.template"}
+{include file="$admintemplatepath/footer.template"}

@@ -1,0 +1,53 @@
+{include file="$blogtemplate/header.template"}
+
+    <div class="block-shadow">
+     <div class="block-main">
+      <div class="{cycle values="box-teal,box-purple,box-red,box-green,box-blue"}">
+       <div class="block-trback-top">
+
+  <br/>
+    <span class="trback-top">{$locale->tr("trackbacks_for_article")}: "<a href="{$url->postLink($post)}">{$post->getTopic()}</a>"</span>
+  <br/><br/>
+
+       </div>
+      </div>
+     </div>
+    </div>
+
+  {foreach from=$trackbacks item=trackback}
+
+    <div class="block-shadow">
+     <div class="block-main">
+      <div class="{cycle values="box-teal,box-purple,box-red,box-green,box-blue"}">
+       <div class="block-trback">
+
+  <br/>
+
+   <span class="trback-url"><a href="{$trackback->getUrl()}">{$trackback->getTitle()}</a></span><br/><br/>
+
+   <table class="trback-table">
+    <tr>
+     <td class="trback-left"><b>{$locale->tr("trackback_excerpt")}</b></td>
+     <td class="trback-right">{$trackback->getExcerpt()}</td>
+    </tr>
+    <tr>
+     <td class="trback-left"><b>{$locale->tr("trackback_weblog")}</b></td>
+     <td class="trback-right">{$trackback->getBlogName()}</td>
+    </tr>
+    <tr>
+     {assign var="trackbackDate" value=$trackback->getDateObject()}
+     <td class="trback-left"><b>{$locale->tr("date")}</b></td>
+     <td class="trback-right">{$locale->formatDate($trackbackDate, "%Y %b %d - %H:%M")}</td>
+    </tr>
+   </table>
+
+  <br/>
+
+       </div>
+      </div>
+     </div>
+    </div>
+
+  {/foreach}
+
+{include file="$blogtemplate/footer.template"}

@@ -1,0 +1,197 @@
+/*
+  The Buggy pLog Template stylesheet
+  pLog Version: 1.0
+  
+  (c) BuggyBrain.com
+  Released under the terms of the GPL
+ */
+
+#header {
+	background: #AF1517;
+	padding: 5px 0px 0px 0px;
+}
+
+#header div.title {
+	border-top: 5px solid #FFF;
+	color: #FFF;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 24px;
+	padding: 5px 0px 0px 10px;
+}
+
+#header div.subtitle {
+	color: #EBEBEB;
+	font-size: 10px;
+	font-weight: bold;
+	padding: 5px 0px 10px 20px;
+}
+
+#photo {
+	position: absolute;
+	left: 630px;
+	top: 20px;
+}
+
+#menu {
+	background: #F2F2F2;
+	font-size: 11px;
+	margin-top: 5px;
+	padding: 5px;
+	position: absolute;
+	text-align: right;
+	width: 615px;
+}
+
+#menu a {
+	font-weight: bold;
+	text-decoration: none;
+}
+
+#col1 {
+	left: 0px;
+	position: absolute;
+	top: 101px;
+	width: 150px;
+}
+
+#col1 .content {
+	background: #E8EBD7;
+	margin-right: 5px;
+	padding: 0px 5px 5px 5px;
+}
+
+#col2 {
+	left: 150px;
+	position: absolute;
+	top: 106px;
+	width: 475px;
+}
+
+#col2 .content {
+	font-size: 13px;
+	font-family: Trebuchet MS, Verdana, Arial, Helvetica, sans-serif;
+	padding: 5px 0px 5px 0px;
+}
+
+#colresource {
+	left: 15px;
+	position: absolute;
+	top: 106px;
+}
+
+#colresource .content {
+	font-size: 13px;
+	font-family: Trebuchet MS, Verdana, Arial, Helvetica, sans-serif;
+	padding: 5px 0px 5px 0px;
+}
+
+#col3 {
+	left: 625px;
+	position: absolute;
+	top: 215px;
+	width: 155px;
+}
+
+#col3 .content {
+	background: #E8EBD7;
+	margin-left: 5px;
+	padding: 0px 5px 5px 5px;
+}
+
+#col1 .content, #col3 .content {
+	font-family: Trebuchet MS, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+
+#footer {
+	background: #F2F2F2;
+	font-size: 11px;
+	line-height: 16px;
+	padding: 5px;
+	position: absolute;
+	vertical-align: bottom;
+	visibility: hidden;
+	width: 770px;
+}
+
+body {
+	background: #FFF;
+	color: #000;
+	font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	margin: 10px 0px 0px 0px;
+	padding: 0px;
+}
+
+a:link {
+	color: #900;
+}
+
+a:visited {
+	color: #900;
+}
+
+a:hover {
+	color: Gray;
+}
+
+img {
+	border: 0px;
+}
+
+h1 {
+	color: #6B6B6B;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 16px;
+	margin: 10px 0px 2px 0px;
+}
+
+h5, h6 {
+	border-top: 5px solid #FFF;
+	color: #FFF;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	margin: 5px -5px 10px -5px;
+	padding: 3px;
+	text-align: center;
+}
+
+h5 {
+	background: #8F8D5A;
+}
+
+h6 {
+	background: #AF1517;
+}
+
+p {
+	line-height: 130%;
+}
+
+.shadelight, .shadedark {
+	font-size: 10px;
+	font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif;
+	padding: 2px 4px 2px 4px;
+}
+
+.shadelight {
+	background: #CCC;
+}
+
+.shadedark {
+	background: #B6B6B6;
+	color: #FFF;
+	font-weight: bold;
+}
+
+.shadedark a, .shadelight a	 {
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.upgrade {
+	display: none;
+	font-weight: bold;
+}

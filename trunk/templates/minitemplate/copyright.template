@@ -1,0 +1,32 @@
+<div id="Bottom">
+	<ul>
+	<li>Valid for
+		<a class="ImgLink" title="Link to the RSS 0.90 feed." href="{$url->rssLink("rss090")}">
+		<img class="logo"src="{$url->getTemplateFile("/img/logo_rss090.gif")}" alt="RSS 0.90" /></a></li>
+	<li><a class="ImgLink" title="Link to the RSS 1.0 feed." href="{$url->rssLink("rss10")}">
+		<img class="logo" src="{$url->getTemplateFile("/img/logo_rss10.gif")}" alt="RSS 1.0" /></a></li>
+	<li><a class="ImgLink" title="Link to the RSS 2.0 feed." href="{$url->rssLink("rss20")}">
+		<img class="logo" src="{$url->getTemplateFile("/img/logo_rss20.gif")}" alt="RSS 2.0" /></a></li>
+	<li><a class="ImgLink" title="Link to the Atom 0.3 feed." href="{$url->rssLink("atom")}">
+		<img class="logo" src="{$url->getTemplateFile("/img/logo_atom.png")}" alt="Atom 0.3" /></a></li>
+	<li>	<a class="ImgLink" href="http://validator.w3.org/check/referer">
+		<img class="logo" src="{$url->getTemplateFile("/img/logo_xhtml10.gif")}" alt="XHTML 1.0 Strict" /></a></li>
+	<li><a class="ImgLink"  href="http://jigsaw.w3.org/css-validator/check/referer">
+		<img class="logo" src="{$url->getTemplateFile("/img/logo_css.gif")}" alt="CSS" /></a></li>
+	<li>Powered by 
+		<a class="ImgLink" href="http://www.plogworld.net">
+		<img class="logo" src="{$url->getTemplateFile("/img/logo_plog.gif")}" alt="pLog 0.3.2" /></a></li>
+	<li><a class="ImgLink" href="http://www.php.net">
+		<img class="logo" src="{$url->getTemplateFile("/img/logo_php.gif")}"  alt="PHP 4" /></a></li>
+	<li><a class="ImgLink" href="http://smarty.php.net">
+		<img class="logo" src="{$url->getTemplateFile("/img/logo_smarty.gif")}" alt="Smarty" /></a></li>
+	<li><a class="ImgLink" href="http://www.mysql.com">
+		<img class="logo" src="{$url->getTemplateFile("/img/logo_mysql.gif")}" alt="PHP 4" /></a></li>
+	<li>Designed by 
+		<a class="ImgLink" href="http://www.minibird.com">
+		<img class="logo" src="{$url->getTemplateFile("/img/logo_minibird.com.gif")}" alt="minibird.com" /></a></li>
+	</ul>
+
+<!--// Notice!! Do not delete the follow <br />, otherwise display wrong in Internet Explorer 6 //-->
+		<br />
+</div>

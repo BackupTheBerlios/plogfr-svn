@@ -1,0 +1,29 @@
+{assign var="postPageTitle" value=$post->getTopic()}
+{assign var="postPageTitle" value=" | $postPageTitle"}
+{include file="$blogtemplate/header.template"}
+   {assign var="poster" value=$post->getUserInfo()}
+    {assign var="postDate" value=$post->getDateObject()}
+    <!-- {$url->postTrackbackLink($post)} -->
+   <div class="dayheader">{$locale->formatDate($postDate,"%A")} | {$locale->formatDate($postDate,"%d.%m.%Y")}</div>
+   {include file="$blogtemplate/post.template"}
+ {if $post->getTotalComments() > 0 }
+  <a name="comments"></a>
+  {foreach from=$comments item=comment}
+   <p class="commentheader">
+    &raquo; {$comment->getTopic()} <span class="categoryinfo">[<a href="{$url->replyCommentLink($post,$comment)}">{$locale->tr("reply")}</a>]</span>
+   </p>
+   <p>
+     {$comment->getText()}
+   </p>
+   <span class="commentposterinfo">
+    {assign var=commentDate value=$comment->getDateObject()}
+    {$locale->tr("posted_by")} {$comment->getUsername()} | {$locale->formatDate($commentDate, "%d/%m/%Y, %H:%M")}
+   </span>
+  {/foreach}
+ {/if}
+ {if $blogsettings->getValue("comments_enabled") && $post->getCommentsEnabled()==1} 
+ <h3>{$locale->tr("add_comment")}</h3>
+ <a name="comment"></a>
+ {include file="$blogtemplate/commentform.template"}
+ {/if}
+{include file="$blogtemplate/footer.template"}

@@ -1,0 +1,23 @@
+{include file="$blogtemplate/header.template"}
+{include file="$blogtemplate/panel.template"}
+
+<div id="main">
+
+{include file="$blogtemplate/post.template"}
+
+ <a name="trackbacks"> </a>
+ <div class="trackbacks">
+  <h2>{$locale->tr("trackbacks")}</h2>
+  
+  {foreach from=$trackbacks item=trackback}
+  <div class="trackbacktitle"> {assign var="trackbackDate" value=$trackback->getDateObject()}
+   <strong><a href="{$trackback->getUrl()}">{$trackback->getTitle()}</a></strong> in {$trackback->getBlogName()} @ {$locale->formatDate($trackbackDate, "%d/%m/%Y %H:%M")}
+  </div> 
+  <p> 
+   {$trackback->getExcerpt()}
+  </p>
+  {/foreach}
+ </div>
+</div>
+{include file="$blogtemplate/footer.template"}
+

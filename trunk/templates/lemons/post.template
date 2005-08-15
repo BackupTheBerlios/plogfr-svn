@@ -1,0 +1,23 @@
+   {assign var="poster" value=$post->getUserInfo()}
+   {assign var="postDate" value=$post->getDateObject()}
+   <div class="postheader">
+    <a name="{$post->getId()}"></a>{$locale->formatDate($postDate, "%H:%m")} {$post->getTopic()} <span class="categoryinfo">[
+   {foreach name=categories from=$post->getCategories() item=postcategory}
+     <a href="{$url->categoryLink($postcategory)}">{$postcategory->getName()}</a>{if !$smarty.foreach.categories.last}, {/if}
+   {/foreach}    
+  ]</span>
+   </div>
+   <p>
+    {$post->getText()}
+   </p>
+   <div class="postinfo">
+    {$poster->getUsername()} |
+    {assign var="postTotalComments" value=$post->getTotalComments()}
+    {if $postTotalComments > 0}
+     <a href="{$url->postLink($post)}#comments">{$postTotalComments} {$locale->tr("comments")}</a>
+    {else}
+     <a href="{$url->postCommentLink($post)}">{$locale->tr("comment on this")}</a>
+    {/if}
+    | <a href="{$url->postTrackbackStatsLink($post)}">{$locale->tr("trackbacks")} ({$post->getNumTrackbacks()})</a>
+    | <a href="{$url->postPermalink($post)}" title="{$locale->tr("permalink_title")}">{$locale->tr("permalink")}(#)</a>
+   </div>

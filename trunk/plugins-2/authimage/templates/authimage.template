@@ -1,0 +1,74 @@
+{include file="$admintemplatepath/header.template"}
+{include file="$admintemplatepath/navigation.template" showOpt=AuthImage title=$locale->tr("authimage_plugin")}
+<form name="authimageluginConfig" method="post">
+ <fieldset class="inputField">
+ <legend>{$locale->tr("label_configuration")}</legend> 
+  {include file="$admintemplatepath/successmessage.template"}
+  {include file="$admintemplatepath/errormessage.template"}
+  <div class="field">
+   <label for="pluginEnabled">{$locale->tr("label_enable")}</label>
+   <span class="required"></span>
+   <div class="formHelp">
+     <input class="checkbox" type="checkbox" name="pluginEnabled" id="pluginEnabled" {if $pluginEnabled} checked="checked" {/if} value="1" />{$locale->tr("authimage_plugin_enabled")}
+   </div>
+  </div> 
+
+  <div class="field">
+   <label for="length">{$locale->tr("label_length")}</label>
+   <span class="required">*</span>
+   <div class="formHelp">{$locale->tr("authimage_length")}</div>
+   <input class="text" type="text" name="length" id="length" value="{$length}" width="10" />
+  </div>
+  
+  <div class="field">
+   <label for="key">{$locale->tr("label_key")}</label>
+   <span class="required">*</span>
+   <div class="formHelp">{$locale->tr("authimage_key")}</div>
+   <input class="text" type="text" name="key" id="key" value="{$key}" width="10" />
+  </div>
+
+  <div class="field">
+   <label for="expiredTime">{$locale->tr("label_expiredtime")}</label>
+   <span class="required">*</span>
+   <div class="formHelp">{$locale->tr("authimage_expiredtime")}</div>
+   <input class="text" type="text" name="expiredTime" id="expiredTime" value="{$expiredTime}" width="10" />
+  </div>   
+
+  <div class="field">
+  <label for="default">{$locale->tr("label_default")}</label>
+  <span class="required"></span>
+  <div class="formHelp">{$locale->tr("authimage_default")}</div>
+    <table>
+    <thead>
+     <tr>
+      <th style="width:20px;"></th>
+      <th style="width:130px;">{$locale->tr("authimage_background_name")}</th>
+      <th style="width:450px;">{$locale->tr("authimage_background_image")}</th>
+     </tr>
+    </thead>
+    <tbody> 
+     {foreach from=$backgrounds item=background}
+     <tr>
+      <td>
+       <input class="radio" type="radio" name="default" id="default" value="{$background}" {if $default==$background} checked="checked" {/if} />
+      </td>
+      <td>
+       {$background}
+      </td>
+      <td>
+       <img src="{$url->getUrl("/plugins/authimage/backgrounds/$background")}" alt="{$background}" />
+      </td> 
+     </tr> 
+     {/foreach}
+    </tbody>
+   </table>
+    </div>
+ </fieldset>
+ <div class="buttons">
+  <input type="hidden" name="op" value="updateAuthImageConfig" />
+  <input type="reset" name="{$locale->tr("reset")}" />
+  <input type="submit" name="{$locale->tr("settings")}" value="{$locale->tr("update")}" />
+ </div>
+</form>
+{include file="$admintemplatepath/footernavigation.template"}
+{include file="$admintemplatepath/footer.template"}

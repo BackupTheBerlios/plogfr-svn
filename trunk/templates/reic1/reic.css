@@ -1,0 +1,327 @@
+/* frame setting
+This part is good to keep unchange unless you change the position of the slince at the reic.psd.
+ */
+html {
+	/* IE Horizontal scrollbar fix */
+	overflow-y: scroll;
+	/* force scrollbars in moz */
+	height: 100%;
+	margin-bottom: 1px;
+	}
+	
+body {
+margin: 0;
+padding: 0;
+background: transparent url(images/bg.gif) repeat scroll;
+}
+
+#outframe {
+background: transparent url(images/frameborder.gif) repeat-y scroll;
+width:760px;
+margin: 10px auto;
+padding: 0px;
+
+}
+
+#header {
+padding: 0px;
+margin: 0px auto;
+height: 128px;
+width: 100%;
+background: transparent url(images/header.gif) 	no-repeat scroll top;
+color: #666666;
+}
+
+#title {
+padding-left:35px;
+padding-top:25px;
+}
+
+
+#nav_r{
+width: 760px;
+height:37px;
+padding:22px 0px 0px 0px;
+text-align: center;
+background: transparent url(images/nav_bar.gif) no-repeat scroll left top;
+color: #558800;
+font: 12px georgia, times new roman, times, serif;
+}
+
+
+
+
+#outcon{
+float: left;
+width: 530px;
+
+background: transparent url(images/con1.gif) repeat-y scroll left;
+}
+
+#content, #container {
+color: #666666;
+
+   padding-bottom: 20px;
+	background: transparent url(images/con2.gif) no-repeat scroll bottom;
+text-align: left;
+
+}
+
+#links {
+padding-left:543px;
+padding-right:33px;
+padding-bottom: 20px;
+background: transparent url(images/links2.gif) no-repeat scroll right bottom;
+}
+#linksout {
+background: transparent url(images/links1.gif) repeat-y scroll right;
+}
+#article_index{
+background: transparent url(images/con1.gif) repeat-y scroll left;
+}
+.blog{
+width:500px;
+padding:  0px 15px 0px 15px;
+}
+
+.comments-head{
+width: 480px;
+margin:10px 0px 0px 10px;
+}
+
+.comments-body {
+width: 480px;
+margin: 0px 0px 0px 10px;
+}
+
+#footer {
+width: 760px;
+height: 39px;
+background: transparent url(images/footer.gif) no-repeat scroll;
+}
+
+.clear{
+	clear: both;
+}
+/* end of frame setting */
+
+/* fonts, color, and paragraph describe part */
+/* main part */
+body{
+font: normal normal normal 12px/normal lucida grande, verdana, arial, sans-serif;;
+color: black;
+}
+
+img{
+	border: 0px;
+}
+
+#title {
+font-size:28px;
+font-weight: bold;
+}
+.description{
+	font-size:14px;
+	color: white;
+}
+
+
+#nav_bar{
+	text-align: center;	
+}
+
+#content, #container
+{
+	text-align: left;
+}
+
+/* fonts, color, and paragraph describe part */
+/*  The css tag is set for pre_post and next_post.
+The colomun is blocked by div tag which is named as article_index */
+#article_index{
+text-align:center;
+font-size:11px;
+}
+
+/* fonts, color, and paragraph describe part */
+/* entries part, which is often filled with article or picture */
+.blog {
+
+}
+
+.blogbody {
+margin: 10px 0px 5px 10px;
+line-height: 140%;
+}
+
+h3.title {
+font-size: large;
+text-transform: capitalize;
+margin: 15px 0px 0px;
+}
+
+div.posted {
+margin: 0px;
+padding: 0px 5px 10px 5px;
+text-align: right;
+text-align: right;
+}
+
+blockquote {
+color: #666;
+border: #777777 1px solid;
+background-color: #eee;
+margin: 20px 25px;
+padding: 0px 10px;
+font-size:12px;
+line-height:150%;
+width: auto;
+}
+
+
+blockquote.mt {
+border: 1px solid White;
+text-align: center;
+font-size:smaller;
+padding: 2px 0px;
+}
+
+/* fonts, color, and paragraph describe part */
+/* comment part */
+.comments-head{
+background: White;
+font-size: 14px;
+border:1px solid #999;
+padding:5px;
+}
+
+.comments-body {
+line-height:140%;
+padding:5px;
+border-left:1px dotted;
+border-right:1px dotted;
+border-bottom:1px dotted;
+}
+
+.com_countandpost{
+border-top:2px solid;
+height:14px;
+}
+.comments-count{
+float:left;
+background: #666;
+color:white;
+width:35px;
+text-align:center;
+}
+
+.comments-post {
+float:right;
+font-size:x-small;
+}
+
+/* fonts, color, and paragraph describe part */
+/* links part */
+#links li, #links ul{
+margin: 1px 3px;
+padding:1px 3px;
+}
+#links ul{
+	list-style: none;
+}
+
+.sidetitle{
+
+	font-size:14px;
+	background: transparent url(images/sidetitle.gif) no-repeat scroll center top;
+
+	text-align: center;
+	height: 20px;
+	color: #DCDCDC;
+	padding:2px 0px 1px;
+}
+.side{
+	margin-bottom:10px;
+}
+
+#search_form fieldset{
+  border-width: 0px;
+}
+
+table.calMonth{
+margin: 0px auto;
+}
+.calMonthHeader
+{
+font-weight: bold;
+}
+.calMonthToday{
+border:1px dotted #669933;
+}
+
+/* fonts, color, and paragraph describe part */
+/* footer part */
+#footer {
+
+}
+
+#credits {
+margin: 0px;
+padding: 5px;
+color: gray;
+text-align: center;
+}
+
+#credits p {
+font-size: 11px;
+margin: 0px;
+padding-top: 10px;
+}
+
+/* end of */
+/* fonts, color, and paragraph describe part */
+
+
+/* hyperlinks setting */
+a { text-decoration: none;}
+a:hover { text-decoration: underline;}
+
+#title a{
+	text-decoration: none;
+	color: #581085;
+}
+#title a:hover{
+	text-decoration: none;
+	color: White;
+}
+
+#nav_r a	{ color: #558800; background: transparent; text-decoration: none;}
+#nav_r a:link	{ color: #558800; background: transparent; }
+#nav_r a:visited	{ color: #558800; background: transparent; }
+#nav_r a:active	{ color: #558800; background: transparent; }
+#nav_r a:hover	{ color: white; background: transparent;text-decoration: underline; }
+
+h3.title a{
+	border-bottom: 1px solid black;
+	display: block;
+	padding-bottom:2px;
+}
+h3.title a:hover{
+	display: block; text-decoration: none; background-color: Gray;}
+
+
+/* ******************  albums  *************** */
+
+div.album {
+	text-align: center;
+   float:left;
+        width:150px;
+        margin-bottom:20px;
+  	}
+
+.album p {
+   	text-align: center;
+   	padding:0;
+   	margin:0;
+   	width:150px;
+   	}

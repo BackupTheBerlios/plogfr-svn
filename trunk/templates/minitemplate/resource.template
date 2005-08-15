@@ -1,0 +1,58 @@
+
+{include file="$blogtemplate/header.template"}
+<!--// Topmen End //-->
+	{assign var=metadata value=$resource->getMetadataReader()}
+	{assign var=updated value=$resource->getTimestamp()}
+
+
+		<div class="BlockTitle">
+		{$resource->getFileName()}
+
+		</div>
+		<div class="BlockArea">  
+		{assign var=album value=$resource->getAlbum()}
+		[ <a href="{$url->albumLink($album)}">{$locale->tr("back")}</a> ]
+[ <a href="{$url->resourceDownloadLink($resource)}">{$locale->tr("download")}</a> ]
+		<br />
+		{$metadata->getRoundedSize()} | {$locale->tr("created")} {$locale->formatDate($updated,"%d/%m/%Y-%H:%M")}
+		<br />
+		{$resource->getDescription()}
+		</div>
+		<div class="BlockArea">    
+
+
+			{if $resource->isImage()}
+					<img
+					src="{$url->resourceMediumSizePreviewLink($resource)}"
+					width="100%"
+					alt="{$resource->getFileName()}, {$metadata->getRoundedSize()}" />
+				{else}
+					
+{* Sound *}
+				{if $resource->isSound()}
+					<img alt="Sound" src="{$url->getTemplateFile("/img/32_sound.gif")}" /><br/>
+					{$locale->tr("format")}: {$metadata->getFormat()|upper}<br/>
+					{$locale->tr("length")}: {$metadata->getLengthString()}<br/>
+					{$locale->tr("sample_rate")}: {$metadata->getSampleRate()} Khz
+{* Video *}
+					{elseif $resource->isVideo()}
+						<img alt="Video" src="{$url->getTemplateFile("/img/32_video.gif")}" /><br/>
+						{$locale->tr("format")}: {$metadata->getFormat()|upper}<br/>
+						{$locale->tr("size")}: {$metadata->getHeight()} x {$metadata->getWidth()}<br/>
+						{$locale->tr("length")}: {$metadata->getLengthString()}<br/>
+						{$locale->tr("video_codec")}: {$metadata->getVideoCodec()}<br/>
+						{$locale->tr("audio_codec")}: {$metadata->getAudioCodec()}
+{* Zip *}
+					{elseif $resource->isZip()}
+						<img alt="Zip" src="{$url->getTemplateFile("/img/32_compressd.gif")}" /><br/>
+						{$metadata->getTotalFiles()} {$locale->tr("files")}<br/>
+						{$locale->tr("uncompressed_size")}: {$metadata->getRoundedUncompressedSize()}
+{*  Other File *}
+					{else}
+						<img alt="File" src="{$url->getTemplateFile("/img/32_file.gif")}" />
+				{/if}   
+			{/if}
+		</div>
+
+		
+{include file="$blogtemplate/footersimple.template"}

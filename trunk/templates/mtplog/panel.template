@@ -1,0 +1,80 @@
+<div id="links">
+
+<div align="center" class="calendar">
+	{$calendar}
+</div>
+<div class="sidetitle">
+{$locale->tr("search")}
+</div>
+    <div class="side" id="Search"> 
+	<form id="search_form"  name="search_form" method="post" action="{$url->getIndexUrl()}">
+	<label for="searchTerms"><input type="text" id="searchTerms" name="searchTerms" value="" /></label>
+	<input type="submit" name="Search" value="{$locale->tr("search_s")}" class="button" />
+	<input type="hidden" name="op" value="Search" />
+	<input type="hidden" name="blogId" value="{$blog->getId()}" />   
+	</form>
+    </div>  
+<div class="sidetitle">
+	{$locale->tr("recently")|capitalize}
+</div>
+<div class="side">
+	{foreach from=$recentposts item=post}
+	<a title="{$post->getText()|truncate:15:"..."|escape}" href="{$url->postLink($post)}">{$post->getTopic()}</a><br />
+	{/foreach}
+</div>
+
+<div class="sidetitle">
+  {$locale->tr("categories")|capitalize}
+</div>
+<div class="side">
+	{foreach from=$articlecategories item=articleCategory}
+	<a href="{$url->categoryLink($articleCategory)}">{$articleCategory->getName()}</a> [{$articleCategory->getNumArticles()}]
+	<a class="nodecoration" href="{$url->categoryRssLink($articleCategory)}"><img border="0" src="{$url->getUrl("/imgs/rss_logo_small.gif")}" alt="RSS Feed for this category." height="12" /></a><br />
+	{/foreach}
+</div>
+
+<div class="sidetitle">
+	{$locale->tr("archives")|capitalize}
+</div>
+<div class="side">
+	{foreach from=$archives item=archivelink}
+	<a href="{$archivelink->getUrl()}">{$archivelink->getName()}</a> [{$archivelink->getNumArticles()}]<br />
+	{/foreach}
+</div>
+
+<div class="sidetitle">
+	{$locale->tr("links")|capitalize}
+</div>
+<div class="side">
+	{foreach from=$mylinkscategories item=linkcategory}
+		<b>{$linkcategory->getName()}</b><br />
+		{foreach from=$linkcategory->getLinks() item=link}
+		<a href="{$link->getUrl()}" title="{$link->getDescription()}">{$link->getName()}</a><br />
+		{/foreach}
+	{/foreach}  
+   </ul>
+</div>
+ 
+<div class="sidetitle">
+    {$locale->tr("syndicate")}
+</div>
+<div class="side">
+	<a title="Link to the RSS 0.90 feed." href="{$url->rssLink("rss090")}"><img src="{$url->getUrl("/imgs/rss090_logo.gif")}" border="0"/></a><br/>
+	<a title="Link to the RSS 1.0 feed." href="{$url->rssLink("rss10")}"><img src="{$url->getUrl("/imgs/rss10_logo.gif")}" border="0"/></a><br/>
+	<a title="Link to the RSS 2.0 feed." href="{$url->rssLink("rss20")}"><img src="{$url->getUrl("/imgs/rss20_logo.gif")}" border="0"/></a><br/>
+	<a title="Link to the Atom 0.3 feed." href="{$url->rssLink("atom")}"><img src="{$url->getUrl("/imgs/atom_logo.png")}" border="0"/></a><br/>
+</div>
+
+<div class="sidetitle">
+    {$locale->tr("menu")}
+</div>
+<div class="side">
+	<a href="{$url->getBaseUrl()}/admin.php"	>{$locale->tr("dashboard")}</a><br />
+	<a href="{$url->albumLink()}">{$locale->tr("albums")}</a>	<br />
+	<a href="{$url->templatePage("about")}">{$locale->tr("about")} {$locale->tr("template")}</a>
+</div>
+
+<div class="powered">
+Powered By <a href="http://www.plogworld.net">pLog</a> <br />
+</div>
+</div>

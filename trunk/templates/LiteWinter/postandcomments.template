@@ -1,0 +1,42 @@
+{include file="$blogtemplate/header.template"}
+{assign var="postDate" value=$post->getDateObject()}
+{assign var="postOwner" value=$post->getUserInfo()}
+{include file="$blogtemplate/panel.template"}
+		{assign var=nextpost value=$post->getNextArticle()}
+		{assign var=prevpost value=$post->getPrevArticle()}
+			<div id="Article_body">
+				<p align="center">
+				{if $prevpost == true}
+					 <a href="{$url->postPermalink($prevpost)}" title="{$locale->tr("previous_post")}: {$prevpost->getTopic()}">&laquo; {$locale->tr("previous_post")}</a> |
+				{/if}
+				{if $nextpost == true}
+					 <a href="{$url->postPermalink($nextpost)}" title="{$locale->tr("next_post")}: {$nextpost->getTopic()}">{$locale->tr("next_post")}&raquo;</a>
+				{/if}
+				</p>
+<!-- {$url->postTrackbackLink($post)} -->
+{include file="$blogtemplate/post.template"}
+
+{if $blogsettings->getValue("comments_enabled") && $post->getCommentsEnabled()==1}
+			  <div id="commons"><a name="Add_commons"></a>{$locale->tr("add_comment")}</div>
+{include file="$blogtemplate/commentform.template"}
+{/if}
+
+{* show comments *}
+{foreach name=comment from=$comments item=comment}
+				<div id="common_head"><img src="{$url->getTemplateFile("images/comment_icon1.gif")}" alt="commons icon" /><a name="{$comment->getId()}"></a>
+					[{$smarty.foreach.comment.total-$smarty.foreach.comment.iteration+1}]
+					{$comment->getTopic()} [<a href="{$url->postPermalink($post)}#NewComment"> {$locale->tr("reply")} </a>]</div>
+				<div id="common_main">{$comment->getText()}</div>
+				<div id="common_footer">
+					{$locale->tr("posted_by")}
+					{if $comment->getUserUrl() != ""}
+						<a href="{$comment->getUserUrl()}"}>{$comment->getUsername()}</a>
+					{else}
+						{$comment->getUsername()}
+					{/if}
+					|{assign var=commentDate value=$comment->getDateObject()}
+					{$locale->formatDate($commentDate, "%d/%m/%Y, %H:%M")}
+				</div>
+{/foreach}
+			</div>
+{include file="$blogtemplate/footer.template"}

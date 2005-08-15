@@ -1,0 +1,14 @@
+  <form name="NewComment" action="{$url->getBaseUrl()}/index.php" method="post">
+  <p>
+   {$locale->pr("comment_topic")}<br/><input type="text" style="width: 80%" name="commentTopic" value=""/>
+   <p>{$locale->pr("comment_text")} <br/><textarea rows="10" style="width: 80%" name="commentText"></textarea></p>
+   <p>{$locale->pr("comment_username")}<br/> <input type="text" name="userName" value=""/></p>
+   <p>{$locale->pr("comment_email")}<br/> <input type="text" name="userEmail" value=""/></p>
+   <p>{$locale->pr("comment_url")}<br/> <input type="text" name="userUrl" value=""/></p>
+   <input type="submit" value="{$locale->pr("comment_send")}" name="Add"/><br/><br/>
+   <input type="hidden" name="op" value="AddComment"/>
+   <input type="hidden" name="articleId" value="{$post->getId()}"/>
+   <input type="hidden" name="blogId" value="{$blog->getId()}"/>
+   <input type="hidden" name="parentId" value="{$parentId}"/>
+  </p>
+  </form>

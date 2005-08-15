@@ -1,0 +1,31 @@
+<div class="credits">
+<a href="http://www.plogworld.net"><img src="{$url->getTemplateFile("buttons/plog.png")}" alt="pLog" title="Powered by pLog" /></a>
+<a href="http://dean.edwards.name/IE7/"><img src="{$url->getTemplateFile("buttons/ie7.gif")}" alt="IE7" title="IE7 Enhanced" /></a>
+<a href="http://validator.w3.org/check?uri=referer"><img src="{$url->getTemplateFile("buttons/xhtml10.png")}" alt="XHTML" title="XHTML 1.0 Compliant" /></a>
+<a href="http://jigsaw.w3.org/css-validator/validator?uri={$url->getUrl("/")}"><img src="{$url->getTemplateFile("buttons/css.png")}" alt="CSS" title="CSS Compliant" /></a>
+<a href="http://www.mozilla.org/products/firefox/"><img src="{$url->getTemplateFile("buttons/firefox.gif")}" alt="Firefox" title="Firefox takes back the Web!" /></a>
+
+
+<!-- Creative Commons-Lizenzvertrag -->
+<!--
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="">
+   <license rdf:resource="http://creativecommons.org/licenses/by-nc-sa/2.0/" />
+</Work>
+<License rdf:about="http://creativecommons.org/licenses/by-nc-sa/2.0/">
+   <permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+   <permits rdf:resource="http://web.resource.org/cc/Distribution" />
+   <requires rdf:resource="http://web.resource.org/cc/Notice" />
+   <requires rdf:resource="http://web.resource.org/cc/Attribution" />
+   <prohibits rdf:resource="http://web.resource.org/cc/CommercialUse" />
+   <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+   <requires rdf:resource="http://web.resource.org/cc/ShareAlike" />
+</License>
+
+</rdf:RDF>
+-->
+<!-- /Creative Commons-Lizenzvertrag -->
+
+</div>

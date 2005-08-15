@@ -1,0 +1,35 @@
+<div id="right">
+<H1 CLASS="rightmenu">About Me</H1>
+{assign var=blogOwner value=$blog->getOwnerInfo()} {if $blogOwner->hasPicture()}
+{assign var=image value=$blogOwner->getPicture()} <img src="{$url->resourceDownloadLink($image)}" alt="My Blog Profile @ site4me.us" />
+{/if}
+<H1 CLASS="userprofile"> {$blogOwner->getAboutMyself()}  </H1>
+<!--Calendar-->
+<H1 CLASS="rightmenu">{$locale->tr("calendar")} </H1>
+<div align="center">
+<H1 CLASS="leftmenutext">{$calendar}</H1>
+</div>
+<H1 CLASS="rightmenu">Search My Blog</H1>
+<!--Search Form-->
+<form name="search_form" method="post" action="{$url->getIndexUrl()}">
+<input type="text" name="searchTerms" value="" size="14" /><br/>
+<input type="hidden" name="op" value="Search" />
+<input type="hidden" name="blogId" value="{$blog->getId()}" />
+<input type="submit" name="Search" value="submit" />
+</form>
+<H1 CLASS="rightmenu">{$locale->tr("links")}</h1>
+{foreach from=$mylinkscategories item=linkcategory}
+{foreach from=$linkcategory->getLinks() item=link}<br />
+<a href="{$link->getUrl()}" title="{$link->getDescription()}">{$link->getName()}</a>
+{/foreach}
+{/foreach}
+<!--Syndicate-->
+<H1 CLASS="rightmenu">{$locale->tr("syndicate")} </h1>
+<ul>
+<a class="nodecoration" title="Link to the RSS 0.90 feed." href="{$url->rssLink("rss090")}"><img src="{$url->getUrl("/imgs/rss090_logo.gif")}" style="border:0px;" alt="RSS 0.90" /></a><br />
+<a class="nodecoration" title="Link to the RSS 1.0 feed." href="{$url->rssLink("rss10")}"><img src="{$url->getUrl("/imgs/rss10_logo.gif")}" style="border:0px;" alt="RSS 1.0" /></a><br />
+<a class="nodecoration" title="Link to the RSS 2.0 feed." href="{$url->rssLink("rss20")}"><img src="{$url->getUrl("/imgs/rss20_logo.gif")}" style="border:0px;" alt="RSS 2.0" /></a><br />
+<a class="nodecoration" title="Link to the Atom 0.3 feed." href="{$url->rssLink("atom")}"><img src="{$url->getUrl("/imgs/atom_logo.png")}" style="border:0px;" alt="Atom 0.3" /></a><br />
+</ul>
+</div>
+</div>

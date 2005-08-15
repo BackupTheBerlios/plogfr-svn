@@ -1,0 +1,30 @@
+{include file="$blogtemplate/header.template"}
+{include file="$blogtemplate/leftmenu.template"}
+<div id="mainalbums">
+<div id="albums">
+<p>
+<H1 CLASS="leftmenu">These are my photo galleries. <br /> Mainly used as pics in my blog entries</H1>
+</p> <br/><br />
+<table style="border:0px;width:93%;" summary="Albums">
+<tr>
+{assign var="counter" value=0}
+{foreach from=$albums item=album}
+<td style="width:30%;" align="center">
+<a class="nodecoration" href="{$url->albumLink($album)}">
+<img style="border:0px;" src="{$url->getUrl("/imgs/folder.gif")}" alt="Folder" /><br/>
+{$album->getName()} ({$album->getNumResources()})
+</a>
+{assign var="counter" value="`$counter+1`"}
+</td>
+{if $counter%3 == 0}
+</tr>
+<tr>
+{/if}
+{/foreach}
+<td></td></tr>
+</table>
+<!-- end of the albums -->
+</div>
+</div>
+{include file="$blogtemplate/rightmenu.template"}
+{include file="$blogtemplate/footer.template"}

@@ -882,7 +882,7 @@ $messages["upgrade_information"] = "This page looks plain and unstyled because y
 $messages["jump_to_navigation"] = "Jump to Navigation.";
 $messages["comment_email_never_display"] = "Line and paragraph breaks automatic, e-mail address never displayed.";
 $messages["comment_html_allowed"] = "<acronym title=\"Hypertext Markup Language\">HTML</acronym> allowed: &lt;<acronym title=\"Hyperlink\">a</acronym> href=&quot;&quot; title=&quot;&quot; rel=&quot;&quot;&gt; &lt;<acronym title=\"Acronym Description\">acronym</acronym> title=&quot;&quot;&gt; &lt;<acronym title=\"Quote\">blockquote</acronym> cite=&quot;&quot;&gt; &lt;<acronym title=\"Strike\">del</acronym>&gt; &lt;<acronym title=\"Italic\">em</acronym>&gt; &lt;<acronym title=\"Underline\">ins</acronym>&gt; &lt;<acronym title=\"Bold\">strong</acronym>&gt;";
-// $messages["trackback_uri"] = "The <acronym title=\"Uniform Resource Identifier\">URI</acronym> to trackback this entry is: ";
+// $messages["trackback_uri"] = "The <acronym title=\"Uniform Resource Identifier\">URI</acronym> to trackback this entry is: ";
 $messages["previous_post"] = "Previous";
 $messages["next_post"] = "Next";
 $messages["comment_default_title"] = "(Untitled)";

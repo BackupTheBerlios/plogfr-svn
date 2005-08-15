@@ -1,0 +1,11 @@
+{include file="$blogtemplate/header.template"}
+{include file="$blogtemplate/panel.template"}
+<div id="main">
+ <div class="error">
+  <h2>{$locale->tr("error")}</h2>
+   <p>
+    <span class="error">{$locale->tr($message)}</span>
+   </p>
+  </div>
+</div>
+{include file="$blogtemplate/footer.template"}

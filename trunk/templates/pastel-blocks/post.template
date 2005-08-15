@@ -1,0 +1,37 @@
+    <div class="block-shadow">
+     <div class="block-main">
+      <div class="{cycle values="box-teal,box-purple,box-red,box-green,box-blue"}">
+
+       <div class="entry-headpad">
+        <div class="entry-headboard">
+         <div class="entry-header">
+          <img alt="star" src="{$url->getTemplateFile("/star.gif")}"/> 
+          {$post->getTopic()}
+         </div>
+         {assign var="postDate" value=$post->getDateObject()}
+         {assign var="postOwner" value=$post->getUserInfo()}
+         <div class="entry-date">{$postOwner->getUsername()} - {$locale->formatDate($postDate,"%Y %b %d (%A) - %H:%M")}</div>
+        </div>
+       </div>
+
+       <div class="entry-content">
+        {$post->getText()}
+       </div>
+
+       <div class="entry-footer">
+         {foreach name=categories from=$post->getCategories() item=postCategory}
+           <a href="{$url->categoryLink($postCategory)}">{$postCategory->getName()}</a>
+           {if !$smarty.foreach.categories.last}, {/if}
+         {/foreach}
+
+        <img alt="|" class="seperator" src="{$url->getTemplateFile("sp.gif")}"/> 
+        <a href="{$url->postPermalink($post)}">{$locale->tr("comment on this")} ({$post->getTotalComments()})</a> 
+        <img alt="|" class="seperator" src="{$url->getTemplateFile("sp.gif")}"/> 
+        <a title="{$locale->tr("permalink_title")}" href="{$url->postPermalink($post)}">{$locale->tr("permalink")}</a> 
+        <img alt="|" class="seperator" src="{$url->getTemplateFile("sp.gif")}"/> 
+        <a href="{$url->postTrackbackStatsLink($post)}">{$locale->tr("trackbacks")} ({$post->getNumTrackbacks()})</a> 
+       </div>
+
+      </div>
+     </div>
+    </div>

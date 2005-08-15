@@ -1,0 +1,740 @@
+html, body {
+margin: 0px;
+padding: 0px;
+border: 0px;
+/*This controls the style of the outermost box*/
+background: #333;
+}
+
+/*This controls the links for the whole blog except the blog title link*/
+A 			{ font: bold 10px Verdana; color: #CAD4F2; text-decoration: none; }
+A:link		{ color: #CAD4F2; text-decoration: none; }
+A:visited	{ color: #CAD4F2; text-decoration: none; }
+A:active	{ color: #FFFFFF; }
+A:hover		{ font: bold 12px Arial; color: #FFFFFF; }
+
+/*This is the red arrow that shows in the menus*/
+/*Seems the Firefox won't realize this*/
+ul {
+list-style-image: url(./imgs/arrow.gif);
+padding-left: 1px;
+}
+
+
+/*FONTS*/
+/*All showing fonts can be easily customized by creating a control here*/
+/*I tried to make the current ones be as descriptive as possible*/
+/*So you could easily change if you want*/
+.mainhead {
+font: bold 12pt Arial; letter-spacing: 5pt; color: #AAAA00
+}
+
+.mainintroheader {
+font: bold 16pt Arial; letter-spacing: 5pt; color: #AAAA00
+}
+
+.mainintrosubheader {
+font: bold 12pt Arial; letter-spacing: 10pt; color: #000000
+}
+
+.postinfo {
+font: bold 12pt Arial; color: #FFFFFF; text-decoration: underline
+}
+.posttitle {
+font: bold 10pt Arial; color: #FFFFFF; text-decoration: none
+}
+.leftmenu {
+font: bold 12pt Arial; letter-spacing: 1pt; color: #CAD4F2; text-decoration: underline
+}
+.leftmenutext {
+font: bold 8pt Arial; letter-spacing: 1pt; color: #FFFFFF
+}
+.rightmenu {
+font: bold 12pt Arial; letter-spacing: 1pt; color: #CAD4F2; text-decoration: underline
+}
+.userprofile {
+font: 8pt Arial; letter-spacing: 3pt; color: #CAD4F2
+}
+.footer {
+font: 9pt Arial; letter-spacing: 0pt; color: red
+}
+/*this one is currently not being used*/
+.h2 {
+font: 8pt Arial; letter-spacing: 1pt; color: #000000;
+}
+/*this controls how the error message shows*/
+/*You can change the error message by checking out the error.template file*/
+.error {
+font: 16pt Arial; letter-spacing: 1pt; color: red;
+}
+
+.albums {
+font: bold 12pt Arial; letter-spacing: 1pt; color: #000000
+}
+
+/*this is the left menu box*/
+#left {
+position: absolute;
+left:0px;
+top:80px;
+width:190px;
+background:#333 /*url(./imgs/brick.jpg) repeat fixed*/;
+border:3px solid #CAD4F2;
+padding: 0px 5px;
+}
+
+/*this is the right menu box*/
+#right {
+position: absolute;
+right:0px;
+top:80px;
+margin-bottom:80px;
+width:190px;
+background:#333 /*url(./imgs/brick.jpg) repeat fixed*/;
+border:3px solid #CAD4F2;
+padding: 0px 5px;
+}
+
+/*this is the blog title and the links that show below*/
+#header {
+/*the below is a background image included with this*/
+/*template set. You can use if you want by uncommenting and*/
+/*removing the none image background*/
+/*background: #333 url(./imgs/brick.jpg) repeat fixed;*/
+background: #333;
+/* IE 5.5 */
+height:81px;
+margin-top:1px;
+border-top:1px solid #000;
+border-right:1px solid #000;
+border-left:1px solid #000;
+voice-family: "\"}\"";
+voice-family: inherit;
+/* IE 6 */
+top:81px;
+/*change the hieght to reflect your background image if you use one*/
+height: 80px;
+}
+html>body #header {
+/* Mozilla and Safari */
+top:81px;
+height: 80px;
+}
+#header a {
+font: italic 40px Verdana;
+color: #CAD4F2;
+margin-left:250px;
+top:100px;
+}
+
+/*This controls the menu links that show below the header*/
+/*You can find these links in the header.template file*/
+#topmenu{
+border-top: 0px solid black;
+border-bottom: 2px #FFFFFF;
+border-right: 2px #FFFFFF;
+border-left: 2px #FFFFFF;
+width: 60%;
+background: #333;
+margin-left: 210px;
+}
+
+* html #topmenu{ /*IE only rule, to negate the padding below IE includes in menu width.*/
+width: 60%;
+}
+
+#topmenu a{
+font: bold 13px Verdana;
+padding: 2px;
+padding-left: 4px;
+display: inline;
+width: 100%;
+color: #CAD4F2;
+text-decoration: none;
+border-bottom: 0px solid black;
+}
+
+html>body #topmenu a{ /*Non IE rule*/
+width: auto;
+}
+
+#topmenu a:hover{
+color: #FFF;
+}
+
+/*This is what controls how the main.template shows everything*/
+/*Be careful if changing this as it was not easy to get this div and*/
+/*The div in the post.template to work properly together*/
+#main {
+background: url(./imgs/back.jpg) no-repeat fixed;
+/* these two margins affect IE 5.5 */
+margin-left: 100px;
+margin-right:100px;
+top:470px;
+border-top:1px solid #000;
+border-left:2px solid #000;
+border-right:2px solid #000;
+border-bottom:2px solid #000;
+padding: 0px 5px;
+voice-family: "\"}\"";
+voice-family: inherit;
+/* these two margins affect IE 6 */
+margin-left: 100px;
+margin-right:100px;
+height: 3200px;
+background:#fff url("./imgs/back.jpg") repeat fixed;
+top:470px;
+}
+html>body #main {
+/* these two margins affect Mozilla and Safari */
+margin-left: 100px;
+margin-right:100px;
+height: 3500px;
+top:470px;
+}
+
+/*This controls how the post.template shows the posts*/
+/*Be careful when editing this as it was not easy to get*/
+/*main.template to work correctly with this*/
+#postmain {
+background:#333;
+/* these two margins affect IE 5.5 */
+margin-left: 100px;
+margin-right:100px;
+margin-top:20px;
+top:470px;
+border:1px solid #CAD4F2;
+padding: 10px 5px;
+voice-family: "\"}\"";
+voice-family: inherit;
+font: 10pt Arial; color: #FFFFFF;
+/* these two margins affect IE 6 */
+margin-left: 100px;
+margin-right:100px;
+top:470px;
+}
+html>body #postmain {
+/* these two margins affect Mozilla and Safari */
+margin-left: 100px;
+margin-right:100px;
+top:470px;
+}
+
+/*This controls how the postandcomments.template shows*/
+#catmain {
+background: url(./imgs/back.jpg) no-repeat fixed;
+/* these two margins affect IE 5.5 */
+margin-left: 100px;
+margin-right:100px;
+top:470px;
+border-top:1px solid #000;
+border-left:2px solid #000;
+border-right:2px solid #000;
+border-bottom:2px solid #000;
+padding: 0px 5px;
+voice-family: "\"}\"";
+voice-family: inherit;
+/* these two margins affect IE 6 */
+margin-left: 150px;
+margin-right:100px;
+height: 3200px;
+background:#fff url("./imgs/back.jpg") repeat fixed;
+top:470px;
+}
+html>body #catmain {
+/* these two margins affect Mozilla and Safari */
+margin-left: 100px;
+margin-right:100px;
+height: 3500px;
+top:470px;
+}
+
+/*This is included if you use sticky posts*/
+/*If you use then this will allow for sticky posts to have its own*/
+/*box below the header and above your blog posts*/
+#sticky {
+background:#333;
+/* these two margins affect IE 5.5 */
+margin-left: 100px;
+margin-right:100px;
+margin-top:20px;
+top:470px;
+border-top:1px solid blue;
+border-left:1px solid blue;
+border-right:1px solid blue;
+border-bottom:1px solid blue;
+padding: 10px 5px;
+voice-family: "\"}\"";
+voice-family: inherit;
+font: 10pt Arial; letter-spacing: 1pt; color: #FFFFFF;
+/* these two margins affect IE 6 */
+margin-left: 100px;
+margin-right:100px;
+top:470px;
+}
+html>body #sticky {
+/* these two margins affect Mozilla and Safari */
+margin-left: 100px;
+margin-right:100px;
+top:470px;
+}
+
+/*The two divs below are in use by the archives.template file*/
+#mainarchives {
+background:#fff url("./imgs/back.jpg") repeat fixed;
+/* these two margins affect IE 5.5 */
+margin-left: 100px;
+margin-right:100px;
+top:470px;
+border-top:1px solid #000;
+border-left:2px solid #000;
+border-right:2px solid #000;
+border-bottom:2px solid #000;
+padding: 0px 5px;
+voice-family: "\"}\"";
+voice-family: inherit;
+/* these two margins affect IE 6 */
+margin-left: 100px;
+margin-right:100px;
+top:470px;
+height: 500px;
+}
+html>body #mainarchives {
+/* these two margins affect Mozilla and Safari */
+margin-left: 100px;
+margin-right:100px;
+top:70px;
+height: 500px;
+}
+
+#archives {
+background:#333;
+/* these two margins affect IE 5.5 */
+margin-left: 125px;
+margin-right:100px;
+margin-top: 50px;
+border:0px solid #000;
+padding: 0px 5px;
+voice-family: "\"}\"";
+voice-family: inherit;
+font: 8pt Arial; letter-spacing: 1pt; color: #FFFFFF;
+/* these two margins affect IE 6 */
+margin-left: 125px;
+margin-right:100px;
+margin-top: 50px;
+}
+html>body #archives {
+/* these two margins affect Mozilla and Safari */
+margin-left: 125px;
+margin-right:100px;
+margin-top: 50px;
+}
+
+/*The two divs below are in use by the albums.template file*/
+#mainalbums {
+background:#fff url("./imgs/back.jpg") repeat fixed;
+/* these two margins affect IE 5.5 */
+margin-left: 100px;
+margin-right:100px;
+top:470px;
+border-top:1px solid #000;
+border-left:2px solid #000;
+border-right:2px solid #000;
+border-bottom:2px solid #000;
+padding: 0px 5px;
+voice-family: "\"}\"";
+voice-family: inherit;
+/* these two margins affect IE 6 */
+margin-left: 100px;
+margin-right:100px;
+height: 900px;
+top:470px;
+}
+html>body #mainalbums {
+/* these two margins affect Mozilla and Safari */
+margin-left: 100px;
+margin-right:100px;
+top:70px;
+}
+
+#albums {
+background:#333;
+/* these two margins affect IE 5.5 */
+margin-left: 125px;
+margin-right:100px;
+margin-top: 50px;
+border:0px solid #000;
+padding: 0px 5px;
+voice-family: "\"}\"";
+voice-family: inherit;
+font: 8pt Arial; letter-spacing: 1pt; color: #FFFFFF;
+/* these two margins affect IE 6 */
+margin-left: 125px;
+margin-right:100px;
+margin-top: 50px;
+}
+html>body #albums {
+/* these two margins affect Mozilla and Safari */
+margin-left: 125px;
+margin-right:100px;
+margin-top: 50px;
+}
+
+/*The two divs below are in use by the album.template and resource.template files*/
+#mainalbumview {
+background:#fff url("./imgs/back.jpg") repeat fixed;
+/* these two margins affect IE 5.5 */
+margin-left: 100px;
+margin-right:100px;
+top:470px;
+border-top:1px solid #000;
+border-left:2px solid #000;
+border-right:2px solid #000;
+border-bottom:2px solid #000;
+padding: 0px 5px;
+voice-family: "\"}\"";
+voice-family: inherit;
+/* these two margins affect IE 6 */
+margin-left: 100px;
+margin-right:100px;
+height: 900px;
+top:470px;
+}
+html>body #mainalbumview {
+/* these two margins affect Mozilla and Safari */
+margin-left: 100px;
+margin-right:100px;
+top:70px;
+}
+
+#albumview {
+background:#333;
+/* these two margins affect IE 5.5 */
+margin-left: 125px;
+margin-right: 100px;
+margin-top: 50px;
+border:0px solid #000;
+padding: 0px 5px;
+voice-family: "\"}\"";
+voice-family: inherit;
+/* these two margins affect IE 6 */
+margin-left: 125px;
+margin-right: 100px;
+margin-top: 50px;
+}
+html>body #albumview {
+/* these two margins affect Mozilla and Safari */
+margin-left: 125px;
+margin-right: 100px;
+margin-top: 50px;
+}
+
+/*The following two divs is how the links.template file shows*/
+#mainlinks {
+background:#fff url("./imgs/back.jpg") repeat fixed;
+/* these two margins affect IE 5.5 */
+margin-left: 100px;
+margin-right:100px;
+top:470px;
+border-top:1px solid #000;
+border-left:2px solid #000;
+border-right:2px solid #000;
+border-bottom:2px solid #000;
+padding: 0px 5px;
+voice-family: "\"}\"";
+voice-family: inherit;
+/* these two margins affect IE 6 */
+margin-left: 100px;
+margin-right:100px;
+height: 900px;
+top:470px;
+}
+html>body #mainlinks {
+/* these two margins affect Mozilla and Safari */
+margin-left: 100px;
+margin-right:100px;
+top:70px;
+height: 3000px;
+}
+
+#links {
+background:#333;
+/* these two margins affect IE 5.5 */
+margin-left: 125px;
+margin-right:100px;
+margin-top: 50px;
+border:0px solid #000;
+padding: 0px 5px;
+voice-family: "\"}\"";
+voice-family: inherit;
+font: 8pt Arial; letter-spacing: 1pt; color: #FFFFFF;
+/* these two margins affect IE 6 */
+margin-left: 125px;
+margin-right:100px;
+margin-top: 50px;
+}
+html>body #links {
+/* these two margins affect Mozilla and Safari */
+margin-left: 125px;
+margin-right:100px;
+margin-top: 50px;
+}
+
+/*Ths controls how the error.template file shows*/
+#error {
+background:#fff;
+/* these two margins affect IE 5.5 */
+margin-left: 300px;
+margin-right:100px;
+margin-top: 100px;
+border:0px solid #000;
+padding: 0px 5px;
+voice-family: "\"}\"";
+voice-family: inherit;
+/* these two margins affect IE 6 */
+margin-left: 300px;
+margin-right:100px;
+margin-top: 100px;
+}
+html>body #error {
+/* these two margins affect Mozilla and Safari */
+margin-left: 300px;
+margin-right:100px;
+margin-top: 100px;
+}
+
+/*the following two divs control how the searchresults.template file shows*/
+#mainsearch {
+background: url(./imgs/back.jpg) no-repeat fixed;
+/* these two margins affect IE 5.5 */
+margin-left: 100px;
+margin-right:100px;
+top:470px;
+border-top:1px solid #000;
+border-left:2px solid #000;
+border-right:2px solid #000;
+border-bottom:2px solid #000;
+padding: 0px 5px;
+voice-family: "\"}\"";
+voice-family: inherit;
+/* these two margins affect IE 6 */
+margin-left: 100px;
+margin-right:100px;
+height: 3200px;
+background:#fff url("./imgs/back.jpg") repeat fixed;
+top:470px;
+}
+html>body #search {
+/* these two margins affect Mozilla and Safari */
+margin-left: 100px;
+margin-right:100px;
+height: 3500px;
+top:470px;
+}
+
+#search {
+background:#333;
+/* these two margins affect IE 5.5 */
+margin-left: 100px;
+margin-right:100px;
+margin-top:20px;
+top:470px;
+border-top:1px solid blue;
+border-left:1px solid blue;
+border-right:1px solid blue;
+border-bottom:1px solid blue;
+padding: 10px 5px;
+voice-family: "\"}\"";
+voice-family: inherit;
+font: 10pt Arial; letter-spacing: 1pt; color: #FFFFFF;
+/* these two margins affect IE 6 */
+margin-left: 100px;
+margin-right:100px;
+top:470px;
+}
+html>body #searchmain {
+/* these two margins affect Mozilla and Safari */
+margin-left: 100px;
+margin-right:100px;
+top:470px;
+}
+
+/*This controls how the plugin Flickr*/
+/*flickr.template file shows*/
+#mainflickr {
+background: url(./imgs/back.jpg) no-repeat fixed;
+/* these two margins affect IE 5.5 */
+margin-left: 100px;
+margin-right:100px;
+top:470px;
+border-top:1px solid #000;
+border-left:2px solid #000;
+border-right:2px solid #000;
+border-bottom:2px solid #000;
+padding: 0px 5px;
+voice-family: "\"}\"";
+voice-family: inherit;
+/* these two margins affect IE 6 */
+margin-left: 100px;
+margin-right:100px;
+height: 900px;
+background:#fff url("./imgs/back.jpg") repeat fixed;
+top:470px;
+}
+html>body #mainflickr {
+/* these two margins affect Mozilla and Safari */
+margin-left: 100px;
+margin-right:100px;
+top:470px;
+}
+
+#flickr {
+background:#333;
+/* these two margins affect IE 5.5 */
+margin-left: 100px;
+margin-right: 100px;
+margin-top: 50px;
+border:2px solid #CAD4F2;
+padding: 0px 5px;
+voice-family: "\"}\"";
+voice-family: inherit;
+font: 8pt Arial; letter-spacing: 1pt; color: #FFFFFF;
+/* these two margins affect IE 6 */
+margin-left: 100px;
+margin-right: 100px;
+margin-top: 50px;
+}
+html>body #flickr {
+/* these two margins affect Mozilla and Safari */
+margin-left: 100px;
+margin-right: 100px;
+margin-top: 50px;
+}
+
+/*This controls how the plugin del.ico.us*/
+/*delicious.template file shows*/
+#maindel {
+background:#fff url("./imgs/back.jpg") repeat fixed;
+/* these two margins affect IE 5.5 */
+margin-left: 100px;
+margin-right:100px;
+top:470px;
+border-top:1px solid #000;
+border-left:2px solid #000;
+border-right:2px solid #000;
+border-bottom:2px solid #000;
+padding: 0px 5px;
+voice-family: "\"}\"";
+voice-family: inherit;
+/* these two margins affect IE 6 */
+margin-left: 100px;
+margin-right:100px;
+height: 500px;
+top:470px;
+}
+html>body #maindel {
+/* these two margins affect Mozilla and Safari */
+margin-left: 100px;
+margin-right:100px;
+top:70px;
+}
+
+#del {
+background:#333;
+/* these two margins affect IE 5.5 */
+margin-left: 250px;
+margin-right: 200px;
+margin-top: 50px;
+border:2px solid #CAD4F2;
+padding: 0px 5px;
+voice-family: "\"}\"";
+voice-family: inherit;
+font: 8pt Arial; letter-spacing: 1pt; color: #FFFFFF;
+/* these two margins affect IE 6 */
+margin-left: 250px;
+margin-right: 200px;
+margin-top: 50px;
+}
+html>body #del {
+/* these two margins affect Mozilla and Safari */
+margin-left: 250px;
+margin-right: 200px;
+margin-top: 50px;
+}
+
+/*This controls how the footer.template file shows*/
+#footer {
+width: 50%;
+height: 35px;
+border-top: 1px solid #000000;
+margin-left: 250px;
+margin-top: 100px;
+}
+
+/*The below control how forms and input field look*/
+/*The effects offered by this do not work I.E. */
+label{
+float: left;
+width: 120px;
+font-weight: bold;
+}
+
+input, textarea{
+width: 100px;
+margin-bottom: 5px;
+}
+
+textarea{
+width: 250px;
+height: 150px;
+}
+
+.boxes{
+width: 1em;
+}
+
+#submitbutton{
+margin-left: 50px;
+margin-top: 5px;
+width: 90px;
+}
+
+br{
+clear: left;
+}
+input:focus, textarea:focus{
+background-color: #3399FF;
+font: bold 8pt Arial; letter-spacing: 1pt; color: #000000;
+}
+
+/*This is the dropcase plugin*/
+#drop-case:first-letter {
+font-size : 200%;
+font-weight : bold;
+float : left;
+margin-top:0px;
+margin-left:0px;
+margin-right: 3px;
+margin-bottom: 3px;
+padding: 2px;
+border: 2px dotted #4265ed;
+}
+
+/*This offers your images to have a nice light dark effect upon mouseover*/
+/*In order to apply the highlight effect in your images you need to give the*/
+/*URL link a class="highlightit" */
+/*Using this will make the css not validate*/
+.highlightit img{
+filter:progid:DXImageTransform.Microsoft.Alpha(opacity=50);
+-moz-opacity: 0.5;
+}
+
+.highlightit:hover img{
+filter:progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+-moz-opacity: 1;
+border: 0px;
+}
+
+.highlightit:hover{
+color: red;
+}

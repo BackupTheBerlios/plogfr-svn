@@ -1,0 +1,72 @@
+{include file="$blogtemplate/header.template"}
+
+ <!-- album contents go here -->
+<div id="album">
+		<div class="BlockTitle">		
+		<a class="nodecoration" href="{$url->parentAlbumLink($album)}">
+		<img align="middle" class="IMGDotElement"  src="{$url->getTemplateFile("/img/32_folder.gif")}" alt="Folder" /></a>
+		{$album->getName()}
+		<br/> {$album->getDescription()}
+		</div>
+  {assign var=children value=$album->getChildren()}
+  {foreach from=$children item=childalbum}
+
+		<div class="BlockArea">
+		<img salign="middle" class="IMGDotElement"  src="{$url->getTemplateFile("/img/32_folder.gif")}" alt="Folder" />
+		<a class="nodecoration" href="{$url->albumLink($childalbum)}">
+		{$childalbum->getName()} ({$childalbum->getNumResources()})
+		</a>
+		</div>
+	{/foreach}
+
+ <!--- show the resources here -->
+
+		{assign var=resources value=$album->getResources()}
+		{foreach from=$resources item=resource}
+		<div class="BlockArea">
+		{if $resource->isImage()}
+
+			{if $resource->hasPreview()}
+				<img alt="{$resource->getDescription()}" src="{$url->resourcePreviewLink($resource)}" />
+				{else}
+				<img alt="{$resource->getDescription()}" src="{$url->getTemplateFile("/img/32_image.gif")}" />
+			{/if}
+			<a href="{$url->resourceLink($resource)}">{$resource->getFileName()}</a>
+
+		{else}
+			
+			{if $resource->isSound()}
+					<img alt="Sound" src="{$url->getTemplateFile("/img/32_sound.gif")}" />
+				{elseif $resource->isVideo()}
+					<img alt="Video" src="{$url->getTemplateFile("/img/32_video.gif")}" />
+				{elseif $resource->isZip()}
+					<img alt="Zip" src="{$url->getTemplateFile("/img/32_compressed.gif")}" />   
+				{else}
+					<img alt="File" src="{$url->getTemplateFile("/img/32_file.gif")}" />    
+			{/if}
+			<a class="nodecoration" href="{$url->resourceLink($resource)}">{$resource->getFileName()}	</a>
+		{/if}
+		<br/>
+
+		{assign var=metadata value=$resource->getMetadataReader()}
+		{$metadata->getRoundedSize()}
+
+		{if $resource->isImage()}
+			 || {$metadata->getWidth()} * {$metadata->getHeight()}
+		{elseif $resource->isSound()}
+			 || {$metadata->getFormat()|upper} {$metadata->getSampleRate()} bps
+		{elseif $resource->isVideo()}
+			 || {$metadata->getFormat()|upper}
+			 || {$metadata->getWidth()} * {$metadata->getHeight()} , 
+			 || {$metadata->getLengthString()}
+		{elseif $resource->isZip()}
+			 || {$metadata->getTotalFiles()} {$locale->tr("files")}
+		{/if}
+		</div>
+
+		{/foreach}
+
+</div>
+ <!-- end of album contents -->
+ 
+ {include file="$blogtemplate/footersimple.template"}

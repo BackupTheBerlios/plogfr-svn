@@ -1,0 +1,32 @@
+<tr>
+<td class="article">
+  <form name="comments_form" action="{$url->getBaseUrl()}/index.php" method="post">
+   <table width="100%" cellspacing="2" border="0" cellpadding="2" class="article" align="left">
+   <tr>
+   <td valign="top" width="200">
+	{$locale->tr("comment_topic")}:<br />
+	<input type="text" tabindex="1" name="commentTopic"  size="30"/><br /><br />
+	{$locale->tr("comment_username")}:<br />
+	<input type="text" tabindex="2" name="userName"  size="30"/><br /><br />
+	{$locale->tr("comment_email")}:<br />
+	<input type="text" tabindex="3" name="userEmail"  size="30"/><br /><br />
+	{$locale->tr("comment_url")}:<br />
+	<input type="text"  tabindex="4" name="userUrl" size="30"/><br /><br />
+  </td>
+  <td valign="top">
+  {$locale->tr("add_comment")}:<br />
+   <img src="{$url->getTemplateFile("bold.gif")}" width="16" height="16" align="middle" alt="Bold" />
+   <img src="{$url->getTemplateFile("italic.gif")}" width="16" height="16" align="middle" alt="Italic" />
+   <img src="{$url->getTemplateFile("link.gif")}" width="16" height="16" align="middle"  alt="Link" /><br />
+  <textarea tabindex="5" id="text" name="commentText" rows="10" cols="50"></textarea><br /><br />
+  <input style="font-weight: bold;" type="submit" name="post" value="&nbsp;{$locale->tr("comment_send")}&nbsp;" /><br /><br />
+  <input type="hidden" name="op" value="AddComment"/>
+  <input type="hidden" name="articleId" value="{$post->getId()}"/>
+  <input type="hidden" name="blogId" value="{$blog->getId()}"/>
+  <input type="hidden" name="parentId" value="{$parentId}"/>
+  </td>
+  </tr>
+  </table>
+  </form>
+</td>
+</tr>

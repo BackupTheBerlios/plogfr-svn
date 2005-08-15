@@ -1,0 +1,81 @@
+{include file="$admintemplatepath/header.template"}
+{include file="$admintemplatepath/navigation.template" showOpt=SiteTemplateEditor title=$locale->tr("SiteTemplateEditor")}
+<SCRIPT type="text/javascript"> var copyToMessage = '{$locale->tr("templateeditor_enter_new_templateset_name")}'; </SCRIPT>
+{literal}
+<SCRIPT type="text/javascript">
+function copyTemplateSetTo( objId ) {
+    copyToName = prompt(copyToMessage, 'new_' + objId);
+    url = document.getElementById(objId);
+    if (copyToName != '' && copyToName != null) {
+        originUrl = url.getAttribute('href');
+        newUrl = encodeURI(originUrl + '&newTemplateId=' + copyToName);
+        url.setAttribute('href', newUrl);
+    } else {
+        url.setAttribute('href', '?op=siteTemplateSetsList');
+    }
+}
+</SCRIPT>
+{/literal}
+ <form id="siteTemplateSetsList" method="post" action="admin.php">
+ <div id="list">
+  {include file="$admintemplatepath/successmessage.template"}
+  {include file="$admintemplatepath/errormessage.template"}
+  <table class="info">
+   <thead>
+    <tr>
+      <th style="width:10px;"><input class="checkbox" type="checkbox" class="check" name="all" id="all" value="1" onclick="toggleAllChecks('siteTemplateSetsList');" /></th>
+      <th style="width:650px;">{$locale->tr("template")}</th>
+      <th style="width:115px;">{$locale->tr("actions")}</th>
+    </tr>
+  </thead>
+  <tbody>
+  {foreach from=$templates item=sitetemplate}
+   <tr class="{cycle values="odd,even"}">
+    <td>
+       <input class="checkbox" type="checkbox" name="templateIds[{counter}]" value="{$sitetemplate->getName()}" />
+    </td>
+    <td  class="col_highlighted">
+     <a href="?op=siteTemplatesList&amp;templateId={$sitetemplate->getName()}">
+      <img src="imgs/admin/icon_folder-16.png" />
+      {$sitetemplate->getName()}
+     </a>
+    </td>
+    <td>
+     <div class="list_action_button">
+      <a href="?op=siteTemplatesList&amp;templateId={$sitetemplate->getName()}">
+        <img src="imgs/admin/icon_edit-16.png" alt="{$locale->tr("edit")}" />
+      </a>
+      {if $sitetemplate->getName() != "rss" && $sitetemplate->getName() != "summary"}
+       <a href="?op=siteDeleteTemplateSet&amp;templateId={$sitetemplate->getName()}">
+         <img src="imgs/admin/icon_delete-16.png" alt="{$locale->tr("delete")}" />
+       </a>
+       <a href="?op=siteCopyTemplateSet&amp;templateId={$sitetemplate->getName()}" id="{$sitetemplate->getName()}" onClick="copyTemplateSetTo(this.id)" >
+         <img src="imgs/admin/icon_copy-16.png" alt="{$locale->tr("copy")}" />
+       </a>
+      {else}
+       <img src="imgs/admin/icon_empty-16.png" />
+       <img src="imgs/admin/icon_empty-16.png" />
+      {/if}
+      <a href="?op=siteArchiveTemplateSet&amp;templateId={$sitetemplate->getName()}">
+        <img src="imgs/admin/icon_archive-16.png" alt="{$locale->tr("download")}" />
+      </a>
+	  {if $sitetemplate->hasScreenshot()}
+	    <a href="javascript:openScreenshotWindow('{$sitetemplate->getScreenshotUrl()}');">
+		  <img src="imgs/admin/icon_image-16.png" alt="Screenshot" />
+		</a>
+	  {/if}	  
+     </div>
+    </td>
+   </tr>
+  {/foreach}
+  </tbody>
+ </table>
+ </div>
+ <div id="list_action_bar">
+   <input type="hidden" name="op" value="siteDeleteTemplateSets" class="submit" />
+   <input type="submit" name="{$locale->tr("delete")}" value="{$locale->tr("delete")}"/>
+ </div>
+ </form>
+ 
+{include file="$admintemplatepath/footernavigation.template"}
+{include file="$admintemplatepath/footer.template"}

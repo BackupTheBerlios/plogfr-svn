@@ -1,0 +1,15 @@
+{assign var="postDate" value=$post->getDateObject()}
+{assign var="postOwner" value=$post->getUserInfo()}
+		<!-- post start -->
+		<p class="post-date">{$locale->formatDate($postDate,"%d %B, %Y %H:%M")}</p>
+		<div class="post-info"><h2 class="post-title"><a href="{$url->postPermalink($post)}" rel="bookmark" title="Permanent Link: {$post->getTopic()}"> {$post->getTopic()} </a></h2>
+			Posted by {$postOwner->getUsername()} under 
+				[{foreach name=categories from=$post->getCategories() item=postcategory}
+				<a href="{$url->categoryLink($postcategory)}">{$postcategory->getName()}</a>
+				{if !$smarty.foreach.categories.last}, {/if}
+				{/foreach}]
+			<br/>[<a href="{$url->postPermalink($post)}"> ({$post->getTotalComments()}) {$locale->tr("comment on this")} </a>]&nbsp;|&nbsp;[<a href="{$url->postTrackbackStatsLink($post)}"> ({$post->getNumTrackbacks()}) {$locale->tr("trackbacks")}  </a>]</div>
+			<div class="post-content">
+				{$post->getText()}
+				<div class="post-footer">&nbsp;</div>
+			</div>

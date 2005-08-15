@@ -1,0 +1,24 @@
+{include file="$blogtemplate/header.template"}
+<div id="content">
+ <div class="blog">
+  <div class="blogbody">
+  <h2 class="title">{$locale->tr("about")} mtplog {$locale->tr("template")}</h2>
+  <div class="posted"><a href="{$url->templatePage("about")}">{$locale->tr("permalink")}</a></div>
+<p>This template &quot;mtplog&quot; is a template based on <a href="http://www.movabletype.org/">MovableType 2.x</a>'s naming method. Thank <b>Sultasto </b>to porting it as a template of plog. </p>
+<p>This template has five different css style. All of them are in the folder of &quot;css/&quot;.</p>
+<ul><li>clean.css</li>
+<li>trendy.css</li>
+<li>gettyburg.css</li>
+<li>plain_jane.css</li>
+<li>rusty.css</li>
+</ul><p>If you want changing the css style, you sholud modify the header.template and replace  the bold character  in <i>$url-&gt;getTemplateFile(&quot;css/<b>clean.css</b>&quot;) </i>with that list above.</p>
+<p>ps: You change the content of this file by editing the about.template.</p>
+  <p align="right">by <a href="http://reic.twbbs.org">reic</a></p>
+<p>Developer: Sultasto<br />
+Porting and maintain: reic</p>
+  </div>
+  <br />
+ </div>
+</div>
+{include file="$blogtemplate/panel.template"}
+{include file="$blogtemplate/footer.template"}

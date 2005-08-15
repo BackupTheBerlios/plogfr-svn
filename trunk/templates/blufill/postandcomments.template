@@ -1,0 +1,39 @@
+{include file="$blogtemplate/header.template"}
+   <tr> 
+      <td> 
+{assign var="postDate" value=$post->getDateObject()}
+{assign var="postOwner" value=$post->getUserInfo()}
+<div id="container">
+ <!-- {$url->postTrackbackLink($post)} -->
+ {include file="$blogtemplate/post.template"}
+ <div class="blog">
+ <div class="comments-head">
+  <a name="comments"></a>Comments
+ </div>
+ {foreach from=$comments item=comment}
+  <div class="comments-main">
+   <a name="{$comment->getId()}"></a><p>{$comment->getText()}</p>
+   <span class="comments-post">
+    {$locale->tr("posted_by")}
+    {if $comment->getUserUrl() != ""}
+     <a href="{$comment->getUserUrl()}"}>{$comment->getUsername()}</a>
+    {else}
+     {$comment->getUsername()}
+    {/if}
+	{assign var=commentDate value=$comment->getDateObject()}
+    {$locale->formatDate($commentDate, "%d %b %Y, %H:%M")}
+   </span>
+  </div>
+ {/foreach}
+ </div>
+ {if $blogsettings->getValue("comments_enabled") && $post->getCommentsEnabled()==1}
+  <div class="blog">
+   <div class="comments-head">{$locale->tr("add_comment")}</div>
+   {include file="$blogtemplate/commentform.template"}
+  </div>
+ {/if}
+</div>
+   </td> 
+</tr>
+{include file="$blogtemplate/footer.template"}
+

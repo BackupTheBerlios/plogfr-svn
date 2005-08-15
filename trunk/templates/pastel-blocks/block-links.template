@@ -1,0 +1,24 @@
+    <div class="block-shadow">
+     <div class="block-main">
+      <div class="{cycle values="box-red,box-blue,box-orange,box-teal,box-purple,box-green"}">
+       <div class="block-links">
+
+       <div class="block-title">
+         <div class="block-header">{$locale->tr("my_links")}</div>
+       </div>
+       
+        {foreach from=$mylinkscategories item=linkcategory}
+         <div class="link-cat">{$linkcategory->getName()}</div>
+         <ul>
+         {foreach from=$linkcategory->getLinks() item=link}
+          <li class="link-item">
+           <a href="{$link->getUrl()}" title="{$link->getDescription()}">{$link->getName()}</a>
+          </li>
+         {/foreach}
+        </ul>
+        {/foreach}
+        <br/>
+       </div>
+      </div>
+     </div>
+    </div>

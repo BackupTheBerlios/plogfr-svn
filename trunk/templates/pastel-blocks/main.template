@@ -1,0 +1,9 @@
+{include file="$blogtemplate/header.template"}
+
+ {foreach from=$posts item=post}
+  {include file="$blogtemplate/post.template"}
+ {/foreach}
+
+{include file="$blogtemplate/footer.template"}
+
+

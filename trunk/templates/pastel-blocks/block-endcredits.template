@@ -1,0 +1,43 @@
+   <div class="block-credits">
+    <div class="block-shadow">
+     <div class="block-main">
+      <div class="box-orange"> 
+
+       <br/>      
+       
+       <div class="credit">
+        <div class="credit-block">
+         All content copyright &copy; 2004 your name here.
+        </div>
+        <img alt="------------------------" class="seperator" src="{$url->getTemplateFile("/line1.gif")}"/> 
+
+       <!--                                            -->
+       <!-- Please leave the credit intact. Thank you! -->
+       <!--                                            -->
+
+
+        <div class="credit-block">
+         Powered by <a href="http://www.plogworld.net">pLog</a>
+         <img alt="|" class="seperator" src="{$url->getTemplateFile("/sp.gif")}"/> 
+         Design by <a href="http://tonymasiello.com">Tony Masiello</a>
+        </div> 
+
+        <img alt="------------------------" class="seperator" src="{$url->getTemplateFile("/line2.gif")}"/> 
+
+        <div class="credit-block">
+         valid <a href="http://validator.w3.org/check/referer">XHTML</a>
+         <img alt="|" class="seperator" src="{$url->getTemplateFile("/sp.gif")}"/> 
+         valid <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a>
+        </div>
+       </div>
+
+       <!--                                            -->
+       <!--               End Credit                   -->
+       <!--                                            -->
+    
+       <br/>
+
+      </div>
+     </div>
+    </div>
+   </div>

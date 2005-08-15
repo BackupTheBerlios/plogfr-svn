@@ -1,0 +1,13 @@
+<h3>{$post->getTopic()}</h3>
+{assign var="postDate" value=$post->getDateObject()}
+{assign var="postOwner" value=$post->getUserInfo()}
+<span class="date">{$postOwner->getUsername()} | {$locale->formatDate($postDate,"%d %B, %Y %H:%M")}</span>
+<p>
+ {$post->getText()}
+</p>
+<div class="footer">
+{foreach name=categories from=$post->getCategories() item=postCategory}
+	<a href="{$url->categoryLink($postCategory)}">{$postCategory->getName()}</a>{if !$smarty.foreach.categories.last}, {/if}
+{/foreach}
+ :: <a href="{$url->postPermalink($post)}">{$locale->tr("comments")} ({$post->getTotalComments()})</a> :: <a title="{$locale->tr("permalink_title")}" href="{$url->postPermalink($post)}">{$locale->tr("permalink")}</a> :: <a href="{$url->postTrackbackStatsLink($post)}">{$locale->tr("trackbacks")} ({$post->getNumTrackbacks()})</a> 
+</div>

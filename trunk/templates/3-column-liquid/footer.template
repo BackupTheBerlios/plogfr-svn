@@ -1,0 +1,50 @@
+   <!-- end of the content -->
+   <div id="footer">
+    <a title="XHTML used here" href="http://www.w3.org/TR/xhtml1/">
+      <img alt="Valid XHTML" src="{$url->getUrl("/imgs/xhtml10_logo.gif")}" border="0"/>
+    <a title="Powered by PHP" href="http://www.php.net">
+      <img alt="Powered by PHP" src="{$url->getUrl("/imgs/php_logo.gif")}" border="0"/></a>
+    <a title="CSS used here" href="http://www.w3.org/Style/CSS/">
+      <img alt="Powered by PHP" src="{$url->getUrl("/imgs/css_logo.gif")}" border="0"/></a>
+    <a title="Powered by MySQL" href="http://www.mysql.com">
+      <img alt="Powered by MySQL" src="{$url->getUrl("/imgs/mysql_logo.gif")}" border="0"/></a><br/>
+    Powered by <a href="http://www.plogworld.net">pLog</a>
+   </div>
+  </div>
+  <div id="right">
+  <div id="sectionHeader">Calendar</div>
+<div id="sectionContent">
+{$calendar}
+</div>
+
+<div id="sectionHeader">Archives</div>
+<div id="sectionContent">
+ <ul id="recently">
+  {foreach from=$archives item=post}
+   <li><a href="{$post->getUrl()}">{$post->getName()}</a></li>
+  {/foreach}
+ </ul>
+</div>
+
+<div id="sectionHeader">Recently</div>
+<div id="sectionContent">
+ <ul id="recently">
+  {foreach from=$recentposts item=post}
+   <li><a title="{$post->getText()|truncate:150:"..."|escape}" href="{$url->postLink($post)}">{$post->getTopic()}</a></li>
+  {/foreach}
+ </ul>
+</div>
+
+<div id="sectionHeader">Misc</div>
+<div id="sectionContent">
+<ul id="misc">
+ <li><a title="Link to the RSS 0.90 feed." href="{$url->rssLink("rss090")}"><img src="{$url->getUrl("/imgs/rss090_logo.gif")}" border="0"/></a></li>
+ <li><a title="Link to the RSS 1.0 feed." href="{$url->rssLink("rss10")}"><img src="{$url->getUrl("/imgs/rss10_logo.gif")}" border="0"/></a></li>
+ <li><a title="Link to the RSS 2.0 feed." href="{$url->rssLink("rss20")}"><img src="{$url->getUrl("/imgs/rss20_logo.gif")}" border="0"/></a></li>
+</ul>
+</div>
+
+  </div>
+
+ </body>
+</html>

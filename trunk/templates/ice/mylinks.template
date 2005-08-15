@@ -1,0 +1,11 @@
+<ul>
+   {foreach from=$mylinkscategories item=linkcategory}
+     <li><strong>{$linkcategory->getName()}</strong>
+     <ul>
+     {foreach from=$linkcategory->getLinks() item=link}
+      <li><a href="{$link->getUrl()}" title="{$link->getDescription()}">{$link->getName()}</a></li>
+     {/foreach}
+     </ul>
+     </li>
+   {/foreach}
+</ul>

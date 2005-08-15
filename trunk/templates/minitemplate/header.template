@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$locale->getLanguageId()}" 
+      lang="{$locale->getLanguageId()}" dir="{$locale->getDirection()}">
+<head>
+	<title>{$blog->getBlog()}{$postPageTitle}</title>
+	<meta http-equiv="Content-Type" content="text/html;charset={$locale->getCharset()}" />
+	<meta name="generator" content="{$version}" />
+	<meta http-equiv="Content-Language" content="{$locale->getLanguageId()}" />
+	<link rel="stylesheet" title="Default" href="{$url->getTemplateFile("style.css")}" type="text/css" />
+	<link rel="alternate" type="text/xml" title="RSS 2.0" href="{$url->rssLink("rss20")}" />
+	<link rel="alternate" type="text/xml" title="RSS 1.0" href="{$url->rssLink("rss10")}" />
+	<link rel="alternate" type="text/xml" title="RSS 0.90" href="{$url->rssLink("rss090")}" />
+	<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="{$url->rssLink("atom")}" />
+	<script type="javascript" src="{$url->getTemplateFile("bgimg.js")}"></script>
+</head>
+<body> 
+<div class="Upgrade">This page looks plain and unstyled because you're using a 
+non-standard compliant browser. To see it in its best form, please <a 
+href="http://www.webstandards.org/upgrade/" title="The Web Standards Project's 
+Browser Upgrade initiative">upgrade</a> to a browser that supports web 
+standards. It's free and painless.</div>
+<!--//  Container Begain//-->
+ <div id="Container">
+<!--// Topmenu Begain //-->
+	{include file="$blogtemplate/topmenu.template"}
+<!--// Topmen End //-->
+
+<!--// Main Begain //-->
+	<div id="Main">
+<!--// Content Begain //-->
+		<div id="Content">

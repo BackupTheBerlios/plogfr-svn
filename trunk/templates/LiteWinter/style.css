@@ -1,0 +1,281 @@
+html {
+	/* IE Horizontal scrollbar fix */
+	overflow-y: scroll;
+	/* force scrollbars in moz */
+	height: 100%;
+}
+body {
+	margin: 0px;
+}
+/*Layout style*/
+#container {
+	width:80%;
+	background-image:url(images/rightshadow.gif);
+	background-repeat:repeat-y;
+	background-position:right;
+	padding:0 6px 0 0;
+	border-left: 1px solid;
+	border-left-color: #999999;
+}
+
+#BlogHeader{
+	margin:0px;
+	width:100%;
+	background-image:url(images/logo.gif);
+	background-repeat:no-repeat;
+	background-position:left;
+	height:80px;
+}
+
+/*Spereate Head and Main block*/
+#nav_bar {
+	background-image:url(images/hbar.gif);
+	background-repeat:repeat-x;
+	border-bottom: 1px solid #dddddd;
+	font:12px/1.4em Arial;
+}
+
+/*Left Block:: Menu Block*/
+#sidebar {
+	font:12px Times, Arial;
+	float:left;
+	width:180px;
+	margin:10px 10px 10px 10px;
+	padding:3px;
+	text-align:left;
+}
+
+/*Right Block :: Article Block*/
+#content {
+	margin:10px 10px 0 200px;
+	position:relative;
+	padding:3px;
+	text-align:left;
+}
+
+/*Bottom Block :: footer block*/
+#BlogFooter {
+	clear:both;
+	font: 12px Times, Arial;
+	background-image:url(images/hbar.gif);
+	background-repeat:repeat-x;
+	border-left: 1px solid #dddddd;
+	border-bottom:1px solid #dddddd;
+	width:100%;
+	text-align:center;
+}
+
+/*The three classes below are use to castale menu blocks*/
+div.blockTitle {
+	background-image: url(images/leftcolumnTitle_bg.gif); 
+	padding: 3px; 
+	background-color: #dddddd; 
+	color: #639ACE; 
+	font-weight: bold;
+	text-align:center;
+}
+
+div.blockContent {
+	background-image:url(images/leftcolumnContent_bg.gif); 
+	padding: 3px; 
+	line-height: 120%; 
+}
+
+div.blockFooter {
+	height:18px; 
+	background-image:url(images/leftcolumnFooter_bg.gif);
+	background-repeat:no-repeat; 
+	padding: 3px; 
+	margin-bottom: 10px;
+}
+
+/*Blog Title style*/
+#TITLE {
+	font:20px Times New Roman, Times, serif;
+	text-align:left;
+	padding:30px 0 0 20px;
+	font-weight:bold;
+}
+
+div.description {
+	width:400px;
+	margin:10px 0 0 0;
+	font:12px Times New Roman, Times, serif;
+	
+}
+
+/*Article style*/
+#Article_body {
+	margin: 0 0px 5px 10px;
+	line-height: 140%;
+	border:1px solid #dddddd;
+	padding:5px;
+}
+
+.Article_title {
+	width:99%;
+	float:left;
+	font-size: 11pt;
+	text-transform: capitalize;
+	border-bottom:1px dotted #666666;
+}
+
+.Article_posted {
+	text-align: right;
+    font: 10px verdana, arial, helvetica, sans-serif;
+    letter-spacing: 0.07em;
+}
+
+.Article_contest {
+	margin: 10px 0 10px 10px;
+	text-align:left;
+	font:12px/1.6em Arial, Helvetica, sans-serif;
+    
+}
+
+.Article_footer {
+	margin: 0px;
+	padding: 0px 5px 10px 5px;
+	text-align: right;
+	font:12px/1.4em Arial, Helvetica, sans-serif;
+    	letter-spacing: 0.08em;
+}
+
+/*Commons style*/
+#commons {
+	margin:10px;
+	border-bottom:1px solid #dddddd;
+	font:12px Arial, Helvetica, sans-serif;
+	text-transform: capitalize;
+}
+#common_form {
+	margin:10px;
+	text-align:left;
+	font:12px/1.4em Arial, Helvetica, sans-serif;
+	line-height:180%;
+}
+#commons input {
+	border-bottom:1px solid #666666;
+	border-left: 0px;
+	border-top: 0px;
+	border-right: 0px;
+	width:60%;
+}
+#commons textarea {
+	width:100%;
+}
+
+.text_form {
+	line-height:140%;
+}
+
+#common_head {
+	margin:20px 10px 10px 10px;
+	border-top:1px dotted #dddddd;
+	font:12px Arial, Helvetica, sans-serif;
+	letter-spacing:0.1em;
+}
+
+#common_main {
+	margin:10px;
+	padding: 0 0 0 10px;
+	font:12px Arial, Helvetica, sans-serif;
+	letter-spacing:0.1em;
+}
+
+#common_footer {
+	text-align:right;
+	margin:10px;
+	font:12px Arial, Helvetica, sans-serif;
+	letter-spacing:0.09em;
+}
+
+/* Calander style*/
+table.calMonth{
+	margin: 0px auto;
+}
+.calMonthHeader
+{
+	font-weight: bold;
+	text-align:center;
+}
+.calMonthToday{
+	border:1px dotted #669933;
+	background-color:#eeeeee;
+}
+
+/*Item style*/
+div.Item {
+	font: 12px Times,Arial;
+	Text-align:left;
+	margin:0 0 0 5px;
+}
+
+div.MainItem {
+	font: 12px Times,Arial;
+	font-weight:bold;
+	Text-align:left;
+	margin:0 0 0 5px;
+}
+
+div.SubItem {
+	font: 12px Times,Arial;
+	Text-align:left;
+	margin:0 0 0 10px;
+}
+
+/* hyperlinks setting */
+a:link { text-decoration: none; color: #3366CC;}
+a:visited {	text-decoration: none;	color: #3366CC;}
+a:hover { text-decoration: none; color:#FFFFFF; background-color:#00CC00;}
+a:active { text-decoration: none;}
+
+#nav_bar a	{ background: transparent; text-decoration: none; color:#333333;}
+#nav_bar a:link	{ background: transparent; }
+#nav_bar a:visited	{ background: transparent; }
+#nav_bar a:active	{ background: transparent; }
+#nav_bar a:hover	{ color:#0099FF; background: transparent;text-decoration: underline; }
+
+#TITLE a{
+	display: block;
+	color:#3697E7;
+	font-style:oblique;
+}
+#TITLE a:hover{
+	display: block; text-decoration: none; background: transparent;
+}
+
+/*  albums style */
+
+#album {
+	text-align: center;
+}
+
+#album p {
+	text-align: center;
+	padding:0;
+	margin:0;
+	width:150px;
+}
+
+#album a a.linked a.hover a.active {
+	color:#3697E7;
+	text-decoration: none; 
+	background: transparent;
+}
+
+#album.nodecoration {
+	text-decoration: none; 
+	background: transparent;
+}
+#Resource-Desc {
+    padding: 10px;
+    text-decoration: none;
+}
+
+/* SearchResult style*/
+div.SearchResult_posted {
+	font:12px/1.4em Times, Arial;
+	text-align:left;
+	border-top:1px solid #666666;
+}

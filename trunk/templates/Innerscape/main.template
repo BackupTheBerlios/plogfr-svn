@@ -1,0 +1,35 @@
+{include file="$blogtemplate/header.template"}
+{include file="$blogtemplate/leftmenu.template"}
+<div id="main">
+{if $showAll == 1 && $category}
+<div id="postmain">
+<h2>{$locale->tr("posts")}: {$category->getName()}</h2>
+</div>{/if}
+
+
+{foreach from=$posts item=post}
+{if $showAll}
+
+<!-- The following will only show the post title when looking at posts from
+category or archive view. The reason this was made this way, is because normally 
+when viewing from archive or category view all posts and full text is shown.
+This can be a problem with blogs that have 100 or more entries in a category.
+To solve that problem you can use the truncate option however with this template
+that option will not work correctly as after the 2nd to 4th entry the rest of the entries
+want to group together and create within each table which results in a very bad look.
+If you can figure out a way to create the truncate text option that works with this template
+please let me know so I can update the package -->
+
+<div id="postmain">
+<a href="{$url->postPermalink($post)}">{$post->getTopic()}</a>
+</div>
+
+{else}
+<!-- show the whole post, as we would normally do -->
+{include file="$blogtemplate/post.template"}
+{/if}
+{/foreach}
+
+</div>
+{include file="$blogtemplate/rightmenu.template"}
+{include file="$blogtemplate/footer.template"}

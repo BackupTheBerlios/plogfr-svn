@@ -1,0 +1,92 @@
+</div>
+</div>
+
+<div id="links">
+
+<div class="sidetitle">{$locale->tr("search")|capitalize}</div>
+<div class="sidecal">
+   <form name="search_form" method="post" action="{$url->getIndexUrl()}">
+    <input type="text" name="searchTerms" value="" size="14" /><br/>
+    <input type="hidden" name="op" value="Search" />
+    <input type="hidden" name="blogId" value="{$blog->getId()}"/>   
+    <input type="submit" name="Search" value="{$locale->tr("search")|capitalize}" />
+   </form>
+</div>
+
+<div  class="calendar">
+<table border="0" cellspacing="4" cellpadding="0" summary="Monthly calendar with links to each day's posts">
+<caption class="calendarhead">{$locale->tr("calendar")|capitalize}</caption>
+<tr>
+<td>
+{$calendar}
+</td>
+</tr>
+</table>
+</div>
+
+<div class="sidetitle">{$locale->tr("archives")|capitalize}</div>
+<div class="side">
+<p>
+ <ul>
+ {foreach from=$archives item=archive}
+  <li><a href="{$archive->getUrl()}">{$archive->getName()}</a></li>
+ {/foreach}
+ </ul>
+</p>
+</div>
+
+<div class="sidetitle">{$locale->tr("categories")|capitalize}</div>
+<div class="side">
+<p>
+ <ul>
+ {foreach from=$articlecategories item=category}
+  <li><a href="{$url->categoryLink($category)}">{$category->getName()}</a></li>
+ {/foreach}
+ </ul>
+</p>
+</div>
+
+<div class="sidetitle">{$locale->tr("links")|capitalize}</div>
+<div class="side">
+<p>
+  <ul>
+   {foreach from=$mylinkscategories item=linkcategory}
+     <li><b>{$linkcategory->getName()}</b>
+     <ul>
+      {foreach from=$linkcategory->getLinks() item=link}
+       <li><a href="{$link->getUrl()}" title="{$link->getDescription()}">{$link->getName()}</a></li>
+      {/foreach}
+     </ul>
+    </li>
+   {/foreach}  
+   </ul>
+</p>
+</div>
+
+<div class="sidetitle">{$locale->tr("menu")|capitalize}</div>
+<div class="side">
+<ul>
+<p>
+   <li><a href="{$url->blogLink()}">{$locale->tr("main")}</a></li>
+   <li><a href="{$url->albumLink()}">{$locale->tr("albums")}</a></li>
+  </ul>
+</p> 
+</div>
+<div class="sidetitle">{$locale->tr("syndicate")|capitalize}</div>
+<div class="side">
+<ul>
+<p>
+    <li><a class="nodecoration" title="Link to the RSS 0.90 feed." href="{$url->rssLink("rss090")}"><img src="{$url->getUrl("/imgs/rss090_logo.gif")}" style="border:0px;" alt="RSS 0.90" /></a></li>
+    <li><a class="nodecoration" title="Link to the RSS 1.0 feed." href="{$url->rssLink("rss10")}"><img src="{$url->getUrl("/imgs/rss10_logo.gif")}" style="border:0px;" alt="RSS 1.0" /></a></li>
+    <li><a class="nodecoration" title="Link to the RSS 2.0 feed." href="{$url->rssLink("rss20")}"><img src="{$url->getUrl("/imgs/rss20_logo.gif")}" style="border:0px;" alt="RSS 2.0" /></a></li>
+    <li><a class="nodecoration" title="Link to the Atom 0.3 feed." href="{$url->rssLink("atom")}"><img src="{$url->getUrl("/imgs/atom_logo.png")}" style="border:0px;" alt="Atom 0.3" /></a></li>	
+</p>
+</div>
+
+<div class="powered">
+Powered by <a href="http://www.plogworld.net">pLog</a><br />    
+</div>
+
+</div>
+</body>
+</html>

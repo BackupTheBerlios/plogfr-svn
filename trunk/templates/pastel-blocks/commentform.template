@@ -1,0 +1,27 @@
+    <form action="{$url->getBaseUrl()}/index.php" method="post">
+
+    <div class="block-shadow">
+     <div class="block-main">
+      <div class="{cycle values="box-teal,box-purple,box-red,box-green,box-blue"}">
+       <div class="block-cmntform">
+
+        <br/><br/><span>{$locale->tr("add_comment")}</span><br/><br/>
+
+        <br/>
+        <input type="hidden" name="op" value="AddComment"/>
+        <input type="hidden" name="articleId" value="{$post->getId()}"/>
+        <input type="hidden" name="blogId" value="{$blog->getId()}"/>
+        <input type="hidden" name="parentId" value="{$parentId}"/>
+        {$locale->pr("comment_topic")}<br/><input class="field" type="text" name="commentTopic" value=""/><br/><br/>
+        {$locale->pr("comment_text")} <br/><textarea rows="10" cols="37" name="commentText"></textarea><br/><br/>
+        {$locale->pr("comment_username")}<br/> <input class="field" type="text" name="userName" value=""/><br/><br/>
+        {$locale->pr("comment_email")}<br/> <input class="field" type="text" name="userEmail" value=""/><br/><br/>
+        {$locale->pr("comment_url")}<br/> <input class="field" type="text" name="userUrl" value=""/><br/><br/>
+        <input type="submit" value="{$locale->pr("comment_send")}" name="Add"/><br/><br/>
+
+       </div>
+      </div>
+     </div>
+    </div>
+
+    </form>

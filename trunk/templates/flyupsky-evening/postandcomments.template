@@ -1,0 +1,67 @@
+{include file="$blogtemplate/header.template"}
+{assign var="postDate" value=$post->getDateObject()}
+{assign var="postOwner" value=$post->getUserInfo()}
+
+<div id="container">
+
+{* Prevpost and nextpost use *}
+<div id="article_index">
+  {assign var=nextpost value=$post->getNextArticle()}
+   {assign var=prevpost value=$post->getPrevArticle()}
+ {if $prevpost == true}
+     <a href="{$url->postPermalink($prevpost)}" title="{$locale->tr("previous_post")}: {$prevpost->getTopic()}">&laquo; {$locale->tr("previous_post")}</a> |
+   {/if}
+   {if $nextpost == true}
+     <a href="{$url->postPermalink($nextpost)}" title="{$locale->tr("next_post")}: {$nextpost->getTopic()}">{$locale->tr("next_post")}&raquo;</a>
+   {/if}
+   </div>
+{* End of article_index *}
+
+
+<div class="blog">
+ <!--{$url->postTrackbackLink($post)}-->
+ {include file="$blogtemplate/post.template"}
+</div>
+
+
+
+{if $blogsettings->getValue("comments_enabled") && $post->getCommentsEnabled()==1}
+ <div class="blog">
+
+
+ <!--div class="comments-head">
+  <a name="comments"></a>Comments
+ </div-->
+ {foreach name=comment from=$comments item=comment}
+
+<div class="comment_outline">
+<div class="comment_title"><div class="comments-head">[{$smarty.foreach.comment.iteration}] {$comment->getTopic()}</div></div>
+<div class="comment_content_space">
+{$comment->getText()}
+
+<div class="comments-post">
+[<a href="{$url->postPermalink($post)}#comments_form">{$locale->tr("comments")}</a>]|
+    {$locale->tr("posted_by")}
+    {if $comment->getUserUrl() != ""}
+     <a href="{$comment->getUserUrl()}"}>{$comment->getUsername()}</a>
+    {else}
+     {$comment->getUsername()}
+    {/if}
+	|{assign var=commentDate value=$comment->getDateObject()}
+    {$locale->formatDate($commentDate, "%d %b %Y, %H:%M")}
+</div>
+</div>
+</div>
+<br />
+{/foreach}
+
+
+ {if $blogsettings->getValue("comments_enabled") && $post->getCommentsEnabled()==1}
+   {include file="$blogtemplate/commentform.template"}
+ {/if}
+ </div>
+ {/if}
+ <div class="clear">&nbsp;</div>
+</div>
+{include file="$blogtemplate/panel.template"} 
+{include file="$blogtemplate/footer.template"}

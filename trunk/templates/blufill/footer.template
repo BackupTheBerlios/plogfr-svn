@@ -1,0 +1,12 @@
+    <tr> 
+      <td colspan="2"> 
+			  <div id="footer">
+				  <div class="next" style="float:left"><a href="#top">^ {$locale->tr("back_top")}</a></div>
+					<div class="next" style="float:right"><a href="#top">{$locale->tr("back_top")} ^</a></div>
+					 Copyright © of {$blog->getBlog()}<br/>powered by <a href="http://www.plogworld.net/" target="_blank">plog</a>
+				</div>
+      </td>
+    </tr>
+  </table></center>
+</body>
+</html>

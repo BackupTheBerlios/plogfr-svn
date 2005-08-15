@@ -1,0 +1,411 @@
+/* =-=-=-=-=-=-=-=-=-[Theme Name: Human Condition]-=-=-=-=-=-=-=-=-= */
+/* =-=-=-=-=-=-=-=-=-[Designed for Alexking Wordpress Competition - 30/01/04 - Ian Main - www.e-lusion.com]-=-=-=-=-=-=-=-=-= */
+
+/* =-=-=-=-=-=-=-=-=-[Licensing]-=-=-=-=-=-=-=-=-=
+
+1. GPL - Ian Main */ 
+
+/* =-=-=-=-=-=-=-=-=-[Hacks Used]-=-=-=-=-=-=-=-=-= 
+
+1. BMH - #content */
+
+body, html {
+	margin: 0 auto;
+	background: #E4F2FF url(images/bg.gif) repeat-y center;
+	width: 767px;
+	font-family: Lucida Grande, Lucida Sans Unicode, Lucida, Helvetica, Verdana, Arial, Sans-serif;
+	text-align: center;
+	}
+	
+a:link {
+	color: #3F729E;
+	text-decoration: none;
+	page-break-after: always;
+	}
+
+a:visited {
+	color: #ABABAB;
+	text-decoration: none;
+	}
+
+a:hover, a:active {
+	color: #093860;
+	}
+	
+#rap { 
+  	margin-left: auto;
+  	margin-right: auto;
+  	width: 749px;
+	} 
+	
+#header {
+	background: url(images/header.gif) no-repeat;
+	height: 154px;
+	width: 747px;
+	margin: 0 auto;
+	text-align: left;
+	}
+	
+#header a {
+	text-decoration: none;
+	font-size: .8em;
+	position: relative;
+	top: 95px;
+	left: 10px;
+	font-family: verdana, arial, helvetica, geneva, sans-serif;
+	text-transform: uppercase;
+	}
+	
+#header a:visited {
+	color: #3F729E;
+	}
+	
+#header a:hover {
+	color: #093860;
+	}
+
+#content {
+	text-align: left;
+	background: url(images/fg.gif) repeat-y;
+	width: 749px;
+	padding: 10px;
+	float: left;
+	voice-family: "\"}\""; 
+  	voice-family: inherit;
+  	width: 729px;
+	}
+	
+.post {
+	width: 540px;
+	}
+	
+h2 {
+	width: 508px;
+	font-size: .7em;
+	background: url(images/date.gif) no-repeat;
+	height: 23px;
+	margin: 0;
+	padding-top: 4px;
+	padding-left: 5px;
+	color: #0E2E4A;
+	}
+	
+h3 {
+	font-size: .9em;
+	margin: 5px 0 0 0;
+	}
+	
+h3 a:link {
+	color: #000;
+	}
+	
+h3 a:visited {
+	color: #000;
+	text-decoration: none;
+	}
+
+h3 a:hover, a:active {
+	color: #093860;
+	}
+
+#commentlist {	
+	margin: 0;
+	padding: 0;
+	}
+	
+#commentlist li {
+	background: #F3F3F3;
+	border: 1px solid #ddd;
+	font-size: 1em;
+	width: 530px;
+	margin-bottom: 20px;
+	padding: 0 5px 3px 5px;
+	}
+	
+ol#commentlist {
+	font-size: 1em;
+	list-style: none;
+	}
+	
+#commentlist code {
+	font-family: Courier New, Courier, mono;
+	border: 1px dashed #F3A0A0;
+	background: #F9E4E4;
+	padding: 0 5px 0 5px;
+	text-align: left;
+	}
+	
+#commentlist cite {
+	margin: 0;
+	padding: 5px;
+	font-size: .9em;
+	font-style: normal;
+	background: #fff;
+	}
+	
+#commentlist li p {
+	width: 530px;
+	}
+
+
+#content p {
+	font-size: .7em;
+	width: 535px;
+	}
+
+.storycontent ul {	
+	list-style-type: none;
+	margin-left: 10px;
+	margin-right: 20px;
+	padding: 0;	
+	font-size: .7em;
+	}
+
+.storycontent ul li {
+	list-style-image: url(images/bullet.gif);
+	margin-left: 20px;
+	}
+
+.storycontent ol {	
+	
+	margin-left: 10px;
+	margin-right: 20px;
+	padding: 0;	
+	font-size: .7em;
+	}
+
+.storycontent ol li {
+	
+	margin-left: 20px;
+	}
+	
+.meta {
+	font-size: .7em;
+	background: #eee;
+	margin: 5px 0 0 0;
+	padding: 3px;
+	width: 502px;
+	color: #3A3A3A;
+	}
+	
+.post-categories {
+	display: inline;
+	margin: 0;
+	padding: 0;
+	}
+	
+.post-categories li {
+	display: inline;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	}
+	
+.storycontent {
+	font-size: 1em;
+	border-left: 1px solid #ddd;
+	padding-left: 5px;
+	text-align: justify;
+	width: 535px;
+	margin: 10px 0 0 0;
+	}
+	
+.storycontent a:hover {
+	background: #EFF8FF;
+	}	
+	
+.feedback {
+	font-size: .7em;
+	background: #eee;
+	margin: 10px 0 40px 0;
+	padding: 3px;
+	width: 502px;
+	color: #3A3A3A;
+	}
+
+#menu {
+	width: 200px;
+	margin-left: -207px;
+	float: right;
+	text-align: left;
+	}
+	
+#menu ul {
+	color: #030;
+	font-weight: bold;
+	list-style-type: none;
+	margin: 0 0 0 20px;
+	padding-left: 10px;
+	width: 160px;
+	}
+	
+#menu ul li {
+	color: #242424;
+	font-family: Lucida Grande, Lucida Sans Unicode, Lucida, Helvetica, Verdana, Arial, Sans-serif;
+	font-weight: bold;
+	font-size: .7em;
+	margin-top: 15px;
+	padding: 5px;
+	border: 1px solid #D7D7D7; 
+	background: #EAEAEA;
+	}
+	
+#menu ul ul {
+	font-weight: normal;
+	line-height: 100%;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	}
+	
+#menu ul ul li {
+	background: none;
+	font-family: Lucida Grande, Lucida Sans Unicode, Lucida, Helvetica, Verdana, Arial, Sans-serif;
+	font-size: 1em;
+	font-weight: normal;
+	margin-top: 5px;
+	padding: 0;
+	border: 0;
+	}
+	
+#menu input {
+	background-color: #fff;
+	border: 1px solid #3F729E;
+	font-family: verdana, arial, helvetica, geneva, sans-serif;
+	font-size: .9em;
+	font-weight: normal;
+	}
+	
+.calendar {
+	background: #fff;
+	border: 1px solid #ddd;
+	empty-cells: show;
+	font-size: 14px;
+	width: 140px;
+	}
+
+.calendarHeaderNext {
+	padding-right: 10px;
+	text-align: right;
+	}
+
+.calendarHeaderPrev {
+	padding-left: 10px;
+	text-align: left;
+	}
+
+.calDayLink {
+	display: block;
+	text-decoration: none;
+	}
+
+.calendar a:hover {
+	background: url(images/posts.gif);
+	color: #333;
+	}
+
+.calendarHeader {
+	color: #242424;
+	font-size: .8em;
+	text-align: left;
+	padding-bottom: 2px;
+	padding-left: 2px;
+	}
+
+.calendar td {
+	color: #999;
+	font: normal 11px Verdana, Geneva, sans-serif;
+	padding: 1px 1px;
+	text-align: right;
+	}
+
+.calendar td.pad:hover {
+	background: #fff;
+	}
+
+.calendarToday {
+	background: url(images/today.gif);
+	color: #666;
+	}
+
+.calendarHeader {
+	color: #7EABD1;
+	font-style: normal;
+	text-transform: capitalize;
+	}
+
+.credit {
+	clear: both;
+	background: url(images/footer.gif) no-repeat;
+	width: 747px;
+	height: 26px;
+	margin: 0 auto;
+	font-size: .6em;
+	line-height: 2.4em;
+	text-align: center;
+	}
+	
+cite {
+	margin: 0;
+	padding: 0;
+	font-size: .9em;
+	font-style: normal;
+	}
+	
+/* =-=-=-=-=-=-=-=-=-[Formatting]-=-=-=-=-=-=-=-=-= */
+
+blockquote {
+	border: 1px dashed #7EACD1;
+	background: #F2F9FF;
+	padding: 5px;
+	font-style: italic;
+	text-align: left;
+	font-size: .7em;
+	}
+	
+code {
+	font-size: 1.2em;
+	color: #4C4C4C;
+	}
+	
+abbr, acronym {
+	border-bottom: 3px double #7DAAD0;
+	}
+	
+input {
+	border: 3px double #7DAAD0;
+	background: #EFF8FF;
+	margin: 5px;
+	padding-left: 3px;
+	color: #3F729E;
+	font-family: Arial, Helvetica, sans-serif;
+	}
+
+input:hover {
+	background: #D2E5F4;
+	}
+	
+textarea {
+	border: 3px double #7DAAD0;
+	background: #EFF8FF;
+	margin: 5px;
+	padding-left: 3px;
+	color: #3F729E;
+	width: 70%;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.2em;
+	}
+
+textarea:hover {
+	background: #D2E5F4;
+	}
+	
+select {
+	border: 3px double #7DAAD0;
+	background: #EFF8FF;
+	margin: 5px;
+	padding-left: 3px;
+	color: #3F729E;
+	font-family: Arial, Helvetica, sans-serif;
+	}

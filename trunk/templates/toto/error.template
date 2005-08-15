@@ -1,0 +1,19 @@
+{include file="$blogtemplate/header.template"}
+<tr>
+  <td>
+   <h2 class="title">{$locale->tr("error")}</h2>
+<br />
+    {$locale->tr("generated")} {$locale->formatDate($now,"%d %b, %Y")}
+   <table>
+    <tr>
+     <td>
+       <img src="{$url->getTemplateFile("error.gif")}" height="32" width="32" alt="Error"/>
+     </td>
+     <td>
+      {$locale->tr($message)}<br /><a href="javascript:history.go(-1)">{$locale->tr("back")}</a>
+     </td>
+    </tr>
+   </table>
+</td>
+</tr>
+{include file="$blogtemplate/footer.template"}

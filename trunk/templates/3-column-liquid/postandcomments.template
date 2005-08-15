@@ -1,0 +1,42 @@
+{include file="$blogtemplate/header.template"}
+  <p style="text-align: center">
+   {* I am not so keen on using if's in templates, but can't think of another way... *}
+   {assign var=prevpost value=$post->getPrevArticle()}
+   {if $prevpost == true}
+     <a href="{$url->postPermalink($prevpost)}" title="Previous post">&laquo; {$prevpost->getTopic()} </a>
+   {/if}
+   {assign var=nextpost value=$post->getNextArticle()}
+   {if $nextpost == true}
+     | <a href="{$url->postPermalink($nextpost)}" title="Next post">{$nextpost->getTopic()} &raquo;</a>
+   {/if}
+   {assign var="poster" value=$post->getUserInfo()}
+   {include file="$blogtemplate/post.template"}
+   {if $post->getTotalComments() > 0 }
+   <div id="postcomments">
+   <div class="posttitle">User Comments</div>
+   {foreach from=$comments item=comment}
+    {assign var="postDate" value=$comment->getTimestamp()}
+    {if $comment->getTopic() == ""}
+      {assign var="commenttopic" value="(no subject)"}
+    {else}
+      {assign var="commenttopic" value=$comment->getTopic()}
+    {/if}
+    <div id="comment">
+    <div class="commentheader">
+     <img src="{$url->getUrl("/imgs/face.gif")}" border="0"/> <span class="commenttopic">{$commenttopic}</span> [<a href="{$url->replyCommentLink($post,$comment)}"><img src="{$url->getUrl("/imgs/indent.gif")}" border="0"/>Reply</a>]
+    </div>
+    <div class="commentinfo">
+    {$comment->getUsername()} | {$locale->formatDate($postDate, "%d %B, %Y %H:%M")}
+   </div>
+    <div class="commenttext">
+      {$comment->getText()}
+    </div>
+   </div>
+  {/foreach}
+  </div>
+  {/if}
+{if $blogsettings->getValue("comments_enabled")}
+   <div class="posttitle">Add Comment</div>
+ {include file="$blogtemplate/commentform.template"}
+{/if}
+{include file="$blogtemplate/footer.template"}

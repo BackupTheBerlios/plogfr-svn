@@ -1,0 +1,5 @@
+<ul>
+{foreach from=$archives item=month}
+ <li><a class="navigation" href="{$month->getUrl()}">{$month->getName()}</a></li>
+{/foreach}
+</ul>

@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset={$locale->getCharset()}" />
+<meta name="MSSmartTagsPreventParsing" content="TRUE" />
+<style type="text/css" media="screen">@import "{$url->getTemplateFile("style.css")}";</style>
+<title>{$blog->getBlog()}</title>
+ <link rel="alternate" type="text/xml" title="RSS 2.0" href="{$url->rssLink("rss20")}" />
+ <link rel="alternate" type="text/xml" title="RSS 1.0" href="{$url->rssLink("rss10")}" />
+ <link rel="alternate" type="text/xml" title="RSS 0.90" href="{$url->rssLink("rss090")}" />
+ <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="{$url->rssLink("atom")}" />
+</head>
+
+<body>
+<div id="banner">
+<h1><a href="{$url->blogLink()}">{$blog->getBlog()}</a></h1>
+{if $blog->getAbout()}<span class="description">{$blog->getAbout()}</span>{/if}
+</div>
+
+<div id="content">
+<div class="blog">
+

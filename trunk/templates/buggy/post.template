@@ -1,0 +1,11 @@
+<h1>{$post->getTopic()}</h1>
+{assign var="postDate" value=$post->getDateObject()}
+{assign var="postOwner" value=$post->getUserInfo()}
+<span class="shadedark">{$postOwner->getUsername()}</span>
+<span class="shadelight">{$locale->formatDate($postDate,"%d %B, %Y %H:%M")}</span>
+<span class="shadedark">{foreach name=categories from=$post->getCategories() item=postCategory}<a href="{$url->postCategoryLink($post)}">{$postCategory->getName()}</a>{if !$smarty.foreach.categories.last}, {/if}{/foreach}</span>
+<span class="shadelight"><a title="{$locale->tr("permalink_title")}" href="{$url->postPermalink($post)}">{$locale->tr("permalink")}</a></span>
+<span class="shadedark"><a href="{$url->postTrackbackStatsLink($post)}">{$locale->tr("trackbacks")} ({$post->getNumTrackbacks()})</a></span>
+<p>
+ {$post->getText()}
+</p>

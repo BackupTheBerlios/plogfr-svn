@@ -1,0 +1,6 @@
+{include file="$blogtemplate/header.template"}
+  {foreach from=$searchresults item=result}
+    {assign var=article value=$result->getArticle()}
+    {$url->postPermalink($article)}
+  {/foreach}
+{include file="$blogtemplate/footer.template"}

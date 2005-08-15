@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset={$locale->getCharset()}">
+<meta name="MSSmartTagsPreventParsing" content="TRUE">
+<title>{$blog->getBlog()}{$postPageTitle}</title>
+<link rel="stylesheet" href="{$url->getTemplateFile("lemons.css")}" type="text/css">
+ <link rel="alternate" type="text/xml" title="RSS 2.0" href="{$url->rssLink("rss20")}" />
+ <link rel="alternate" type="text/xml" title="RSS 1.0" href="{$url->rssLink("rss10")}" />
+ <link rel="alternate" type="text/xml" title="RSS 0.90" href="{$url->rssLink("rss090")}" />
+ <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="{$url->rssLink("atom")}" />
+</head>
+
+<body>
+<div id="banner">&nbsp;</div>
+<div id="sidebar">
+
+<div class="sidetitle">
+{$locale->tr("search")}
+</div>
+<div class="side">
+   <form name="search_form" method="post" action="{$url->getIndexUrl()}">
+    <input type="text" name="searchTerms" value="" /><br/>
+    <input type="hidden" name="op" value="Search" />
+    <input type="hidden" name="blogId" value="{$blog->getId()}" />
+    <input type="submit" name="Search" value="{$locale->tr("search")|capitalize}" />
+   </form> 
+</div>
+
+<div class="sidetitle">
+{$locale->tr("calendar")}
+</div>
+<div class="side">
+ {$calendar}
+</div>
+
+<div class="sidetitle">
+{$locale->tr("recently")}
+</div>
+<div class="side">
+ {include file="$blogtemplate/recentposts.template"}
+</div>
+
+<div class="sidetitle">
+{$locale->tr("archives")}
+</div>
+<div class="side">
+  {include file="$blogtemplate/archives.template"}
+</div>
+
+<div class="sidetitle">
+{$locale->tr("categories")}
+</div>
+<div class="side">
+  {include file="$blogtemplate/articlecategories.template"}
+</div>
+
+<div class="sidetitle">
+{$locale->tr("my_links")}
+</div>
+<div class="side">
+  {include file="$blogtemplate/mylinks.template"}
+</div>
+
+<div class="sidetitle">
+{$locale->tr("menu")}
+</div>
+<div class="side">
+<ul>
+ <li><a href="{$url->albumLink()}">{$locale->tr("albums")}</a></li>
+ <li><a href="{$url->blogLink()}">{$locale->tr("main")}</a></li>
+ <li><a href="{$url->getAdminUrl()}">{$locale->tr("admin")}</a></li>
+</ul>
+</div>
+	
+<div class="sidetitle">
+{$locale->tr("syndicate")}
+</div>
+<div class="side">
+<ul>
+ <li><a title="RSS 0.90" href="{$url->rssLink("rss090")}">RSS 0.90</a></li>
+ <li><a title="RSS 1.0" href="{$url->rssLink("rss10")}">RSS 1.0</a></li>
+ <li><a title="RSS 2.0" href="{$url->rssLink("rss20")}">RSS 2.0</a></li>
+ <li><a title="Atom 0.3" href="{$url->rssLink("atom")}">Atom 0.3</a></li> 
+</ul>
+</div>
+
+</div>
+<div id="content">
+<a name="top"></a>
+<div class="top">:: <a class="header" href="{$url->blogLink()}">{$blog->getBlog()}</a> ::</div>	
+<div class="blog">

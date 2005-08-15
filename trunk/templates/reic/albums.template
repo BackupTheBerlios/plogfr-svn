@@ -1,0 +1,23 @@
+{include file="$blogtemplate/header.template"}
+<div id="content">
+ <div class="blog">
+ <div class="blogbody">
+  <h2 class="date">{$locale->tr("albums")}</h2>
+ 	<div class="clear">&nbsp;</div>
+
+
+  		{foreach from=$albums item=album}
+	<div class="album">
+	<a href="{$url->albumLink($album)}"><img src="{$url->getTemplateFile("images/folder.gif")}" alt="{$album->getName()}" /></a>
+  	<p>{$album->getName()} ({$album->getNumResources()})</p>
+
+	</div>
+		{/foreach}
+
+	<div class="clear">&nbsp;</div>
+ 
+</div>
+</div>
+</div>
+{include file="$blogtemplate/panel.template"}
+{include file="$blogtemplate/footer.template"}

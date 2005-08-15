@@ -1,0 +1,16 @@
+				<div id="common_form">
+					<form id="NewComment" action="{$url->getBaseUrl()}/index.php" method="post">
+						<span class="text_form">{$locale->tr("comment_username")}:</span><input name="userName" type="text" size="35"/><br />
+						<span class="text_form">{$locale->tr("comment_topic")}:</span><input name="commentTopic" type="text" size="35" /><br />
+						<span class="text_form">{$locale->tr("comment_url")}:</span><input name="userUrl" type="text" size="35" /><br />
+						<span class="text_form">{$locale->tr("comment_email")}:</span><input name="userEmail" type="text" size="35" /><br />
+						{$locale->tr("add_comment")}<br />
+						<textarea rows="10" cols="45" name="commentText"></textarea><br />
+						<input style="font-weight: bold;" type="submit" name="post" value="&nbsp;{$locale->tr("comment_send")}&nbsp;" />
+						&nbsp;&nbsp;<input style="font-weight: bold;" type="reset"><br /><br />
+						<input type="hidden" name="op" value="AddComment"/>
+						<input type="hidden" name="articleId" value="{$post->getId()}"/>
+						<input type="hidden" name="blogId" value="{$blog->getId()}"/>
+						<input type="hidden" name="parentId" value="{$parentId}"/>
+					</form>
+				</div>

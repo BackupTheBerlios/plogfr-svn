@@ -1,0 +1,45 @@
+{include file="$blogtemplate/header.template"}
+{assign var=nextpost value=$post->getNextArticle()}
+{assign var=prevpost value=$post->getPrevArticle()}
+{if $nextpost == true}
+<a href="{$url->postPermalink($nextpost)}" title="Next post: {$nextpost->getTopic()}">&laquo;&laquo;&laquo;</a> |
+{/if}
+{if $prevpost == true}
+|<a href="{$url->postPermalink($prevpost)}" title="Previous post: {$prevpost->getTopic()}">&raquo;&raquo;&raquo;</a>
+{/if}
+<!--
+{$url->postTrackbackLink($post)}
+-->
+{include file="$blogtemplate/post.template"}
+
+{foreach name=comment from=$comments item=comment}
+	<div class="CommentBlock">
+		<div class="CommenTheader">
+			<div class="categoryinfo">
+	{* ------ Show comment number *}
+				<a href="{$url->replyCommentLink($post,$comment)}">{$locale->tr("reply")}.</a>
+				[{$smarty.foreach.comment.iteration}]
+				{$comment->getTopic()} 
+			</div>
+			<div class="commentposterinfo">
+				{assign var="commentDate" value=$comment->getDateObject()}
+				{$comment->getUsername()} @ {$locale->formatDate($commentDate, "%d/%m/%Y-%H:%M")}
+			</div>
+		</div>
+
+		<div class="CommentContent">
+		{$comment->getText()}
+		</div>
+	</div>
+
+{/foreach}
+{if $blogsettings->getValue("comments_enabled") && $post->getCommentsEnabled()==1}
+	<div class="AddComment">
+		{$locale->tr("add_comment")}
+	</div>
+
+{include file="$blogtemplate/commentform.template"}
+
+{/if}
+
+{include file="$blogtemplate/footersimple.template"}

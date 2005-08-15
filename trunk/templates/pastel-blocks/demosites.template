@@ -1,0 +1,30 @@
+{include file="$blogtemplate/header.template"}
+
+    <div class="block-shadow">
+     <div class="block-main">
+      <div class="{cycle values="box-teal,box-purple,box-red,box-green,box-blue"}">
+       <div class="block-demosites">
+
+        <br/>
+        <span class="demosites">
+         The following sites are running pLog. Take a peek to see the look and feel of pLog!
+        </span>
+        <br/><br/>
+
+        <ul>
+         <li><a href="http://www.renalias.net">Oscar's (one of the developers) own personal page</a> (Kind of slow sometimes)</li>
+         <li><a href="http://www.francesc.net">Francesc's (another developer) own personal page</a> (Faster than Oscar's :))</li>
+         <li><a href="http://www.lamevaweb.info">Free blogging service for the users of the #tarrega channel in the Spanish IRC network.</a>.</li>
+         <li><a href="http://ireport.sourceforge.net">iReport project</a></li>
+         <li><a href="http://darren.someblog.com">Darren's blog</a></li>
+         <li><a href="http://blog.tonymasiello.com/index.php?blogid=1">Tony's Blog</a></li>
+         <li><a href="http://blog.tonymasiello.com/index.php?blogid=2">Quan's Blog</a></li>
+        </ul>
+        <br/>
+
+       </div>
+      </div>
+     </div>
+    </div>
+
+{include file="$blogtemplate/footer.template"}

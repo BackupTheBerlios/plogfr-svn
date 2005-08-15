@@ -1,0 +1,25 @@
+<a name="comments_form"></a> <div class="comments-body">
+  <form name="NewComment" action="{$url->getBaseUrl()}/index.php" method="post">
+  <div style="width:150px; padding-right:15px; margin-right:15px; float:left; text-align:left; border-right:1px dotted #bbb;">
+	<label for="subject">{$locale->tr("comment_topic")}:</label><br />
+	<input tabindex="1" id="subject" name="commentTopic" /><br /><br />
+	<label for="author">{$locale->tr("comment_username")}:</label><br />
+	<input tabindex="2" id="author" name="userName" /><br /><br />
+	<label for="email">{$locale->tr("comment_email")}:</label><br />
+	<input tabindex="3" id="email" name="userEmail" /><br /><br />
+	<label for="url">{$locale->tr("comment_url")}:</label><br />
+	<input tabindex="4" id="url" name="userUrl" /><br /><br /><br /><br />
+  </div>
+ <div> 
+  <label for="text">{$locale->tr("add_comment")}:</label><br />
+  <textarea tabindex="5" id="text" name="commentText" rows="10" cols="40"></textarea><br />
+  <br />  
+  <input style="font-weight: bold;" type="submit" name="post" value="&nbsp;{$locale->tr("comment_send")}&nbsp;" />
+  &nbsp;&nbsp;<input style="font-weight: bold;" type="reset"><br /><br />
+  <input type="hidden" name="op" value="AddComment"/>
+  <input type="hidden" name="articleId" value="{$post->getId()}"/>
+  <input type="hidden" name="blogId" value="{$blog->getId()}"/>
+  <input type="hidden" name="parentId" value="{$parentId}"/>
+  </div>
+  </form>
+</div>

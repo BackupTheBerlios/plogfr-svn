@@ -1,0 +1,76 @@
+<!-- end of content space -->
+</div>
+
+
+<div id="links">
+   <!-- the calendar -->
+   <div id="calendar">
+    {$calendar}
+   </div>
+   <br/>
+   
+   <!-- search -->
+   <div id="search">
+		<form id="search_form" method="post" action="{$url->getIndexUrl()}">
+		<div>
+		<label for="searchTerms"><input type="text" id="searchTerms" name="searchTerms" value="" /></label>
+		<input type="submit" name="Search" value="{$locale->tr("search_s")}" class="button" />
+		<input type="hidden" name="op" value="Search" />
+		<input type="hidden" name="blogId" value="{$blog->getId()}" />   
+		</div>
+		</form>
+   </div>
+   <br/>
+   
+   <!-- some text about the blog --> 
+   <h3>{$locale->tr("About")}</h3>
+   <div id="about"> 
+    {$blog->getAbout()}
+   </div>
+   <br/>
+
+	<!-- archive links will be generated here -->
+	<h3>{$locale->tr("Archive")}</h3>
+	<ul>
+    {foreach from=$archives item=post}
+    <li><a href="{$post->getUrl()}">{$post->getName()}</a></li>
+    {/foreach}
+    </ul>
+    <br/>
+	
+	<!-- blogroll -->
+	<h3>{$locale->tr("links")}</h3>
+   <ul>
+   {foreach from=$mylinkscategories item=linkcategory}
+     <li><b>{$linkcategory->getName()}</b>
+     <ul>
+      {foreach from=$linkcategory->getLinks() item=link}
+       <li><a href="{$link->getUrl()}" title="{$link->getDescription()}">{$link->getName()}</a></li>
+      {/foreach}
+     </ul>
+    </li>
+   {/foreach}  
+   </ul>
+   <br/>
+    
+    <!-- article categories -->
+    <h3>{$locale->tr("categories")}</h3>
+    <ul>
+     {foreach from=$articlecategories item=articleCategory}
+      <li><a href="{$url->categoryLink($articleCategory)}">{$articleCategory->getName()}</a> [{$articleCategory->getNumArticles()}] 
+      (<a href="{$url->categoryRssLink($articleCategory)}">RSS</a>)</li>
+     {/foreach}
+    </ul>
+    <br/>
+    
+    <!-- other links -->
+    <ul>
+    <li><a title="{$locale->tr("albums")}" href="{$url->albumLink()}">{$locale->tr("albums")}</a></li>
+    <li><a title="Link to the RSS 0.90 feed." href="{$url->rssLink("rss090")}"><img src="{$url->getUrl("/imgs/rss090_logo.gif")}" border="0"/></a></li>
+    <li><a title="Link to the RSS 1.0 feed." href="{$url->rssLink("rss10")}"><img src="{$url->getUrl("/imgs/rss10_logo.gif")}" border="0"/></a></li>
+    <li><a title="Link to the RSS 2.0 feed." href="{$url->rssLink("rss20")}"><img src="{$url->getUrl("/imgs/rss20_logo.gif")}" border="0"/></a></li>
+    </ul>
+</div>
+
+</body>
+</html>

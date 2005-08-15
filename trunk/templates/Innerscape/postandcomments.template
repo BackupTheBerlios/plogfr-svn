@@ -1,0 +1,43 @@
+{assign var="postPageTitle" value=$post->getTopic()}
+{assign var="postPageTitle" value=" | $postPageTitle"}
+{include file="$blogtemplate/header.template"}
+{include file="$blogtemplate/leftmenu.template"}
+{include file="$blogtemplate/rightmenu.template"}
+<div id="catmain">
+{assign var=nextpost value=$post->getNextArticle()}
+{if $nextpost == true}
+<a href="{$url->postPermalink($nextpost)}" title="Next post: {$nextpost->getTopic()}">&laquo;</a> |
+{/if}
+{assign var=prevpost value=$post->getPrevArticle()}
+{if $prevpost == true}
+<a href="{$url->postPermalink($prevpost)}" title="Previous post: {$prevpost->getTopic()}">&raquo;</a>
+{/if}
+{assign var="poster" value=$post->getUserInfo()}
+<!-- {$url->postTrackbackLink($post)} -->
+
+{include file="$blogtemplate/post.template"}
+<div id="postmain"><H1 CLASS="leftmenu">Comments</H1>
+{foreach from=$comments item=comment}
+
+<h3 class="commentheader"><img src="{$url->getUrl("/imgs/comment_icon1.gif")}" alt="Comment Icon" /> {$comment->getTopic()}</h3>
+
+<p class="commentposterinfo">
+{if $gravatar->isEnabled()}
+<img src="{$gravatar->gravatar($comment)}" width="{$gravatar->getSize()}" height="{$gravatar->getSize()}" align="left" />
+{/if}
+{assign var="postDate" value=$comment->getTimestamp()}
+{if $comment->getUserUrl() != ""}<a href="{$comment->getUserUrl()}">{$comment->getUsername()}</a>
+{else}
+{$comment->getUsername()}
+{/if} | {$locale->formatDate($postDate, "%d/%m/%Y, %H:%M")}
+</p>
+
+<div class="commenttext">
+{$comment->getText()}
+
+{/foreach}
+
+{if $blogsettings->getValue("comments_enabled") && $post->getCommentsEnabled()==1}
+{include file="$blogtemplate/commentform.template"}
+{/if}
+</div>

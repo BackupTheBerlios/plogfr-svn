@@ -1,0 +1,15 @@
+<form action="{$url->getIndexUrl()}" method="post">  
+  <fieldset>
+   <legend>{$locale->tr("add_comment")}</legend>
+   <label for="topic">{$locale->pr("comment_topic")}</label><br/><input type="text" id="topic" name="commentTopic" value=""/><br/>
+   <label for="text">{$locale->pr("comment_text")}</label> <br/><textarea rows="10" cols="50" id="text" name="commentText"></textarea><br/>
+   <label for="user">{$locale->pr("comment_username")}</label><br/> <input type="text" id="user" name="userName" value=""/><br/>
+   <label for="email">{$locale->pr("comment_email")}</label><br/> <input type="text" id="email" name="userEmail" value=""/><br/>
+   <label for="url">{$locale->pr("comment_url")}</label><br/> <input type="text" id="url" name="userUrl" value=""/><br/>
+   <input type="submit" value="{$locale->pr("comment_send")}" name="Add"/><br/><br/>
+   <input type="hidden" name="op" value="AddComment"/>
+   <input type="hidden" name="articleId" value="{$post->getId()}"/>
+   <input type="hidden" name="blogId" value="{$blog->getId()}"/>
+   <input type="hidden" name="parentId" value="{$parentId}"/>
+  </fieldset>
+  </form>

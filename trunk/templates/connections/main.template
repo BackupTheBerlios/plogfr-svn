@@ -1,0 +1,10 @@
+{include file="$blogtemplate/header.template"}
+			<div id="content">
+				<div class="post">
+	{foreach from=$posts item=post}
+  		{include file="$blogtemplate/post.template"}
+	{/foreach}
+				</div>
+			</div>
+{include file="$blogtemplate/panel.template"}
+{include file="$blogtemplate/footer.template"}

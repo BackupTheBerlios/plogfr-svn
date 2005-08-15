@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+
+<!-- This template has been designed by Martijn ten Napel, http://blogtemplates.noipo.org/ -->
+
+<title>{$blog->getBlog()}</title>
+<meta http-equiv="Content-Type" content="text/html; charset={$locale->getCharset()}" />
+<meta name="MSSmartTagsPreventParsing" content="TRUE" />
+<style type="text/css" media="screen">@import "{$url->getTemplateFile("white.css")}";</style>
+ <link rel="alternate" type="text/xml" title="RSS 2.0" href="{$url->rssLink("rss20")}" />
+ <link rel="alternate" type="text/xml" title="RSS 1.0" href="{$url->rssLink("rss10")}" />
+ <link rel="alternate" type="text/xml" title="RSS 0.90" href="{$url->rssLink("rss090")}" />
+ <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="{$url->rssLink("atom")}" />
+</head>
+<body>
+<!-- empty div to create header -->
+<div id="topbar"></div>
+<div id="content">
+<!-- start content -->
+<h1>{$blog->getBlog()}</h1>

@@ -1,0 +1,515 @@
+body {
+	margin:0px; 
+	padding:0px;
+	text-align: center;
+	font:12px ËÎÌו,arial, times new roman, lucida sans unicode, sans-serif;
+	color: #000;
+	background:#fff fixed;
+	cursor: url('http://www.minibird.com/blog/templates/minitemplate/img/mouse.ani');
+	}
+
+
+hr {
+	color: #000;
+	height: 1px;
+	}
+
+a {
+	color:#666;
+	text-decoration:none;
+	border: 1px solid #fff;  
+	background: transparent;
+	}
+
+a:link {
+	color: #999; 
+	border: 1px solid #fff;  
+	background: transparent;
+	}
+a:visited {
+	color: #999; 
+	border: 1px solid #fff;  
+	background: transparent;
+	}
+a:hover {
+	color: #f00; 
+	border: 1px solid #f00; 
+	background: transparent;
+	}
+
+a.ImgLink:link {
+	border: 0px;	
+	}
+a.ImgLink:hover {
+	border: 0px;	
+	}
+a.ImgLink:visited {
+	border: 0px;	
+	}
+a.ImgLink img{
+	border: 0px;	
+	}
+
+
+.Upgrade {
+	display: none;
+	font-weight: bold;
+      }
+
+IMG {
+	border: 0px;
+	}
+.ImgLink {
+	align: middle;
+	border: 0px;
+	}
+
+ol, ul {
+	margin-top:0;
+	margin-bottom:10px;
+	line-height:1.8;
+	}
+
+#Container {
+	margin-left:auto;
+	margin-right: auto;
+	width:520px;
+	padding:0px;
+	border: 0px;	
+	text-align: left;
+	background: transparent;
+	color: #333;
+	}
+
+/* width main=sidebar + content*/
+#Main {
+	width:514px;
+	margin: 0px;
+	padding:0px;
+	border: 0px;
+	float: left;
+	text-align:center;
+	background-color: transparent;
+	color: #333;
+	}
+	
+#Container>#Main {margin-left: 0px;}
+
+#Top {
+	width: 368px;
+	height: 100px;
+	text-align:center;
+	margin: 0px;
+	padding: 0px;
+	border: 1px solid #000; 
+	color: #333;
+	background:#ddd url(./img/topic_dewdrop.jpg);
+	}
+
+#Topmenu {
+	width: 362px;
+	text-align:left;
+	margin: 2px;
+	padding: 2px;
+	border: 0px;
+	background: url(./img/bg_dot.gif);
+	font:12px bold #000;
+	font-weight: bold;
+	color:#000;
+	}
+	.TopmenuLine {
+		border: 0px;
+		display: block;
+	}
+	#Topmenu a:link {
+		color: #999; 
+		border: 2px solid #fff;  
+		background: transparent;
+		}
+	#Topmenu a:visited {
+		color: #999; 
+		border: 2px solid #fff;  
+		background: transparent;
+		}
+	#Topmenu a:hover {
+		color: #f00; 
+		border: 2px solid #f00; 
+		background: transparent;
+		}
+	#Topmenu ul {
+		margin: 0;
+		padding: 0px;
+		list-style: none;
+		text-align: left;
+		}
+		
+	#Topmenu ul li {
+		display: inline;
+		padding: 0px;
+		}
+#Content {
+	/* total width 370px */
+	width: 346px;
+	height: auto;
+	float: left;
+	text-align:left;
+	margin:0px;
+	padding:10px;
+	border: 2px solid #000;
+	color: #000;
+	background: url(./img/bg_goffer.gif);
+	word-wrap: break-word;
+	word-break: break-all; 
+	}
+/* Post Style Begain*/
+.PostHeader {
+
+	margin-top: 15px;
+	margin-bottom: 2px;
+    border: 0px;
+	color:#666;
+	font-size:13px;
+	font-weight: bold ;	
+	background: transparent;
+	}
+.PostTitle{
+	display: inline;
+	}
+.PostText {
+	line-height:1.5;
+	margin:10px 0px;
+
+	}
+.PostText:first-letter {
+	margin: 2px;
+	padding: 4px;
+	border:2px dashed #a00;
+	color: #a00;
+	float: left;
+	font-size: 200%;
+	font-weight: bold;
+	text-transform: uppercase;
+	} 
+.PostInfo {
+	font: 10px;
+	margin: 5px;
+	border-top: 1px solid #333;
+	border-left: 0px;
+	border-right:  0px;
+	border-bottom: 0px;
+	font-weight: normal;
+	}
+
+.PostFooter {
+	font:10px ;
+	color: #666;
+	background: transparent;
+	text-align: right;
+	}
+/* Post Style End*/
+
+#Sidebar {
+	/* total width 130px */
+	width: 140px;
+	padding:0px;
+	margin: 0px;
+	border: 0px;
+	float: right;
+	font:12px;
+	color:#666;
+	text-align:left;
+	background: transparent;
+	}
+.Sidetitle {
+	width: 100px;
+	text-align: left;
+	margin: 0px;
+	padding-left: 5px;
+	padding-bottom: 2px;
+	border-top: 1px solid #999;
+	border-right: 1px solid #aaa;
+	font-weight:bold;
+	color: #333;
+	background: #eee;
+    /*text-transform: uppercase; */
+	}
+.SideBlock {
+	width: auto;
+	text-align: left;
+	margin-top: 2px;
+	margin-left: 2px;
+	padding: 0px;
+	border: 0px;
+	background: transparent;
+	}
+.SideDim {
+	width: auto;
+	text-align: left;
+	margin: 0px;
+	padding-top: 10px;
+	padding: 2px;
+	border: 1px solid #000;
+	color: #333;
+	background: transparent;
+	}
+
+.SideDimTitle {
+	width: auto;
+	text-align: left;
+	margin: 0px;
+	padding: 2px;
+	border: 1px solid #000;
+	font-weight:bold;
+	color: #333;
+	background: url(./img/bg_dot.gif);
+	}
+.SideDimContent {
+	width: auto;
+	text-align: left;
+	margin-top:5px;
+	padding: 2px;
+	border: 0px;
+	background: transparent;
+	line-height: 1.5;
+	word-wrap: break-word;
+	word-break: break-all; 
+	}
+#Bottom {
+	clear: left;
+	float: left;
+	width: 370px;
+	text-align: right; 
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	background: transparent;
+	font:10px verdana, arial, helvetica, sans-serif;
+	color:#333;
+	}
+	#Bottom ul {
+		margin: 0;
+		padding: 0px;
+		list-style: none;
+		text-align: right;
+		}
+		
+	#Bottom ul li {
+		display: block;
+		padding: 0px;
+		}
+#Resource-Container {
+	width:520px;
+	margin:0px auto;
+	text-align:left;
+	padding:0px;
+	border: 1px solid #ccc;
+	background-color:#eee;
+	color: #333;
+	}	
+	
+#Resource-Container a:link {
+ text-decoration: none;
+}
+	
+	
+#Resource-Main {
+	width:790px;
+	padding:0px;
+	border-top: 1px solid #ccc;
+	background-color:#fff;
+	color: #333;
+	text-decoration: none;
+	}
+	
+#Resource-Desc {
+    padding: 10px;
+    text-decoration: none;
+}
+
+.AlbumElementFolder {
+	margin: 5px;
+	padding: 5px;
+	border:1px dotted #000;
+	display: block;
+	}
+.AlbumElement {
+	margin: 5px;
+	padding: 5px;
+	border:1px solid #ccc;
+	display: block;
+	}
+/* calendar style begain */
+#calendar {
+	width: 100%
+	text-align: center;;
+	font-size: 11px;
+	border: 0px;
+	background-color: transparent;
+}
+#calendar div {
+	text-align:center;
+	}
+table.calMonth {
+	width: auto;
+	border: 0px;
+}
+
+thead {
+	text-align:center;
+	
+	border: 0px;
+}
+
+tbody {
+	text-align:center;
+	border: 0px;
+}
+
+table.calYear tbody tr td {
+	margin:0px;
+	padding: 0px;
+	vertical-align:top;
+	border:  0px solid #000;
+}
+.calMonthToday {
+	background-color: #fff;
+	border: 1px solid #AAA;
+	}
+.calMonthHeader, .calMonthNav{
+	color: #000;
+	font: 10px Verdana, Arial, serif;
+	padding-top:10px;
+	text-align: center;
+	text-transform: lowercase;
+}
+
+#calendar .calMonthForward, #calendar .calMonthForward>a{
+	padding-left: 5px;
+	text-align: center;
+	border:0px;
+}
+
+#calendar .calMonthBackward, #calendar .calMonthBackward>a{
+	padding-right: 5px;
+	text-align: center;
+	border:0px;
+}
+/* calendar style end*/
+/* comment style ,used by postandcomments.template */
+.commentposterinfo {
+	text-align: left;
+    margin-top: 0px;
+}
+.logo {
+	border: 0px;
+}
+
+.ImgDotElement {
+	align: middle;
+	border:2px;
+	Display: inline;
+	vertical-align:baseline;
+}
+
+.AddComment {
+	margin: 2px;
+	padding: 5px;
+	font-weight: bold;
+	border:1px solid #ccc;
+	color: #000;
+	font-size: 15px;
+	display: block;
+	}
+.CommentBlock {
+	margin: 2px;
+	padding: 5px;
+	font-weight: normal;
+	border:1px solid #ccc;
+	color: #000;
+	font-size: 12px;
+	display: block;
+}
+.CommentContent {
+	}
+.CommenTheader {
+	}
+.categoryinfo {
+	}
+.commentposterinfo {
+	}
+#CommentForm {
+	color: #f00;
+	margin: 0px;
+	padding: 0px;
+	font-weight: bold;
+	border:1px solid #fff;
+	display: block;
+	}
+.BlockFormTitle {
+	color: #000;
+	font-weight: bold;
+	}
+.BlockFormInput {
+	padding-bottom:5px;
+	margin: 0px;
+	display: block;
+	}
+	Form {
+	padding: 0px;
+	margin: 0px;
+	}
+.FormInput {
+	border: 1px solid #999;
+	background: #eee;
+	color: #000;
+	}
+.FormTextarea {
+	border: 1px solid #999;
+	background: #eee;
+	color: #000;
+	}
+
+.Formsubmit {
+	padding: 0px;
+	margin: 0px;
+	border: 1px solid #999 outset #ccc  inset #999;
+	background: #fff;
+	color: #000;
+	font-weight: bold;
+	}
+
+#ErrorTopic {
+	color: #f00;
+	margin: 5px;
+	padding: 5px;
+	font-weight: bold;
+	border:1px solid #f00;
+	display: block;
+	}
+#ErrorMessage{
+	margin: 5px;
+	padding: 5px;
+	border:1px solid #000;
+	display: block;
+	}
+.BlockTitle {
+	margin: 2px;
+	padding: 5px;
+	border:1px dotted #000;
+	font-size: 13px;
+	font-weight: bold;
+	display:block;
+	}
+.BlockArea {
+	margin: 2px;
+	padding: 2px;
+	border:1px solid #ccc;
+	display:block;
+	}
+.BlockAreaTitle {
+	margin: 2px;
+	padding: 2px;
+	border: 0px;
+	font-weight: bold;
+	display:block;
+	}

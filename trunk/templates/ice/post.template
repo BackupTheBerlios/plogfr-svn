@@ -1,0 +1,38 @@
+   {assign var="postDate" value=$post->getDateObject()}
+
+    <div class="post">
+	<h2>{$post->getTopic()}</h2>
+	
+   {assign var="postCategory" value=$post->getCategory()}
+   {assign var="poster" value=$post->getUserInfo()}
+   <div class="postheader">
+    <a name="{$post->getId()}"></a>{$locale->formatDate($postDate, "%Y-%m-%d")} @ {$locale->formatDate($postDate,"%H:%M")} in 
+	<span class="categoryinfo">
+	{foreach name=categories from=$post->getCategories() item=postCategory}
+     <a href="{$url->categoryLink($postCategory)}">{$postCategory->getName()}</a>{if !$smarty.foreach.categories.last}, {/if}
+	{/foreach}
+	 </span>
+   </div>
+ 
+   <p>
+    {$post->getText()}
+   </p>
+   
+   <div class="postfooter">
+    {$locale->tr("posted_by")} {$poster->getUsername()} |
+	
+    {assign var="postTotalComments" value=$post->getTotalComments()}
+    {if $blogsettings->getValue("comments_enabled") && $post->getCommentsEnabled()==1}
+	 {if $postTotalComments > 0}
+      <a href="{$url->postLink($post)}#comments">{$postTotalComments} {$locale->tr("comments")}</a> |
+     {else}
+      <a href="{$url->postCommentLink($post)}">{$locale->tr("comment on this")}</a> | 
+     {/if}
+	{/if}
+	
+     <a href="{$url->postTrackbackStatsLink($post)}#trackbacks">Trackback ({$post->getNumTrackbacks()})</a> | 
+	
+     <a href="{$url->postPermalink($post)}" title="{$locale->tr("permalink_title")}">Permalink</a>
+   </div>
+   
+    </div>
