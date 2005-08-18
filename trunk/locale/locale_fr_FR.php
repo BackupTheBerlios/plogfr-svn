@@ -198,10 +198,10 @@ $messages["hours"] = "heures";
 // new post
 $messages["topic"] = "Sujet";
 $messages["topic_help"] = "Titre de la note";
-$messages["text"] = "Texte";
+$messages["text"] = "Amorce";
 $messages["text_help"] = "Texte de la note. Cette partie apparaîtra sur la page principale";
-$messages["extended_text"] = "Texte supplémentaire";
-$messages["extended_text_help"] = "Texte supplémentaire de la note. Cette partie peut optionellement apparaître sur la page des notes ou sur la page principale. Voir les paramètres du carnet pour plus d'informations";
+$messages["extended_text"] = "Corps";
+$messages["extended_text_help"] = "Corps de la note. Cette partie peut optionellement apparaître sur la page des notes ou sur la page principale. Voir les paramètres du carnet pour plus d'informations";
 $messages["post_slug"] = "Titre de rappel";
 $messages["post_slug_help"] = "Le titre de rappel sera utilisé pour générer de beaux liens permanents";
 $messages["date"] = "Date";
@@ -796,7 +796,7 @@ $messages["help_search_in_comments"] = "Rechercher aussi dans les commentaires";
 
 // cleanup
 $messages["purge"] = "Nettoyer";
-$messages["cleanup_spam"] = "Nottyage des Spam";
+$messages["cleanup_spam"] = "Nettyage des pourriels";
 $messages["cleanup_spam_help"] = "Ceci supprimera tout les commentaires marqués comme Spam. Ils ne sera pas possible de revenir en arrière";
 $messages["spam_comments_purged_ok"] = "Commentaires-spam nettoyés";
 $messages["cleanup_posts"] = "Nettoyer les articles";
@@ -891,4 +891,9 @@ $messages["trackbacks"] = "Rétroliens";
 $messages["menu"] = "Menu";
 $messages["albums"] = "Albums";
 $messages["label_comments_enabled"] = "Commentaires activés";
+$messages["trackback_urls"]= "URLs de rétrolien";
+
+$messages["password_field"] = "Mot de passe";
+$messages["password_field_help"] = "Include un mot de passe pour protéger la note. Avant d'afficher la note, pLog demandera le mot de passe.";
+
 ?>
