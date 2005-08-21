@@ -58,7 +58,7 @@
   
   
   <div class="field">
-   <label for="messageText">{$locale->tr("text")}</label>
+   <label for="messageText">{$locale->tr("mailcentre_text")}</label>
    <span class="required">*</span>
    <div class="formHelp">{$locale->tr("mailcentre_text_help")}</div>   
    <textarea name="messageText" id="messageText" rows="15" style="width:100%" {if !$editable}readonly="readonly"{/if}>{$messageText}</textarea>

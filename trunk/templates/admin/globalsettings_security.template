@@ -1,28 +1,28 @@
 <div style="padding-left:10px;" id="security">
    <!-- security_pipeline_enabled -->
    <div class="field">
-    <label for="config[security_pipeline_enabled]">security_pipeline_enabled</label>
+    <label for="config[security_pipeline_enabled]">{$locale->tr("security_pipeline_enabled")}</label>
     <div class="formHelp">{$locale->tr("help_security_pipeline_enabled")}</div>	
     <input class="radio" type="radio" id="config[security_pipeline_enabled]" name="config[security_pipeline_enabled]" value="1" {if $security_pipeline_enabled == 1 } checked="checked" {/if} />{$locale->tr("yes")}
     <input class="radio" type="radio" id="config[security_pipeline_enabled]" name="config[security_pipeline_enabled]" value="0" {if $security_pipeline_enabled == 0 } checked="checked" {/if} />{$locale->tr("no")}
    </div>
    <!-- ip_address_filter_enabled -->
    <div class="field">
-    <label for="config[ip_address_filter_enabled]">ip_address_filter_enabled</label>
+    <label for="config[ip_address_filter_enabled]">{$locale->tr("ip_address_filter_enabled")}</label>
     <div class="formHelp">{$locale->tr("help_ip_address_filter_enabled")}</div>	
     <input class="radio" type="radio" id="config[ip_address_filter_enabled]" name="config[ip_address_filter_enabled]" value="1" {if $ip_address_filter_enabled == 1 } checked="checked" {/if} />{$locale->tr("yes")}
     <input class="radio" type="radio" id="config[ip_address_filter_enabled]" name="config[ip_address_filter_enabled]" value="0" {if $ip_address_filter_enabled == 0 } checked="checked" {/if} />{$locale->tr("no")}
    </div>
    <!-- content_filter_enabled -->
    <div class="field">
-    <label for="config[content_filter_enabled]">content_filter_enabled</label>
+    <label for="config[content_filter_enabled]">{$locale->tr("content_filter_enabled")}</label>
     <div class="formHelp">{$locale->tr("help_content_filter_enabled")}</div>	
     <input class="radio" type="radio" id="config[content_filter_enabled]" name="config[content_filter_enabled]" value="1" {if $content_filter_enabled == 1 } checked="checked" {/if} />{$locale->tr("yes")}
     <input class="radio" type="radio" id="config[content_filter_enabled]" name="config[content_filter_enabled]" value="0" {if $content_filter_enabled == 0 } checked="checked" {/if} />{$locale->tr("no")}
    </div>
    <!-- maximum size of a comment -->
    <div class="field">
-    <label for="config[maximum_comment_size]">maximum_comment_size</label>
+    <label for="config[maximum_comment_size]">{$locale->tr("maximum_comment_size")}</label>
     <div class="formHelp">{$locale->tr("help_maximum_comment_size")}</div>	
     <input style="width:100%" type="text" id="config[maximum_comment_size]" name="config[maximum_comment_size]" value="{$maximum_comment_size}"/>
    </div>
