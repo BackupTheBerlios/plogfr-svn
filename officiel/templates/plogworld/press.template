@@ -1,0 +1,19 @@
+{include file="$blogtemplate/header.template" pageTitle=Features}
+
+  <div id="nav_bar">
+  <div id="section_title">
+     <h2>References</h2>
+  </div>
+  <br style="clear:both;" />
+  </div>
+    <ul id="tablist">
+      <li><a href="{$url->templatePage("features")}">Features</a></li>
+      <li><a href="{$url->templatePage("projectinfo")}">Project Info</a></li>
+      <li><a href="{$url->templatePage("donations")}">Donations</a></li>
+      <li><a href="{$url->templatePage("screenshots")}">Screenshots</a></li>
+      <li><a href="{$url->templatePage("demosites")}">Success Stories</a></li>
+      <li id="tab_active"><a id="tab_current" href="{$url->templatePage("press")}">References</a></li>
+	</ul>
+  <div id="page">
+  </div>
+{include file="$blogtemplate/footer.template"}

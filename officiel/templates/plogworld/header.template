@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd" >
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+<head>
+ <meta http-equiv="Content-Type" content="text/html;charset={$locale->getCharset()}" />
+ <meta name="generator" content="{$version}" />
+ <meta http-equiv="Content-Language" content="{$locale->getLanguageId()}" />
+ <title>{if $pageTitle==""}pLog Project Page{else}{$pageTitle}{/if}</title>
+ <link rel="stylesheet" href="{$url->getTemplateFile("plogworld.css")}" type="text/css" media="screen" /> 
+ <link rel="alternate" type="text/xml" title="RSS 2.0" href="{$url->rssLink("rss20")}" />
+ <link rel="alternate" type="text/xml" title="RSS 1.0" href="{$url->rssLink("rss10")}" />
+ <link rel="alternate" type="text/xml" title="RSS 0.90" href="{$url->rssLink("rss090")}" />
+ <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="{$url->rssLink("atom")}" /> 
+</head>
+<body>
+
+<div id="container" >
+
+
+    <div id="header" >
+        <h1><span>pLog Project Page</span></h1>
+    </div>
+
+    <hr class="hide" />
+    <div id="skipNav">
+    <ul title="Accessibility options">
+    <li><a href="#menubar">Skip to Menu Bar</a></li>
+
+    <li><a href="#navigation">Skip to Navigation Bar</a></li>
+    <li><a href="#list_nav_bar">Search/List Options</a></li>
+    <li><a href="#list">Skip to Post Lists</a></li>
+    </ul>
+    </div>
+    <hr class="hide" />
+
+    <div id="menubar">
+
+        <div id="menu">
+			<ul class="menuTop">
+			  <li class="menuOption"><a href="{$url->blogLink()}">Main</a></li>
+			  <li class="menuOption"><a href="{$url->templatePage("features")}">About</a></li>
+			  <li class="menuOption"><a href="{$url->templatePage("download")}">Download</a></li>
+			  <li class="menuOption"><a href="{$url->templatePage("blog")}">Blog</a></li>
+			  <li class="menuOption"><a href="http://forums.plogworld.net/">Forums</a></li>
+			  <li class="menuOption"><a href="http://wiki.plogworld.net/">Wiki</a></li>			  
+			</ul>
+            <br style="clear:both;"/>
+        </div>
+
+    </div>
+    <div id="content" >

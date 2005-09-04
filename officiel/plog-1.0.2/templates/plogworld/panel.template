@@ -1,0 +1,54 @@
+<div id="links">
+
+
+ <div class="sidetitle">
+  {$locale->tr("categories")|capitalize}
+ </div>
+ <div class="side">
+  <ul>
+   {foreach from=$articlecategories item=articleCategory}
+     <li><a href="{$url->categoryLink($articleCategory)}">{$articleCategory->getName()}</a></li>
+   {/foreach}
+  </ul> 
+ </div>
+
+ <div class="sidetitle">
+  {$locale->tr("archives")|capitalize}
+ </div>
+ <div class="side">
+  <ul>
+  {foreach from=$archives item=archivelink}
+   <li><a href="{$archivelink->getUrl()}">{$archivelink->getName()}</a> [{$archivelink->getNumArticles()}]</li>
+  {/foreach}
+  </ul>
+ </div>
+
+
+ <div class="sidetitle">
+  {$locale->tr("menu")}
+ </div>
+ <div class="side">
+  <ul>
+   <li><a href="{$url->templatePage("about")}">{$locale->tr("about")}</a></li>
+   <li><a href="{$url->albumLink()}">{$locale->tr("albums")}</a></li>
+   <li><a title="Link to the RSS 0.90 feed." href="{$url->rssLink("rss090")}">RSS 0.90</a></li>
+   <li><a title="Link to the RSS 1.0 feed." href="{$url->rssLink("rss10")}">RSS 1.0</a></li>
+   <li><a title="Link to the RSS 2.0 feed." href="{$url->rssLink("rss20")}">RSS 2.0</a></li>
+   <li><a title="Link to the Atom 0.3 feed." href="{$url->rssLink("atom")}">Atom 0.3</a></li>
+  </ul> 
+ </div>
+ 
+
+ <div class="sidetitle">
+  {$locale->tr("search")|capitalize}
+ </div>
+ <div class="side">
+  <form name="search_form" method="post" action="{$url->getIndexUrl()}">
+   <input type="text" name="searchTerms" value="" /><br/>
+   <input type="hidden" name="op" value="Search" />
+   <input type="hidden" name="blogId" value="{$blog->getId()}"/>   
+   <input type="submit" name="Search" value="{$locale->tr("search")|capitalize}" />
+  </form>
+ </div>  
+ 
+</div>

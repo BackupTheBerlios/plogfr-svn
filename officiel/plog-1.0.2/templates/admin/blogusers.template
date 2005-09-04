@@ -1,0 +1,52 @@
+{include file="$admintemplatepath/header.template"}
+{include file="$admintemplatepath/navigation.template" showOpt=showBlogUsers title=$locale->tr("showBlogUsers")}
+        <form id="blogUsers" action="admin.php" method="post">
+        <div id="list">
+  {include file="$admintemplatepath/successmessage.template"}
+  {include file="$admintemplatepath/errormessage.template"}
+		
+            <table class="info">
+                <thead>
+                    <tr>
+                        <th style="width:10px;"><input class="checkbox" type="checkbox" class="check" name="all" id="all" value="1" onclick="toggleAllChecks('blogUsers');" /></th>
+                        <th style="width:145px;">{$locale->tr("username")}</th>
+                        <th style="width:325px;">{$locale->tr("full_name")}</th>                        
+                        <th style="width:210px;">{$locale->tr("email")}</th>
+                        <th style="width:90px;">{$locale->tr("actions")}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                   {foreach from=$blogusers item=bloguser}
+                    <tr class="{cycle values="odd,even"}">
+                        <td>
+                            <input class="checkbox" type="checkbox" name="userIds[{$bloguser->getId()}]" id="checks_1" value="{$bloguser->getId()}" />
+                        </td>
+                        <td class="col_highlighted">
+                            {$bloguser->getUsername()}
+                        </td>
+                        <td>
+                            {$bloguser->getFullName()}
+                        </td>                        
+                        <td>
+                            <a href="mailto:{$bloguser->getEmail()}">
+                            {$bloguser->getEmail()}
+                            </a>
+                        </td>
+                        <td>
+                            <div class="list_action_button">
+                            <!-- <a href="#"><img src="imgs/admin/icon_edit-16.png" alt="{$locale->tr("editUser")}" /></a> -->
+                            <a href="?op=deleteBlogUserPermissions&amp;userId={$bloguser->getId()}"><img src="imgs/admin/icon_delete-16.png" alt="{$locale->tr("revoke_permissions")}" /></a>
+                            </div>
+                        </td>
+                    </tr>
+                    {/foreach}
+                </tbody>
+            </table>
+        </div>
+        <div id="list_action_bar">
+            <input type="submit" name="delete" value="{$locale->tr("revoke_permissions")}" class="submit" />
+            <input type="hidden" name="op" value="deleteBlogUsersPermissions" />
+        </div>
+	</form>
+{include file="$admintemplatepath/footernavigation.template"}
+{include file="$admintemplatepath/footer.template"}

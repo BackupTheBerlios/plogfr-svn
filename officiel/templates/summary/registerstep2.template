@@ -1,0 +1,34 @@
+{include file="summary/header.template" section=$locale->tr("register_step2_title")}
+ <form name="createBlog" action="summary.php" method="post">
+  <fieldset class="inputField">
+   <legend>{$locale->tr("step2")}</legend>
+   {include file="summary/formvalidate.template" message=$locale->tr("error_adding_blog")}     
+   <div class="field">
+     <label for="blogName">{$locale->tr("name")}</label>
+     <span class="required">*</span>
+     <div class="formHelp">{$locale->tr("register_blog_name_help")}</div>
+     <input type="text" name="blogName" value="{$blogName}" id="blogName" />
+     {include file="summary/validate.template" field=blogName message=$locale->tr("error_empty_name")}
+   </div>  
+   <div class="field">
+     <label for="blogLocale">{$locale->tr("language")}</label>
+     <span class="required">*</span>
+     <div class="formHelp">{$locale->tr("blog_language_help")}</div>
+     <select name="blogLocale" id="blogLocale">
+      {foreach from=$locales item=localeObject}
+        <option value="{$localeObject->getLocaleCode()}" {if $defaultLocale == $localeObject->getLocaleCode()}selected="selected"{/if}>{$localeObject->getDescription()}</option>
+      {/foreach}
+     </select>
+   </div>
+  </fieldset>
+  <div class="buttons">
+    <!-- <input type="button" onClick="javascript:window.location='summary.php?op=RegisterStep1'" value="&laquo; {$locale->tr("register_back")}" name="Register"/> -->
+    <input type="submit" name="{$locale->tr("register_next")}" value="{$locale->tr("register_next")} &raquo;"/>
+    <input type="hidden" name="op" value="RegisterStep3"/>
+    <input type="hidden" name="userName" value="{$userName}"/>
+    <input type="hidden" name="userFullName" value="{$userFullName}"/>
+    <input type="hidden" name="userPassword" value="{$userPassword}"/>
+    <input type="hidden" name="userEmail" value="{$userEmail}"/>
+  </div>  
+ </form>
+{include file="summary/footer.template"}

@@ -1,0 +1,12 @@
+{include file="$blogtemplate/header.template"}
+<h1>Sample template</h1>
+<p>
+ {$message}
+</p>
+<p>
+And now, some RSS feeds from Slashdot using the RSS parser included in this package:<br/>
+{$rss->parse("http://slashdot.org/slashdot.rdf")}
+{foreach from=$rss->getItems() item=rssItem}
+ <a href="{$rssItem->getLink()}">{$rssItem->getTitle()}</a><br/>
+{/foreach}
+{include file="$blogtemplate/footer.template"}

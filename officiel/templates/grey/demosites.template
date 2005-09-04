@@ -1,0 +1,16 @@
+{include file="$blogtemplate/header.template"}
+  <p>
+   The following sites are running pLog. Have a look at them if you want to see how 
+   pLog feels like:
+  </p>
+  <ul>
+  <li><a href="http://www.renalias.net">Oscar's (one of the developers) own personal page</a> (Kind of slow
+  sometimes)</li>
+  <li><a href="http://www.francesc.net">Francesc's (another developer) own personal page</a> (Faster than
+  Oscar's :))</li>
+  <li><a href="http://www.lamevaweb.info">Free blogging service for the users of the #tarrega channel in the
+  Spanish IRC network.</a>.</li>
+  <li><a href="http://ireport.sourceforge.net">iReport project</a></li>
+  <li><a href="http://darren.someblog.com">Darren's blog</a><br/></li>
+  </ul>
+{include file="$blogtemplate/footer.template"}

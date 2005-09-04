@@ -1,0 +1,4 @@
+{include file="$blogtemplate/header.template"}
+ <h3>Features</h3>
+ {$blog->getAbout()}
+{include file="$blogtemplate/footer.template"}

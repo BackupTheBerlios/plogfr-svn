@@ -1,0 +1,13 @@
+{include file="$blogtemplate/header.template" pageTitle=Documentation}
+
+  <div id="nav_bar">
+  <div id="section_title">
+     <h2>About pLog</h2>
+  </div>
+  <br style="clear:both;" />
+  </div>
+    <ul id="tablist">
+      <li><a href="{$url->templatePage("about")}">About</a></li>				  	
+	  <li><a href="{$url->templatePage("features")}">Development</a></li>
+	</ul>
+{include file="$blogtemplate/footer.template"}

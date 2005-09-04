@@ -1,0 +1,17 @@
+{include file="$blogtemplate/header.template"}
+<h1>Sample template</h1>
+<p>
+ {$message}
+</p>
+<p>
+And now, some RSS feeds from Slashdot using the RSS parser included in this package:<br/>
+{if $rss->parse("http://slashdot.org/slashdot.rdf")}
+ {foreach from=$rss->getItems() item=rssItem}
+  <a href="{$rssItem->getLink()}">{$rssItem->getTitle()}</a><br/>
+ {/foreach}
+{/if}
+<hr/>
+<p>This is a sample of the plugin that gets the sinfest strip:
+</p>
+<a href="http://sinfest.net"><img src="{$sfstrip->SinfestStripUrl()}" alt="Sinfest strip" width="385"/></a>
+{include file="$blogtemplate/footer.template"}

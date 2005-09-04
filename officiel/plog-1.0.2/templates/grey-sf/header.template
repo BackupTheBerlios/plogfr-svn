@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$locale->getLanguageId()}" 
+      lang="{$locale->getLanguageId()}" dir="{$locale->getDirection()}">
+<head>
+ <meta http-equiv="Content-Type" content="text/html;charset={$locale->getCharset()}" />
+ <meta name="generator" content="{$version}" />
+ <meta http-equiv="Content-Language" content="{$locale->getLanguageId()}" />
+ <title>{$blog->getBlog()}</title>
+ <link rel="stylesheet" title="Default" href="{$url->getTemplateFile("grey-sf.css")}" type="text/css" />
+ <link rel="alternate" type="text/xml" title="RSS 2.0" href="{$url->rssLink("rss20")}" />
+ <link rel="alternate" type="text/xml" title="RSS 1.0" href="{$url->rssLink("rss10")}" />
+ <link rel="alternate" type="text/xml" title="RSS 0.90" href="{$url->rssLink("rss090")}" />
+ <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="{$url->rssLink("atom")}" />
+</head>
+ <body>
+  <p class="Upgrade">This page looks plain and unstyled because you're using a non-standard compliant browser. To see it in its best form, please <a href="http://www.webstandards.org/upgrade/" title="The Web Standards Project's Browser Upgrade initiative">upgrade</a> to a browser that supports web standards. It's free and painless.</p>
+  <div id="Container">
+  <img src="{$url->getTemplateFile("plog_top.gif")}" alt="pLog"/>
+  <div id="Topmenu"><a href="{$url->blogLink()}">Main</a> | 
+  <a href="http://sourceforge.net/projects/plog">Project page</a> | 
+  <a href="{$url->templatePage("features")}">Features</a> | 
+  <a href="http://sourceforge.net/project/showfiles.php?group_id=83964">Download</a> |
+  <a href="{$url->templatePage("templates")}">Templates</a> |
+  <a href="http://www.plogworld.net/forums">Forums</a> |
+  <a href="http://www.plogworld.net/ploogle/">pLoogle!</a> |
+  <a href="http://www.plogworld.net/wiki">Documentation</a></div>
+  <div id="Main">
+  <div id="Sidebar-l">
+   <div class="Sidetitle">
+    <h4>{$locale->tr("calendar")}</h4>
+   </div>
+    {$calendar}
+   <div class="Sidetitle">
+    <h4>{$locale->tr("recently")}</h4>
+   </div>
+   <p>
+    {foreach from=$recentposts item=post}
+    <a title="{$post->getText()|truncate:150:"..."|strip_tags|escape}" href="{$url->postLink($post)}">{$post->getTopic()}</a><br/>
+    {/foreach}
+   </p>
+  </div>
+  <div id="Content">

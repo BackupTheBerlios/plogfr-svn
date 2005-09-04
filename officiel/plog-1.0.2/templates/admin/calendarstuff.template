@@ -1,0 +1,17 @@
+// init the array with the days of the month for every month
+  var days = new Array( 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 );
+
+ ///
+ /// customization of the javascript calendar
+ ///
+ var MonthName = new Array();
+ {foreach name=monthLoop from=$months item=monthName}
+  MonthName[{$smarty.foreach.monthLoop.iteration}-1] = '{$monthName}';
+ {/foreach}
+
+ var WeekDayName = new Array();
+ {foreach name=daysLoop from=$days item=dayName}
+  WeekDayName[{$smarty.foreach.daysLoop.iteration}-1] = '{$dayName}';
+ {/foreach}
+
+ var WindowTitle = "{$locale->tr("calendar")}";

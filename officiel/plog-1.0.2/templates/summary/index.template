@@ -1,0 +1,117 @@
+{include file="summary/header.template" selected="index"}
+
+<div id="column-left">
+    <form id="loginForm" method="post" action="admin.php">
+    <fieldset class="inputField">
+        <h4>{$locale->tr("login")}</h4>
+        <div class="field">
+            <label for="userName">{$locale->tr("username")}</label>
+            <input type="text" tabindex="10" name="userName" id="userName" value="" maxlength="50" />
+        </div>
+        <div class="field">
+            <label for="userPassword">{$locale->tr("password")}</label>
+            <input type="password" tabindex="11" name="userPassword" id="userPassword" maxlength="50" />
+        </div>
+        <input type="submit" class="button" name="Login" value="{$locale->tr("login")}" tabindex="12" />
+        <input type="hidden" name="op" value="Login" />
+		<br/>
+	    <a href="?op=resetPasswordForm">{$locale->tr("password_forgotten")}</a>		
+    </fieldset>
+    </form>
+    <h4>{$locale->tr("summary_newest_blogs")}
+    {if $recentBlogs}
+      <a href="{$url->getRssUrl()}?summary=1&amp;type=newestblogs">
+        <img src="{$url->getUrl("/imgs/rss_logo_small.gif")}" 
+         alt="RSS" /></a>    
+    {/if}
+    </h4>
+    <ul class="itemList">
+    {foreach from=$recentBlogs item=blog}
+        {assign var="url" value=$blog->getBlogRequestGenerator()}
+		{** remove this if you're having problems with blogs in encondings other than iso-8859-1 **}
+        <li class="item"><a href="{$url->blogLink()}">{$blog->getBlog()|strip_tags}</a></li>
+    {/foreach}
+    </ul>	
+</div>
+
+<div id="maincolumn">
+    <div id="intro">
+        <h4>{$locale->tr("summary_welcome")}</h4>
+		You should place here whatever welcome message you would like your users to see. Or remove
+		this one completely and rearrange the whole page. Or something :) Take a look at
+		templates/summary, that is where all template files that make up this page are stored. You are
+		free to change them in any way you like.
+    </div>
+    {include file="summary/recent.template"}
+</div>
+
+<div id="column-right">
+    <form id="searchForm" method="post" action="{$smarty.server.PHP_SELF}">
+    <fieldset class="inputField">
+        <h4>{$locale->tr("summary_search_blogs")}</h4>
+        <div class="field">
+            <label for="searchTerms">{$locale->tr("search_terms")}</label><br />
+            <input type="text" tabindex="20" name="searchTerms" id="searchTerms" value="" />
+        </div>
+        <input type="hidden" name="op" value="summarySearch" />            
+        <input type="submit" class="button" name="summarySearch" value="{$locale->tr("search")}" tabindex="21" />
+    </fieldset>
+    </form>	
+    <h4>{$locale->tr("summary_most_active_blogs")}
+    {if $activeBlogs}
+      <a href="{$url->getRssUrl()}?summary=1&amp;type=mostactiveblogs">
+        <img src="{$url->getUrl("/imgs/rss_logo_small.gif")}" 
+         alt="RSS" /></a>    
+    {/if}
+    </h4>
+    <ul class="itemList">
+    {foreach from=$activeBlogs item=blog}
+	    {assign var="url" value=$blog->getBlogRequestGenerator()}
+        <li class="item"><a href="{$url->blogLink()}">{$blog->getBlog()|strip_tags}</a></li>
+    {/foreach}
+    </ul>
+
+    <h4>{$locale->tr("summary_most_commented_articles")}
+    {if $commentedPosts} 
+      <a href="{$url->getRssUrl()}?summary=1&amp;type=mostcommented">
+        <img src="{$url->getUrl("/imgs/rss_logo_small.gif")}" 
+         alt="RSS" /></a>
+    {/if}    
+
+	</h4>
+    {foreach name=commented from=$commentedPosts item=post}
+       {if $smarty.foreach.commented.first}
+         <ul class="itemList">
+       {/if}
+	    {assign var="blog" value=$post->getBlogInfo()}
+	    {assign var="url" value=$blog->getBlogRequestGenerator()}	
+        <li class="item">		
+            <a href="{$url->postPermalink($post)}">{$post->getTopic()|strip_tags}</a> ({$post->getTotalComments()})<br />
+        </li>
+       {if $smarty.foreach.commented.last}
+         </ul>
+       {/if}
+    {/foreach}
+
+    <h4>{$locale->tr("summary_most_read_articles")}
+      {if $readestBlogs}
+        <a href="{$url->getRssUrl()}?summary=1&amp;type=mostread">
+          <img src="{$url->getUrl("/imgs/rss_logo_small.gif")}" 
+          alt="RSS" /></a>		
+      {/if}
+     </h4>
+    {foreach name=readest from=$readestBlogs item=post}
+       {if $smarty.foreach.readest.first}
+         <ul class="itemList">
+       {/if}
+	    {assign var="blog" value=$post->getBlogInfo()}
+	    {assign var="url" value=$blog->getBlogRequestGenerator()}		
+        <li class="item">
+            <a href="{$url->postPermalink($post)}">{$post->getTopic()|strip_tags}</a> ({$post->getNumReads()})<br />
+        </li>
+       {if $smarty.foreach.readest.last}
+         </ul>
+       {/if}
+    {/foreach}
+</div>
+{include file="summary/footer.template"}

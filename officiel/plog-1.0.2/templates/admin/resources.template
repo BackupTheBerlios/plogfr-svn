@@ -1,0 +1,114 @@
+{include file="$admintemplatepath/header.template"}
+{include file="$admintemplatepath/navigation.template" showOpt=resources title=$locale->tr("resources")}
+        <div id="list_nav_bar">
+            <div id="list_nav_select">
+<form id="viewResources" action="admin.php" method="post">
+ <fieldset>
+  <legend>{$locale->tr("show_by")}</legend>
+   <div class="list_nav_option">
+    <label for="showCategory">{$locale->tr("album")}</label>
+	<br />
+    <select name="albumId" id="albumId">
+      <option value="0">{$locale->tr("root_album")}</option>
+   {foreach from=$albumsList item=albumItem}
+     {assign var=indentLevel value=$albumItem->getValue("level")}
+	 <option value="{$albumItem->getId()}" {if $album}{if $album->getName()==$albumItem->getName()}selected="selected"{/if}{/if}>
+	   {textformat indent=$indentLevel indent_char="&nbsp;&nbsp;&nbsp;"}{$albumItem->getName()}{/textformat}   
+	 </option>
+   {/foreach}
+   </select>
+   </div>
+   <div class="list_nav_option">
+    <br />
+    <input type="hidden" name="op" value="resources">
+    <input type="submit" name="Show" value="{$locale->tr("show")}">
+   </div>
+  </fieldset> 
+ </form> 
+ </div>
+ <br style="clear:both">
+ </div>
+
+<form id="Resources" method="post" action="admin.php">
+<div id="list">
+  {include file="$admintemplatepath/successmessage.template"}
+  {include file="$admintemplatepath/errormessage.template"}
+<table class="info">
+ <thead>
+  <tr>
+    <!-- 775 -->
+    <th style="width:10px;"><input class="checkbox" type="checkbox" class="check" name="all" id="all" value="1" onclick="toggleAllChecks('Resources');" /></th>
+    <th style="width:660px;">{$locale->tr("name")}</th>
+    <th style="width:95px;">{$locale->tr("actions")}</th>
+ </tr>
+</thead>
+<tbody> 
+{if $album && $pager->getCurrentPage() == 1}
+<tr class="{cycle values="odd,even"}">
+ <td>&nbsp;</td>
+ <td>
+  <a href="admin.php?op=resources&amp;albumId={$album->getParentId()}&amp;page=1"><img src="imgs/admin/icon_folder-72.png" border="0" alt="Parent" /></a><br/>
+  <a href="admin.php?op=resources&amp;albumId={$album->getParentId()}&amp;page=1">{$locale->tr("up")}</a>
+ </td>
+</tr>
+{/if}
+{foreach from=$albums item=resalbum}
+<tr class="{cycle values="odd,even"}">
+ <td>
+  <input type="checkbox" class="checkbox" value="{$resalbum->getId()}" name="albumIds[{$resalbum->getId()}]" />
+ </td>
+ <td>
+    <a href="admin.php?op=resources&amp;albumId={$resalbum->getId()}&amp;page=1"><img src="imgs/admin/icon_folder-72.png" border="0" alt="folder" /></a><br/>
+    <a href="admin.php?op=resources&amp;albumId={$resalbum->getId()}&amp;page=1">{$resalbum->getName()}</a>
+ </td>
+ <td>
+  <div class="list_action_button"> 
+    <a href="?op=editResourceAlbum&amp;albumId={$resalbum->getId()}"><img src="imgs/admin/icon_edit-16.png" alt="{$locale->tr("edit")}" /></a>
+    <a href="?op=deleteResourceAlbum&amp;albumId={$resalbum->getId()}"><img src="imgs/admin/icon_delete-16.png" alt="{$locale->tr("delete")}" /></a>    
+  </div>  
+ </td>
+</tr>
+{/foreach}
+{foreach from=$resources item=resource}
+<tr class="{cycle values="odd,even"}">
+ <td>
+   <input type="checkbox"  class="checkbox" value="{$resource->getId()}" name="resourceIds[{$resource->getId()}]" />
+ </td>
+ <td>
+  {if $resource->hasPreview()}
+     <a href="admin.php?op=resourceInfo&amp;resourceId={$resource->getId()}">
+     <img src="{$url->resourcePreviewLink($resource)}" alt="{$locale->tr("preview")}" />
+  {else}
+   {if $resource->isSound()}
+    <img alt="Sound" src="imgs/admin/icon_sound-48.png" style="border:0px;" />
+   {elseif $resource->isVideo()}
+    <img alt="Video" src="imgs/admin/icon_video-48.png" style="border:0px;" />
+   {elseif $resource->isZip()}
+    <img alt="Zip" src="imgs/admin/icon_compressed-48.png" style="border:0px;" />   
+   {else}
+    <img alt="File" src="imgs/admin/icon_file-48.png" style="border:0px;" />
+   {/if}
+  {/if}
+  </a><br/>
+  <a href="admin.php?op=resourceInfo&amp;resourceId={$resource->getId()}">{$resource->getFileName()}</a>
+ </td>
+ <td>
+  <div class="list_action_button"> 
+    <a href="?op=resourceInfo&amp;resourceId={$resource->getId()}"><img src="imgs/admin/icon_edit-16.png" alt="{$locale->tr("edit")}" /></a>
+    <a href="?op=deleteResource&amp;resourceId={$resource->getId()}"><img src="imgs/admin/icon_delete-16.png" alt="{$locale->tr("delete")}" /></a>    
+  </div>  
+ </td>
+</tr>
+{/foreach}
+</tbody>
+</table>
+</div>
+<div id="list_action_bar">
+  {include file="$admintemplatepath/adminpager.template" style=list}
+  {$locale->tr("num_resources")}: <strong>{$totalresources}</strong>, {$locale->tr("total_size")}: <strong>{$quotausage|round}</strong>
+  {if $quota > 0 }, {$locale->tr("quota")}: <strong>{$quota|round}</strong>{/if}
+  <input type="submit" name="delete" value="{$locale->tr("delete")}" class="submit" />
+  <input type="hidden" name="op" value="deleteResourceItems" />
+</div>
+{include file="$admintemplatepath/footernavigation.template"}
+{include file="$admintemplatepath/footer.template"}

@@ -1,0 +1,52 @@
+{include file="$blogtemplate/header.template"}
+{include file="$blogtemplate/navigation.template" showOpt=siteTemplates title=$locale->tr("siteTemplates")}
+ <form id="siteTemplates" method="post" action="admin.php">
+ <div id="list">
+  {include file="$admintemplatepath/successmessage.template"}
+  {include file="$admintemplatepath/errormessage.template"}
+  <table class="info">
+   <thead>
+    <tr>
+      <th style="width:10px;"><input class="checkbox" type="checkbox" class="check" name="all" id="all" value="1" onclick="toggleAllChecks('siteTemplates');" /></th>
+      <th style="width:670px;">{$locale->tr("template")}</th>
+      <th style="width:95px;">{$locale->tr("actions")}</th>
+    </tr>
+  </thead>
+  <tbody>
+  {foreach from=$templates item=sitetemplate}
+   <tr class="{cycle values="odd,even"}">
+    <td>
+       <input class="checkbox" type="checkbox" name="templateIds[{counter}]" value="{$sitetemplate->getName()}" />
+    </td>
+    <td  class="col_highlighted">
+	 {if $sitetemplate->hasScreenshot()}
+	  <a href="javascript:openScreenshotWindow('{$sitetemplate->getScreenshotUrl()}');">{$sitetemplate->getName()}</a>
+	 {else}
+      {$sitetemplate->getName()}
+	 {/if} 
+    </td>
+    <td>
+     <div class="list_action_button">
+      <a href="?op=deleteTemplate&amp;templateId={$sitetemplate->getName()}">
+        <img src="imgs/admin/icon_delete-16.png" alt="{$locale->tr("delete")}" />
+      </a>
+	  {if $sitetemplate->hasScreenshot()}
+	    <a href="javascript:openScreenshotWindow('{$sitetemplate->getScreenshotUrl()}');">
+		  <img src="imgs/admin/icon_image-16.png" alt="Screenshot" />
+		</a>
+	  {/if}	  
+     </div>
+    </td>
+   </tr>
+  {/foreach}
+  </tbody>
+ </table>
+ </div>
+ <div id="list_action_bar">
+   <input type="hidden" name="op" value="deleteTemplates" class="submit" />
+   <input type="submit" name="{$locale->tr("delete")}" value="{$locale->tr("delete")}"/>
+ </div>
+ </form>
+ 
+{include file="$blogtemplate/footernavigation.template"}
+{include file="$blogtemplate/footer.template"}

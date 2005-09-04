@@ -1,0 +1,82 @@
+1.0
+---
+- Search features
+- redesign of the admin interface
+- Keywords
+- Articles spanning multiple pages
+- Support for resource quotas
+
+0.3.1
+-----
+- Several fixes from 0.3.
+- Doesn't ask for the blog you'd like to use if only belong to one blog (DONE)
+- wizard checks whether config/config.properties.php is writable or not. If not, throws an error (DONE)
+- support for generation of https addresses, as well as normal http
+- for every album, the total amount of items it holds should be the ones that it directly has plus the amount
+of items that every of child has (recursive stuff, might be quite heavy on the performance)
+
+
+Some other time
+---------------
+- Support http://.../plog/id/X, http://.../user/X and http://.../blog/whatever-blog-name
+
+Possible/Suitable plugins
+----------------
+- On-line template editor
+- On-line image editor, where resource images can be modified, resized, cropped, and even some effects
+could be applied to them
+- Recent comments
+- Moblogging (working on it!)
+- Karma (working on it!)
+- Fetch and display the weather for our location
+- A threaded comments plugin
+
+
+** HIGHER PRIORITY ITEMS **
+
+- Re-design of the admin interface
+- Get more active developers and also think in a good way to organize all tasks ...
+
+** LOWER PRIORITY ITEMS **
+
+- New section of recently commented articles. ---> can be done with a plugin!!! (volunteers???)
+- Readers mail-list, when a new post is added an email is sent to the list. (with the possibility tu subscribe different categories) --> I don't think this should be implemented in the core but rather
+as a nice plugin. At the moment plugins can *not* respond to events such as new post, post edited, etc
+but perhaps we should think about it. We could use the observer pattern here: have all the plugins
+register for the events they need and then, have the objects fire events at will so that 'listeners' can respond to those events.
+- Private/public stuff: ability to create users for a blog that has different access level for different contents --> this would be great if we were implementing a CMS such as Drupal, *Nuke but we're not so I don't really see how far we should get with this-
+- Spell-checker
+- Multiple categories per post.
+- Possibility to let the user choose wether to send an xmlrpc ping or not, instead of always sending it if the admin enabled the feature.
+- The same feature, but when a post is updated. At the moment no xmlrpc ping is sent but maybe it should... better let the user choose :)
+- Publishing via email (will it need some kind of wrapper?)
+- moblogging --> half of this feature can be "leveraged" from http://easymoblog.sourceforge.net/. Heck, we could even ask the author to join us and continue developing mo-blogging features but using our framework. Otherwise, he's using the PEAR::Mime and PEAR::Mail to get the info from emails and it doesn't look that difficult (I've already had a look at the source code) We just need to have the resources framework in place.
+- Importer for Movable Type, ...
+
+- AutoUpdate
+- Preview of styles in admin interface (perhaps via an screenshot?)
+- For every link we add to our site, there could be the possibility of having as well its RSS feed. Then, in the
+templates, if the RSS feed is available we should then show a little icon next to the link. This would require a
+little change to the database!
+
+
+** OTHER **
+
+- Get a Logo
+- New project page style (based on admin new style)
+- List of webs using plog (with a submision form to add a new one)
+- Change forums style (new logo, ...)
+
+**** DONE/COMPLETED ITEMS ****
+
+- API compatible with BlogApp, BlogBuddy and wBloggar  --> Hopefully this will be ready very soon!
+- Generation of different profiles of RSS/RDF: 0.92 (currently implemented), 1.0 and 2.0. --> This one's in on the works. Would be great to get somebody to finish and verify that the templates are
+valid RSS/RDF/XML code.  --> committed support for this on the 16th of november. Also added support for
+Klipfolio data feeds (http://www.serence.com/site.php) as well as per-category data feeds (also, any of the supported ones: rss 0.90, 1.0 and 2.0, xml and klipfolio) Should be enough for a while :)
+- Select wether to enable or disable comments on a per-post basis. --> DONE. I will commit the changes very soon.
+- Bug: prevent comments for being posted x times if you reload x times after posting one. --> DONE and committed to both 0.3 CVS and 0.2.1
+- Framework for uploading files
+- Security framework (under development)
+- Show links under their categories.
+- Get clean own template design to set is as our default theme.
+- Timezones/time differences

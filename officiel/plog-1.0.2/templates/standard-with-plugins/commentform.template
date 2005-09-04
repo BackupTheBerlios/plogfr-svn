@@ -1,0 +1,36 @@
+<div id="CommentForm">
+  
+	<form id="NewComment" name="NewComment" action="{$url->getBaseUrl()}/index.php" method="post">
+	<fieldset>
+ 	<legend>{$locale->tr("add_comment")}</legend>
+   	<div><label for="commentTopic">{$locale->pr("comment_topic")}</label><input type="text" name="commentTopic" id="commentTopic" value="" /></div>
+
+   	<div>
+   	 <label for="commentText">{$locale->pr("comment_text")}</label><textarea rows="10" cols="30" name="commentText" id="commentText"></textarea> 
+   	 {if !empty($smileys)}
+   	  {if $smileys->isEnabled()}
+       <script type="text/javascript" src="{$url->getBaseUrl()}/plugins/smileys/js/smileys/smileys.js"></script>
+       <br/><label>&nbsp;</label>{$smileys->generateSmileysBar()}
+      {/if}
+     {/if}
+    </div> 
+
+   	<div><label for="userName">{$locale->pr("comment_username")}</label><input type="text" name="userName" id="userName" value="" /></div>
+   	<div><label for="userEmail">Email</label><input type="text" name="userEmail" id="userEmail" value="" /></div>
+   	<div><label for="userUrl">Web</label><input type="text" name="userUrl" id="userUrl" value="" /></div>
+
+    {if !empty($authimage)}
+     {if $authimage->isEnabled()}
+      <div><label for="authImage">{$locale->tr("authimage_code")}</label><input type="text" name="authImage" id="authImage" value="" />&nbsp;{$authimage->show()}</div>
+     {/if}
+    {/if}
+
+   	<div id="Submit"><input id="Add" type="submit" value="{$locale->pr("comment_send")}" name="Add" />
+   	<input type="hidden" name="op" value="AddComment" />
+   	<input type="hidden" name="articleId" value="{$post->getId()}" />
+   	<input type="hidden" name="blogId" value="{$blog->getId()}" />
+   	<input type="hidden" name="parentId" value="{$parentId}" /></div>
+	</fieldset>
+  	</form>
+  	
+</div>

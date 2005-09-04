@@ -1,0 +1,14 @@
+{include file="$blogtemplate/header.template"}
+{if !empty($delicious)}
+ {if $delicious->isEnabled()}
+  {assign var=tagId value=$smarty.request.tag}
+  {assign var=deliciousTags value=$delicious->getTagList()}
+  {foreach item=deliciousTag from=$deliciousTags}
+   {math equation="10+ceil(x/y)*3" assign=fontsize x=$deliciousTag.count y=5}
+   <span style="font-size:{$fontsize}px"><a href="{$deliciousTag.deliciousUrl}" style="border-bottom: 0px;" title="{$deliciousTag.count} Posts">{$deliciousTag.id}</a></span>&nbsp;&nbsp;&nbsp;&nbsp;
+  {/foreach}
+ {else}
+  {$locale->tr("error_delicious_not_enabled")}
+ {/if}
+{/if}
+{include file="$blogtemplate/footer.template"}

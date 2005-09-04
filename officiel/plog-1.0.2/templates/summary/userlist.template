@@ -1,0 +1,18 @@
+{include file="summary/header.template" section=$locale->tr("users")}
+<div id="onecolumn">
+    {foreach from=$users item=user}
+        <h3><a href="?op=UserProfile&amp;userId={$user->getId()}">{$user->getUsername()}</a></h3>
+		<p>
+		 <b>{$locale->tr("blogs")}:</b>
+		 {assign var=userBlogs value=$user->getBlogs()}
+		 {foreach from=$userBlogs item=userBlog name=userBlogsLoop}
+		  {assign var=urlGen value=$userBlog->getBlogRequestGenerator()}
+		  <a href="{$urlGen->blogLink()}">{$userBlog->getBlog()}</a>{if !$smarty.foreach.userBlogsLoop.last}, {/if}
+		 {/foreach}
+		</p>
+    {/foreach}
+</div>
+<div class="pager">
+	{include file="summary/pager.template" style=links}
+</div>
+{include file="summary/footer.template"}

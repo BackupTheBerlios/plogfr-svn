@@ -1,0 +1,22 @@
+    {assign var="blog" value=$post->getBlogInfo()}
+	{assign var="request" value=$blog->getBlogRequestGenerator()}
+    <h5>{$post->getTopic()}</h5>
+    <div class="subtitle">
+        {$locale->tr("blog")} <a href="{$request->blogLink()}">{$blog->getBlog()}</a>
+    </div>
+    <p>
+        {$post->getText()|strip_tags|truncate:200:"..."}
+    </p>
+    <div class="peu">
+
+    {assign var="postCategories" value=$post->getCategories()}
+    {assign var="postOwner" value=$post->getUserInfo()}
+    {assign var="postDate" value=$post->getDateObject()}
+        <a href="{$request->postPermalink($post)}" class="noborder">
+            <img src="imgs/post.png" width="10" height="11" alt="Permalink" />
+        </a>
+        &nbsp;{$locale->tr("posted_by")} {$postOwner->getUsername()},  {$locale->formatDate($postDate,"%e %B %Y")} |
+        <img src="imgs/comment.png" width="11" height="10" alt="{$locale->tr("comments")}" />&nbsp;
+        <a href="{$request->postPermalink($post)}#comments">{if $post->getTotalComments() eq 0}{$locale->tr("comment on this")}{else}{$post->getTotalComments()} {$locale->tr("comments")|capitalize}{/if}</a>
+        <br style="clear: both;" />
+    </div>

@@ -1,0 +1,27 @@
+{include file="$blogtemplate/header.template" pageTitle="Download Plugins"}
+<div id="content" >
+  <div id="nav_bar">
+  <div id="section_title">
+     <h2>Plugins</h2>
+  </div>
+  <br style="clear:both;" />
+  </div>
+    <ul id="tablist">
+      <li><a href="{$url->templatePage("download")}">Official Releases</a></li>				  	
+	  <li id="tab_active"><a id="tab_current" href="{$url->templatePage("plugins")}">Plugins</a></li>  
+	  <li><a href="{$url->templatePage("templates")}">Templates</a></li>     
+	  <li><a href="{$url->templatePage("development")}">Development</a></li>
+	</ul>
+	<div id="page">
+	 <p>
+ 	  The wiki has the most recent list of plugins avialable for the current version of pLog, as well as
+ 	  some information about each one of them. Please proceed to the pLog
+	  <a href="http://wiki.plogworld.net/index.php/PLog_1.0/Plugin_Repository">Plugin Repository</a> pages.
+	 </p>
+	 <p>
+	  If you are interested in developing your own plugins, please refer to the wiki section about
+	  <a href="http://wiki.plogworld.net/index.php/PLog_1.0/Plugins">developing plugins</a>.
+	 </p>
+	</div>
+
+{include file="$blogtemplate/footer.template"}

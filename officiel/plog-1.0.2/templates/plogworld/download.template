@@ -1,0 +1,25 @@
+{include file="$blogtemplate/header.template" pageTitle=Download}
+<div id="content" >
+  <div id="nav_bar">
+    <div id="section_title">
+       <h2>Official Releases</h2>
+    </div>
+    <br style="clear:both;" />
+  </div>
+    <ul id="tablist">
+      <li id="tab_active"><a id="tab_current" href="{$url->templatePage("download")}">Official Releases</a></li>
+	  <li><a href="{$url->templatePage("plugins")}">Plugins</a></li>  
+	  <li><a href="{$url->templatePage("templates")}">Templates</a></li>
+	  <li><a href="{$url->templatePage("development")}">Development</a></li>
+	</ul>
+  <div id="page">
+   <p>
+   The current newest version of pLog is <b>1.0</b>. Please download it by clicking the image 
+   below:<br/><br/>
+ <a href="http://sourceforge.net/project/showfiles.php?group_id=83964" style="border:0px;">
+  <img src="{$url->getTemplateFile("download.gif")}" alt="Download!" />
+ </a>   
+   </p>
+  </div>
+
+{include file="$blogtemplate/footer.template"}

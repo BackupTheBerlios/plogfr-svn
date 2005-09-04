@@ -1,0 +1,71 @@
+Design Patterns
+--
+
+During the development of pLog, we've put special attention in its design. 
+As a result, several design patterns are used in many places thoughout
+the code of the application. This file is a simple catalog of which 
+patterns are used, where and a reference (if available) to some information
+about them.
+
+The Patterns
+--
+
+* 1. MVC
+The Model-View-Controller is used to separate content/presentation layer
+from the application layer. The base classes Controller, Action and
+View represent each one of the layers in an MVC application.
+
+http://www.phppatterns.com/index.php/article/articleview/11/1/1/
+http://java.sun.com/blueprints/patterns/MVC-detailed.html (Java)
+
+* 2. Front Controller
+The Front Controller pattern is the class through which all the incoming
+requests are handled. It takes care of mapping user parameters to Action
+classes. The Controller class implements a Front Controller patttern.
+
+http://www.phppatterns.com/index.php/article/articleview/81/1/1/
+http://java.sun.com/blueprints/corej2eepatterns/Patterns/FrontController.html
+
+* 3. Strategy
+The Strategy pattern allows us to encapsulate an algorithm in its own class,
+making it easier to change the algorithm in the future since client classes
+are only dependant on the interface and not on the implementation.
+
+The Strategy pattern is used in the Validator classes, where every class that
+implements the Validator superclass offers mechanisms to validate each type of
+data. In this way, if we add an additional requirement in the future for one
+of our types of data, simply modifying the correct Validator will
+automatically provide all the client classes with the new feature.
+
+http://www.vico.org/pages/PatronsDisseny/Pattern Strategy/
+
+* 4. DAO (Data Access Object)
+This pattern is also refered as Data Mapper in the book
+"Patterns of Enterprise Application Architecture" by Martin Fowler. Such
+pattern moves data between objects while keeping them independent of each
+other and the mapper itself. In other words, it separates the domain of our
+data from the data source. 
+
+The DAO pattern is implemented by many of the classes in the classes/dao/
+folder.
+
+http://www.phppatterns.com/index.php/article/articleview/25/1/1/
+
+* 5. Singleton
+The Singleton pattern ensures that a class has only one instance, providing a
+global access point to it.
+
+The Singleton pattern is used in the Config and DB classes. It helps there to
+make sure that there is only one instance of the class, providing also caching
+mechanisms.
+
+http://www.vico.org/pages/PatronsDisseny/Pattern Singleton/
+
+* 6. Pipeline
+The Pipeline pattern is used in the security framework that is going to be
+implemented in pLog 0.3. Allows complex tasks to be broken up in smaller
+sub-tasks that can be carried independently.
+
+Have a look at the class/security folder.
+
+http://www.cise.ufl.edu/research/ParallelPatterns/PatternLanguage/AlgorithmStructure/Pipeline.htm

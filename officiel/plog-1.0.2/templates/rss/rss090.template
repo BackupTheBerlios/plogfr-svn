@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="{$locale->getCharset()}"?>
+<?xml-stylesheet href="{$url->getUrl("/styles/rss.css")}" type="text/css"?>
+<rdf:RDF 
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns="http://my.netscape.com/rdf/simple/0.9/"
+>
+{$locale->setLocale("en_UK")}
+ <channel>
+  <title>{$blog->getBlog()|escape}</title>
+  <link>{$url->blogLink()}</link>
+  <description>{$blog->getAbout()|escape}</description>
+ </channel>
+  {foreach from=$posts item=post}
+  <item>
+   <title>{$post->getTopic()|escape}</title>
+   <description>{$post->getText()|escape}</description>
+   <link>{$url->postPermalink($post)}</link>
+   {assign var="postDate" value=$post->getDateObject()}
+   <pubDate>{$locale->formatDate($postDate, "%a, %d %b %Y %H:%M:%S %O", $blog)}</pubDate>   
+  </item>
+  {/foreach}
+</rdf:RDF>
+
+

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="{$locale->getCharset()}"?>
+<?xml-stylesheet href="{$url->getUrl("/styles/rss.css")}" type="text/css"?>
+<rss version="2.0">
+ <channel>
+  <title>Your service title</title>
+  <description>Your service description</description>
+  <link>{$url->getBaseUrl(false)}/summary.php</link>
+  <generator>pLog 1.0</generator>
+  {foreach from=$blogs item=blog}
+   {assign var=url value=$blog->getBlogRequestGenerator()}  
+  <item>
+   <title>{$blog->getBlog()|escape}</title>
+   <description>{$blog->getAbout()|escape}</description>
+   <link>{$url->blogLink()}</link>
+   <guid>{$url->blogLink()}</guid>
+   {assign var="blogOwner" value=$blog->getOwnerInfo()}
+   <author>{$blogOwner->getUsername()}</author>
+   <source url="{$url->rssLink("rss20")}">{$blog->getBlog()|escape}</source>
+  </item>
+  {/foreach}
+ </channel>
+</rss>

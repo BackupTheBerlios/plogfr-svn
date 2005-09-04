@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="{$locale->getCharset()}"?>
+<feed version="0.3" xmlns="http://purl.org/atom/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:lang="{$locale->getLanguageId()|lower}"> 
+<title>Your site title</title> 
+<generator url="http://www.plogworld.net/" version="1.0">pLog</generator> 
+<copyright>Copyright (c) Your copyright notice</copyright> 
+ {foreach from=$blogs item=blog} 
+ {assign var=url value=$blog->getBlogRequestGenerator()}
+ <entry> 
+ <id>{$url->blogLink()}</id>
+ <title>{$blog->getBlog()|escape}</title> 
+ <link rel="alternate" type="text/html" href="{$url->blogLink()}" /> 
+ {assign var="blogDate" value=$blog->getCreateDateObject()} 
+ {assign var="modifiedDate" value=$blog->getUpdateDateObject()}
+ <modified>{$modifiedDate->getW3Date()}</modified> 
+ <issued>{$locale->formatDate($blogDate, "%Y-%m-%dT%H:%M:%S")}</issued> 
+ <created>{$locale->formatDate($blogDate, "%Y-%m-%dT%H:%M:%SZ")}</created> 
+ <summary type="text/plain">{$blog->getAbout()|strip_tags|truncate:200:" ..."|escape:"html"}</summary> 
+ <author> 
+ {assign var="blogOwner" value=$blog->getOwnerInfo()} 
+ <name>{$blogOwner->getUsername()}</name> 
+ <url>{$url->blogLink()}</url> 
+ <email>{$blogOwner->getEmail()}</email> 
+</author> 
+ {assign var=blogLocale value=$blog->getLocale()}
+ <content type="text/html" mode="escaped" xml:lang="{$blogLocale->getLanguageId()|lower}" xml:base="{$url->blogLink()}"> 
+ {$blog->getAbout()|escape} 
+</content> 
+</entry> 
+{/foreach} 
+</feed>

@@ -1,0 +1,184 @@
+</div>
+
+<div id="Menu">
+  	
+  	<h2>{$locale->tr("menu")}</h2>
+    	<div id="Sections">
+    	<ul>
+    	<li><a title="{$locale->tr("main")}" href="{$url->blogLink()}">{$locale->tr("main")}</a></li>
+    	<li><a title="{$locale->tr("archives")}" href="{$url->templatePage("archives")}">{$locale->tr("archives")}</a></li>
+    	<li><a title="{$locale->tr("albums")}" href="{$url->albumLink()}">{$locale->tr("albums")}</a></li>
+    	<li><a title="{$locale->tr("links")}" href="{$url->templatePage("links")}">{$locale->tr("links")}</a></li>
+    	{if !empty($flickr)}
+    	 {if $flickr->isEnabled()}
+    	  <li><a title="{$locale->tr("flickr")}" href="{$flickr->pluginTemplatePage()}">{$locale->tr("flickr")}</a></li>
+    	 {/if}
+    	{/if}
+    	{if !empty($delicious)}
+    	 {if $delicious->isEnabled()}
+    	  <li><a title="{$locale->tr("delicious")}" href="{$delicious->pluginTemplatePage()}">{$locale->tr("delicious")}</a></li>
+    	 {/if}
+    	{/if}
+    	{if !empty($guestbook)}
+    	 {if $guestbook->isEnabled()}
+    	  <li><a title="{$locale->tr("guestbook")}" href="{$guestbook->pluginTemplatePage()}">{$locale->tr("guestbook")}</a></li>
+    	 {/if}
+    	{/if}    	
+    	{if !empty($karma)}
+    	 {if $karma->isEnabled()}
+    	  <li><a title="{$locale->tr("karma_moderated_down_articles")}" href="{$karma->pluginTemplatePage()}">{$locale->tr("karma_moderated_down_articles")}</a></li>
+    	 {/if}
+    	{/if}    	
+    	</ul>
+    	</div>
+    	
+    	<h2>{$locale->tr("search")}</h2>
+	<div id="Search">
+	<form id="search_form" method="post" action="{$url->getIndexUrl()}">
+	<fieldset>
+	<label for="searchTerms"><input type="text" id="searchTerms" name="searchTerms" value="" /></label>
+	<input type="submit" name="Search" value="{$locale->tr("search_s")}" class="button" />
+	<input type="hidden" name="op" value="Search" />
+	<input type="hidden" name="blogId" value="{$blog->getId()}" />   
+	</fieldset>
+	</form>
+	</div> 
+
+	<h2>{$locale->tr("calendar")}</h2>
+    	<div id="Calendar">
+    		{$calendar}
+    	</div>	
+  
+  	<h2>{$locale->tr("recently")}</h2>
+    	<div id="Recently">
+    	<ul>
+    		{foreach from=$recentposts item=post}
+        <li><a title="{$post->getTopic()}" href="{$url->postLink($post)}">{$post->getTopic()}</a></li>
+    		{/foreach}
+    	</ul>
+   	</div>
+    
+ 	<h2>{$locale->tr("categories")}</h2>
+    	<div id="Categories">
+    	<ul>
+    		{foreach from=$articlecategories item=articleCategory}
+    	<li><a title="{$articleCategory->getName()}" href="{$url->categoryLink($articleCategory)}">{$articleCategory->getName()} <abbr title="{$articleCategory->getNumArticles()} {$locale->tr("posts")}">[{$articleCategory->getNumArticles()}]</abbr></a></li>
+   		{/foreach}
+  	</ul>
+  	</div>
+
+    {if !empty($recentcomments)}
+     {if $recentcomments->isEnabled()}
+      <h2>{$locale->tr("recentcomments")}</h2>
+      <div id="Recently">
+       {assign var=comments value=$recentcomments->getRecentComments()}
+       <ul>
+        {foreach from=$comments item=comment}
+         {assign var=commentpostid value=$comment->getArticleId()}
+         {assign var=commentpost value=$recentcomments->getArticle($commentpostid)}
+         {assign var=commentUserName value=$comment->getUsername()}
+         <li><a title="{$locale->pr("view_comment_by" ,$commentUserName)}" href="{$url->postPermalink($commentpost)}#{$comment->getId()}"><b>{$commentUserName}:&nbsp;</b>{$comment->getText()|truncate:100:"..."|strip_tags}</a></li>
+        {/foreach}
+       </ul>
+      </div> 
+     {/if}
+    {/if}
+
+    {if !empty($recenttrackbacks)}
+     {if $recenttrackbacks->isEnabled()}
+      <h2>{$locale->tr("recenttrackbacks")}</h2>
+      <div id="Recently">
+       {assign var=trackbacks value=$recenttrackbacks->getRecentTrackbacks()}
+       <ul>
+        {foreach from=$trackbacks item=trackback}
+         {assign var=trackbackpostid value=$trackback->getArticleId()}
+         {assign var=trackbackpost value=$recenttrackbacks->getArticle($trackbackpostid)}
+         {assign var=trackbacBlogName value=$trackback->getBlogName()}
+         <li><a title="{$locale->pr("view_trackback_by" ,$trackbacBlogName)}" href="{$trackback->getUrl()}"><b>{$trackbacBlogName}:&nbsp;</b>{$trackback->getTitle()}</a></li>
+        {/foreach}
+       </ul>
+      </div> 
+     {/if}
+    {/if}
+
+    {if !empty($topcommentposts)}    
+     {if $topcommentposts->isEnabled()}
+      <h2>{$locale->tr("topcommentposts")}</h2>
+      <div id="Recently">
+       <ul> 
+        {assign var=commentposts value=$topcommentposts->getTopCommentPosts()}
+        {foreach from=$commentposts item=commentpost}
+         <li><a href="{$url->postLink($commentpost)}">{$commentpost->getTopic()} ({$commentpost->getTotalComments()} Posts)</a></li>
+        {/foreach}
+       </ul>
+      </div> 
+     {/if}
+    {/if}
+
+    {if !empty($topcommentvisitors)}    
+     {if $topcommentvisitors->isEnabled()}
+      <h2>{$locale->tr("topcommentvisitors")}</h2>
+      <div id="Recently">
+       <ul>
+        {assign var=commentvisitors value=$topcommentvisitors->getTopCommentVisitors()}
+        {foreach from=$commentvisitors item=commentvisitor}
+         <li><a href="{$commentvisitor.user_url}">{$commentvisitor.user_name} ({$commentvisitor.user_count} Comments)</a></li>
+        {/foreach}
+       </ul>
+      </div>  
+     {/if}
+    {/if}
+
+    {if !empty($topreadposts)}    
+     {if $topreadposts->isEnabled()}
+      <h2>{$locale->tr("topreadposts")}</h2>
+      <div id="Recently">
+       <ul>
+        {assign var=readposts value=$topreadposts->getTopReadPosts()}
+        {foreach from=$readposts item=readpost}
+         <li><a href="{$url->postLink($readpost)}">{$readpost->getTopic()} ({$readpost->getNumReads()} Times)</a></li>
+        {/foreach}
+       </ul>
+      </div> 
+     {/if}
+    {/if}
+        
+    {if !empty($toptrackbackposts)}    
+     {if $toptrackbackposts->isEnabled()}
+      <h2>{$locale->tr("toptrackbackposts")}</h2>
+      <div id="Recently">
+       <ul>  
+        {assign var=trackbackposts value=$toptrackbackposts->getTopTrackbackPosts()}
+        {foreach from=$trackbackposts item=trackbackpost}
+         <li><a href="{$url->postLink($trackbackpost)}">{$trackbackpost->getTopic()} ({$trackbackpost->getNumTrackbacks()} Trackbacks)</a></li>
+        {/foreach}
+       </ul>
+      </div>
+     {/if}
+    {/if}
+  
+  	<h2>{$locale->tr("syndicate")}</h2>
+    	<div id="Syndicate">
+    	<ul>
+    	<li><a title="RSS 0.90" href="{$url->rssLink("rss090")}">RSS 0.90</a></li>
+    	<li><a title="RSS 1.0" href="{$url->rssLink("rss10")}">RSS 1.0</a></li>
+    	<li><a title="RSS 2.0" href="{$url->rssLink("rss20")}">RSS 2.0</a></li>
+    	<li><a title="XML" href="{$url->rssLink("xml")}">XML</a></li>
+    	</ul>
+    	</div>
+</div>
+
+<div class="clearer">&nbsp;</div> 
+
+</div>
+
+<div id="Bottommenu"><a href="http://www.w3.org/WAI/">Accessible</a> and Valid <a href="http://validator.w3.org/check/referer">XHTML 1.0 Strict</a> and <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a></div>
+
+
+<!-- Please leave the credit intact. Thank you. -->
+<div id="Bottom">Powered by <a href="http://www.plogworld.net">pLog</a> - Design by <a href="http://www.balearweb.com/">BalearWeb</a></div>
+
+</div>
+
+</body>
+</html>

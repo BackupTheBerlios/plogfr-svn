@@ -1,0 +1,31 @@
+{include file="$blogtemplate/header.template" pageTitle=Features}
+
+  <div id="nav_bar">
+  <div id="section_title">
+     <h2>Success Stories</h2>
+  </div>
+  <br style="clear:both;" />
+  </div>
+      <ul id="tablist">
+      <li><a href="{$url->templatePage("features")}">Features</a></li>
+      <li><a href="{$url->templatePage("projectinfo")}">Project Info</a></li>
+      <li><a href="{$url->templatePage("screenshots")}">Screenshots</a></li>
+      <li><a href="{$url->templatePage("donations")}">Donations</a></li>
+      <li id="tab_active"><a id="tab_current" href="{$url->templatePage("demosites")}">Success Stories</a></li>
+      <li><a href="{$url->templatePage("press")}">References</a></li>
+	</ul>
+ <div id="page">
+  <ul>
+   {foreach from=$mylinkscategories item=linkcategory}
+     <li><b>{$linkcategory->getName()}</b>
+     <ul>
+      {foreach from=$linkcategory->getLinks() item=link}
+       <li><a href="{$link->getUrl()}" title="{$link->getDescription()}">{$link->getName()}</a></li>
+      {/foreach}
+     </ul>
+    </li>
+   {/foreach}  
+   </ul>
+ </div>  
+
+{include file="$blogtemplate/footer.template"}

@@ -1,0 +1,39 @@
+{assign var=blog value=$posts[0]->getBlogInfo()}
+{assign var=url value=$blog->getBlogRequestGenerator()}
+<?xml version="1.0" encoding="{$locale->getCharset()}"?>
+<feed version="0.3" xmlns="http://purl.org/atom/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:lang="{$locale->getLanguageId()|lower}"> 
+<title>Your site title</title> 
+<link rel="alternate" type="text/html" href="{$url->blogLink()}" /> 
+{assign var="newestDate" value=$posts[0]->getDateObject()}
+<modified>{$locale->formatDate($newestDate, "%Y-%m-%dT%H:%M:%SZ")}</modified> 
+<generator url="http://www.plogworld.net/" version="1.0">pLog</generator> 
+<copyright>Copyright (c) Your copyright notice</copyright> 
+ {foreach from=$posts item=post} 
+ {assign var=blog value=$post->getBlogInfo()}
+ {assign var=url value=$blog->getBlogRequestGenerator()}
+ <entry> 
+ <id>{$url->getAtomUniqueId($post)}</id>
+ <title>{$post->getTopic()|escape}</title> 
+ <link rel="alternate" type="text/html" href="{$url->postPermalink($post)}" /> 
+ {assign var="postDate" value=$post->getDateObject()} 
+ <modified>{$postDate->getW3Date()}</modified> 
+ <issued>{$locale->formatDate($postDate, "%Y-%m-%dT%H:%M:%S")}</issued> 
+ <created>{$locale->formatDate($postDate, "%Y-%m-%dT%H:%M:%SZ")}</created> 
+ <summary type="text/plain">{$post->getText()|strip_tags|truncate:200:" ..."|escape:"html"}</summary> 
+ <author> 
+ {assign var="postOwner" value=$post->getUserInfo()} 
+ <name>{$postOwner->getUsername()}</name> 
+ <url>{$url->blogLink()}</url> 
+ <email>{$postOwner->getEmail()}</email> 
+</author> 
+<dc:subject>
+{foreach from=$post->getCategories() item=category}
+{$category->getName()|escape} 
+{/foreach}
+</dc:subject> 
+ <content type="text/html" mode="escaped" xml:lang="{$locale->getLanguageId()|lower}" xml:base="{$url->blogLink()}"> 
+ {$post->getText()|escape} 
+</content> 
+</entry> 
+{/foreach} 
+</feed>

@@ -1,0 +1,14 @@
+{include file="$blogtemplate/header.template" pageTitle=Support}
+
+  <div id="nav_bar">
+  <div id="section_title">
+     <h2>Mailing Lists</h2>
+  </div>
+  <br style="clear:both;" />
+  </div>
+    <ul id="tablist">
+      <li><a href="{$url->templatePage("support")}">Forums</a></li>
+      <li id="tab_active"><a id="tab_current" href="{$url->templatePage("lists")}">Mailing Lists</a></li>
+	</ul>
+  
+{include file="$blogtemplate/footer.template"}

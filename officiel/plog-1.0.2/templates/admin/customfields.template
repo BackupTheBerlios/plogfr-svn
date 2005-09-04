@@ -1,0 +1,59 @@
+{include file="$admintemplatepath/header.template"}
+{include file="$admintemplatepath/navigation.template" showOpt=blogCustomFields title=$locale->tr("blogCustomFields")}
+
+        <form id="customFields" action="admin.php" method="post">
+        <div id="list">
+  {include file="$admintemplatepath/successmessage.template"}
+  {include file="$admintemplatepath/errormessage.template"}
+		
+            <table class="info">
+                <thead>
+                    <tr>
+                        <th style="width:10px;"><input class="checkbox" type="checkbox" class="check" name="all" id="all" value="1" onclick="toggleAllChecks('customFields');" /></th>
+                        <th style="width:180px;">{$locale->tr("name")}</th>
+                        <th style="width:350px;">{$locale->tr("description")}</th>
+                        <th style="width:70px;">{$locale->tr("type")}</th>                        
+                        <th style="width:70px;">{$locale->tr("hidden")}</th>
+                        <th style="width:95x;">{$locale->tr("actions")}</th>
+                    </tr>
+                </thead>
+				<tbody>
+				 {foreach from=$fields item=field}
+				 <tr class="{cycle values="odd,even"}">
+				   <td>
+				     <input class="checkbox" type="checkbox" name="fieldIds[{$field->getId()}]" id="checks_1" value="{$field->getId()}" />				   
+				   </td>
+				   <td class="col_highlighted">
+				     <a href="admin.php?op=editCustomField&amp;fieldId={$field->getId()}">{$field->getName()}</a>
+				   </td>
+				   <td>
+				     {$field->getDescription()}
+				  </td>
+				  <td>
+				    {if $field->getType() == 1}{$locale->tr("text_field")}{/if}
+					{if $field->getType() == 2}{$locale->tr("text_area")}{/if}
+					{if $field->getType() == 3}{$locale->tr("checkbox")}{/if}
+					{if $field->getType() == 4}{$locale->tr("date_field")}{/if}					
+				 </td>	
+				 <td>
+				   {if $field->isHidden()}{$locale->tr("yes")}{else}{$locale->tr("No")}{/if}
+				 </td>
+                 <td>
+                    <div class="list_action_button">
+                       <a href="?op=editCustomField&amp;fieldId={$field->getId()}"><img src="imgs/admin/icon_edit-16.png" alt="{$locale->tr("editCustomField")}" /></a>
+                       <a href="?op=deleteCustomField&amp;fieldId={$field->getId()}"><img src="imgs/admin/icon_delete-16.png" alt="{$locale->tr("delete")}" /></a>
+                     </div>
+                  </td>				 
+			  </tr>
+			  {/foreach}
+			  </tbody>
+			</table>
+        </div>
+        <div id="list_action_bar">
+	    {include file="$admintemplatepath/adminpager.template" style=list}
+            <input type="submit" name="delete" value="{$locale->tr("delete")}" class="submit" />
+            <input type="hidden" name="op" value="deleteCustomFields" />
+        </div>
+</form>
+{include file="$admintemplatepath/footernavigation.template"}
+{include file="$admintemplatepath/footer.template"}
