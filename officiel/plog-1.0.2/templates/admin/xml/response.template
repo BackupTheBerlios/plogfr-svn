@@ -1,5 +1,0 @@
-<?xml version="1.0"?>
-<response>
- <method>{$method}</method>
- <result>{$result}</result>
-</response>
