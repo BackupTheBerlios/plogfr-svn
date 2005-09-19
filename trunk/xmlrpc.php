@@ -285,6 +285,9 @@
                 // we have to do this in long way
                 $blogInfo = $blogsG->getBlogInfo( $blogid );
                 $url = $blogInfo->getBlogRequestGenerator();
+                // disable the generation of xhtml content or else the IXR_XMLRPC library will
+                // escape things twice!
+                $url->setXHTML( false );
                 
                 $dummy["htmlUrl"]        = $url->categoryLink( $cat );
                 $dummy["rssUrl"]         = "http://";
@@ -317,7 +320,8 @@
         if ($erg != false)
         {
             $item = $articles->getUserArticle($postid, $erg->_id);
-            $time = $item->getDateObject()->getTimestamp();
+            $dateObject = $item->getDateObject();
+            $time = $dateObject->getTimestamp();
             $time = mktime(
                 substr($time,8,2),
                 substr($time,10,2),
@@ -357,7 +361,8 @@
         if ($erg != false)
         {
             $item = $articles->getUserArticle($postid, $erg->_id);
-            $time = $item->getDateObject()->getTimestamp();
+            $dateObject = $item->getDateObject();
+            $time = $dateObject->getTimestamp();
             $time = mktime(
                 substr($time,8,2),
                 substr($time,10,2),
@@ -609,7 +614,8 @@
 
             foreach($list as $item)
             {
-                $time = $item->getDateObject()->getTimestamp();
+                $dateObject = $item->getDateObject();
+                $time = $dateObject->getTimestamp();
                 $time = mktime(
                     substr($time,8,2),
                     substr($time,10,2),
@@ -662,7 +668,8 @@
 
             foreach($list as $item)
             {
-                $time = $item->getDateObject()->getTimestamp();
+                $dateObject = $item->getDateObject();
+                $time = $dateObject->getTimestamp();
                 $time = mktime(
                     substr($time,8,2),
                     substr($time,10,2),
