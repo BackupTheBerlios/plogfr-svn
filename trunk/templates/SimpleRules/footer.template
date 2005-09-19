@@ -1,0 +1,98 @@
+</div>
+</div>
+<div id="menu">
+<div id="menuContent" style="padding:10px;">
+<ul>
+<li>
+<form method="post" action="{$url->getIndexUrl()}">
+<div>
+<input type="text" name="searchTerms" size="15" value="" />
+<input type="hidden" name="op" value="Search" />
+<input type="hidden" name="blogId" value="{$blog->getId()}" />
+<input type="submit" name="Search" value="Suche" />
+</div>
+</form>
+</li>
+
+{assign var=blogOwner value=$blog->getOwnerInfo()}
+{if $blogOwner->hasPicture()}
+
+<li><h2>{$locale->tr("about_myself")|capitalize}</h2>
+<ul>
+<li><div align="center">
+{assign var=picture value=$blogOwner->getPicture()}
+<img src="{$url->resourcePreviewLink($picture)}" alt="{$picture->getDescription()}" />
+</div>
+</li>
+</ul>
+</li>
+{/if}
+
+<li><h2>{$locale->tr("recently")|capitalize}</h2>
+<ul>
+{foreach from=$recentposts item=post}
+<li><a title="{$post->getTopic()|strip_tags}"
+href="{$url->postLink($post)}">{$post->getTopic()}</a></li>
+{/foreach}
+</ul>
+</li>
+<li><h2>{$locale->tr("categories")|capitalize}</h2>
+<ul>
+{foreach from=$articlecategories item=articleCategory}
+<li><a href="{$url->categoryLink($articleCategory)}">
+{$articleCategory->getName()}</a>
+[{$articleCategory->getNumArticles()}]</li>
+{/foreach}
+</ul>
+</li>
+<li><h2>{$locale->tr("archives")|capitalize}</h2>
+<ul>
+{foreach from=$archives item=archivelink}
+<li><a href="{$archivelink->getUrl()}">{$archivelink->getName()}</a>
+[{$archivelink->getNumArticles()}]</li>
+{/foreach}
+</ul>
+</li>
+<li><h2>{$locale->tr("links")|capitalize}</h2>
+<ul>
+{foreach name=linkcategories from=$mylinkscategories item=linkcategory}
+{if $linkcategory->getNumLinks()>0}
+<li>
+<b>{$linkcategory->getName()}</b>
+
+{foreach name=linkcategorylinks from=$linkcategory->getLinks() item=link}
+{if $smarty.foreach.linkcategorylinks.first}<ul>{/if}
+<li><a href="{$link->getUrl()}"
+title="{$link->getDescription()}">{$link->getName()}</a></li>
+{if $smarty.foreach.linkcategorylinks.last}</ul>{/if}
+{/foreach}
+
+</li>
+{/if}
+{/foreach}
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+</div>
+<br style="clear:both;" />
+</div>
+
+<div id="footer">
+<p style="float:left;">Design by <a href="http://poolie.kulando.de/">Alexander Kaiser</a></span></p>
+<p style="float:right; text-align:right;"><span>
+
+<a title="{$locale->tr("main")}" href="{$url->blogLink()}">{$locale->tr("main")}</a> | <a title="{$locale->tr("albums")}" href="{$url->albumLink()}">{$locale->tr("albums")}</a>
+{if $flickr}
+{if $flickr->isEnabled()}
+| <a title="Flickr" href="{$flickr->pluginTemplatePage()}">Flickr</a>
+{/if}
+{/if}
+
+<br />
+<a title="RSS 0.90 feed." href="{$url->rssLink("rss090")}" style="color:#898989;">RSS 0.90</a> | <a title="RSS 1.0 feed." href="{$url->rssLink("rss10")}" style="color:#898989;">RSS 1.0</a> | <a title="RSS 2.0 feed." href="{$url->rssLink("rss20")}" style="color:#898989;">RSS 2.0</a> | <a title="Atom 0.3 feed." href="{$url->rssLink("atom")}" style="color:#898989;">Atom 0.3</a></span></p>
+</div>
+</body>
+</html>

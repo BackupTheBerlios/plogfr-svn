@@ -1,0 +1,33 @@
+{assign var="postPageTitle" value=$post->getTopic()}
+{assign var="postPageTitle" value=" - $postPageTitle - Trackbacks"}
+{include file="$blogtemplate/header.template"}
+<div id="content" class="narrowcolumn">
+<div class="navigation">
+{if $post->getNextArticle() != ""}
+<div class="alignleft">
+{assign var=nextpost value=$post->getNextArticle()}
+&laquo; <a href="{$url->postTrackbackStatsLink($nextpost)}"> {$nextpost->getTopic()}</a>
+</div>
+{/if}
+
+{if $post->getPrevArticle() != ""}
+<div class="alignright">
+{assign var=prevpost value=$post->getPrevArticle()}
+<a href="{$url->postTrackbackStatsLink($prevpost)}"> {$prevpost->getTopic()}</a> &raquo;
+</div>
+{/if}
+</div>
+<div class="post">
+<h2>{$locale->tr("trackbacks_for_article")} "<a href="{$url->postLink($post)}">{$post->getTopic()}</a>"</h2>
+<div class="entry">
+{foreach from=$trackbacks item=trackback}
+<a href="{$trackback->getUrl()}">{$trackback->getTitle()}</a><br/>
+<b>{$locale->tr("trackback_excerpt")}:</b> {$trackback->getExcerpt()}<br/>
+<b>{$locale->tr("trackback_weblog")}:</b> {$trackback->getBlogName()}<br/>
+{assign var="trackbackDate" value=$trackback->getDateObject()}
+<b>{$locale->tr("date")}:</b> {$locale->formatDate($trackbackDate, "%d.%m.%Y %H:%M")}<br/><br/>
+{/foreach}
+</div>
+</div>
+</div>
+{include file="$blogtemplate/footer.template"}

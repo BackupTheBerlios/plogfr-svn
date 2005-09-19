@@ -1,0 +1,13 @@
+{assign var="postPageTitle" value=" - Impressum"}
+{include file="$blogtemplate/header.template"}
+<div id="content" class="narrowcolumn">
+<div>
+<div>
+<h2 class="title">Impressum</h2>
+{$blog->getImpressum()}
+</div>
+<br />
+</div>
+</div>
+
+{include file="$blogtemplate/footer.template"}

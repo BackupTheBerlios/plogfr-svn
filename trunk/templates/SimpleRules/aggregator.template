@@ -1,0 +1,25 @@
+{assign var="postPageTitle" value=" - RSS Aggregator Beispiel: netzeitung.de"}
+{include file="$blogtemplate/header.template"}
+<div id="content" class="narrowcolumn">
+<div>
+<div>
+<h2 class="title">RSS Aggregator Beispiel: netzeitung.de</h2>
+{if $rss->parse("http://www.netzeitung.de/export/news/rss/titelseite.xml")}
+{assign var=channel value=$rss->getChannel()}
+<p>{$channel->getDescription()}</p>
+<ul style="list-style: none;">
+{foreach from=$rss->getItems() item=rssItem}
+<li>
+<a href="{$rssItem->getLink()}">{$rssItem->getTitle()}</a><br />
+<p>
+{$rssItem->getDescription()}<br /><br />
+</p>
+</li>
+{/foreach}
+</ul>
+{/if}
+</div>
+<br />
+</div>
+</div>
+{include file="$blogtemplate/footer.template"}

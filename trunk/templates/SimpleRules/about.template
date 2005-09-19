@@ -1,0 +1,13 @@
+{assign var="postPageTitle" value=" - About"}
+{include file="$blogtemplate/header.template"}
+<div id="content" class="narrowcolumn">
+<div>
+<div>
+<h2 class="title">About</h2>
+{$blog->getAbout()}
+</div>
+<br />
+</div>
+</div>
+
+{include file="$blogtemplate/footer.template"}

@@ -1,0 +1,18 @@
+<!-- Blog Artikel -->
+<!-- {$url->postTrackbackLink($post)} -->
+{assign var="postDate" value=$post->getDateObject()}
+{assign var="postOwner" value=$post->getUserInfo()}
+<h2><a href="{$url->postPermalink($post)}">{$post->getTopic()}</a></h2>
+<small>{$locale->tr("posted_by")} {$postOwner->getUsername()} | {$locale->formatDate($postDate,"%j %b, %Y")}, {$locale->formatDate($postDate,"%H:%M")}</small>
+<div class="entry">
+{$post->getText()}
+</div>
+
+<div>
+<p class="postmetadata">
+{foreach name=categories from=$post->getCategories() item=postcategory}
+<a href="{$url->categoryLink($postcategory)}">{$postcategory->getName()}</a>{if !$smarty.foreach.categories.last}, {/if}
+{/foreach} |
+<a href="{$url->postPermalink($post)}">{$locale->tr("comments")} ({$post->getTotalComments()})</a> |
+<a href="{$url->postTrackbackStatsLink($post)}">{$locale->tr("trackbacks")} ({$post->getNumTrackbacks()})</a></p>
+</div>

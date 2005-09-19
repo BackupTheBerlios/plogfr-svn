@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xml:lang="{$locale->getLanguageId()}"
+lang="{$locale->getLanguageId()}" dir="{$locale->getDirection()}">
+
+<head>
+<title>{$blog->getBlog()}{$postPageTitle}</title>
+
+<!-- Meta Tags -->
+<meta http-equiv="content-type" content="text/html; charset={$locale->getCharset()}" />
+<meta name="generator" content="{$version}" />
+<meta http-equiv="Content-Language" content="{$locale->getLanguageId()}" />
+
+<!-- Yepp, that's what you're looking for. Isn't it. -->
+<link rel="stylesheet" type="text/css" media="screen" href="{$url->getTemplateFile("css/poolie.css")}" />
+
+<!-- Feeds -->
+<link rel="alternate" type="application/xml" title="RSS 2.0" href="{$url->rssLink("rss20")}" />
+<link rel="alternate" type="application/xml" title="RSS 1.0" href="{$url->rssLink("rss10")}" />
+<link rel="alternate" type="application/xml" title="RSS 0.90" href="{$url->rssLink("rss090")}" />
+<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="{$url->rssLink("atom")}" />
+
+</head>
+
+<body>
+<div id="head">
+<div id="geek">
+<p class="geekContent"><span>{$blog->getAbout()}</span></p>
+</div>
+</div>
+
+<div id="main">
+<div id="mainContent">
+<div id="logo">
+<h1><a href="{$url->blogLink()}">{$blog->getBlog()}</a></h1>
+</div>
+
+<div id="blog">
+<div id="blogContent" style="padding:10px;">

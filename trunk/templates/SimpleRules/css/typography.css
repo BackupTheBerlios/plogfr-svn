@@ -1,0 +1,96 @@
+/* SimpleRules CSS 1.0 - Alexander Kaiser */
+/* poolie.kulando.de - alex@poolie.de */
+/* released for pLog (plogworld.net) unter the GPL */
+
+body, ol, ul, li, p, input, textarea, select {
+font-family: "Lucida Sans Unicode", "Trebuchet MS", Arial, sans-serif;
+color: #313131;
+font-size: 11px;
+}
+
+blockquote {
+background-color: #F7F5F1;
+border: 1px dotted #9B1B34;
+padding: 5px;
+}
+
+#logo h1 {
+font-size: 30px;
+color: #9B1B34;
+display: inline;
+}
+
+#menuContent h2 {
+font-size: 12px;
+color: #ffffff;
+}
+
+#menuContent {
+color: #C47081;
+}
+
+/* links */
+a, a:active, a:visited {
+color: #9B1B34;
+text-decoration: none;
+font-weight: normal;
+}
+
+a:hover {
+color: #5F5A53;
+font-weight: normal;
+}
+
+#menuContent a, #menuContent a:active, #menuContent a:visited {
+color: #CCCCCC;
+text-decoration: none;
+font-weight: normal;
+}
+
+#menuContent a:hover {
+color: #999999;
+font-weight: normal;
+}
+
+#blogContent h2 {
+font-size: 18px;
+margin: 0 0 0 0;
+}
+
+#blogContent h2 a, #blogContent h2 a:active, #blogContent h2 a:visited {
+color: #4E5A69;
+text-decoration: none;
+font-weight: bold;
+}
+
+#blogContent h2 a:hover {
+color: #999999;
+font-weight: bold;
+}
+
+.entry p {
+padding: 5px;
+}
+
+.geekContent {
+padding-top: 30px;
+text-align: right;
+color: #C3C8CD;
+font-size: 11px;
+}
+
+small {
+font-family: Arial, Helvetica, Sans-Serif;
+font-size: 0.9em;
+line-height: 1.5em;
+}
+
+#footer a, #footer a:active, #footer a:visited {
+color: #E7E0D0;
+text-decoration: none;
+font-weight: normal;
+}
+
+#footer a:hover {
+color: #999999;
+}

@@ -1,0 +1,17 @@
+{include file="$blogtemplate/header.template"}
+<div id="content" class="narrowcolumn">
+
+<div class="post">
+<h2 class="title">{$locale->tr("error")}</h2>
+<div class="entry">
+<br/>
+{$locale->tr($message)}
+<br/><br/>
+{$locale->tr("generated")} {$locale->formatDate($now,"%d %b, %Y")}
+<br/><br/>
+<a href="javascript:history.go(-1)">{$locale->tr("back")}</a>
+</div>
+</div>
+</div>
+
+{include file="$blogtemplate/footer.template"}
