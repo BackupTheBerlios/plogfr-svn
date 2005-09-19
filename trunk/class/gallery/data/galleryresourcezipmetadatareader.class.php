@@ -14,16 +14,6 @@
         	$this->GalleryResourceBaseMetadataReader( $resource );
         }
 
-        /**
-         * Returns an array with the name of the files insize the zip archive
-         *
-         * @return Array of strings.
-         */
-        function getFiles()
-        {
-        	return $this->_metadata["zip"]["files"];
-        }
-
 		/**
 		 * returns the total compressed size of this file
 		 *

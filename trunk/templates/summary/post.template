@@ -1,6 +1,6 @@
     {assign var="blog" value=$post->getBlogInfo()}
 	{assign var="request" value=$blog->getBlogRequestGenerator()}
-    <h5>{$post->getTopic()}</h5>
+    <h5>{$post->getTopic()|strip_tags}</h5>
     <div class="subtitle">
         {$locale->tr("blog")} <a href="{$request->blogLink()}">{$blog->getBlog()}</a>
     </div>

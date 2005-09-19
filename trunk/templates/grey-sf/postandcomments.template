@@ -15,7 +15,7 @@
    {include file="$blogtemplate/post.template"}
    {foreach from=$comments item=comment}
     <p class="commentheader">
-     <img src="{$url->getUrl("/imgs/comment_icon1.gif")}"/> {$comment->getTopic()} <span class="categoryinfo">[<a href="{$url->replyCommentLink($post,$comment)}">{$locale->tr("reply")}</a>]</span>
+     <img src="{$url->getUrl("/imgs/comment_icon1.gif")}"/> {$comment->getTopic()|strip_tags} <span class="categoryinfo">[<a href="{$url->replyCommentLink($post,$comment)}">{$locale->tr("reply")}</a>]</span>
     </p>
     <p>
       {$comment->getText()}

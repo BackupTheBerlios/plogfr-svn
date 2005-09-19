@@ -260,7 +260,6 @@
         {
             // get the name of the action
             $request = new Request( $httpRequest );
-            $actionName = $request->getValue($this->_actionParam );
 
             $i = 0;
             $performed = false;
@@ -269,7 +268,10 @@
                 // get the value of this varilable, every loop
                 global $_plogController_forwardAction;
 				global $_plogController_previousAction;
-				
+
+                    // jondaley: 08/29/2005, what are these here for??
+                    // perhaps the global statements should be moved
+                    // inside the elseif loop below?
                 $_plogController_forwardAction;
 				$_plogController_previousAction;
 
@@ -277,11 +279,13 @@
                     // if this is the first iteration, then we have to take this path...
                     // since we will use the http request to determine which action to
                     // use next
+                    $actionName = $request->getValue($this->_actionParam );
                     $actionClass = $this->_getActionClassName($request->getValue($this->_actionParam));
                 }
                 elseif (!empty($_plogController_forwardAction)) {
                     // if we're forwarding the current execution flow to another action, then
                     // we'll go this way
+                    $actionName = $_plogController_forwardAction;
                     $actionClass = $this->_getActionClassName($_plogController_forwardAction);
                     $httpRequest = HttpVars::getRequest();
                     $_plogController_forwardAction = null;

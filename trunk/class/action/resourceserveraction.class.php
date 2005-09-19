@@ -60,7 +60,7 @@
             // "user" parameter.
             if( !$blogId && !$blogName ) {
             	// check if there was a user parameter
-                 if( !empty($userName) ) {
+                if( !empty($userName) ) {
                 	// if so, check to which blogs the user belongs
                 	$users = new Users();
                  	$userInfo = $users->getUserInfoFromUsername( $userName );
@@ -71,7 +71,11 @@
                         // get the first one (any better rule for this?)
                     	if( !empty($userBlogs)) {						
 	                		$blogId = $userBlogs[0]->getId();
+                        } else{
+                        	$blogId = $this->_config->getValue('default_blog_id');
                         }
+                    } else{
+                    	$blogId = $this->_config->getValue('default_blog_id');
                     }
                 }
                 else {

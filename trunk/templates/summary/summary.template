@@ -1,6 +1,6 @@
 {include file="summary/header.template"}
  {foreach from=$posts item=post}
-   <h3>{$post->getTopic()}</h3>
+   <h3>{$post->getTopic()|strip_tags}</h3>
 {assign var="postDate" value=$post->getDateObject()}
 {assign var="postOwner" value=$post->getUserInfo()}
 <span class="date">{$postOwner->getUsername()} | {$locale->formatDate($postDate,"%d %B, %Y %H:%M")}</span>

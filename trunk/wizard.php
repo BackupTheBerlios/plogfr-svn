@@ -649,6 +649,9 @@ $Inserts[111] = "INSERT INTO {dbprefix}config (config_key, config_value, value_t
 $Inserts[112] = "INSERT INTO {dbprefix}config (config_key, config_value, value_type) VALUES('template_cache_lifetime', '-1', 3);";
 $Inserts[113] = "INSERT INTO {dbprefix}config (config_key, config_value, value_type) VALUES('use_http_accept_language_detection', '0', 1);";
 $Inserts[114] = "INSERT INTO {dbprefix}config (config_key, config_value, value_type) VALUES('session_save_path', '', 3);";
+$Inserts[115] = "INSERT INTO {dbprefix}config (config_key, config_value, value_type) VALUES('skip_dashboard', '0', 1);";
+$Inserts[116] = "INSERT INTO {dbprefix}config (config_key, config_value, value_type) VALUES('use_captcha_auth', '0', 1);";
+
 
     /**
      * Open a connection to the database
@@ -1438,7 +1441,7 @@ $Inserts[114] = "INSERT INTO {dbprefix}config (config_key, config_value, value_t
             // ---
             // add the new configuration settings that were added for 1.0
             // ---
-            $newSettings = range( 71, 112 );
+            $newSettings = range( 71, 116 );
             foreach( $newSettings as $settingId ) {
                 $setting = $Inserts[$settingId];
                 $query = str_replace( "{dbprefix}", $this->_dbPrefix, $setting );

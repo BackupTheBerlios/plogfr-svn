@@ -33,7 +33,7 @@
 	     <label for="postTopic">{$locale->tr("topic")}</label>
 		 <span class="required">*</span>
 		 <div class="formHelp">{$locale->tr("topic_help")}</div>
-	     <input type="text" id="postTopic" name="postTopic" style="width:100%" value="{$postTopic}" />
+	     <input type="text" id="postTopic" name="postTopic" style="width:100%" value="{$postTopic|escape:"html"}" />
 	     {include file="$admintemplatepath/validate.template" field=postTopic message=$locale->tr("error_missing_post_topic")}
 	   </div>
 	   
@@ -63,11 +63,11 @@
 	     {/if}
 	   </div>
 
-	   <div class="field">
+	   <!--<div class="field">
 	     <label for="trackbackUrls">{$locale->tr("trackback_urls")}</label>
 		 <div class="formHelp">{$locale->tr("trackback_urls_help")}</div>
 	     <textarea rows="5" id="trackbackUrls" name="trackbackUrls" style="width:100%">{$trackbackUrls}</textarea>
-	   </div>	   
+	   </div>-->
 	   
 	   <!-- text area custom fields -->
       {include file="$admintemplatepath/newpost_customfields.template" type=2 fields=$customfields}
@@ -78,7 +78,7 @@
 	   <div class="field">
 	     <label for="postSlug">{$locale->tr("post_slug")}</label>
 		 <div class="formHelp">{$locale->tr("post_slug_help")}</div>
-	     <input type="text" name="postSlug" id="postSlug" style="width:100%" value="{$postSlug}" />
+	     <input type="text" name="postSlug" id="postSlug" style="width:100%" value="{$postSlug|escape:"html"}" />
 	   </div>
 	   
        <div class="field">

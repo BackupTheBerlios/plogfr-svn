@@ -244,7 +244,7 @@
         {
         	$value = $this->_props->getValue( $key );
             if( $value == "" || $value == null )
-            	if( !isset( $defaultValue ) || is_null( $defaultValue ) )
+            	if(isset($defaultValue))
                 	$value = $defaultValue;
 
             return $value;

@@ -68,7 +68,8 @@
                       IF(p.permission_id = 1, 1, 0 ) AS site_admin,
                       u.status AS status
                       FROM {$prefix}users u LEFT JOIN {$prefix}users_permissions p ON u.id = p.user_id
-                      WHERE u.user = '".Db::qstr($user)."' AND u.password = '".md5($pass)."'";
+                      WHERE u.user = '".Db::qstr($user)."' AND u.password = '".md5($pass)."'
+                      ORDER BY blog_id";
 
             $userInfo = $this->_getUserInfoFromQuery( $query );
 
@@ -90,7 +91,7 @@
                              IF(p.permission_id = 1, 1, 0 ) AS site_admin,
                              u.status AS status
                       FROM {$prefix}users u LEFT JOIN {$prefix}users_permissions p ON u.id = p.user_id
-                      WHERE u.user = '".Db::qstr($username)."'";
+                      WHERE u.user = '".Db::qstr($username)."' ORDER BY blog_id";
 
             $userInfo = $this->_getUserInfoFromQuery( $query );
 
@@ -116,7 +117,7 @@
                                  IF(p.permission_id = 1, 1, 0 ) AS site_admin,
                                  u.status AS status
                           FROM {$prefix}users u LEFT JOIN {$prefix}users_permissions p ON u.id = p.user_id
-                          WHERE u.id = $userid";
+                          WHERE u.id = $userid ORDER BY blog_id";
 
                 $userInfo = $this->_getUserInfoFromQuery( $query, $extendedInfo );
 

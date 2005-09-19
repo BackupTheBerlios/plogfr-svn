@@ -20,7 +20,7 @@
 <h2>{$locale->tr("comments")}</h2>	
    		{foreach from=$comments item=comment}
 
-<h3 class="commentheader"><img src="{$url->getUrl("/imgs/comment_icon1.gif")}" alt="Comment Icon" /> {$comment->getTopic()}</h3>
+<h3 class="commentheader"><img src="{$url->getUrl("/imgs/comment_icon1.gif")}" alt="Comment Icon" /> {$comment->getTopic()|strip_tags}</h3>
 
 <p class="commentposterinfo">
 		{assign var="postDate" value=$comment->getTimestamp()}

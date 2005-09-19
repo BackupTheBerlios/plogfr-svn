@@ -42,7 +42,7 @@
     {else}
      {$comment->getUsername()}
     {/if}
-     @ {$locale->formatDate($postDate,"%H:%M")}, {$locale->formatDate($postDate, "%Y-%m-%d")}
+     @ {assign var=commentDate value=$comment->getDateObject()}	{$locale->formatDate($commentDate, "%H:%M, %Y-%m-%d")}
    </div>
   {/foreach}
  </div>

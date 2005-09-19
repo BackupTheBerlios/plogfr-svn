@@ -119,7 +119,7 @@
 		{
         	$this->_postText     = trim(Textfilter::xhtmlize($this->_request->getValue( "postText" )));
             $this->_postExtendedText = trim(Textfilter::xhtmlize($this->_request->getValue( "postExtendedText" )));
-            $this->_postTopic    = trim(Textfilter::filterAllHTML($this->_request->getValue( "postTopic" )));
+            $this->_postTopic    = trim(Textfilter::xhtmlize(Textfilter::filterAllHTML($this->_request->getValue( "postTopic" ))));
             $this->_postCategories = $this->_request->getValue( "postCategories" );
 			$this->_postSlug = trim(Textfilter::filterAllHTML($this->_request->getValue( "postSlug" )));
             $this->_postStatus   = $this->_request->getValue( "postStatus" );

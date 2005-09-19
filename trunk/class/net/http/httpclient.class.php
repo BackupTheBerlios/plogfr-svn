@@ -140,7 +140,7 @@ class HttpClient
 					}
 					else
 					{
-						$path = $URI_PARTS["path"].($URI_PARTS["query"] ? "?".$URI_PARTS["query"] : "");
+						$path = $URI_PARTS["path"].(( array_key_exists( "query", $URI_PARTS ) && $URI_PARTS["query"] ) ? "?".$URI_PARTS["query"] : "");
 						// no proxy, send only the path
 						$this->_httprequest($path, $fp, $URI, $this->_httpmethod);
 					}
@@ -819,6 +819,7 @@ class HttpClient
 		}
 
 		//$results = fread($fp, $this->maxlength);
+		$results = "";
 		while(!feof($fp)) {
 			$results .= fgets($fp, 128);
 		}

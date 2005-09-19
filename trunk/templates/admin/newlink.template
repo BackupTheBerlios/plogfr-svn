@@ -56,11 +56,13 @@
 			</select>
         </div>
         
+        {*
         <div class="field">
         	<label for="bookmarklet">{$locale->tr("bookmarklet")}</label>
         	<div class="formHelp">{$locale->tr("bookmarklet_help")}</div>
         	<a href="javascript:void(plogbm=window.open('{$url->getAdminUrl()}?op=newLink&linkName='+encodeURIComponent(document.title)+'&linkUrl='+encodeURIComponent(location.href),'plogbm','toolbar=1,status=1,location=1,scrollbars=1,menubar=1,resizable=1'));" onclick="window.alert('{$locale->tr("bookmarklet_help")}');">{$locale->tr("bookmarkit_to_plog")}</a>
         </div>
+        *}
         
         </fieldset>
         <div class="buttons">

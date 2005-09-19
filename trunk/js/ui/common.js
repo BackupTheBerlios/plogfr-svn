@@ -291,12 +291,15 @@ function previewPost_old( formId )
 
 function previewPost( formId )
 {
+
     form = document.getElementById( formId )
     
-    if( submitNewPost( form )) {
-        preview = window.open( 'about:blank', '', 'scrollbars=yes,resizable=yes,toolbar=no' );
+    if( submitNewPost( form )) { 
+        preview = window.open( '', '', 'scrollbars=yes,resizable=yes,toolbar=no' );
+        preview.focus();
         
-        // write the contents as a form with hidden fields
+        // write the contents as a form with hidden fields        
+        preview.document.open();
         preview.document.write( '<html><body><div style="display:none">' +
                                 '<form name="previewForm" method="post" action="admin.php">' +
                                 '<input type="hidden" name="op" value="previewPost">' );
@@ -310,7 +313,7 @@ function previewPost( formId )
         else {
         	postText = form.postText.value;
         	postExtendedText = form.postExtendedText.value;
-    	}
+    	}    	
         preview.document.write( '<textarea name="postText">' + postText + '</textarea>' +
                                 '<textarea name="postTopic">' + form.postTopic.value + '</textarea>' +
                                 '<textarea name="postExtendedText">' + postExtendedText + '</textarea>' +
@@ -324,7 +327,8 @@ function previewPost( formId )
             if( form.postCategories.options[i].selected )
                 preview.document.write( '<option selected="selected" value="' + form.postCategories.options[i].value + '">test</option>' );
         }
-        preview.document.write( '</select>' );        
+        
+        preview.document.write( '</select>' );                        
         // custom fields -- since we don't know their exact names and amount, we need to loop through the whole form to find them!        
         for(var i = 0; i < form.elements.length; i++ ) {
             var itemName = form.elements[i].name;
@@ -342,9 +346,10 @@ function previewPost( formId )
         preview.document.write( '</form></div>' +
                                 '<b>Loading preview, please wait...</b>' +
                                 '</body></html>' );
+        preview.document.close();
     
         // and submit the form
-        preview.document.previewForm.submit();        
+        preview.document.previewForm.submit();
     }
 }
 

@@ -4,7 +4,7 @@
     <div class="field">
 	  <label for="customField[{$fieldId}]">{$field->getName()}</label>
 	  <div class="formHelp">{$field->getDescription()}</div>
-      <input type="text" name="customField[{$fieldId}]" id="customField[{$fieldId}]" value="{$customField[$fieldId]}" />
+      <input type="text" name="customField[{$fieldId}]" id="customField[{$fieldId}]" value="{$customField[$fieldId]|escape:"html"}" />
 	</div>  
   {elseif $field->getType() == 2 && ($type == 2 || $type == "")}
     <div class="field">

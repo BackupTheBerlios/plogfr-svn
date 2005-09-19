@@ -45,7 +45,8 @@
         	$this->_albumName = Textfilter::filterAllHTML($this->_request->getValue( "albumName" ));
             $this->_albumDescription = Textfilter::filterAllHTML($this->_request->getValue( "albumDescription" ));
             $this->_parentId = $this->_request->getValue( "parentId" );			
-			
+            $showAlbum = $this->_request->getValue("showAlbum") ? 1 : 0;
+            
 			// create the album
         	$albums = new GalleryAlbums();			
 			$t = new Timestamp();
@@ -55,7 +56,7 @@
 									   $this->_parentId, 
 									   $t->getTimestamp(),
 									   Array(),
-									   true );
+									   $showAlbum);
 									   
 			$this->notifyEvent( EVENT_PRE_ALBUM_ADD, Array( "album" => &$album ));
 			// and add it to the database

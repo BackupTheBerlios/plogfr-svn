@@ -84,7 +84,9 @@
                     }
                     
                     // merge the plugin locale with the big locale
-                    $locale->mergeLocale( $pluginLocale );                    
+                    if ( isset( $pluginLocale ) ) {
+                        $locale->mergeLocale( $pluginLocale );                    
+                    }
                 }
                 
                 $loadedLocales[$localeCode] = $locale;

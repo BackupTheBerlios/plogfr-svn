@@ -54,7 +54,7 @@
                             <input class="checkbox" type="checkbox" name="commentIds[{$comment->getId()}]" id="checks_{$comment->getId()}" value="{$comment->getId()}" />
                         </td>
                         <td class="col_highlighted">
-                            {$comment->getTopic()}
+                            {$comment->getTopic()|strip_tags}
                         </td>
 						<td>
 						    {$comment->getText()}

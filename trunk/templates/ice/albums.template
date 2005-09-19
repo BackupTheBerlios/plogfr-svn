@@ -6,7 +6,7 @@
 
  <div class="resources">
   <h2>{$locale->tr("albums")}</h2>
-  <p>
+  <br/>
   {foreach from=$albums item=album}
 	<div class="album">
 	<a href="{$url->albumLink($album)}"><img src="{$url->getTemplateFile("icons/folder.png")}" alt="{$album->getName()}" /></a><br />
@@ -14,7 +14,7 @@
 	</div>
   {/foreach}
   <div style="clear:left">&nbsp;</div>
-  </p>
+  <br/>
  </div>
 
 <!-- end of the albums -->

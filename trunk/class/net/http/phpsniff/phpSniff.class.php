@@ -191,8 +191,8 @@ class phpSniff extends phpSniff_core
         // 20020425 :: besfred
         if(empty($UA)) $UA = getenv('HTTP_USER_AGENT');
         if(empty($UA)) {
-            $pv = explode(".", PHP_VERSION);
-            $UA = ( $pv[0] > 3 && $pv[1] > 0 ) ? $_SERVER['HTTP_USER_AGENT'] : $HTTP_SERVER_VARS['HTTP_USER_AGENT'];
+            global $HTTP_SERVER_VARS;
+            $UA = ( phpversion() >= "4.1.0"  ) ? $_SERVER['HTTP_USER_AGENT'] : $HTTP_SERVER_VARS['HTTP_USER_AGENT'];
         }
         // 20020910 :: rraymond
         if(empty($UA)) return false;

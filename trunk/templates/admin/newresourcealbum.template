@@ -35,7 +35,14 @@
 	<div class="formHelp">{$locale->tr("album_description_help")}</div>
     <textarea name="albumDescription" id="albumDescription" rows="10" cols="60">{$albumDescription}</textarea>
    </div>
-   </fieldset>
+   <div class="field">
+    <label for="showAlbum">{$locale->tr("show")}</label>
+    <div class="formHelp">
+     <input class="checkbox" type="checkbox" id="showAlbum" name="showAlbum" value="1" 
+          checked="checked" />
+     {$locale->tr("show_album_help")}
+   </div> 
+   </div>   </fieldset>
    <div class="buttons">
 	<input type="reset" name="reset" value="{$locale->tr("reset")}" />
     <input type="submit" name="addAlbum" value="{$locale->tr("add")}" />

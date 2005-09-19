@@ -63,7 +63,7 @@
 		"mpg" => GALLERY_RESOURCE_VIDEO,
 		"mpeg" => GALLERY_RESOURCE_VIDEO,
         "wmv" => GALLERY_RESOURCE_VIDEO,
-		"asf" => GALLERY_RESOURCE_VIDEO,
+		//"asf" => GALLERY_RESOURCE_VIDEO,
         "mov" => GALLERY_RESOURCE_VIDEO,
         "divx" => GALLERY_RESOURCE_VIDEO,
 		"rm" => GALLERY_RESOURCE_VIDEO,
@@ -276,23 +276,6 @@
 		}
 
 		/**
-		 * @private
-		 * finds out the right resource type for a given file upload 
-		 */
-		function getResourceType( $fileName )
-		{
-			// get the resource type
-			$fileParts = explode( ".", $fileName );
-			$fileExt = strtolower($fileParts[count($fileParts)-1]);
-			if( array_key_exists( $fileExt, $this->_extensionToType ))
-				$resourceType = $this->_extensionToType[ $fileExt ];
-			else
-				$resourceType = GALLERY_RESOURCE_UNKNOWN;
-			
-			return $resourceType;	
-		}
-
-		/**
 		 * Adds a row related to a resource to the database. You should usually use
 		 * GalleryResources::addResource() or GalleryResources::addResourceFromDisk(), which are more
 		 * suitable and will do most of the job for you.
@@ -382,7 +365,7 @@
 			$outFile = GalleryResourceStorage::getPreviewsFolder( $ownerId ).$fileName;
 			
 			// and finally, we can generate the preview!
-			$result = $resizer->generate( $outFile, $previewHeight, $previewWidth, $previewKeepAspectRatio );
+			$result = $resizer->generate( $outFile, $previewWidth, $previewHeight, $previewKeepAspectRatio );
 			
 			return $result;
 		}
@@ -417,7 +400,36 @@
 			$result = $resizer->generate( $outFile, $previewWidth, $previewHeight, $previewKeepAspectRatio );
 			
 			return $result;
-		}		
+		}
+		
+		/**
+		 * @private
+		 * @param fileName
+		 * @param metadata
+		 */
+		function _getResourceType( $fileName, &$metadata )
+		{
+  			// find out the right resource type based on the extension
+			// get the resource type
+			$fileParts = explode( ".", $fileName );
+			$fileExt = strtolower($fileParts[count($fileParts)-1]);
+			
+			//asf need special working
+			if ("asf" == $fileExt ){			 
+                if (!($metadata["audio"]["codec"]))                            
+                    $resourceType = GALLERY_RESOURCE_SOUND;
+                else 
+                    $resourceType = GALLERY_RESOURCE_VIDEO;
+             }           
+ 		     else {
+    			if( array_key_exists( $fileExt, $this->_extensionToType ))
+	   			     $resourceType = $this->_extensionToType[ $fileExt ];
+		  	   else
+				    $resourceType = GALLERY_RESOURCE_UNKNOWN;
+            }
+            
+            return( $resourceType );					
+		}
 
         /**
          * adds a resource to the database. This method requires a FileUpload parameter and it
@@ -462,18 +474,21 @@
             // get the metadata
             $getId3 = new GetID3();
             $metadata = $getId3->analyze( $upload->getTmpName());
-			
-			// find out the right resource type based on the extension
-			$resourceType = $this->getResourceType( $upload->getFileName());
-			
+            // nifty helper method from the getid3 package
+            getid3_lib::CopyTagsToComments($metadata);            
+            
+            $resourceType = $this->_getResourceType( $upload->getFileName(), $metadata );
+            
             // set the flags
             $flags = 0;
             if( $resourceType == GALLERY_RESOURCE_IMAGE )
                 $flags = $flags|GALLERY_RESOURCE_PREVIEW_AVAILABLE;
-			
+                
+            $info = $this->_filterMetadata( $metadata, $resourceType );               
+      		
             // add the record to the database
             $fileName = $upload->getFileName();
-			$resourceId = $this->addResourceToDatabase( $ownerId, $albumId, $description, $flags, $resourceType, $filePath, $fileName, $metadata );
+			$resourceId = $this->addResourceToDatabase( $ownerId, $albumId, $description, $flags, $resourceType, $filePath, $fileName, $info );
 			if( !$resourceId )
 				return false;
 			
@@ -501,6 +516,53 @@
 			
             // return the id of the resource we just added
             return $resourceId;
+        }
+        
+        /**
+         * @private
+         * Returns an array with only those bits of metadata as generate by getid3 that
+         * we'd like to keep, instead of one huge array
+         *
+         * @param metadata
+         * @param resourceType
+         */
+        function _filterMetadata( &$metadata, $resourceType ) 
+        {
+            $info = Array();
+            $info["md5_file"] = $metadata["md5_file"];
+            $info["md5_data"] = $metadata["md5_data"];
+            $info["filesize"]= $metadata["filesize"];
+            $info["fileformat"] = $metadata["fileformat"]; 
+            $info["comments"] = $metadata["comments"];
+                        
+            if($resourceType == GALLERY_RESOURCE_IMAGE){
+                $info["video"] = $metadata["video"];
+                $info["jpg"]["exif"]["FILE"] = $metadata["jpg"]["exif"]["FILE"];
+                $info["jpg"]["exif"]["COMPUTED"] = $metadata["jpg"]["exif"]["COMPUTED"];
+                $info["jpg"]["exif"]["IFD0"] = $metadata["jpg"]["exif"]["IFD0"];
+                $metadata["jpg"]["exif"]["EXIF"]["MakerNote"] = "";
+                $info["jpg"]["exif"]["EXIF"] = $metadata["jpg"]["exif"]["EXIF"];
+             }  
+             else  if($resourceType == GALLERY_RESOURCE_SOUND){
+                $info["audio"] = $metadata["audio"];
+                $info["playtime_string"] = $metadata["playtime_string"];
+                $info["playtime_seconds"] = $metadata["playtime_seconds"];
+             }   
+             else  if($resourceType == GALLERY_RESOURCE_VIDEO){
+                $info["video"] = $metadata["video"];
+                $info["audio"] = $metadata["audio"];
+                $info["playtime_seconds"] = $metadata["playtime_seconds"];                
+                $info["playtime_string"] = $metadata["playtime_string"];                
+             }
+             else if( $resourceType == GALLERY_RESOURCE_ZIP ) {
+                $info["zip"]["compressed_size"] = $metadata["zip"]["compressed_size"];
+                $info["zip"]["uncompressed_size"] = $metadata["zip"]["uncompressed_size"];
+                $info["zip"]["entries_count"] = $metadata["zip"]["entries_count"];
+                $info["zip"]["copmression_method"] = $metadata["zip"]["copmression_method"];
+                $info["zip"]["compression_speed"] = $metadata["zip"]["compression_speed"];
+             }
+             
+             return( $info );            
         }
         
         /**
@@ -536,10 +598,12 @@
             // get the metadata
             $getId3 = new GetID3();
             $metadata = $getId3->analyze( $fullFilePath );
+            // nifty helper method from the getid3 package
+            getid3_lib::CopyTagsToComments($metadata);                      
     
-            // find out the right resource type based on the extension
-            $resourceType = $this->getResourceType( $fileName );
-    
+            $resourceType = $this->_getResourceType( $fullFilePath, $metadata );
+            $info = $this->_filterMetadata( $metadata, $resourceType );            		
+			    
             // set the flags
             $flags = 0;
             if( $resourceType == GALLERY_RESOURCE_IMAGE )
@@ -735,6 +799,7 @@
              // to which album this resource belongs
              $album = $this->albums->getAlbum( $row["album_id"], $row["owner_id"], false );
              $res->setAlbum( $album );
+              // print_r(unserialize($row["metadata"]));
 
              return $res;
         }

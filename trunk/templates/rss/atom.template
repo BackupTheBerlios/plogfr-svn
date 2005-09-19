@@ -3,7 +3,7 @@
 <title>{$blog->getBlog()|escape}</title> 
 <link rel="alternate" type="text/html" href="{$url->blogLink()}" /> 
 {assign var="newestDate" value=$posts[0]->getDateObject()} 
-<modified>{$locale->formatDateGMT($newestDate, "%Y-%m-%dT%H:%M:%S-00:00")}</modified> 
+<modified>{$locale->formatDate($newestDate, "%Y-%m-%dT%H:%M:%S%O", $blog)}</modified> 
 <tagline>{$blog->getAbout()|escape}</tagline> 
 <generator url="http://www.plogworld.net/" version="1.0.1">pLog</generator> 
 {assign var="blogOwner" value=$posts[0]->getUserInfo()} 
@@ -14,9 +14,9 @@
  <title>{$post->getTopic()|escape}</title> 
  <link rel="alternate" type="text/html" href="{$url->postPermalink($post)}" /> 
  {assign var="postDate" value=$post->getDateObject()} 
- <modified>{$locale->formatDateGMT($postDate, "%Y-%m-%dT%H:%M:%S-00:00")}</modified> 
- <issued>{$locale->formatDateGMT($postDate, "%Y-%m-%dT%H:%M:%S-00:00")}</issued> 
- <created>{$locale->formatDateGMT($postDate, "%Y-%m-%dT%H:%M:%S-00:00")}</created> 
+ <modified>{$locale->formatDate($postDate, "%Y-%m-%dT%H:%M:%S%O", $blog)}</modified> 
+ <issued>{$locale->formatDate($postDate, "%Y-%m-%dT%H:%M:%S%O", $blog)}</issued> 
+ <created>{$locale->formatDate($postDate, "%Y-%m-%dT%H:%M:%S%O", $blog)}</created> 
  <summary type="text/plain">{$post->getText()|strip_tags|truncate:200:" ..."|escape:"html"}</summary> 
  <author> 
  {assign var="postOwner" value=$post->getUserInfo()} 

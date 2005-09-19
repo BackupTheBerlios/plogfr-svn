@@ -9,7 +9,7 @@
   <title>{$blog->getBlog()|escape}</title>
   <link>{$url->blogLink()}</link>
   <description>{$blog->getAbout()|escape}</description>
-  <pubDate>{$locale->formatDateGMT($now, "%a, %d %b %Y %H:%M:%S GMT")}</pubDate>
+  <pubDate>{$locale->formatDate($now, "%a, %d %b %Y %H:%M:%S %O")}</pubDate>
   <generator>http://www.plogworld.net</generator>
   {foreach from=$posts item=post}
   <item>
@@ -26,7 +26,7 @@
     <category>{$category->getName()|escape}</category>
    {/foreach}
    {assign var="postDate" value=$post->getDateObject()}
-   <pubDate>{$locale->formatDateGMT($postDate, "%a, %d %b %Y %H:%M:%S GMT")}</pubDate>
+   <pubDate>{$locale->formatDate($postDate, "%a, %d %b %Y %H:%M:%S %O", $blog)}</pubDate>
    <source url="{$url->rssLink("rss20")}">{$blog->getBlog()|escape}</source>
    {foreach from=$post->getArticleResources() item=resource}
     {** please uncomment the line below if you'd like to server everything but images, instead of

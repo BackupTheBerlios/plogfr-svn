@@ -216,7 +216,7 @@
                       VALUES (".
                       $album->getOwnerId().", '".Db::qstr($album->getDescription())."', '".
 					  Db::qstr($album->getName())."', 0, ".$album->getParentId().", '".
-                      serialize($album->getProperties())."', 1,'".
+                      serialize($album->getProperties())."', ".$album->getShowAlbum()." ,'".
                       Db::qstr($tf->normalizeText($album->getName()))."','".
                       Db::qstr($tf->normalizeText($album->getDescription()))."', '".
 					  $tf->urlize($album->getName())."');";
@@ -335,7 +335,8 @@
 			}
 			
             $total = "";
-            if ( array_key_exists( $albumId, $this->_counts ) )
+            
+            if ( $this->_counts && array_key_exists( $albumId, $this->_counts ) )
             {
                 $total = $this->_counts[$albumId];
             }

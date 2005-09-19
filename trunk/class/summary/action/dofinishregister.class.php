@@ -125,12 +125,12 @@
             // if the blog was created, we can add some basic information
             // add a category
             $articleCategories = new ArticleCategories();
-            $articleCategory = new ArticleCategory( $this->_locale->tr("register_default_category" ), "", $newblogId, true );
+            $articleCategory = new ArticleCategory( $locale->tr("register_default_category" ), "", $newblogId, true );
             $catId = $articleCategories->addArticleCategory( $articleCategory );
 
             // add an article based on that category
-            $articleTopic = $this->_locale->tr( "register_default_article_topic" );
-            $articleText  = $this->_locale->tr("register_default_article_text" );
+            $articleTopic = $locale->tr( "register_default_article_topic" );
+            $articleText  = $locale->tr("register_default_article_text" );
             $article = new Article( $articleTopic, $articleText, Array( $catId ), $userId, $newblogId, POST_STATUS_PUBLISHED, 0, Array(), "welcome" );
             $article->setDateObject( new Timestamp());  // set it to the current date
             $article->setCommentsEnabled( true ); // enable comments

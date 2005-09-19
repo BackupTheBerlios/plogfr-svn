@@ -29,12 +29,12 @@
                         {foreach from=$recentposts[$blogId] item=post}
                         <tr style="background-color: {cycle values="#FFFFFF,#F7F7F7"};">
                             <td>
-                                <a target="_blank" href="{$url->postPermalink($post)}">{$post->getTopic()}</a><br/>
+                                <a target="_blank" href="{$url->postPermalink($post)}">{$post->getTopic()|strip_tags}</a><br/>
                             </td>
                             <td>
                                 <div class="list_action_button">
                                 <a href="?op=blogSelect&amp;blogId={$blog->getId()}&amp;action=editPost&amp;postId={$post->getId()}"><img src="imgs/admin/icon_edit-16.png" alt="{$locale->tr("edit")}" /></a>
-                                <a href="?op=blogSelect&amp;blogId={$blog->getId()}&amp;action=deletePost&amp;postIds[]={$post->getId()}"><img src="imgs/admin/icon_delete-16.png" alt="{$locale->tr("delete")}" /></a>
+                                <a href="?op=blogSelect&amp;blogId={$blog->getId()}&amp;action=deletePost&amp;postId={$post->getId()}"><img src="imgs/admin/icon_delete-16.png" alt="{$locale->tr("delete")}" /></a>
                                 </div>
                             </td>
                         </tr>
@@ -59,7 +59,7 @@
                                 {if $comment->getTopic() == ""}
                                 <i>{$locale->tr("no_subject")}</i>
                                 {else}
-                                {$comment->getTopic()}
+                                {$comment->getTopic()|strip_tags}
                                 {/if}
                                 </a>
                             </td>
@@ -69,7 +69,7 @@
                                 {/if}
                             </td>
                             <td>
-                                <a href="{$url->postPermalink($article)}">{$article->getTopic()}</a>
+                                <a href="{$url->postPermalink($article)}">{$article->getTopic()|strip_tags}</a>
                             </td>
                             <td>
                                 {assign var=commentDate value=$comment->getDateObject()}
@@ -119,7 +119,7 @@
                                 </a>
                             </td>
                             <td>
-                                <a href="{$url->postPermalink($article)}">{$article->getTopic()}</a>
+                                <a href="{$url->postPermalink($article)}">{$article->getTopic()|strip_tags}</a>
                             </td>
                             <td>
                                 {assign var=trackbackDate value=$trackback->getDateObject()}

@@ -225,7 +225,7 @@
          *
          * @param category The ArticleCategory object with information about the category
          * whose RSS feed we'd like to generate
-         * @þaram profile The profile we'd like to generate: RSS 0.90, RSS 1.0, RSS 2.0
+         * @aram profile The profile we'd like to generate: RSS 0.90, RSS 1.0, RSS 2.0
          * or XML.
          * @param blogInfo A BlogInfo object containing information about the blog.
          * @return The url pointing to the rss feed of the journal.
@@ -414,8 +414,8 @@
             $this->addParameter( "resource", $resource->getFileName());
             $this->addParameter( "mode", "preview" );
 
-            $resourceLink = $this->getResourceServerUrl().$this->getRequest();
-
+            $resourceLink = $this->getResourceServerUrl().$this->getRequest( false );
+            
             return $resourceLink;
         }
 		
@@ -432,7 +432,7 @@
             $this->addParameter( "resource", $resource->getFileName());
             $this->addParameter( "mode", "medium" );
 
-            $resourceLink = $this->getResourceServerUrl().$this->getRequest();
+            $resourceLink = $this->getResourceServerUrl().$this->getRequest( false );
 
             return $resourceLink;
 		}

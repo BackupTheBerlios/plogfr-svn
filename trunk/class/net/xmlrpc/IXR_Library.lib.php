@@ -89,7 +89,7 @@ class IXR_Value {
             case 'struct':
                 $return = '<struct>'."\n";
                 foreach ($this->data as $name => $value) {
-                    $return .= "  <member><name>$name</name><value>";
+                    $return .= "  <member><name>".htmlspecialchars($name)."</name><value>";
                     $return .= $value->getXml()."</value></member>\n";
                 }
                 $return .= '</struct>';

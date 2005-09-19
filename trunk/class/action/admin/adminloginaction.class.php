@@ -109,7 +109,7 @@
 			// check if we are skipping the dashboard
 			if( $this->_config->getValue( "skip_dashboard" )) {
 				// get the first blog that came
-				$this->_blogInfo = array_pop( $userBlogs );			
+				$this->_blogInfo = end( $userBlogs );			
 				// set it in the session
             	$session = HttpVars::getSession();
             	$session["SessionInfo"]->setValue( "blogInfo", $this->_blogInfo );

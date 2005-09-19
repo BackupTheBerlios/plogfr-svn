@@ -82,11 +82,9 @@
             }
             $this->_userName  = Textfilter::filterAllHTML($this->_request->getValue( "userName" ));
             $this->_commentText = trim($this->_request->getValue( "commentText" ));
-            $this->_commentTopic = trim($this->_request->getValue( "commentTopic" ));
-            // remove all weird stuff from the text and topic
+            $this->_commentTopic = trim(Textfilter::filterAllHTML($this->_request->getValue( "commentTopic" )));
+            // remove all weird stuff from the comment text
             $tf = new TextFilter();
-            $this->_commentTopic = $tf->xhtmlize($tf->filterHTML( $this->_commentTopic ));
-            // and also from the text
             $this->_commentText = $tf->xhtmlize($tf->filterHTML( $this->_commentText ));
             // now, if the option is set, we 'beautify' the text typed by users
             if( $this->_config->getValue( "beautify_comments_text" )) {

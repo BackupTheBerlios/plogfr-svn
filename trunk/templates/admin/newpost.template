@@ -59,7 +59,7 @@
 	     <label for="postTopic">{$locale->tr("topic")}</label>
 		 <span class="required">*</span>
 		 <div class="formHelp">{$locale->tr("topic_help")}</div>
-	     <input type="text" name="postTopic" style="width:100%" id="postTopic" value="{$postTopic}" />
+	     <input type="text" name="postTopic" style="width:100%" id="postTopic" value="{$postTopic|escape:"html"}" />
 	     {include file="$admintemplatepath/validate.template" field=postTopic message=$locale->tr("error_missing_post_topic")}
 	   </div>
 	   
@@ -88,11 +88,11 @@
 	     {/if}
 	   </div>
 
-	   <div class="field">
+	   <!--<div class="field">
 	     <label for="trackbackUrls">{$locale->tr("trackback_urls")}</label>
 		 <div class="formHelp">{$locale->tr("trackback_urls_help")}</div>
 	     <textarea rows="5" id="trackbackUrls" name="trackbackUrls" style="width:100%">{$trackbackUrls}</textarea>
-	   </div>	      	   
+	   </div>-->
 	   
 	   <!-- text area custom fields -->
       {include file="$admintemplatepath/newpost_customfields.template" type=2 fields=$customfields}
@@ -103,7 +103,7 @@
 	   <div class="field">
 	     <label for="postSlug">{$locale->tr("post_slug")}</label>
 		 <div class="formHelp">{$locale->tr("post_slug_help")}</div>
-	     <input type="text" name="postSlug" id="postSlug" style="width:100%" value="{$postSlug}" />
+	     <input type="text" name="postSlug" id="postSlug" style="width:100%" value="{$postSlug|escape:"html"}" />
 	   </div>
    
        <div class="field">
@@ -164,11 +164,13 @@
 		 {/if}
       </div>
 
+      {*
       <div class="field">
        	<br /><label for="bookmarklet">{$locale->tr("bookmarklet")}</label>
        	<div class="formHelp">{$locale->tr("bookmarklet_help")}</div>
 		<a href="javascript:bm=document.selection?document.selection.createRange().text:document.getSelection();void(plogbm=window.open('{$url->getAdminUrl()}?op=newPost&sendTrackbacks=1&postText='+encodeURIComponent('&lt;p&gt;'+bm+' ... '+'&lt;a href=&quot;'+window.location.href+'&quot;&gt;'+'{$locale->tr("original_post")}'+'&lt;/a&gt;&lt;/p&gt;'),'plogbm','toolbar=1,status=1,location=1,scrollbars=1,menubar=1,resizable=1'))" onclick="window.alert('{$locale->tr("bookmarklet_help")}');">{$locale->tr("blogit_to_plog")}</a> 
-      </div>	 
+      </div>
+      *}
 	  
 	  <!-- checkbox custom fields -->
 	   {include file="$admintemplatepath/newpost_customfields.template" type=3 fields=$customfields}	  

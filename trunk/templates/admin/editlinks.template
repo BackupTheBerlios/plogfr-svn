@@ -55,7 +55,7 @@
    </td>
    <td>
     {if $link->getRssFeed() != ""}
-      <a href="{$link->getRssFeed()}"><img src="imgs/admin/rss_logo_small.gif" style="border:0px;" /></a>
+      <a href="{$link->getRssFeed()}"><img src="imgs/rss_logo_small.gif" style="border:0px;" /></a>
     {/if}
    </td>
    <td>

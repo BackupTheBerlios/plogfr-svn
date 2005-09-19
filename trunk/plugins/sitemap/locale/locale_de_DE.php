@@ -5,7 +5,7 @@ $messages["sitemapPluginSettings"] = "Sitemaps";
 $messages["sitemap_plugin_enabled"] = "Diese Plugin aktivieren.";
 $messages["sitemap_plugin"] = "Sitemap Plugin";
 
-$messages["google_notification_enabled"] = "Google bei €nderungen automatisch benachrichtigen.";
+$messages["google_notification_enabled"] = "Google bei &Auml;nderungen automatisch benachrichtigen.";
 
 $messages["sitemap_settings_saved_ok"] = "Sitemap-Einstellungen wurde gespeichert!";
 

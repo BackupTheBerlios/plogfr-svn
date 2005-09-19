@@ -475,6 +475,7 @@
 		 * <li>%S	seconds</li>
 		 * <li>%y	2-digit year representation</li>
 		 * <li>%Y	4-digit year representation</li>
+		 * <li>%O   Difference to Greenwich time (GMT) in hours</li>
 		 * <li>%%	the '%' character
          * </ul>
          * (these have been added by myself and are therefore incompatible with php)<ul>
@@ -482,7 +483,7 @@
          * <li>%D	cardinal representation of the day</li>
          * </ul>
 		 */
-		function formatDate( $timeStamp, $format = null )
+		function formatDate( $timeStamp, $format = null, $blog = null )
 		{
 			// load the file if it hadn't been loaded yet		
 			if( !is_array($this->_messages))
@@ -496,6 +497,39 @@
             // and the same for the weekdays
             $weekdayId = $timeStamp->getWeekdayId();
             $weekday = $this->_messages["days"][$weekdayId];
+            
+            
+            // Get the time stamp string
+            $strTimeStamp = $timeStamp->getTimestamp();
+            //Convert this to a php timestamp.
+            $time = mktime(
+                substr($strTimeStamp,8,2),
+                substr($strTimeStamp,10,2),
+                substr($strTimeStamp,12,2),
+                substr($strTimeStamp,4,2),
+                substr($strTimeStamp,6,2),
+                substr($strTimeStamp,0,4)
+            );
+
+            // Get the time zone offset for the server, on the specified date
+            $timeZoneSec = date("Z", $time);
+            if ( $blog ) {
+                //
+                // The blog was specified.  Use it to get the time offset
+                //
+                $timeDiff = 0;
+                $blogSettings = $blog->getSettings();
+                $timeDiff = $blogSettings->getValue( 'time_offset' );
+                
+                // The following line relies on the fact that the result will
+                // be an int.
+                $timeZoneSec += ( $timeDiff * 3600 );
+            }
+            // Now convert the time zone seconds to hours and minutes
+            $timeZoneHours = intval( abs($timeZoneSec) / 3600 );
+            $timeZoneMins = intval(( abs($timeZoneSec) % 3600 ) / 60 );
+            $timeZoneDirection = ($timeZoneSec < 0 ) ? "-" : "+";
+            
 			
 			// if the user did not specify a format, let's use the default one
 			if( $format == null )
@@ -518,6 +552,7 @@
 			$values["%S"] = $timeStamp->getSeconds();
 			$values["%y"] = substr($timeStamp->getYear(), 2, 4 );
 			$values["%Y"] = $timeStamp->getYear();
+			$values["%O"] = sprintf( "%s%02d%02d", $timeZoneDirection, $timeZoneHours, $timeZoneMins );
 			$values["%%"] = "%";
             $values["%T"] = $this->getDayOrdinal( $timeStamp )." ".$this->tr("of")." ".$monthStr;
             $values["%D"] = $this->getDayOrdinal( $timeStamp );
@@ -561,6 +596,7 @@
 		 * <li>%S	seconds</li>
 		 * <li>%y	2-digit year representation</li>
 		 * <li>%Y	4-digit year representation</li>
+		 * <li>%O   Difference to Greenwich time (GMT) in hours (Will always be +0000)</li>
 		 * <li>%%	the '%' character
          * </ul>
          * (these have been added by myself and are therefore incompatible with php)<ul>
@@ -568,12 +604,27 @@
          * <li>%D	cardinal representation of the day</li>
          * </ul>
 		 */
-        function formatDateGMT( $timeStamp, $format = null )
+        function formatDateGMT( $timeStamp, $format = null, $blog = null )
         {
             // load the file if it hadn't been loaded yet       
             if( !is_array($this->_messages))
                 $this->_loadLocaleFile();       
         
+            if ( $blog ) {
+                //
+                // The blog was specified.  Use it to get the time offset
+                //
+                $timeDiff = 0;
+                $blogSettings = $blog->getSettings();
+                $timeDiff = $blogSettings->getValue( 'time_offset' );
+                $timeDiff *= -1;
+                
+                if( $timeDiff > 0 )
+                    $timeStamp->addSeconds( $timeDiff * 3600 );
+                else
+                    $timeStamp->subtractSeconds( $timeDiff * (-3600));
+            
+            }
             // Convert this timestamp to on that is in GMT
             $strTimeStamp = $timeStamp->getTimestamp();
             // Now have a local time stamp 
@@ -622,6 +673,7 @@
             $values["%S"] = gmdate( "s", $time );
             $values["%y"] = gmdate( "y", $time );
             $values["%Y"] = gmdate( "Y", $time );
+            $values["%O"] = "+0000";
             $values["%%"] = "%";
             $values["%T"] = $this->getDateOrdinal( gmdate( "d", $time ) )." ".$this->tr("of")." ".$monthStr;
             $values["%D"] = $this->getDateOrdinal( gmdate( "d", $time )  );

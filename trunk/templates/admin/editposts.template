@@ -93,7 +93,7 @@
                         </td>
                         <td class="col_highlighted">
                             <a href="?op=editPost&amp;postId={$post->getId()}">
-                            {$post->getTopic()}
+                            {$post->getTopic()|strip_tags}
                             </a>
                         </td>
                         <td>

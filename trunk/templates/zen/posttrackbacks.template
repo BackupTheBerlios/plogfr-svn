@@ -8,7 +8,7 @@
      <b>{$locale->tr("trackback_excerpt")}:</b> {$trackback->getExcerpt()}<br/>
      <b>{$locale->tr("trackback_weblog")}:</b> {$trackback->getBlogName()}<br/>
      {assign var="trackbackDate" value=$trackback->getDateObject()}
-     <b>{$locale->tr("date")}:</b> Date would be here<br/><br/>
+     <b>{$locale->tr("date")}:</b> {$locale->formatDate($trackbackDate, "%d/%m/%Y %H:%M")}<br/><br/>
     {/foreach}
   </div>
  </div>

@@ -213,7 +213,10 @@ class MimeType extends Object
          "mxu" => "video/vnd.mpegurl",
          "avi" => "video/x-msvideo",
          "movie" => "video/x-sgi-movie",
-         "ice" => "x-conference-xcooltalk"
+         "ice" => "x-conference-xcooltalk",
+         "wmv"=>"video/x-ms-wmv",
+         "wma"=>"audio/x-ms-wma",
+         "asf"=>"video/x-msvideo"
       );
 
    // default mime type returned if it could not be found
@@ -238,7 +241,8 @@ class MimeType extends Object
       $filename = explode('.', $filename);
 
       // take the last part of the file to get the file extension
-      $filename = $filename[count($filename)-1];
+      $filename = $filename[count($filename)-1];    
+   
 
       // find mime type
       return $this->privFindType($filename);
@@ -252,6 +256,7 @@ class MimeType extends Object
    function privFindType($ext) {
       // return mime type for extension
       if (isset($this->mimetypes[$ext])) {
+       // die($this->mimetypes[$ext]);
          return $this->mimetypes[$ext];
       // if the extension wasn't found return octet-stream
       } else {

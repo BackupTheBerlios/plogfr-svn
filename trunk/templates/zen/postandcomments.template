@@ -6,6 +6,7 @@
     <h2>{$locale->formatDate($postDate,"%d %b, %Y")}</h2>
     
     <div class="post">
+       <!-- {$url->postTrackbackLink($post)} -->
         {include file="$blogtemplate/post.template"}
     
         <h2 id="comments">{$locale->tr("comments")|capitalize}</h2>
